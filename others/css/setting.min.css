@@ -1,0 +1,8 @@
+@charset "UTF-8";
+/**
+ * Castle
+ * Author ohmyga ( https://ohmyga.cn )
+ * Github https://github.com/ohmyga233/castle-Typecho-Theme
+ * Version 0.1.0
+ **/
+.moe-panel{width:90%;color:#fff;padding:20px;margin-left:auto;margin-right:auto;border-radius:3px;background-color:rgba(0,0,0,0.6)}.moe-panel a{color:#ec407a}.moe-panel .moe-title{display:block;font-size:36px;font-weight:500;text-align:center;margin-bottom:10px;text-shadow:0 2px 1px #424242}.moe-panel .moe-current-ver{display:block;font-size:16px}.moe-panel .moe-new-ver{display:block;font-size:16px}.moe-panel .moe-announcement{display:block;font-size:16px;margin-bottom:36px}.moe-panel .moe-btn:hover{background:#d81b60;transition:all .29s ease}.moe-panel .moe-btn:active{background-color:#c2185b;transition:all .29s ease}.typecho-option-submit{right:25px;bottom:10px;float:right;z-index:233;position:fixed}.btn{border-radius:5px}.btn{will-change:box-shadow;transition:box-shadow .25s cubic-bezier(.4,0,.2,1);transition:-webkit-box-shadow .25s cubic-bezier(.4,0,.2,1);-webkit-transition:-webkit-box-shadow .25s cubic-bezier(.4,0,.2,1);transition:box-shadow .25s cubic-bezier(.4,0,.2,1),-webkit-box-shadow .25s cubic-bezier(.4,0,.2,1)}.btn:focus,.btn:hover{box-shadow:0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);-webkit-box-shadow:0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12)}textarea{border-radius:5px;height:240px!important}input{border-radius:5px}
