@@ -3,6 +3,18 @@
  "head": {
   "searchInput": "想搜索点什么呢？"
  },
+ "archive": {
+  "comment": "%s 条咸鱼",
+  "commentDynamic": "%s条咸鱼",
+  "commentNopic": "%s 条咸鱼",
+  "FloatingTitle": "点我深入了解《%s》~",
+  "LinkDynamic": "翻牌子...",
+  "nofound": "并没有你想找的内容哦 ＞﹏＜",
+  "time": "Y年m月d日",
+  "view": "%s 次调戏",
+  "viewDynamic": "%s次调戏",
+  "ViewLink": "翻牌子 (/≧▽≦)/"
+ },
  "index": {
   "comment": "%s 条咸鱼",
   "commentDynamic": "%s条咸鱼",
@@ -24,6 +36,7 @@
  "post": {
   "categories": "水文分类",
   "comment": "%s 条咸鱼",
+  "copy": "本文绒布球：%author<br>本文入口处：<a href=\"%link\">%link</a><br>最后修改的时间：%time<br>嘿(｡･∀･)ﾉﾞ，本站文章如未注明转载均为原创哟，而且采用了 <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh\" target=\"_blank\">CC BY-NC-SA 4.0</a> 授权协议，转载请注明来源，阿里嘎多(￣▽￣)\"<br>",
   "next": "下一篇",
   "nextNo": "没有了（＞人＜；）",
   "prev": "上一篇",
@@ -39,6 +52,7 @@
  },
  "page": {
   "comment": "%s 条咸鱼",
+  "copy": "本文绒布球：%author<br>本文入口处：<a href=\"%link\">%link</a><br>最后修改的时间：%time<br>嘿(｡･∀･)ﾉﾞ，本站文章如未注明转载均为原创哟，而且采用了 <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh\" target=\"_blank\">CC BY-NC-SA 4.0</a> 授权协议，转载请注明来源，阿里嘎多(￣▽￣)\"<br>",
   "share": "分享到哪里呢(/▽＼)",
   "shareFB": "分享至 Facebook",
   "shareQQ": "分享至 QQ",
@@ -61,6 +75,7 @@
   "commentUserURL": "小窝链接(选填) (～﹃～)~zZ",
   "loginOut": "滚啊 (* ￣︿￣)",
   "loginUserCommentTitle": "现在以绒布球的身份发表评论",
+  "markdown": "资瓷Markdown哟~",
   "NoComment": "一条咸鱼都没有 (* ￣︿￣)",
   "OnlyOneComment": "只有 1 条咸鱼 _〆(´Д｀ )",
   "reply": "正正丅",
@@ -73,6 +88,7 @@
   "close": "不可以",
   "emoji": "Emoji",
   "huaji": "滑稽",
+  "qwq": "✪ω✪",
   "OwO": "OωO",
   "tieba": "泡泡"
  },
@@ -120,7 +136,20 @@
   "windows 8.1": "Windows 8.1",
   "windows 10": "Windows 10"
  },
+ "links": {
+  "clickThis": "点我进行PY~",
+  "Slink": "PY申请"
+ },
+ "tags": {
+  "tagAllNum": "全部共 %s 个标签o(*￣▽￣*)o",
+  "title": "标签云"
+ },
  "404": {
-  "title": "页面走丢惹 ≧ ﹏ ≦"
+  "home": "首页",
+  "login": "登录",
+  "no found": "页面好像走丢了...",
+  "title": "页面走丢了QAQ",
+  "search": "搜索点什么呢？",
+  "try search": "或许你可以尝试搜索下？？"
  }
 }]

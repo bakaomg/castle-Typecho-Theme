@@ -1,4 +1,10 @@
 <?php
+/**
+ * Functions
+ * Version 0.1.5
+ * Author ohmyga( https://ohmyga.cn/ )
+ * 2019/04/10
+ **/
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 define("THEME_NAME", "Castle");
@@ -39,7 +45,7 @@ function themeFields($layout) {
 
 function themeInit($comment) {
  Helper::options()->commentsAntiSpam = false; //关闭评论反垃圾(否则与PJAX冲突)
- Helper::options()->commentsHTMLTagAllowed = '<a href=""> <img src=""> <img src="" class=""> <code>'; //评论允许使用的标签
+ Helper::options()->commentsHTMLTagAllowed = '<a href=""> <img src=""> <img src="" class=""> <code> <del>'; //评论允许使用的标签
  Helper::options()->commentsMarkdown = true; //启用评论可使用MarkDown语法
  Helper::options()->commentsCheckReferer = false; //关闭检查评论来源URL与文章链接是否一致判断(否则会无法评论)
  Helper::options()->commentsPageBreak = true; //是否开启评论分页
@@ -107,6 +113,20 @@ function PSetting($type) {
  return $output;
 }
 
+/* 高级设置 */
+function adSetting($a, $b, $c=NULL, $moe=NULL){
+ $data = Helper::options()->advancedSetting;
+ $set = json_decode($data, true);
+ if (!empty($a) && !empty($b) && !empty($c)) {
+  $output = $set[$a][$b][$c];
+ }elseif (!empty($a) && !empty($b)) {
+  $output = $set[$a][$b];
+ }elseif (!empty($a)) {
+  $output = $set[$a];
+ }
+ return $output;
+}
+
 /* 随机封面图 */
 function randPic() {
  $setting = Helper::options()->randimg;
@@ -146,15 +166,20 @@ function updateURL() {
 
 /* 主题检查更新&获取公告 */
 function themeUpdate($type) {
- $get_new_ver = file_get_contents(updateURL().'themes/update/?site='.$_SERVER['HTTP_HOST'].'&v='.CASTLE_VERSION.'&n='.THEME_NAME);
- $array = json_decode($get_new_ver, true);
- 
  if ($type == 'GetNewVer') {
+  $get_new_ver = file_get_contents(updateURL().'themes/update/?site='.$_SERVER['HTTP_HOST'].'&v='.CASTLE_VERSION.'&n='.THEME_NAME);
+  $array = json_decode($get_new_ver, true);
   $output = $array['version'];
  }elseif ($type == 'check') {
+  $get_new_ver = file_get_contents(updateURL().'themes/update/?site='.$_SERVER['HTTP_HOST'].'&v='.CASTLE_VERSION.'&n='.THEME_NAME);
+  $array = json_decode($get_new_ver, true);
   $output = $array['message'];
  }elseif ($type == 'announcement') {
+  $get_new_ver = file_get_contents(updateURL().'themes/update/?site='.$_SERVER['HTTP_HOST'].'&v='.CASTLE_VERSION.'&n='.THEME_NAME);
+  $array = json_decode($get_new_ver, true);
   $output = $array['announcement'];
+ }elseif($type == 'ajaxURL') {
+  $output = updateURL().'themes/update/?site='.$_SERVER['HTTP_HOST'].'&v='.CASTLE_VERSION.'&n='.THEME_NAME;
  }
  
  return $output;
@@ -181,12 +206,12 @@ function lang($type, $name){
 
 /* 获取主题静态文件引用源 */
 function themeResource($content) {
- $setting = 'local';
+ $setting = Helper::options()->themeResource;
  
  if ($setting == 'local') {
   $output = Helper::options()->themeUrl.'/'.$content;
  }elseif ($setting == 'jsdelivr') {
-  $output = 'https://cdn.jsdelivr.net/gh/ohmyga233/'.THEME_NAME.'@'.themeVer('current').'/'.$content;
+  $output = 'https://cdn.jsdelivr.net/gh/ohmyga233/castle-Typecho-Theme@'.themeVer('current').'/'.$content;
  }
 
  return $output;
@@ -297,6 +322,49 @@ function theNext($widget, $default = NULL) {
  }
 }
 
+/* Tag随机颜色 */
+function randColor() {
+ $before = 'mdui-text-color-';
+ $randNum1 = rand(0,18);
+ $colorArray = array('red','pink','purple','deep-purple','indigo','blue','light-blue','cyan','teal','green','light-green','lime','yellow','amber','orange','deep-orange','brown','grey','blue-grey');
+ $output = $before.$colorArray[$randNum1];
+ return $output;
+}
+
+/* Tag字体大小 */
+function fTag($t, $moe=NULL) {
+ $num = 14;
+ $count = $moe->count;
+ if ($count <= 10){
+  $output = $num+$count;
+ }else{
+  $output = $num+$count/2;
+ }
+ return $output;
+}
+
+/* 解析文章/页面作者 */
+function Jauthor($moe=NULL) {
+ $json = json_encode($moe->author);
+ $jsonde = json_decode($json, true);
+ $output = $jsonde['stack'][0]['name'];
+ return $output;
+}
+
+/* 输出文章/页面版权 */
+function Pcopy($type, $moe=NULL) {
+ if ($type == 'post') {
+  $copyText = lang('post', 'copy');
+ }elseif ($type == 'page'){
+  $copyText = lang('page', 'copy');
+ }else{}
+ $Tauthor = preg_replace('/%author/', Jauthor($moe), $copyText);
+ $Ttime = preg_replace('/%time/', date('Y-m-d H:i:s', $moe->modified), $Tauthor);
+ $Tlink = preg_replace('/%link/', $moe->permalink, $Ttime);
+ $output = $Tlink;
+ return $output;
+}
+
 function DrawerMenu() {
  $data = Helper::options()->sidebar;
  if (!empty($data)) {
@@ -326,7 +394,7 @@ function DrawerMenu() {
       <i class="mdui-icon material-icons mdui-list-item-icon mdui-collapse-item-arrow">keyboard_arrow_down</i>
      </div>
      <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">';
-	  Typecho_Widget::widget('Widget_Metas_Category_List')->parse('<a href="{permalink}" class="mdui-list-item mdui-ripple" mdui-drawer-close>{name} &nbsp; <span style="background:#424242; color:#fff; line-heigh:40px; text-align:center; font-size:10px; border-radius:4px; padding-top:3px; padding-bottom:2px; padding-left:7px; padding-right:7px;">{count}</span></a>');
+	  Typecho_Widget::widget('Widget_Metas_Category_List')->parse('<a href="{permalink}" class="mdui-list-item mdui-ripple" mdui-drawer-close>{name} &nbsp; <span class="moe-cl-a">{count}</span></a>');
 	echo '</ul>
     </li>';
    }elseif ($i['type'] == '3') {
@@ -435,7 +503,7 @@ function Pshare($t,$moe=NULL) {
        </li>';
 
  $twitter = '<li class="mdui-menu-item">
-        <a href="https://twitter.com/intent/tweet?text='.$moe->title.';url='.$moe->permalink.';via='.Helper::options()->author.'" target="_blank" class="mdui-ripple">
+        <a href="https://twitter.com/intent/tweet?text='.$moe->title.';url='.$moe->permalink.';via='.Jauthor($moe).'" target="_blank" class="mdui-ripple">
          <strong>'.lang($Pt,'shareTW').'</strong>
         </a>
        </li>';
@@ -471,6 +539,8 @@ class Castle {
    array('Castle', 'parsePaopaoBiaoqingCallback'), $content);
   $content = preg_replace_callback('/\:\s*(huaji1|huaji2|huaji3|huaji4|huaji5|huaji6|huaji7|huaji8|huaji9|huaji10|huaji11|huaji12|huaji13|huaji14|huaji15|huaji16|huaji17|huaji18|huaji19|huaji20|huaji21|huaji22)\s*\:/is',
    array('Castle', 'parseHuajibiaoqingCallback'), $content);
+  $content = preg_replace_callback('/\:\s*(qwq1|qwq2|qwq3|qwq4|qwq5|qwq6|qwq7|qwq8|qwq9|qwq10|qwq11|qwq12|qwq13|qwq14|qwq15|qwq16|qwq17|qwq18|qwq19|qwq20|qwq21|qwq22|qwq23|qwq24|qwq25|qwq26)\s*\:/is',
+   array('Castle', 'parseqwqbiaoqingCallback'), $content);
   return $content;
  }
 
@@ -480,6 +550,10 @@ class Castle {
 	
  private static function parseHuajibiaoqingCallback($match){
   return '<img class="moe-owo-img-hj" src="'.Helper::options()->themeUrl.'/others/img/OwO/huaji/'.$match[1].'.gif">';
+ }
+ 
+ private static function parseqwqbiaoqingCallback($match){
+  return '<img class="moe-owo-img-qwq" src="'.Helper::options()->themeUrl.'/others/img/OwO/qwq/'.$match[1].'.png">';
  }
 
  static public function parseFancyBox($content){
@@ -631,4 +705,54 @@ function getOs($agent) {
   $icon = 'icon-os';
  }
  echo '<i class="iconfont '.$icon.' moe-comments-ua" mdui-tooltip="{content: \''.$name.'\'}"></i>';
+}
+
+/* HTML压缩 */
+function compressHtml($html_source) {
+  $chunks = preg_split('/(<!--<nocompress>-->.*?<!--<\/nocompress>-->|<nocompress>.*?<\/nocompress>|<pre.*?\/pre>|<textarea.*?\/textarea>|<script.*?\/script>)/msi', $html_source, -1, PREG_SPLIT_DELIM_CAPTURE);
+  $compress = '';
+  foreach ($chunks as $c) {
+    if (strtolower(substr($c, 0, 19)) == '<!--<nocompress>-->') {
+      $c = substr($c, 19, strlen($c) - 19 - 20);
+      $compress .= $c;
+      continue;
+    }else if (strtolower(substr($c, 0, 12)) == '<nocompress>') {
+      $c = substr($c, 12, strlen($c) - 12 - 13);
+      $compress .= $c;
+      continue;
+    } else if (strtolower(substr($c, 0, 4)) == '<pre' || strtolower(substr($c, 0, 9)) == '<textarea') {
+      $compress .= $c;
+      continue;
+    }else if (strtolower(substr($c, 0, 7)) == '<script' && strpos($c, '//') != false && (strpos($c, "\r") !== false || strpos($c, "\n") !== false)) {
+      $tmps = preg_split('/(\r|\n)/ms', $c, -1, PREG_SPLIT_NO_EMPTY);
+      $c = '';
+      foreach ($tmps as $tmp) {
+        if (strpos($tmp, '//') !== false) {
+          if (substr(trim($tmp), 0, 2) == '//') {
+             continue;
+          }
+          $chars = preg_split('//', $tmp, -1, PREG_SPLIT_NO_EMPTY);
+          $is_quot = $is_apos = false;
+          foreach ($chars as $key => $char) {
+            if ($char == '"' && $chars[$key - 1] != '\\' && !$is_apos) {
+               $is_quot = !$is_quot;
+            }else if ($char == '\'' && $chars[$key - 1] != '\\' && !$is_quot) {
+               $is_apos = !$is_apos;
+            }else if ($char == '/' && $chars[$key + 1] == '/' && !$is_quot && !$is_apos) {
+               $tmp = substr($tmp, 0, $key);
+                break;
+            }
+          }
+        }
+        $c .= $tmp;
+      }
+    }
+    $c = preg_replace('/[\\n\\r\\t]+/', ' ', $c);
+    $c = preg_replace('/\\s{2,}/', ' ', $c);
+    $c = preg_replace('/>\\s</', '> <', $c);
+    $c = preg_replace('/\\/\\*.*?\\*\\//i', '', $c);
+    $c = preg_replace('/<!--[^!]*-->/', '', $c);
+    $compress .= $c;
+  }
+  return $compress;
 }

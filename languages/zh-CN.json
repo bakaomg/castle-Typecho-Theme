@@ -3,6 +3,18 @@
  "head": {
   "searchInput": "输入你想搜索的内容并回车"
  },
+ "archive": {
+  "comment": "评论 %s",
+  "commentDynamic": "%s条评论",
+  "commentNopic": "%s 条评论",
+  "FloatingTitle": "点击标题继续阅读《%s》",
+  "LinkDynamic": "more...",
+  "nofound": "好像找不到相关的内容。。。",
+  "time": "Y年m月d日",
+  "view": "浏览 %s",
+  "viewDynamic": "浏览 %s",
+  "ViewLink": "继续阅读"
+ },
  "index": {
   "comment": "评论 %s",
   "commentDynamic": "%s条评论",
@@ -24,6 +36,7 @@
  "post": {
   "categories": "文章分类",
   "comment": "%s 评论",
+  "copy": "本文作者：%author<br>本文链接：<a href=\"%link\">%link</a><br>最后修改时间：%time<br>本站未注明转载的文章均为原创，并采用 <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh\" target=\"_blank\">CC BY-NC-SA 4.0</a> 授权协议，转载请注明来源，谢谢！<br>",
   "next": "下一篇",
   "nextNo": "没有了",
   "prev": "上一篇",
@@ -39,6 +52,7 @@
  },
  "page": {
   "comment": "%s 评论",
+  "copy": "本文作者：%author<br>本文链接：<a href=\"%link\">%link</a><br>最后修改时间：%time<br>本站未注明转载的文章均为原创，并采用 <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh\" target=\"_blank\">CC BY-NC-SA 4.0</a> 授权协议，转载请注明来源，谢谢！<br>",
   "share": "分享至...",
   "shareFB": "分享至 Facebook",
   "shareQQ": "分享至 QQ",
@@ -61,6 +75,7 @@
   "commentUserURL": "链接(选填)",
   "loginOut": "退出登录",
   "loginUserCommentTitle": "现在以登录者的身份评论",
+  "markdown": "支持Markdown语法",
   "NoComment": "暂无评论（；´д｀）ゞ",
   "OnlyOneComment": "已有 1 条评论 (o゜▽゜)o☆",
   "reply": "回复",
@@ -73,6 +88,7 @@
   "close": "取消",
   "emoji": "Emoji",
   "huaji": "滑稽",
+  "qwq": "✪ω✪",
   "OwO": "OωO",
   "tieba": "贴吧"
  },
@@ -120,7 +136,20 @@
   "windows 8.1": "Windows 8.1",
   "windows 10": "Windows 10"
  },
+ "links": {
+  "clickThis": "点此申请友链",
+  "Slink": "友链申请"
+ },
+ "tags": {
+  "tagAllNum": "总共有 %s 个标签",
+  "title": "标签云"
+ },
  "404": {
-  "title": "页面走丢惹 ≧ ﹏ ≦"
+  "home": "首页",
+  "login": "登录",
+  "no found": "404 Not Found",
+  "title": "404 Not Found",
+  "search": "输入你想搜索的内容吧！",
+  "try search": "或许你可以试着搜索一下？"
  }
 }]

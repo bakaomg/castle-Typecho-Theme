@@ -1,10 +1,12 @@
 # Castle-Typecho-Theme
-Version 0.1.0
+MD风格单栏主题<br>
+Version 0.2.0
 ## LICENSE
 GPL V3
 ## 链接
-Blog https://ohmyga.cn
+Blog https://ohmyga.cn<br>
+Docs https://castle.ohmyga.cc/ (目前还没写完)
 ## 提示
-目前版本为非稳定版本，如有发现BUG请发起issues<br>
-此版本仅有基础的功能，但设置项并非完善，这些将在下个版本解决。（时间太赶了）<br>
-~~ 懒得写ReadME，目前就保持这样子吧。~~
+(继续偷懒不写README)<br>
+如果觉得本主题还行的话，请给本项目一个Star吧！<br>
+如果GitHub下载速度一直为0K/S的话请在QQ群群文件下载(群号在博客的关于页面)

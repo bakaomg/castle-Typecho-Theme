@@ -10,16 +10,19 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $owo_tieba_file = themeResource('others/img/OwO/tieba/');
 $owo_huaji_file = themeResource('others/img/OwO/huaji/');
+$owo_qwq_file = themeResource('others/img/OwO/qwq/');
 ?>
  <div class="mdui-dialog" id="OwO-ck">
- <div class="moe-dialog-body mdui-dialog-content" id="smiliesbox" style="display:block;">
+ <div class="mdui-dialog-title moe-dialog-title">
   <div class="mdui-tab mdui-tab-full-width" id="OwO-tab" mdui-tab>
-   <a href="#owo" class="mdui-ripple"><?php echo lang('smile', 'OwO'); ?></a>
-   <a href="#emoji" class="mdui-ripple"><?php echo lang('smile', 'emoji'); ?></a>
-   <a href="#tieba" class="mdui-ripple"><?php echo lang('smile', 'tieba'); ?></a>
-   <a href="#hj" class="mdui-ripple"><?php echo lang('smile', 'huaji'); ?></a>
+   <a href="#owo" class="mdui-ripple" no-pgo><?php echo lang('smile', 'OwO'); ?></a>
+   <a href="#qwq" class="mdui-ripple" no-pgo><?php echo lang('smile', 'qwq'); ?></a>
+   <a href="#emoji" class="mdui-ripple" no-pgo><?php echo lang('smile', 'emoji'); ?></a>
+   <a href="#tieba" class="mdui-ripple" no-pgo><?php echo lang('smile', 'tieba'); ?></a>
+   <a href="#hj" class="mdui-ripple" no-pgo><?php echo lang('smile', 'huaji'); ?></a>
   </div>
-
+ </div>
+ <div class="moe-dialog-body mdui-dialog-content" id="smiliesbox" style="display:block;">
   <div id="owo" class="mdui-p-a-2">
    <a href="javascript:Smilies.grin('OωO');"><span class="moe-owo-text mdui-btn mdui-card mdui-shadow-2" mdui-dialog-close>OωO</span></a>
    <a href="javascript:Smilies.grin('ヾ(≧∇≦*)ゝ');"><span class="moe-owo-text mdui-btn mdui-card mdui-shadow-2" mdui-dialog-close>ヾ(≧∇≦*)ゝ</span></a>
@@ -43,10 +46,10 @@ $owo_huaji_file = themeResource('others/img/OwO/huaji/');
    <a href="javascript:Smilies.grin('( ง ᵒ̌皿ᵒ̌)ง⁼³₌₃');"><span class="moe-owo-text mdui-btn mdui-card mdui-shadow-2" mdui-dialog-close>( ง ᵒ̌皿ᵒ̌)ง⁼³₌₃</span></a>
    <a href="javascript:Smilies.grin('(ó﹏ò｡)');"><span class="moe-owo-text mdui-btn mdui-card mdui-shadow-2" mdui-dialog-close>(ó﹏ò｡)</span></a>
    <a href="javascript:Smilies.grin('Σ(っ °Д °;)っ');"><span class="moe-owo-text mdui-btn mdui-card mdui-shadow-2" mdui-dialog-close>Σ(っ °Д °;)っ</span></a>
-   <a href="javascript:Smilies.grin('( ,,´･ω･)ﾉ\(´っω･｀｡)');"><span class="moe-owo-text mdui-btn mdui-card mdui-shadow-2" mdui-dialog-close>( ,,´･ω･)ﾉ\"(´っω･｀｡)</span></a>
+   <a href="javascript:Smilies.grin('( ,,´･ω･)ﾉ\\\'\'(´っω･｀｡)');"><span class="moe-owo-text mdui-btn mdui-card mdui-shadow-2" mdui-dialog-close>( ,,´･ω･)ﾉ\"(´っω･｀｡)</span></a>
    <a href="javascript:Smilies.grin('╮(╯▽╰)╭');"><span class="moe-owo-text mdui-btn mdui-card mdui-shadow-2" mdui-dialog-close>╮(╯▽╰)╭</span></a>
    <a href="javascript:Smilies.grin('o(*////▽////*)q');"><span class="moe-owo-text mdui-btn mdui-card mdui-shadow-2" mdui-dialog-close>o(*////▽////*)q</span></a>
-   <a href="javascript:Smilies.grin('( ๑´•ω•)(ㆆᴗㆆ)');"><span class="moe-owo-text mdui-btn mdui-card mdui-shadow-2" mdui-dialog-close>( ๑´•ω•) \"(ㆆᴗㆆ)</span></a>
+   <a href="javascript:Smilies.grin('( ๑´•ω•)\\\'\'(ㆆᴗㆆ)');"><span class="moe-owo-text mdui-btn mdui-card mdui-shadow-2" mdui-dialog-close>( ๑´•ω•) \"(ㆆᴗㆆ)</span></a>
    <a href="javascript:Smilies.grin('(｡•ˇ‸ˇ•｡)');"><span class="moe-owo-text mdui-btn mdui-card mdui-shadow-2" mdui-dialog-close>(｡•ˇ‸ˇ•｡)</span></a>
   </div>
   
@@ -81,6 +84,35 @@ $owo_huaji_file = themeResource('others/img/OwO/huaji/');
    <a href="javascript:Smilies.grin('😣');"><span class="moe-owo-emoji mdui-btn mdui-card mdui-shadow-2" mdui-dialog-close>😣</span></a>
    <a href="javascript:Smilies.grin('💊');"><span class="moe-owo-emoji mdui-btn mdui-card mdui-shadow-2" mdui-dialog-close>💊</span></a>
    <a href="javascript:Smilies.grin('🍉');"><span class="moe-owo-emoji mdui-btn mdui-card mdui-shadow-2" mdui-dialog-close>🍉</span></a>
+  </div>
+  
+  <div id="qwq" class="mdui-p-a-2">
+   <a href="javascript:Smilies.grin(':qwq1:');"><div class="moe-owo-qwq mdui-card mdui-btn" mdui-dialog-close><img src="<?php echo $owo_qwq_file.'qwq1.png'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':qwq2:');"><div class="moe-owo-qwq mdui-card mdui-btn" mdui-dialog-close><img src="<?php echo $owo_qwq_file.'qwq2.png'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':qwq3:');"><div class="moe-owo-qwq mdui-card mdui-btn" mdui-dialog-close><img src="<?php echo $owo_qwq_file.'qwq3.png'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':qwq4:');"><div class="moe-owo-qwq mdui-card mdui-btn" mdui-dialog-close><img src="<?php echo $owo_qwq_file.'qwq4.png'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':qwq5:');"><div class="moe-owo-qwq mdui-card mdui-btn" mdui-dialog-close><img src="<?php echo $owo_qwq_file.'qwq5.png'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':qwq6:');"><div class="moe-owo-qwq mdui-card mdui-btn" mdui-dialog-close><img src="<?php echo $owo_qwq_file.'qwq6.png'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':qwq7:');"><div class="moe-owo-qwq mdui-card mdui-btn" mdui-dialog-close><img src="<?php echo $owo_qwq_file.'qwq7.png'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':qwq8:');"><div class="moe-owo-qwq mdui-card mdui-btn" mdui-dialog-close><img src="<?php echo $owo_qwq_file.'qwq8.png'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':qwq9:');"><div class="moe-owo-qwq mdui-card mdui-btn" mdui-dialog-close><img src="<?php echo $owo_qwq_file.'qwq9.png'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':qwq10:');"><div class="moe-owo-qwq mdui-card mdui-btn" mdui-dialog-close><img src="<?php echo $owo_qwq_file.'qwq10.png'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':qwq11:');"><div class="moe-owo-qwq mdui-card mdui-btn" mdui-dialog-close><img src="<?php echo $owo_qwq_file.'qwq11.png'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':qwq12:');"><div class="moe-owo-qwq mdui-card mdui-btn" mdui-dialog-close><img src="<?php echo $owo_qwq_file.'qwq12.png'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':qwq13:');"><div class="moe-owo-qwq mdui-card mdui-btn" mdui-dialog-close><img src="<?php echo $owo_qwq_file.'qwq13.png'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':qwq14:');"><div class="moe-owo-qwq mdui-card mdui-btn" mdui-dialog-close><img src="<?php echo $owo_qwq_file.'qwq14.png'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':qwq15:');"><div class="moe-owo-qwq mdui-card mdui-btn" mdui-dialog-close><img src="<?php echo $owo_qwq_file.'qwq15.png'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':qwq16:');"><div class="moe-owo-qwq mdui-card mdui-btn" mdui-dialog-close><img src="<?php echo $owo_qwq_file.'qwq16.png'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':qwq17:');"><div class="moe-owo-qwq mdui-card mdui-btn" mdui-dialog-close><img src="<?php echo $owo_qwq_file.'qwq17.png'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':qwq18:');"><div class="moe-owo-qwq mdui-card mdui-btn" mdui-dialog-close><img src="<?php echo $owo_qwq_file.'qwq18.png'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':qwq19:');"><div class="moe-owo-qwq mdui-card mdui-btn" mdui-dialog-close><img src="<?php echo $owo_qwq_file.'qwq19.png'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':qwq20:');"><div class="moe-owo-qwq mdui-card mdui-btn" mdui-dialog-close><img src="<?php echo $owo_qwq_file.'qwq20.png'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':qwq21:');"><div class="moe-owo-qwq mdui-card mdui-btn" mdui-dialog-close><img src="<?php echo $owo_qwq_file.'qwq21.png'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':qwq22:');"><div class="moe-owo-qwq mdui-card mdui-btn" mdui-dialog-close><img src="<?php echo $owo_qwq_file.'qwq22.png'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':qwq23:');"><div class="moe-owo-qwq mdui-card mdui-btn" mdui-dialog-close><img src="<?php echo $owo_qwq_file.'qwq23.png'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':qwq24:');"><div class="moe-owo-qwq mdui-card mdui-btn" mdui-dialog-close><img src="<?php echo $owo_qwq_file.'qwq24.png'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':qwq25:');"><div class="moe-owo-qwq mdui-card mdui-btn" mdui-dialog-close><img src="<?php echo $owo_qwq_file.'qwq25.png'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':qwq26:');"><div class="moe-owo-qwq mdui-card mdui-btn" mdui-dialog-close><img src="<?php echo $owo_qwq_file.'qwq26.png'; ?>" /></div></a>
   </div>
   
   <div id="tieba" class="mdui-p-a-2">
@@ -142,9 +174,12 @@ $owo_huaji_file = themeResource('others/img/OwO/huaji/');
    <a href="javascript:Smilies.grin(':huaji8:');"><div class="moe-owo-hj mdui-card mdui-btn" mdui-dialog-close><img class="mdui-img-fluid" src="<?php echo $owo_huaji_file.'huaji8.gif'; ?>" /></div></a>
    <a href="javascript:Smilies.grin(':huaji18:');"><div class="moe-owo-hj mdui-card mdui-btn" mdui-dialog-close><img class="mdui-img-fluid" src="<?php echo $owo_huaji_file.'huaji18.gif'; ?>" /></div></a>
    <a href="javascript:Smilies.grin(':huaji15:');"><div class="moe-owo-hj mdui-card mdui-btn" mdui-dialog-close><img class="mdui-img-fluid" src="<?php echo $owo_huaji_file.'huaji15.gif'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':huaji27:');"><div class="moe-owo-hj mdui-card mdui-btn" mdui-dialog-close><img class="mdui-img-fluid" src="<?php echo $owo_huaji_file.'huaji27.gif'; ?>" /></div></a>
    <a href="javascript:Smilies.grin(':huaji20:');"><div class="moe-owo-hj mdui-card mdui-btn" mdui-dialog-close><img class="mdui-img-fluid" src="<?php echo $owo_huaji_file.'huaji20.gif'; ?>" /></div></a>
    <a href="javascript:Smilies.grin(':huaji13:');"><div class="moe-owo-hj mdui-card mdui-btn" mdui-dialog-close><img class="mdui-img-fluid" src="<?php echo $owo_huaji_file.'huaji13.gif'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':huaji23:');"><div class="moe-owo-hj mdui-card mdui-btn" mdui-dialog-close><img class="mdui-img-fluid" src="<?php echo $owo_huaji_file.'huaji23.gif'; ?>" /></div></a>
    <a href="javascript:Smilies.grin(':huaji9:');"><div class="moe-owo-hj mdui-card mdui-btn" mdui-dialog-close><img class="mdui-img-fluid" src="<?php echo $owo_huaji_file.'huaji9.gif'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':huaji26:');"><div class="moe-owo-hj mdui-card mdui-btn" mdui-dialog-close><img class="mdui-img-fluid" src="<?php echo $owo_huaji_file.'huaji26.gif'; ?>" /></div></a>
    <a href="javascript:Smilies.grin(':huaji12:');"><div class="moe-owo-hj mdui-card mdui-btn" mdui-dialog-close><img class="mdui-img-fluid" src="<?php echo $owo_huaji_file.'huaji12.gif'; ?>" /></div></a>
    <a href="javascript:Smilies.grin(':huaji7:');"><div class="moe-owo-hj mdui-card mdui-btn" mdui-dialog-close><img class="mdui-img-fluid" src="<?php echo $owo_huaji_file.'huaji7.gif'; ?>" /></div></a>
    <a href="javascript:Smilies.grin(':huaji19:');"><div class="moe-owo-hj mdui-card mdui-btn" mdui-dialog-close><img class="mdui-img-fluid" src="<?php echo $owo_huaji_file.'huaji19.gif'; ?>" /></div></a>
@@ -161,10 +196,12 @@ $owo_huaji_file = themeResource('others/img/OwO/huaji/');
    <a href="javascript:Smilies.grin(':huaji17:');"><div class="moe-owo-hj mdui-card mdui-btn" mdui-dialog-close><img class="mdui-img-fluid" src="<?php echo $owo_huaji_file.'huaji17.gif'; ?>" /></div></a>
    <a href="javascript:Smilies.grin(':huaji16:');"><div class="moe-owo-hj mdui-card mdui-btn" mdui-dialog-close><img class="mdui-img-fluid" src="<?php echo $owo_huaji_file.'huaji16.gif'; ?>" /></div></a>
    <a href="javascript:Smilies.grin(':huaji14:');"><div class="moe-owo-hj mdui-card mdui-btn" mdui-dialog-close><img class="mdui-img-fluid" src="<?php echo $owo_huaji_file.'huaji14.gif'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':huaji24:');"><div class="moe-owo-hj mdui-card mdui-btn" mdui-dialog-close><img class="mdui-img-fluid" src="<?php echo $owo_huaji_file.'huaji24.gif'; ?>" /></div></a>
+   <a href="javascript:Smilies.grin(':huaji25:');"><div class="moe-owo-hj mdui-card mdui-btn" mdui-dialog-close><img class="mdui-img-fluid" src="<?php echo $owo_huaji_file.'huaji25.gif'; ?>" /></div></a>
   </div>
  </div>
   <div class="mdui-dialog-actions">
-   <button class="mdui-btn mdui-ripple" mdui-dialog-close><?php echo lang('smile', 'close'); ?></button>
+   <button class="mdui-btn mdui-ripple" type="button" mdui-dialog-close><?php echo lang('smile', 'close'); ?></button>
   </div>
  </div>
 

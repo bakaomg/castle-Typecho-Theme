@@ -1,8 +1,21 @@
 <?php
-if (!defined('__TYPECHO_ROOT_DIR__')) exit; 
-$this->need('includes/header.php');
+/**
+ * Page
+ * Version 0.1.5
+ * Author ohmyga( https://ohmyga.cn/ )
+ * 2019/04/10
+ **/
+ if (!defined('__TYPECHO_ROOT_DIR__')) exit; 
+ if (isset($_GET['_pjax'])) {
+  echo '<title>';
+  $this->archiveTitle(array('category'=>_t('分类 %s 下的文章'),'search'=>_t('包含关键字 %s 的文章'),'tag'=>_t('标签 %s 下的文章'),'author'=>_t('%s 发布的文章')), '', ' - ');
+  echo $this->options->title.'</title>';
+  echo '<div id="moe-body">';
+ } else {
+  $this->need('includes/header.php');
+ }
 ?>
-   <div class="mdui-card moe-card-page">
+   <div class="mdui-card moe-card-page moe-card-tr">
     <div class="mdui-card-media moe-card-media">
 	 <main class="moe-card-img" data-original="<?php $wzimg = $this->fields->wzimg;
 	 if(!empty($wzimg)){
@@ -35,14 +48,27 @@ $this->need('includes/header.php');
 	
 	<div class="moe-p-c">
 	 <?php echo Castle::parseAll($this->content); ?>
+	 <div class="moe-blockquote-top"></div>
+	 <blockquote class="moe-blockquote-copy">
+	  本文作者: <?php $this->author(); ?><br>
+	  本文链接: <a href="<?php $this->permalink(); ?>"><?php $this->permalink(); ?></a><br>
+	  最后修改时间: <?php echo date('Y-m-d H:i:s', $this->modified);?><br>
+	  本站未注明转载的文章均为原创，并采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">CC BY-NC-SA 4.0</a> 授权协议，转载请注明来源，谢谢！<br>
+	 </blockquote>
 	</div>
 	
 	<div class="mdui-divider moe-c-d"></div>
    </div>
 <?php $this->need('includes/comments.php'); ?>
-   <div class="moe-margin-top-page">
+   <div class="moe-margin-top-page"></div>
    <script>
     var commentUrl = '<?php $this->commentUrl() ?>';
     var commentID = '<?php echo $this->respondId(); ?>';
    </script>
-<?php $this->need('includes/footer.php'); ?>
+<?php
+if (isset($_GET['_pjax'])) {
+ echo '</div>';
+} else {
+ $this->need('includes/footer.php');
+}
+?>

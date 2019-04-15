@@ -8,14 +8,21 @@
  * @link https://www.ohmyga.net/
  */
  if (!defined('__TYPECHO_ROOT_DIR__')) exit;
- $this->need('includes/header.php');
+ if (isset($_GET['_pjax'])) {
+  echo '<title>';
+  $this->archiveTitle(array('category'=>_t('分类 %s 下的文章'),'search'=>_t('包含关键字 %s 的文章'),'tag'=>_t('标签 %s 下的文章'),'author'=>_t('%s 发布的文章')), '', ' - ');
+  echo $this->options->title.'</title>';
+  echo '<div id="moe-body">';
+ } else {
+  $this->need('includes/header.php');
+ }
 ?>
    <div id="moe-post">
     <div class="moe-margin-card-top"></div>
     <?php while($this->next()): ?>
 	<?php $PostType = $this->fields->PostType;
     if($PostType == "nopic"){ ?>
-	<div class="mdui-card moe-card moe-card-day">
+	<div class="mdui-card moe-card moe-card-day moe-card-a moe-card-tr">
 	 <div class="moe-card-day-icon moe-headimg-xz"><i class="mdui-icon material-icons"><?php if(!empty(PSetting('Dicon'))) { echo PSetting('Dicon'); }else{ echo 'message'; } ?></i></div>
 	 <h2 class="moe-day-title"><a href="<?php $this->permalink() ?>" title="<?php echo sprintf(lang('index', 'FloatingTitle'), $this->title); ?>"><?php $this->title() ?></a></h2>
 	 <span class="moe-day-d"><?php $this->excerpt(100); ?></span>
@@ -30,7 +37,7 @@
 	 </div>
 	</div>
 	<?php }elseif($PostType == "dynamic"){?>
-	<div class="mdui-card moe-card-day2">
+	<div class="mdui-card moe-card-day2 moe-card-a moe-card-tr">
 	 <div class="moe-day2">
 	  <i class="mdui-icon material-icons">autorenew</i>
 	  <span class="moe-body">
@@ -40,9 +47,14 @@
 	 </div>
 	</div>
 	<?php }else{ ?>
-    <div class="mdui-card moe-card mdui-hoverable">
+    <div class="mdui-card moe-card mdui-hoverable moe-card-a moe-card-tr">
      <div class="mdui-card-media moe-card-media">
-	  <main class="moe-card-img" data-original="<?php print_r (randPic()); ?>" style="background-image: url('<?php echo themeResource('others/img/loading.gif'); ?>');"></main>
+	  <main class="moe-card-img" data-original="<?php $wzimg = $this->fields->wzimg;
+	 if(!empty($wzimg)){
+      echo $this->fields->wzimg;
+	 }else{
+	  echo randPic();
+	 }?>" style="background-image: url('<?php echo themeResource('others/img/loading.gif'); ?>');"></main>
 	  <div class="mdui-card-media-covered">
 	   <div class="mdui-card-primary">
 	    <a href="<?php $this->permalink() ?>" class="mdui-card-primary-title moe-card-title moe-text-ellipsis" title="<?php echo sprintf(lang('index', 'FloatingTitle'), $this->title); ?>"><?php $this->title() ?></a>
@@ -73,11 +85,17 @@
 	<?php } ?>
     <?php endwhile; ?>
     <div class="moe-margin-card-top"></div>
-	<div class="moe-page-div">
+	<div class="moe-page-div moe-card-a">
 	 <?php $this->pageLink('<button class="mdui-btn mdui-btn-icon mdui-ripple mdui-color-theme-accent mdui-shadow-5 moe-prev"><i class="mdui-icon material-icons">navigate_before</i></button>','prev'); ?>
 	 <button class="mdui-btn moe-number" disabled><span class=""><?php if($this->_currentPage>1) echo $this->_currentPage;  else echo 1;?> / <?php echo ceil($this->getTotal() / $this->parameter->pageSize); ?></span></button>
 	 <?php $this->pageLink('<button class="mdui-btn mdui-btn-icon mdui-ripple mdui-color-theme-accent mdui-shadow-5 moe-next"><i class="mdui-icon material-icons">navigate_next</i></button>','next'); ?>
     </div>
    </div>
 
-<?php $this->need('includes/footer.php'); ?>
+<?php
+if (isset($_GET['_pjax'])) {
+ echo '</div>';
+} else {
+ $this->need('includes/footer.php');
+}
+?>

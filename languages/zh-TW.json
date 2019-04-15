@@ -1,3 +1,155 @@
 [{
- "name": "繁體中文"
+ "name": "繁體中文",
+ "head": {
+  "searchInput": "輸入你想搜尋的內容並回車"
+ },
+ "archive": {
+  "comment": "評論 %s",
+  "commentDynamic": "%s條評論",
+  "commentNopic": "%s 條評論",
+  "FloatingTitle": "點擊標題繼續閱讀《%s》",
+  "LinkDynamic": "more...",
+  "nofound": "沒有找到相關内容",
+  "time": "Y年m月d日",
+  "view": "瀏覽 %s",
+  "viewDynamic": "%d次瀏覽",
+  "ViewLink": "繼續閱讀"
+ },
+ "index": {
+  "comment": "評論 %s",
+  "commentDynamic": "%s條評論",
+  "commentNopic": "%s 條評論",
+  "FloatingTitle": "點擊標題繼續閱讀《%s》",
+  "LinkDynamic": "more...",
+  "time": "Y年m月d日",
+  "view": "瀏覽 %s",
+  "viewDynamic": "%d次瀏覽",
+  "ViewLink": "繼續閱讀"
+ },
+ "sidebar": {
+  "categoriesAllNumber": "分類總數",
+  "commentAllNumber": "評論總數",
+  "home": "首頁",
+  "pageAllNumber": "頁面總數",
+  "postAllNumber": "文章總數"
+ },
+ "post": {
+  "categories": "文章分類",
+  "comment": "%s 評論",
+  "copy": "本文作者：%author<br>本文鏈接：<a href=\"%link\">%link</a><br>修改時間：%time<br>本站未注明轉載的文章均爲原創，並采用 <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh\" target=\"_blank\">CC BY-NC-SA 4.0</a> 授權協議，轉載請注明來源，謝謝！<br>",
+  "next": "下一篇",
+  "nextNo": "沒有了",
+  "prev": "上一篇",
+  "prevNo": "沒有了",
+  "share": "分享至...",
+  "shareFB": "分享至 Facebook",
+  "shareQQ": "分享至 QQ",
+  "shareTW": "分享至 Twitter",
+  "shareWB": "分享至 WeiBo",
+  "tag": "文章標籤",
+  "time": "Y年m月d日",
+  "view": "%s 瀏覽"
+ },
+ "page": {
+  "comment": "%s 評論",
+  "copy": "本文作者：%author<br>本文鏈接：<a href=\"%link\">%link</a><br>修改時間：%time<br>本站未注明轉載的文章均爲原創，並采用 <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh\" target=\"_blank\">CC BY-NC-SA 4.0</a> 授權協議，轉載請注明來源，謝謝！<br>",
+  "share": "分享至...",
+  "shareFB": "分享至 Facebook",
+  "shareQQ": "分享至 QQ",
+  "shareTW": "分享至 Twitter",
+  "shareWB": "分享至 WeiBo",
+  "time": "Y年m月d日",
+  "view": "%s 瀏覽"
+ },
+ "comment": {
+  "author": "本文作者",
+  "AllCommentNumber": "已有 %d 條評論 (o゜▽゜)o☆",
+  "bloger": "博主",
+  "cancelReply": "取消回复",
+  "commentAllTitle": "全部評論",
+  "commentTitle": "評論",
+  "commentTextsms": "寫點什麼吧...",
+  "commentUserEmail": "電郵",
+  "commentUserName": "暱稱",
+  "commentOff": "評論已經關閉",
+  "commentUserURL": "網站鏈接(選填)",
+  "loginOut": "註銷登錄",
+  "loginUserCommentTitle": "現在以登錄者的身份評論",
+  "markdown": "支持Markdown",
+  "NoComment": "暫無評論（；´д｀）ゞ",
+  "OnlyOneComment": "已有 1 條評論 (o゜▽゜)o☆",
+  "reply": "回复",
+  "sendComment": "發表評論",
+  "smile": "表情",
+  "time": "Y年m月d日 H:i",
+  "URLbutton": "網站鏈接"
+ },
+ "smile": {
+  "close": "關閉",
+  "emoji": "Emoji",
+  "huaji": "動圖",
+  "qwq": "✪ω✪",
+  "OwO": "OωO",
+  "tieba": "泡泡"
+ },
+ "ua": {
+  "2345": "2345瀏覽器",
+  "360": "360瀏覽器",
+  "aoyou": "遨遊瀏覽器",
+  "baidu": "百度瀏覽器",
+  "chrome": "Chrome",
+  "edge": "Microsoft Edge",
+  "firefox": "FireFox",
+  "ie": "Internet Explorer",
+  "lb": "獵豹瀏覽器",
+  "opera": "Opera瀏覽器",
+  "other": "其他瀏覽器",
+  "qq": "QQ瀏覽器",
+  "safari": "Safari",
+  "sougou": "搜狗瀏覽器",
+  "tw": "TheWorld Browser",
+  "ub": "UC瀏覽器",
+  "uc": "UC瀏覽器",
+  "wechat": "WeChat瀏覽器",
+  "weibo": "WeiBo瀏覽器",
+  "xiaomi": "Mi Browse",
+  "xunlie": "迅雷瀏覽器",
+  "yandex": "Yandex瀏覽器"
+ },
+ "os": {
+  "android": "Android",
+  "android l": "Android L",
+  "android m": "Android M",
+  "android n": "Android N",
+  "android p": "Android P",
+  "android o": "Android O",
+  "ipad": "iPad",
+  "iphone": "iPhone",
+  "linux": "Linux",
+  "mac os": "Mac OS",
+  "other": "其他操作系統",
+  "windows": "Windows",
+  "windows vista": "Windows Vista",
+  "windows xp": "Windows XP",
+  "windows 7": "Windows 7",
+  "windows 8": "Windows 8",
+  "windows 8.1": "Windows 8.1",
+  "windows 10": "Windows 10"
+ },
+ "links": {
+  "clickThis": "點此申請友情鏈接",
+  "Slink": "友情鏈接申請"
+ },
+ "tags": {
+  "tagAllNum": "總共有 %s 個標簽",
+  "title": "全部標簽"
+ },
+ "404": {
+  "home": "首頁",
+  "login": "登入",
+  "no found": "404 Not Found",
+  "title": "404 Not Found",
+  "search": "想要搜尋點什麼？",
+  "try search": "或許你可以嘗試搜尋你需要的內容？"
+ }
 }]

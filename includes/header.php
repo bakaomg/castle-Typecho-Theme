@@ -1,4 +1,8 @@
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+<?php
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+$ThemeColor = Typecho_Widget::widget('Widget_Options')->themecolor;
+$AccentColor = Typecho_Widget::widget('Widget_Options')->accentcolor;
+?>
 <html>
  <head>
   <meta charset="utf-8">
@@ -11,7 +15,7 @@
   <script src="<?php echo themeResource('others/js/mdui.min.js'); ?>"></script>
   <script src="<?php echo themeResource('others/js/nprogress.js'); ?>"></script>
   <script src="<?php echo themeResource('others/js/jquery3.3.1.min.js'); ?>"></script>
-  <script src="<?php echo themeResource('others/js/jquery.pjax.min.js'); ?>"></script>
+  <?php if ($this->options->other && in_array('pjax', $this->options->other)): ?><script src="<?php echo themeResource('others/js/jquery.pjax.min.js'); ?>"></script><?php endif; ?>
   <link rel="stylesheet" href="<?php echo themeResource('others/css/iconfont.css'); ?>" />
   <link rel="stylesheet" href="<?php echo themeResource('others/css/mdui.min.css'); ?>" />
   <link rel="stylesheet" href="<?php echo themeResource('others/css/nprogress.css'); ?>" />
@@ -23,8 +27,9 @@
   <?php $this->header('generator=&pingback=&xmlrpc=&wlw=&commentReply='); ?>
  </head>
  
- <body class="mdui-theme-primary-pink mdui-theme-accent-pink mdui-appbar-with-toolbar">
- <div class="moe-bg" style="background-color: #EEEEEE;background-image: url('<?php if(!empty(Helper::options()->bgurl)){echo Helper::options()->bgurl;}else{} ?>')"></div>
+ <body class="mdui-theme-primary-<?php echo $ThemeColor; ?> mdui-theme-accent-<?php echo $AccentColor; ?> mdui-appbar-with-toolbar">
+ <div class="moe-bg" style="background-color: #EEEEEE;"></div>
+ <div class="moe-bg-after"></div>
   <header class="mdui-appbar mdui-appbar-fixed moe-head">
    <div class="mdui-toolbar">
     <a class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: 'true', overlay: 'true'}"><i class="mdui-icon material-icons">menu</i></a>
@@ -50,4 +55,5 @@
   
 <?php $this->need('includes/sidebar.php'); ?>
   
+  <?php if ($this->options->comment && in_array('ajax', $this->options->comment)): ?><input id="linkStatus" type="hidden" value="false"/><?php endif; ?>
   <div id="moe-body">
