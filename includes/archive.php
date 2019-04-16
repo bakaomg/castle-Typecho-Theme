@@ -88,7 +88,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     </div>
 	<?php else: ?>
 	<div class="moe-card moe-archive-nofound mdui-card mdui-color-red">
-	 <span><?php echo lang('nofound', 'nofound'); ?></span>
+	 <span><?php echo lang('archive', 'nofound'); ?></span>
 	</div>
 	<?php endif; ?>
    </div>

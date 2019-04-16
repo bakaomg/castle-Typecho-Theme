@@ -36,11 +36,11 @@
      <div class="mdui-card-header-title"><?php $this->author(); ?></div>
      <div class="mdui-card-header-subtitle"><?php $this->date(lang('page', 'time')); ?></div>
      <div class="mdui-card-menu"> 
-	  <!-- Share -->
+<?php if ($this->options->page && in_array('share', $this->options->page)): ?>	  <!-- Share -->
 	  <button class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '<?php echo lang('page', 'share'); ?>'}" mdui-menu="{target: '#share', align: 'right', position: 'top'}"><i class="mdui-icon material-icons mdui-text-color-grey-700">share</i></button>
 	  <ul class="mdui-menu" id="share">
        <?php echo Pshare('page', $this); ?>
-      </ul>
+      </ul><?php endif; ?>
 	 </div>
     </div>
 	
@@ -48,13 +48,13 @@
 	
 	<div class="moe-p-c">
 	 <?php echo Castle::parseAll($this->content); ?>
-	 <div class="moe-blockquote-top"></div>
+<?php if ($this->options->page && in_array('copy', $this->options->page)): ?>	 <div class="moe-blockquote-top"></div>
 	 <blockquote class="moe-blockquote-copy">
 	  本文作者: <?php $this->author(); ?><br>
 	  本文链接: <a href="<?php $this->permalink(); ?>"><?php $this->permalink(); ?></a><br>
 	  最后修改时间: <?php echo date('Y-m-d H:i:s', $this->modified);?><br>
 	  本站未注明转载的文章均为原创，并采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">CC BY-NC-SA 4.0</a> 授权协议，转载请注明来源，谢谢！<br>
-	 </blockquote>
+	 </blockquote><?php endif; ?>
 	</div>
 	
 	<div class="mdui-divider moe-c-d"></div>

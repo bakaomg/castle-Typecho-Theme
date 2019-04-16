@@ -36,23 +36,23 @@
      <div class="mdui-card-header-title"><?php $this->author(); ?></div>
      <div class="mdui-card-header-subtitle"><?php $this->date(lang('post', 'time')); ?></div>
      <div class="mdui-card-menu">
-	  <!-- Tags -->
+<?php if ($this->options->post && in_array('tags', $this->options->post)): ?>	  <!-- Tags -->
 	  <button class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '<?php echo lang('post', 'tag'); ?>'}" mdui-menu="{target: '#tag', align: 'right', position: 'top'}"><i class="mdui-icon material-icons mdui-text-color-grey-700">local_offer</i></button>
       <ul class="mdui-menu" id="tag">
 	   <?php array_map(function($v){echo '<li class="mdui-menu-item"><a href="'.$v['permalink'].' "class="mdui-ripple"><strong>'.$v['name'].'</strong></a></li>';},$this->tags) ?>
-	  </ul>
+	  </ul><?php endif; ?>
 	  
-	  <!-- Categories -->
+<?php if ($this->options->post && in_array('cate', $this->options->post)): ?>	  <!-- Categories -->
 	  <button class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '<?php echo lang('post', 'categories'); ?>'}" mdui-menu="{target: '#classification', align: 'right', position: 'top'}"><i class="mdui-icon material-icons mdui-text-color-grey-700">bookmark</i></button>
 	  <ul class="mdui-menu" id="classification">
 	   <?php array_map(function($v){echo '<li class="mdui-menu-item"><a href="'.$v['permalink'].' "class="mdui-ripple"><strong>'.$v['name'].'</strong></a></li>';},$this->categories) ?>
-	  </ul>
+	  </ul><?php endif; ?>
 	  
-	  <!-- Share -->
+<?php if ($this->options->post && in_array('share', $this->options->post)): ?>	  <!-- Share -->
 	  <button class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '<?php echo lang('post', 'share'); ?>'}" mdui-menu="{target: '#share', align: 'right', position: 'top'}"><i class="mdui-icon material-icons mdui-text-color-grey-700">share</i></button>
 	  <ul class="mdui-menu" id="share">
        <?php echo Pshare('post', $this); ?>
-      </ul>
+      </ul><?php endif; ?>
 	 </div>
     </div>
 	
@@ -60,10 +60,10 @@
 	
 	<div class="moe-p-c">
 	 <?php echo Castle::parseAll($this->content); ?>
-	 <div class="moe-blockquote-top"></div>
+<?php if ($this->options->post && in_array('copy', $this->options->post)): ?>	 <div class="moe-blockquote-top"></div>
 	 <blockquote class="moe-blockquote-copy">
 	  <?php echo Pcopy('post', $this); ?>
-	 </blockquote>
+	 </blockquote><?php endif; ?>
 	</div>
 	
 	<div class="mdui-divider moe-c-d"></div>

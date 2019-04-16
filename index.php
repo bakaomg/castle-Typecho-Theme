@@ -1,11 +1,11 @@
 <?php
 /**
- * 从零开始<br>作者：<a href="https://www.ohmyga.net/">ohmyga</a>
+ * 从零开始<br>作者：<a href="https://ohmyga.cn/">ohmyga</a>
  * 
  * @package Castle
  * @author ohmyga
- * @version 0.1
- * @link https://www.ohmyga.net/
+ * @version 0.2.1
+ * @link https://ohmyga.cn/
  */
  if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  if (isset($_GET['_pjax'])) {

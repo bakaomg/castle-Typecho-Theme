@@ -1,14 +1,14 @@
 <?php
 /**
  * Functions
- * Version 0.2.0
+ * Version 0.2.1
  * Author ohmyga( https://ohmyga.cn/ )
  * 2019/04/10
  **/
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 define("THEME_NAME", "Castle");
-define("CASTLE_VERSION", "0.2.0");
+define("CASTLE_VERSION", "0.2.1");
 
 require_once("libs/setting.php");
 
@@ -537,7 +537,7 @@ class Castle {
  static public function parseBiaoQing($content){
   $content = preg_replace_callback('/\:\s*(a|bishi|bugaoxing|guai|haha|han|hehe|heixian|huaji|huanxin|jingku|jingya|landeli|lei|mianqiang|nidongde|pen|shuijiao|suanshuang|taikaixin|tushe|wabi|weiqu|what|what|wuzuixiao|xiaoguai|xiaohonglian|xiaoniao|xiaoyan|xili|yamaidei|yinxian|yiwen|zhenbang|aixin|xinsui|bianbian|caihong|damuzhi|dangao|dengpao|honglingjin|lazhu|liwu|meigui|OK|shafa|shouzhi|taiyang|xingxingyueliang|yaowan|yinyue)\s*\:/is',
    array('Castle', 'parsePaopaoBiaoqingCallback'), $content);
-  $content = preg_replace_callback('/\:\s*(huaji1|huaji2|huaji3|huaji4|huaji5|huaji6|huaji7|huaji8|huaji9|huaji10|huaji11|huaji12|huaji13|huaji14|huaji15|huaji16|huaji17|huaji18|huaji19|huaji20|huaji21|huaji22)\s*\:/is',
+  $content = preg_replace_callback('/\:\s*(huaji1|huaji2|huaji3|huaji4|huaji5|huaji6|huaji7|huaji8|huaji9|huaji10|huaji11|huaji12|huaji13|huaji14|huaji15|huaji16|huaji17|huaji18|huaji19|huaji20|huaji21|huaji22|huaji23|huaji24|huaji25|huaji26|huaji27)\s*\:/is',
    array('Castle', 'parseHuajibiaoqingCallback'), $content);
   $content = preg_replace_callback('/\:\s*(qwq1|qwq2|qwq3|qwq4|qwq5|qwq6|qwq7|qwq8|qwq9|qwq10|qwq11|qwq12|qwq13|qwq14|qwq15|qwq16|qwq17|qwq18|qwq19|qwq20|qwq21|qwq22|qwq23|qwq24|qwq25|qwq26)\s*\:/is',
    array('Castle', 'parseqwqbiaoqingCallback'), $content);
@@ -709,50 +709,50 @@ function getOs($agent) {
 
 /* HTML压缩 */
 function compressHtml($html_source) {
-  $chunks = preg_split('/(<!--<nocompress>-->.*?<!--<\/nocompress>-->|<nocompress>.*?<\/nocompress>|<pre.*?\/pre>|<textarea.*?\/textarea>|<script.*?\/script>)/msi', $html_source, -1, PREG_SPLIT_DELIM_CAPTURE);
-  $compress = '';
-  foreach ($chunks as $c) {
-    if (strtolower(substr($c, 0, 19)) == '<!--<nocompress>-->') {
-      $c = substr($c, 19, strlen($c) - 19 - 20);
-      $compress .= $c;
+ $chunks = preg_split('/(<!--<nocompress>-->.*?<!--<\/nocompress>-->|<nocompress>.*?<\/nocompress>|<pre.*?\/pre>|<textarea.*?\/textarea>|<script.*?\/script>)/msi', $html_source, -1, PREG_SPLIT_DELIM_CAPTURE);
+ $compress = '';
+ foreach ($chunks as $c) {
+  if (strtolower(substr($c, 0, 19)) == '<!--<nocompress>-->') {
+   $c = substr($c, 19, strlen($c) - 19 - 20);
+   $compress .= $c;
+   continue;
+  }else if (strtolower(substr($c, 0, 12)) == '<nocompress>') {
+   $c = substr($c, 12, strlen($c) - 12 - 13);
+   $compress .= $c;
+   continue;
+  }elseif (strtolower(substr($c, 0, 4)) == '<pre' || strtolower(substr($c, 0, 9)) == '<textarea') {
+   $compress .= $c;
+   continue;
+  }elseif (strtolower(substr($c, 0, 7)) == '<script' && strpos($c, '//') != false && (strpos($c, "\r") !== false || strpos($c, "\n") !== false)) {
+   $tmps = preg_split('/(\r|\n)/ms', $c, -1, PREG_SPLIT_NO_EMPTY);
+   $c = '';
+   foreach ($tmps as $tmp) {
+    if (strpos($tmp, '//') !== false) {
+     if (substr(trim($tmp), 0, 2) == '//') {
       continue;
-    }else if (strtolower(substr($c, 0, 12)) == '<nocompress>') {
-      $c = substr($c, 12, strlen($c) - 12 - 13);
-      $compress .= $c;
-      continue;
-    } else if (strtolower(substr($c, 0, 4)) == '<pre' || strtolower(substr($c, 0, 9)) == '<textarea') {
-      $compress .= $c;
-      continue;
-    }else if (strtolower(substr($c, 0, 7)) == '<script' && strpos($c, '//') != false && (strpos($c, "\r") !== false || strpos($c, "\n") !== false)) {
-      $tmps = preg_split('/(\r|\n)/ms', $c, -1, PREG_SPLIT_NO_EMPTY);
-      $c = '';
-      foreach ($tmps as $tmp) {
-        if (strpos($tmp, '//') !== false) {
-          if (substr(trim($tmp), 0, 2) == '//') {
-             continue;
-          }
-          $chars = preg_split('//', $tmp, -1, PREG_SPLIT_NO_EMPTY);
-          $is_quot = $is_apos = false;
-          foreach ($chars as $key => $char) {
-            if ($char == '"' && $chars[$key - 1] != '\\' && !$is_apos) {
-               $is_quot = !$is_quot;
-            }else if ($char == '\'' && $chars[$key - 1] != '\\' && !$is_quot) {
-               $is_apos = !$is_apos;
-            }else if ($char == '/' && $chars[$key + 1] == '/' && !$is_quot && !$is_apos) {
-               $tmp = substr($tmp, 0, $key);
-                break;
-            }
-          }
-        }
-        $c .= $tmp;
+     }
+     $chars = preg_split('//', $tmp, -1, PREG_SPLIT_NO_EMPTY);
+     $is_quot = $is_apos = false;
+     foreach ($chars as $key => $char) {
+      if ($char == '"' && $chars[$key - 1] != '\\' && !$is_apos) {
+       $is_quot = !$is_quot;
+      }elseif ($char == '\'' && $chars[$key - 1] != '\\' && !$is_quot) {
+       $is_apos = !$is_apos;
+      }elseif ($char == '/' && $chars[$key + 1] == '/' && !$is_quot && !$is_apos) {
+       $tmp = substr($tmp, 0, $key);
+       break;
       }
+     }
     }
-    $c = preg_replace('/[\\n\\r\\t]+/', ' ', $c);
-    $c = preg_replace('/\\s{2,}/', ' ', $c);
-    $c = preg_replace('/>\\s</', '> <', $c);
-    $c = preg_replace('/\\/\\*.*?\\*\\//i', '', $c);
-    $c = preg_replace('/<!--[^!]*-->/', '', $c);
-    $compress .= $c;
+    $c .= $tmp;
+   }
   }
-  return $compress;
+  $c = preg_replace('/[\\n\\r\\t]+/', ' ', $c);
+  $c = preg_replace('/\\s{2,}/', ' ', $c);
+  $c = preg_replace('/>\\s</', '> <', $c);
+  $c = preg_replace('/\\/\\*.*?\\*\\//i', '', $c);
+  $c = preg_replace('/<!--[^!]*-->/', '', $c);
+  $compress .= $c;
+ }
+ return $compress;
 }

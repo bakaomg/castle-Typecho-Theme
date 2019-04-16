@@ -24,7 +24,7 @@ function threadedComments($comments, $options) {
       echo '<a href="'.$comments->url.'" target="_blank">'.$comments->author.'</a>'.$commentsClassName.$commentClass.'';
      }else{
 	  echo '<span>'.$comments->author.'</span>'.$commentsClassName.$commentClass.'';
-     } ?><?php if (!empty(Typecho_Widget::widget('Widget_Options')->comment) && in_array('userUA', Typecho_Widget::widget('Widget_Options')->comment)){ getBrowser($comments->agent); getOs($comments->agent); } ?></div>
+     } ?><?php getBrowser($comments->agent); getOs($comments->agent); ?></div>
 	 <div class="moe-comments-time"><?php $comments->date(lang('comment', 'time')); ?></div>
 	 <div class="moe-reply"><?php $comments->reply('<button class="mdui-btn">'.lang('comment', 'reply').'</button>'); ?></div>
 	 <div class="moe-comments-textBox">
@@ -96,7 +96,7 @@ function threadedComments($comments, $options) {
 	<input id="LinksX" name="LinksX" type="hidden" value="false"/>
    </div>
    <?php if ($this->options->comment && in_array('ajax', $this->options->comment)){}else{ ?><div class="moe-comments-btn">
-    <?php if (!empty(Typecho_Widget::widget('Widget_Options')->comment) && in_array('link', Typecho_Widget::widget('Widget_Options')->comment)){ if($this->user->hasLogin()){}else{ echo '<button class="mdui-btn mdui-btn-icon mdui-ripple moe-comments-url-btn mdui-color-grey-800 mdui-btn-raised" onclick="commentLinks()" mdui-tooltip="{content: \''.lang('comment', 'URLbutton').'\'}"><i class="mdui-icon material-icons">link</i></button>'; }} ?>
+    <button class="mdui-btn mdui-btn-icon mdui-ripple moe-comments-url-btn mdui-color-grey-800 mdui-btn-raised" onclick="commentLinks()" mdui-tooltip="{content: '<?php echo lang('comment', 'URLbutton'); ?>'}" type="button"><i class="mdui-icon material-icons">link</i></button>
     <?php $comments->cancelReply('<button class="mdui-btn mdui-ripple moe-comments-close-btn mdui-text-color-red" mdui-tooltip="{content: \''.lang('comment', 'cancelReply').'\'}"><i class="mdui-icon material-icons">close</i></button>'); ?>
     <button class="mdui-btn mdui-color-theme mdui-ripple moe-comments-submit-btn mdui-btn-raised" mdui-tooltip="{content: '<?php echo lang('comment', 'sendComment'); ?>'}" type="submit"><i class="mdui-icon material-icons">send</i></button>
    </div>
@@ -104,7 +104,7 @@ function threadedComments($comments, $options) {
    </form>
   <?php endif; ?>
    <?php if ($this->options->comment && in_array('ajax', $this->options->comment)){ ?><div class="moe-comments-btn">
-    <?php if (!empty(Typecho_Widget::widget('Widget_Options')->comment) && in_array('link', Typecho_Widget::widget('Widget_Options')->comment)){ if($this->user->hasLogin()){}else{ echo '<button class="mdui-btn mdui-btn-icon mdui-ripple moe-comments-url-btn mdui-color-grey-800 mdui-btn-raised" onclick="commentLinks()" mdui-tooltip="{content: \''.lang('comment', 'URLbutton').'\'}"><i class="mdui-icon material-icons">link</i></button>'; }} ?>
+    <?php if($this->user->hasLogin()){}else{ echo '<button class="mdui-btn mdui-btn-icon mdui-ripple moe-comments-url-btn mdui-color-grey-800 mdui-btn-raised" onclick="commentLinks()" mdui-tooltip="{content: \''.lang('comment', 'URLbutton').'\'}"><i class="mdui-icon material-icons">link</i></button>'; } ?>
     <?php $comments->cancelReply('<button class="mdui-btn mdui-ripple moe-comments-close-btn mdui-text-color-red" mdui-tooltip="{content: \''.lang('comment', 'cancelReply').'\'}"><i class="mdui-icon material-icons">close</i></button>'); ?>
     <button class="mdui-btn mdui-color-theme mdui-ripple moe-comments-submit-btn mdui-btn-raised" onclick="commentSubmit()" mdui-tooltip="{content: '<?php echo lang('comment', 'sendComment'); ?>'}" id="commentsSuBtt"><i class="mdui-icon material-icons" id="commentSuBt">send</i></button>
    </div><?php } ?>

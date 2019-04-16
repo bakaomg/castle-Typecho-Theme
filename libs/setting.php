@@ -19,7 +19,7 @@ function themeConfig($form) {
     $(\'#acGet\').html(\'正在获取公告中...\');
    },
    success: function(data) {
-    $(\'#newVer\').html(data.version);
+    $(\'#newVer\').html(data.message);
 	$(\'#acGet\').html(data.announcement);
    },
    error: function(xhr, textStatus, errorThrown) {
@@ -50,7 +50,7 @@ function themeConfig($form) {
   }
   $lang = new Typecho_Widget_Helper_Form_Element_Select('lang', $output, Helper::options()->themeFile(getTheme(), "languages/zh-CN.json"), 
   _t('语言'),
-  _t('主题语言配置文件'));
+  _t('主题语言配置文件 (如想自定义语言配置请参考文档)'));
   $form->addInput($lang->multiMode());
   
   $themecolor = new Typecho_Widget_Helper_Form_Element_Select('themecolor',array(
@@ -125,8 +125,7 @@ function themeConfig($form) {
   
   $randimg = new Typecho_Widget_Helper_Form_Element_Select('randimg',array(
     'local' => '本地',
-	'api.ohmyga.cn' => 'api.ohmyga.cn',
-	'others' => '第三方API'
+	'api.ohmyga.cn' => 'api.ohmyga.cn'
   ),
   'api.ohmyga.cn',
   _t('封面图源'),
@@ -143,6 +142,22 @@ function themeConfig($form) {
   _t('Gravatar源'),
   _t('请选择Gravatar头像源'));
   $form->addInput($gravatar_url->multiMode());
+  
+  $post = new Typecho_Widget_Helper_Form_Element_Checkbox('post', array(
+	'share' => _t('启用分享按钮'),
+	'tags' => _t('启用文章标签按钮'),
+	'cate' => _t('启用文章分类按钮'),
+	'copy' => _t('启用文章底部版权 (如需修改内容请在语言配置文件内修改)')
+  ),
+  array('share', 'cate', 'copy'), _t('文章设置'));
+  $form->addInput($post->multiMode());
+  
+  $page = new Typecho_Widget_Helper_Form_Element_Checkbox('page', array(
+	'share' => _t('启用分享按钮'),
+	'copy' => _t('启用文章底部版权 (如需修改内容请在语言配置文件内修改)')
+  ),
+  array('share', 'copy'), _t('独立页设置'));
+  $form->addInput($page->multiMode());
   
   $comment = new Typecho_Widget_Helper_Form_Element_Checkbox('comment', array(
 	'userUA' => _t('显示评论者UA'),
@@ -170,6 +185,9 @@ function themeConfig($form) {
   
   $bgs = new Typecho_Widget_Helper_Form_Element_Text('bgs', NULL, '', _t('小屏背景'), _t('宽度小于或等于600PX的设备显示的壁纸，如果宽屏不填默认将以灰色代替'));
   $form->addInput($bgs);
+  
+  $sidebarBG = new Typecho_Widget_Helper_Form_Element_Text('sidebarBG', NULL, '', _t('侧边抽屉头图'), _t('不填将显示默认图片'));
+  $form->addInput($sidebarBG);
   
   $miibeian = new Typecho_Widget_Helper_Form_Element_Text('miibeian', NULL, '', _t('备案号'), _t('输入备案号，不填写将不显示'));
   $form->addInput($miibeian);
