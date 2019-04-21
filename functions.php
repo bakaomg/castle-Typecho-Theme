@@ -12,7 +12,8 @@ define("CASTLE_VERSION", "0.2.5");
 
 require_once("libs/setting.php");
 
-//错误是什么？
+//鲁迅曾经说过：“看不见报错就是没有错误”。
+//鲁迅本人：“？？？”。
 error_reporting(0);
 
 /* 文章or页面类型 */
