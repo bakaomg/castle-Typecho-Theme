@@ -25,6 +25,7 @@ $AccentColor = Typecho_Widget::widget('Widget_Options')->accentcolor;
   <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
 <?php $this->need('includes/style.php')?>
   <?php $this->header('generator=&pingback=&xmlrpc=&wlw=&commentReply='); ?>
+  <script>var bgmURL = "<?php $this->options->siteUrl(); ?>?action=bangumi&bgmID=:id&auth=:auth";</script>
  </head>
  
  <body class="mdui-theme-primary-<?php echo $ThemeColor; ?> mdui-theme-accent-<?php echo $AccentColor; ?> mdui-appbar-with-toolbar">
@@ -44,9 +45,9 @@ $AccentColor = Typecho_Widget::widget('Widget_Options')->accentcolor;
    <a class="mdui-btn mdui-btn-icon moe-search-btn" mdui-dialog-close><i class="mdui-icon material-icons">close</i></a>
    <div class="moe-body">
     <div class="moe-c">
-	 <form id="search" method="post" action="<?php $this->options->siteUrl(); ?>" role="search">
+	 <form id="searchBox" onKeyDown="if(event.keyCode == 13){SerachSubmit();}">
       <i class="mdui-icon material-icons moe-search-icon">search</i>
-      <input class="moe-search-input" placeholder="<?php echo lang('head', 'searchInput'); ?>" type="text" name="s"/>
+      <input class="moe-search-input" placeholder="<?php echo lang('head', 'searchInput'); ?>" type="text" id="searchInput"/>
 	 </form>
 	</div>
 	<span class="moe-bottom"></span>

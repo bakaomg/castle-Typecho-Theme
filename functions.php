@@ -1,16 +1,19 @@
 <?php
 /**
  * Functions
- * Version 0.2.1
+ * Version 0.2.5
  * Author ohmyga( https://ohmyga.cn/ )
- * 2019/04/10
+ * 2019/04/21
  **/
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 define("THEME_NAME", "Castle");
-define("CASTLE_VERSION", "0.2.1");
+define("CASTLE_VERSION", "0.2.5");
 
 require_once("libs/setting.php");
+
+//错误是什么？
+//error_reporting(0);
 
 /* 文章or页面类型 */
 function themeFields($layout) {
@@ -53,21 +56,81 @@ function themeInit($comment) {
  Helper::options()->commentsPageDisplay = 'first'; //默认显示第一页
  Helper::options()->commentsOrder = 'DESC'; //将较新的评论展示在第一页
 
- /* AJAX获取评论者Gravatar头像 */ 
- if(isset($_GET["action"]) == 'ajax_avatar_get' && 'GET' == $_SERVER['REQUEST_METHOD'] ) {
+ /* AJAX获取评论者Gravatar头像 */
+ if(@$_GET["action"] == 'ajax_avatar_get' && 'GET' == $_SERVER['REQUEST_METHOD'] ) {
    $host = 'https://cdn.v2ex.com/gravatar/';
    $email = strtolower($_GET['email']);
    $hash = md5($email);
    $qq = str_replace('@qq.com','',$email);
    $sjtx = 'mm';
    if(strstr($email,"qq.com") && is_numeric($qq) && strlen($qq) < 11 && strlen($qq) > 4) {
-    $avatar = 'https://q.qlogo.cn/g?b=qq&nk='.$qq.'&s=640';
+    $avatar = QQHeadimg($qq);
    }else{
     $avatar = $host.$hash.'?d='.$sjtx;
    }
    echo $avatar; 
    die();
- }else{
+ }elseif(@$_GET["action"] == 'bangumi' && 'GET' == $_SERVER['REQUEST_METHOD'] ) {
+   header('Content-type: application/json');
+   $bangumiID = $_GET['bgmID'];
+   $getKEY = $_GET['auth'];
+   if(Helper::options()->apipass) {
+    $setKEY = Helper::options()->apipass;
+   }else{
+    $setKEY = 'babff6a3d9521693097debb2f0063a2f';
+   }
+   if (!empty($getKEY)) {
+   if (!empty($bangumiID)) {
+   if ($getKEY == $setKEY) {
+    if (extension_loaded('openssl')) {
+     $get_json = file_get_contents("https://api.bgm.tv/user/".$bangumiID."/collection?cat=watching");
+	}else{
+     $get_json = file_get_contents("http://api.bgm.tv/user/".$bangumiID."/collection?cat=watching");
+	}
+	$dejson = json_decode($get_json, true);
+	foreach($dejson as $bangumi) {
+     if ($bangumi['subject']['type'] == 2) {
+      if ($bangumi['subject']['eps_count'] == null){
+       $eps_count = '总集数未知';
+       $bfb = 0;
+      }else{
+       $eps_count = $bangumi['subject']['eps_count'];
+       $bfb = 100/$eps_count*$bangumi['ep_status'];
+      }
+      $array[] = array('name'=>$bangumi['name'], 'CNname'=>$bangumi['subject']['name_cn'], 'img'=>$bangumi['subject']['images']['large'], 'url'=>$bangumi['subject']['url'], 'status'=>$bangumi['ep_status'], 'count'=>$eps_count, 'percentage'=>$bfb);
+	 }
+    }
+	echo preg_replace('/http/', 'https', json_encode($array, true));
+   }else{
+    header('HTTP/1.1 403 Forbidden');
+    $error_json = array('status'=>'403');
+	$output = json_encode($error_json);
+	echo $output;
+   }
+   }else{
+    header('HTTP/1.1 404 Not Found');
+    $error_json = array('status'=>'404');
+    $output = json_encode($error_json);
+	echo $output;
+   }
+   }else{
+    header('HTTP/1.1 403 Forbidden');
+    $error_json = array('status'=>'403');
+	$output = json_encode($error_json);
+	echo $output;
+   }
+   die();
+  }elseif(@$_GET["action"] == 'QQ_headimg' && 'GET' == $_SERVER['REQUEST_METHOD'] ) {
+   $qqNum = base64_decode($_GET['content'], true);
+   if (extension_loaded('openssl')) {
+     $qqGet = file_get_contents("https://q.qlogo.cn/g?b=qq&nk=".$qqNum."&s=100");
+	}else{
+     $qqGet = file_get_contents("http://q.qlogo.cn/g?b=qq&nk=".$qqNum."&s=100");
+	}
+   header('Content-type: image/jpeg');
+   echo $qqGet;
+   die();
+  }else{
    return;
  }
 }
@@ -260,12 +323,43 @@ function userHeadimg($moe=NULL) {
  $email = strtolower($moe->mail);
  $qq = str_replace('@qq.com','',$email);
  if(strstr($email,"qq.com") && is_numeric($qq) && strlen($qq) < 11 && strlen($qq) > 4) {
-  $avatar = 'https://q.qlogo.cn/g?b=qq&nk='.$qq.'&s=640';
+  $avatar = QQHeadimg($qq);
  }else{
   $avatar = 'https://'.$host.'/'.$hash.'?s=640';
  }
  
  return $avatar;
+}
+
+/* 获取QQ头像 */
+function QQHeadimg($qq) {
+ $set = Helper::options()->qqheadimg;
+ if (!empty($set)) {
+  $setting = $set;
+ }else{
+  $setting = '0';
+ }
+ 
+ if (extension_loaded('openssl')) {
+  $osStatus = 'https';
+ }else{
+  $osStatus = 'http';
+ }
+ 
+ if ($setting == 0) {
+  $output = "https://q.qlogo.cn/g?b=qq&nk=".$qq."&s=40";
+ }elseif ($setting == 1) {
+  $output = Helper::options()->siteUrl.'?action=QQ_headimg&content='.base64_encode($qq);;
+ }elseif ($setting == 2) {
+  $url = '://ptlogin2.qq.com/getface?&imgtype=1&uin=';
+  $qquser = file_get_contents($osStatus.$url.$qq);
+  $str1 = explode('&k=', $qquser);
+  $str2 = explode('&s=', $str1[1]);
+  $k = $str2[0];
+  $output = $k = 'https://q.qlogo.cn/g?b=qq&k='.$k.'&s=100';
+ }
+ 
+ return $output;
 }
 
 /* 显示上一篇 */

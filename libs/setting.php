@@ -7,6 +7,59 @@
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 function themeConfig($form) {
+  /* 模板设置备份功能来自QQdie( https://qqdie.com/ ) 
+   * 稍微的魔改了一下下提示~
+   */
+  $db = Typecho_Db::get();
+  $sjdq=$db->fetchRow($db->select()->from ('table.options')->where ('name = ?', 'theme:'.getTheme().''));
+  $ysj = $sjdq['value'];
+  if(isset($_POST['type'])){ 
+   if($_POST["type"]=="备份模板数据"){
+    if($db->fetchRow($db->select()->from ('table.options')->where ('name = ?', 'theme:CastleBackup'))){
+     $update = $db->update('table.options')->rows(array('value'=>$ysj))->where('name = ?', 'theme:CastleBackup');
+     $updateRows= $db->query($update);
+     echo '<div class="message popup success moe-a" style="position: absolute; top: 36px; display: block;">备份已更新，请等待自动刷新！如果等不到请点击 <a href="'.Helper::options()->adminUrl.'options-theme.php">这里</a></div>
+           <script language="JavaScript">window.setTimeout("location=\''.Helper::options()->adminUrl.'options-theme.php\'", 2500);</script>';
+    }else{
+     if($ysj){
+      $insert = $db->insert('table.options')->rows(array('name' => 'theme:CastleBackup','user' => '0','value' => $ysj));
+      $insertId = $db->query($insert);
+      echo '<div class="message popup success moe-a" style="position: absolute; top: 36px; display: block;">备份完成，请等待自动刷新！如果等不到请点击 <a href="'.Helper::options()->adminUrl.'options-theme.php">这里</a></div>
+            <script language="JavaScript">window.setTimeout("location=\''.Helper::options()->adminUrl.'options-theme.php\'", 2500);</script>';
+     }
+    }
+   }
+   if($_POST["type"]=="还原模板数据"){
+    if($db->fetchRow($db->select()->from ('table.options')->where ('name = ?', 'theme:CastleBackup'))){
+    $sjdub=$db->fetchRow($db->select()->from ('table.options')->where ('name = ?', 'theme:CastleBackup'));
+    $bsj = $sjdub['value'];
+    $update = $db->update('table.options')->rows(array('value'=>$bsj))->where('name = ?', 'theme:'.getTheme().'');
+    $updateRows= $db->query($update);
+    echo '<div class="message popup success moe-a" style="position: absolute; top: 36px; display: block;">检测到模板备份数据，恢复完成，请等待自动刷新！如果等不到请点击 <a href="'.Helper::options()->adminUrl.'options-theme.php">这里</a></div>
+          <script language="JavaScript">window.setTimeout("location=\''.Helper::options()->adminUrl.'options-theme.php\'", 2000);</script>';
+   }else{
+    echo '<div class="message popup success moe-a" style="position: absolute; top: 36px; display: block;" id="del-error">恢复失败，因为你没备份过设置哇（；´д｀）ゞ</div>
+	    <script language="JavaScript">
+		 setTimeout( function(){$(\'#del-error\').removeClass(\'moe-a\');$(\'#del-error\').addClass(\'moe-a-off\');}, 2100 );
+		 setTimeout( function(){$(\'#del-error\').attr(\'style\', \'display: none;\');}, 2300 );
+		</script>';
+  }
+ }
+ if($_POST["type"] == "删除备份数据"){
+  if($db->fetchRow($db->select()->from ('table.options')->where ('name = ?', 'theme:CastleBackup'))){
+   $delete = $db->delete('table.options')->where ('name = ?', 'theme:CastleBackup');
+   $deletedRows = $db->query($delete);
+   echo '<div class="message popup success moe-a" style="position: absolute; top: 36px; display: block;">删除成功，请等待自动刷新，如果等不到请点击 <a href="'.Helper::options()->adminUrl.'options-theme.php">这里</a></div>
+         <script language="JavaScript">window.setTimeout("location=\''.Helper::options()->adminUrl.'options-theme.php\'", 2500);</script>';
+  }else{
+   echo '<div class="message popup success moe-a" style="position: absolute; top: 36px; display: block;" id="del-error">删除失败，检测不到备份ㄟ( ▔, ▔ )ㄏ</div>
+        <script language="JavaScript">
+		 setTimeout( function(){$(\'#del-error\').removeClass(\'moe-a\');$(\'#del-error\').addClass(\'moe-a-off\');}, 2100 );
+		 setTimeout( function(){$(\'#del-error\').attr(\'style\', \'display: none;\');}, 2300 );
+		</script>';
+  }
+ }
+}
   echo '<style>textarea{ height: 180px; width: 100%;}</style>';
   echo '<link rel="stylesheet" href="'.themeResource('others/css/setting.min.css').'" />';
   echo '<script src="'.themeResource('others/js/jquery3.3.1.min.js').'"></script>
@@ -33,7 +86,13 @@ function themeConfig($form) {
    <span class="moe-current-ver">本地版本: '.themeVer('current').'</span>
    <span class="moe-new-ver">云端版本: <span id="newVer">正在获取新版本中...</span></span>
    <span class="moe-announcement">公告: <span id="acGet">正在获取公告中...</span></span>
+   <form class="protected" action="?CastleBackup" method="post">
+    <input type="submit" name="type" class="btn btn-s" value="备份模板数据" />&nbsp;&nbsp;
+	<input type="submit" name="type" class="btn btn-s" value="还原模板数据" />&nbsp;&nbsp;
+	<input type="submit" name="type" class="btn btn-s" value="删除备份数据" />
+   </form>
    </div>';
+   
   $filenum = 0;
   $openfile = glob(Helper::options()->themeFile(getTheme(), "languages/*.json"));
   foreach ($openfile as $v) {
@@ -143,6 +202,16 @@ function themeConfig($form) {
   _t('请选择Gravatar头像源'));
   $form->addInput($gravatar_url->multiMode());
   
+  $qqheadimg = new Typecho_Widget_Helper_Form_Element_Select('qqheadimg',array(
+    '0' => '默认',
+	'1' => 'Base64',
+	'2' => 'QQ自带加密'
+  ),
+  '0',
+  _t('QQ头像源'),
+  _t('QQ头像源(评论区)，详细参考文档'));
+  $form->addInput($qqheadimg->multiMode());
+  
   $post = new Typecho_Widget_Helper_Form_Element_Checkbox('post', array(
 	'share' => _t('启用分享按钮'),
 	'tags' => _t('启用文章标签按钮'),
@@ -191,6 +260,9 @@ function themeConfig($form) {
   
   $miibeian = new Typecho_Widget_Helper_Form_Element_Text('miibeian', NULL, '', _t('备案号'), _t('输入备案号，不填写将不显示'));
   $form->addInput($miibeian);
+  
+  $apipass = new Typecho_Widget_Helper_Form_Element_Text('apipass', NULL, Typecho_Common::randString(32), _t('* API接口保护'), _t('加盐保护API不被滥用，自动生成无需修改（如果为空请重新启用主题 - <strong>主题设置会清空注意备份</strong>）'));
+  $form->addInput($apipass);
   
   $sidebar = new Typecho_Widget_Helper_Form_Element_Textarea('sidebar', NULL, '[{
    "name":"归档",
@@ -259,4 +331,17 @@ function themeConfig($form) {
  }
 }', _t('高级设置'), _t('主题高级设置，用法参考文档'));
   $form->addInput($advancedSetting);
+}
+
+/**
+ * 既然你找到了版权在这，那么请保留。
+ * 保留版权就是对作者最大的支持。
+ * 在此对某些喜欢删版权的说（针对喜欢删或改版权的某些人）：留着版权会死？如果那么喜欢删那么就别用这个主题（笑）
+ **/
+function foinfo() {
+ if (Helper::options()->miibeian){ $beian = '<a href="http://www.beian.miit.gov.cn" target="_blank">'.Helper::options()->miibeian.'</a><br>'; }else{ $beian = ''; }
+ $output = 'This <span class="mdui-list-item-content"><a href="https://github.com/ohmyga233/castle-Typecho-Theme" target="_blank">Theme</a> By <a href="https://ohmyga.cn/" target="_blank">ohmyga</a></span><br>
+      '.$beian.'
+      Powered By <a href="http://typecho.org/" target="_blank">Typecho</a>';
+ return $output;
 }

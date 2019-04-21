@@ -29,16 +29,12 @@ if($this->options->cardt == '0'){ $nightStatus = 'true'; }else{ $nightStatus = '
      </div>            
 
      <div class="mdui-col-xs-12 mdui-col-md-4 mdui-hidden-sm-down" style=" text-align:right; margin-top:16px; margin-bottom:16px;">
-      This <span class="mdui-list-item-content"><a href="https://github.com/ohmyga233/castle-Typecho-Theme" target="_blank">Theme</a> By <a href="https://ohmyga.cn/" target="_blank">ohmyga</a>😋</span><br>
-      <?php if ($this->options->miibeian){ ?><a href="http://www.miitbeian.gov.cn/" target="_blank"><?php $this->options->miibeian(); ?></a><br><?php } ?>
-      Powered By <a href="http://typecho.org/" target="_blank">Typecho</a> 
+      <?php echo foinfo();?>
 	 </div>
     </div>
 
     <div class="mdui-col-xs-12 mdui-col-md-4 mdui-hidden-md-up" style="text-align:center; margin-top:16px; margin-bottom:16px;">
-     This <span class="mdui-list-item-content"><a href="https://github.com/ohmyga233/castle-Typecho-Theme" target="_blank">Theme</a> By <a href="https://ohmyga.cn/" target="_blank">ohmyga</a>😋</span><br>
-     <?php if ($this->options->miibeian){ ?><a href="http://www.miitbeian.gov.cn/" target="_blank"><?php $this->options->miibeian(); ?></a><br><?php } ?>
-     Powered By <a href="http://typecho.org/" target="_blank">Typecho</a>
+     <?php echo foinfo();?>
 	</div>
    </div>
   </footer>
@@ -48,7 +44,8 @@ if($this->options->cardt == '0'){ $nightStatus = 'true'; }else{ $nightStatus = '
  <?php $this->options->statistics(); ?>
 </div>
 <?php endif; ?>
-  
+
+  <script src="<?php echo themeResource('others/js/highlight.min.js'); ?>"></script>  
   <script src="<?php echo themeResource('others/js/jquery.lazyload.min.js'); ?>"></script>
   <script src="<?php echo themeResource('others/js/jquery.fancybox.min.js'); ?>"></script>
   <script>
@@ -76,14 +73,14 @@ if($this->options->cardt == '0'){ $nightStatus = 'true'; }else{ $nightStatus = '
 	textareaHTML: true,
 	NightOrDay: <?php echo $nightStatus; ?>
    });
-   var leaveTitle = '<?php echo adSetting('setting', 'leave', 'title'); ?>';
-   var leaveIcon = '<?php if(!empty(adSetting('setting', 'leave', 'icon'))){ echo adSetting('setting', 'leave', 'icon'); }else{ echo themeResource('others/img/huaji.png'); } ?>';
-   var returnTitle = '<?php echo adSetting('setting', 'return', 'title'); ?>';
-   var returnIcon = '<?php if(!empty(adSetting('setting', 'return', 'icon'))){ echo adSetting('setting', 'leave', 'icon'); }else{ echo themeResource('others/img/OwO/tieba/a.png'); } ?>';
+   var leaveTitle = '<?php $leaveTitle = adSetting('setting', 'leave', 'title'); if(!empty($leaveTitle)){ echo adSetting('setting', 'leave', 'title'); }else{ echo '???? (/?\) '; } ?>';
+   var leaveIcon = '<?php $leaveIcon = adSetting('setting', 'leave', 'icon'); if(!empty($leaveIcon)){ echo adSetting('setting', 'leave', 'icon'); }else{ echo themeResource('others/img/huaji.png'); } ?>';
+   var returnTitle = '<?php $returnTitle = adSetting('setting', 'return', 'title'); if(!empty($returnTitle)){ echo adSetting('setting', 'return', 'title'); }else{ echo '???? S(? °? °;)? '; } ?>';
+   var returnIcon = '<?php $returnIcon = adSetting('setting', 'return', 'icon'); if(!empty($returnIcon)){ echo adSetting('setting', 'return', 'icon'); }else{ echo themeResource('others/img/OwO/tieba/a.png'); } ?>';
    var OriginIcon = '<?php echo siteHeadimg('ico'); ?>';
-   var copyPromptText = '<?php echo adSetting('setting', 'copyPrompt', 'text'); ?>';
-   var copyPromptTitle = '<?php echo adSetting('setting', 'copyPrompt', 'title'); ?>';
-   var topText = '<?php echo adSetting('setting', 'toTopText'); ?>';
+   var copyPromptText = '<?php $copyPromptText = adSetting('setting', 'copyPrompt', 'text'); if(!empty($copyPromptText)){ echo adSetting('setting', 'copyPrompt', 'text'); }else{ echo '?????????!'; } ?>';
+   var copyPromptTitle = '<?php $copyPromptTitle = adSetting('setting', 'copyPrompt', 'title'); if(!empty($copyPromptTitle)){ echo adSetting('setting', 'copyPrompt', 'title'); }else{ echo '??'; }?>';
+   var topText = '<?php $toTopText = adSetting('setting', 'toTopText'); if(!empty($toTopText)){ echo adSetting('setting', 'toTopText'); }else{ echo '????~'; } ?>';
   </script>
   
   <?php $this->footer(''); ?>

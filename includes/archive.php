@@ -18,7 +18,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 	 <?php $PostType = $this->fields->PostType;
      if($PostType == "nopic"){ ?>
 	 <div class="mdui-card moe-card moe-card-day moe-card-tr">
-	  <div class="moe-card-day-icon moe-headimg-xz"><i class="mdui-icon material-icons"><?php if(!empty(PSetting('Dicon'))) { echo PSetting('Dicon'); }else{ echo 'message'; } ?></i></div>
+	  <div class="moe-card-day-icon moe-headimg-xz"><i class="mdui-icon material-icons"><?php $Dicon = PSetting('Dicon'); if(!empty($Dicon)) { echo PSetting('Dicon'); }else{ echo 'message'; } ?></i></div>
 	  <h2 class="moe-day-title"><a href="<?php $this->permalink() ?>" title="<?php echo sprintf(lang('archive', 'FloatingTitle'), $this->title); ?>"><?php $this->title() ?></a></h2>
 	  <span class="moe-day-d"><?php $this->excerpt(100); ?></span>
 	  <div class="mdui-divider"></div>
@@ -36,7 +36,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 	  <div class="moe-day2">
 	   <i class="mdui-icon material-icons">autorenew</i>
 	   <span class="moe-body">
-	    <span class="moe-t"><?php if(!empty(PSetting('Dtitle'))) { echo PSetting('Dtitle'); }else{ $this->title(); } ?>（<a href="<?php $this->permalink() ?>"><?php echo lang('archive', 'LinkDynamic'); ?></a>）</span>
+	    <span class="moe-t"><?php $Dtitle = PSetting('Dtitle'); if(!empty($Dtitle)) { echo PSetting('Dtitle'); }else{ $this->title(); } ?>（<a href="<?php $this->permalink() ?>"><?php echo lang('archive', 'LinkDynamic'); ?></a>）</span>
 	    <span class="moe-info"><?php $this->date(lang('archive', 'time')); ?> • <?php echo sprintf(lang('archive', 'commentDynamic'), $this->commentsNum); ?> • <?php echo sprintf(lang('archive', 'viewDynamic'), PostView($this)); ?></span>
 	   </span>
 	  </div>

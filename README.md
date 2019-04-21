@@ -1,6 +1,6 @@
 # Castle-Typecho-Theme
 MD风格单栏主题<br>
-Version 0.2.1
+Version 0.2.5
 ## LICENSE
 GPL V3
 ## 链接
