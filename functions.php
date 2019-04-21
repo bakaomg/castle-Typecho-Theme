@@ -13,7 +13,7 @@ define("CASTLE_VERSION", "0.2.5");
 require_once("libs/setting.php");
 
 //错误是什么？
-//error_reporting(0);
+error_reporting(0);
 
 /* 文章or页面类型 */
 function themeFields($layout) {
