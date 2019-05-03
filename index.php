@@ -4,7 +4,7 @@
  * 
  * @package Castle
  * @author ohmyga
- * @version 0.2.5
+ * @version 0.2.6
  * @link https://ohmyga.cn/
  */
  if (!defined('__TYPECHO_ROOT_DIR__')) exit;
@@ -66,7 +66,7 @@
 	 <div class="mdui-card-actions">
 	  <div class="moe-post-margin"></div>
 	  <span class="moe-post-text">
-	   <?php $this->excerpt(100); ?>
+	   <?php if($this->fields->des){ $this->fields->des(); }else{ $this->excerpt(100); } ?>
 	  </span>
 	  <div class="moe-post-margin"></div>
 	 </div>

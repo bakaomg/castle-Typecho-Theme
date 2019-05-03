@@ -33,7 +33,7 @@
   $utext = '<span class="moe-bgm-error moe-card-a">未填写Bangumi ID</span>';
  }
 ?>
-   <div class="moe-bgm-card mdui-card">
+   <div class="moe-bgm-card mdui-card moe-card-tr">
     <div class="mdui-card-media moe-card-media">
 	 <main class="moe-card-img" data-original="<?php $wzimg = $this->fields->wzimg;
 	 if(!empty($wzimg)){

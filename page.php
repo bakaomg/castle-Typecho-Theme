@@ -50,10 +50,7 @@
 	 <?php echo Castle::parseAll($this->content); ?>
 <?php if ($this->options->page && in_array('copy', $this->options->page)): ?>	 <div class="moe-blockquote-top"></div>
 	 <blockquote class="moe-blockquote-copy">
-	  本文作者: <?php $this->author(); ?><br>
-	  本文链接: <a href="<?php $this->permalink(); ?>"><?php $this->permalink(); ?></a><br>
-	  最后修改时间: <?php echo date('Y-m-d H:i:s', $this->modified);?><br>
-	  本站未注明转载的文章均为原创，并采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">CC BY-NC-SA 4.0</a> 授权协议，转载请注明来源，谢谢！<br>
+	  <?php echo Pcopy('page', $this); ?>
 	 </blockquote><?php endif; ?>
 	</div>
 	

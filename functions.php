@@ -1,14 +1,14 @@
 <?php
 /**
  * Functions
- * Version 0.2.5
+ * Version 0.2.6
  * Author ohmyga( https://ohmyga.cn/ )
  * 2019/04/21
  **/
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 define("THEME_NAME", "Castle");
-define("CASTLE_VERSION", "0.2.5");
+define("CASTLE_VERSION", "0.2.6");
 
 require_once("libs/setting.php");
 
@@ -24,25 +24,33 @@ function themeFields($layout) {
  $wzimg = new Typecho_Widget_Helper_Form_Element_Text('wzimg', NULL, NULL, _t('文章/独立页面封面图'), _t('如果不填将显示随机封面图'));
  $layout->addItem($wzimg);
  
- $PostType = new Typecho_Widget_Helper_Form_Element_Select('PostType',
+ $des = new Typecho_Widget_Helper_Form_Element_Text('des', NULL, NULL, _t('文章/独立页面摘要'), _t('简介摘要，如不填将自动摘取前100字'));
+ $layout->addItem($des);
+ 
+ preg_match('/write-post.php/', $_SERVER['SCRIPT_NAME'], $post);
+ preg_match('/write-page.php/', $_SERVER['SCRIPT_NAME'], $page);
+ 
+ if(@$post[0] == 'write-post.php'){
+  $PostType = new Typecho_Widget_Helper_Form_Element_Select('PostType',
    array(
 	'post'=>'文章',
 	'nopic'=>'无图',
 	'dynamic'=>'日常'
    ),
   'post','文章类型','设置发表的文章的类型(仅对文章有效)');
- $layout->addItem($PostType);
- 
-/* $PageType = new Typecho_Widget_Helper_Form_Element_Select('PageType',
+  $layout->addItem($PostType);
+ }elseif(@$page[0] == 'write-page.php'){
+  $PageType = new Typecho_Widget_Helper_Form_Element_Select('PageType',
    array(
 	'page'=>'默认',
 	'links'=>'友链',
 	'bangumi'=>'追番'
    ),
   'page','独立页面类型','请根据页面模板选择类型，普通页面保持默认即可(仅对页面有效)');
- $layout->addItem($PageType);*/
+  $layout->addItem($PageType);
+ }
  
-/* $PSetting = new Typecho_Widget_Helper_Form_Element_Textarea('PSetting', NULL, NULL,
+ /*$PSetting = new Typecho_Widget_Helper_Form_Element_Textarea('PSetting', NULL, NULL,
  '高级设置', '文章/独立页高级设置，如果不懂此有何用请勿填写。');
  $layout->addItem($PSetting);*/
 }
@@ -196,7 +204,7 @@ function randPic() {
  $setting = Helper::options()->randimg;
  $rand = rand(0,99); //防止只获取一张图
  if ($setting == 'api.ohmyga.cn') {
-  $output = 'https://api.ohmyga.cn/wallpaper/?source=sina&rand='.$rand;
+  $output = 'https://api.ohmyga.cn/wallpaper/?rand='.$rand;
  }elseif ($setting == 'local') {
   $openfile = glob(Helper::options()->themeFile(getTheme(), "random/*.jpg"), GLOB_BRACE);
   $img = array_rand($openfile);
@@ -348,19 +356,37 @@ function QQHeadimg($qq) {
  }
  
  if ($setting == 0) {
-  $output = "https://q.qlogo.cn/g?b=qq&nk=".$qq."&s=40";
+  $output = "https://q.qlogo.cn/g?b=qq&nk=".$qq."&s=100";
  }elseif ($setting == 1) {
-  $output = Helper::options()->siteUrl.'?action=QQ_headimg&content='.base64_encode($qq);;
+  $output = Helper::options()->siteUrl.'?action=QQ_headimg&content='.base64_encode($qq);
  }elseif ($setting == 2) {
   $url = '://ptlogin2.qq.com/getface?&imgtype=1&uin=';
   $qquser = file_get_contents($osStatus.$url.$qq);
   $str1 = explode('&k=', $qquser);
   $str2 = explode('&s=', $str1[1]);
   $k = $str2[0];
-  $output = $k = 'https://q.qlogo.cn/g?b=qq&k='.$k.'&s=100';
+  $output = 'https://q.qlogo.cn/g?b=qq&k='.$k.'&s=100';
  }
  
  return $output;
+}
+
+/* 主题整体色 */
+function tcs() {
+ $setting = Helper::options()->tcs;
+ 
+ if ($setting == 0) {
+ }elseif($setting == 1) {
+  @$cookie = $_COOKIE["nightSwitch"];
+  if (!empty($cookie)) {
+   if ($cookie == 'off') {
+   }else{
+    setcookie('nightSwitch', 'open');
+   }
+  }else{
+   setcookie('nightSwitch', 'open');
+  }
+ }
 }
 
 /* 显示上一篇 */
@@ -520,7 +546,7 @@ function DrawerMenu() {
    }elseif ($i['type'] == '5') {
     echo '<div class="mdui-divider"></div>';
    }elseif ($i['type'] == '6') {
-	echo '<a href="'.Helper::options()->siteUrl.'feed" target="_blank" class="mdui-list-item mdui-ripple" mdui-drawer-close>
+	echo '<a href="'.Helper::options()->feedUrl.'" target="_blank" class="mdui-list-item mdui-ripple" mdui-drawer-close>
      <i class="mdui-icon material-icons mdui-list-item-icon">rss_feed</i>
      <div class="mdui-list-item-content">RSS订阅</div>
     </a>';

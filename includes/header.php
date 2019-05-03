@@ -2,6 +2,16 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $ThemeColor = Typecho_Widget::widget('Widget_Options')->themecolor;
 $AccentColor = Typecho_Widget::widget('Widget_Options')->accentcolor;
+if($this->options->cardt == '0'){
+ $cardtr = '';
+}elseif($this->options->cardt == '10'){
+ $cardtr = 'moe-card-tr-10';
+}elseif($this->options->cardt == '20'){
+ $cardtr = 'moe-card-tr-20';
+}elseif($this->options->cardt == '30'){
+ $cardtr = 'moe-card-tr-30';
+}
+tcs();
 ?>
 <html>
  <head>
@@ -16,10 +26,10 @@ $AccentColor = Typecho_Widget::widget('Widget_Options')->accentcolor;
   <script src="<?php echo themeResource('others/js/nprogress.js'); ?>"></script>
   <script src="<?php echo themeResource('others/js/jquery3.3.1.min.js'); ?>"></script>
   <?php if ($this->options->other && in_array('pjax', $this->options->other)): ?><script src="<?php echo themeResource('others/js/jquery.pjax.min.js'); ?>"></script><?php endif; ?>
-  <link rel="stylesheet" href="<?php echo themeResource('others/css/iconfont.css'); ?>" />
+  <link rel="stylesheet" href="<?php echo themeResource('others/css/iconfont.css'); ?>?v=<?php echo themeVer('current'); ?>" />
   <link rel="stylesheet" href="<?php echo themeResource('others/css/mdui.min.css'); ?>" />
   <link rel="stylesheet" href="<?php echo themeResource('others/css/nprogress.css'); ?>" />
-  <link rel="stylesheet" href="<?php echo themeResource('others/css/castle.min.css'); ?>" />
+  <link rel="stylesheet" href="<?php echo themeResource('others/css/castle.min.css'); ?>?v=<?php echo themeVer('current'); ?>" />
   <link rel="stylesheet" href="<?php echo themeResource('others/css/fancybox.min.css'); ?>" />
   <link rel="icon" type="image/x-icon" href="<?php echo siteHeadimg('ico'); ?>" id="Icon-title">
   <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
@@ -57,4 +67,4 @@ $AccentColor = Typecho_Widget::widget('Widget_Options')->accentcolor;
 <?php $this->need('includes/sidebar.php'); ?>
   
   <?php if ($this->options->comment && in_array('ajax', $this->options->comment)): ?><input id="linkStatus" type="hidden" value="false"/><?php endif; ?>
-  <div id="moe-body">
+  <div id="moe-body" class="<?php echo $cardtr; ?>">

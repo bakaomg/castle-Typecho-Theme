@@ -38,7 +38,7 @@ function themeConfig($form) {
     echo '<div class="message popup success moe-a" style="position: absolute; top: 36px; display: block;">检测到模板备份数据，恢复完成，请等待自动刷新！如果等不到请点击 <a href="'.Helper::options()->adminUrl.'options-theme.php">这里</a></div>
           <script language="JavaScript">window.setTimeout("location=\''.Helper::options()->adminUrl.'options-theme.php\'", 2000);</script>';
    }else{
-    echo '<div class="message popup success moe-a" style="position: absolute; top: 36px; display: block;" id="del-error">恢复失败，因为你没备份过设置哇（；´д｀）ゞ</div>
+    echo '<div class="message popup error moe-a" style="position: absolute; top: 36px; display: block;" id="del-error">恢复失败，因为你没备份过设置哇（；´д｀）ゞ</div>
 	    <script language="JavaScript">
 		 setTimeout( function(){$(\'#del-error\').removeClass(\'moe-a\');$(\'#del-error\').addClass(\'moe-a-off\');}, 2100 );
 		 setTimeout( function(){$(\'#del-error\').attr(\'style\', \'display: none;\');}, 2300 );
@@ -52,7 +52,7 @@ function themeConfig($form) {
    echo '<div class="message popup success moe-a" style="position: absolute; top: 36px; display: block;">删除成功，请等待自动刷新，如果等不到请点击 <a href="'.Helper::options()->adminUrl.'options-theme.php">这里</a></div>
          <script language="JavaScript">window.setTimeout("location=\''.Helper::options()->adminUrl.'options-theme.php\'", 2500);</script>';
   }else{
-   echo '<div class="message popup success moe-a" style="position: absolute; top: 36px; display: block;" id="del-error">删除失败，检测不到备份ㄟ( ▔, ▔ )ㄏ</div>
+   echo '<div class="message popup error moe-a" style="position: absolute; top: 36px; display: block;" id="del-error">删除失败，检测不到备份ㄟ( ▔, ▔ )ㄏ</div>
         <script language="JavaScript">
 		 setTimeout( function(){$(\'#del-error\').removeClass(\'moe-a\');$(\'#del-error\').addClass(\'moe-a-off\');}, 2100 );
 		 setTimeout( function(){$(\'#del-error\').attr(\'style\', \'display: none;\');}, 2300 );
@@ -161,6 +161,15 @@ function themeConfig($form) {
   _t('请选择主题的强调颜色'));
   $form->addInput($accentcolor->multiMode());
   
+  $tcs = new Typecho_Widget_Helper_Form_Element_Select('tcs',array(
+    '0' => '默认',
+	'1' => '暗色(夜间)'
+  ),
+  '0',
+  _t('主题整体色'),
+  _t('主题整体颜色'));
+  $form->addInput($tcs->multiMode());
+  
   $cardt = new Typecho_Widget_Helper_Form_Element_Select('cardt',array(
     '0' => '不透明',
 	'10' => '10%',
@@ -169,7 +178,7 @@ function themeConfig($form) {
   ),
   '0',
   _t('卡片透明度'),
-  _t('全部卡片透明度，开启透明度夜间模式将无效(隐藏)'));
+  _t('全部卡片透明度'));
   $form->addInput($cardt->multiMode());
   
   $themeResource = new Typecho_Widget_Helper_Form_Element_Select('themeResource',array(
@@ -241,9 +250,10 @@ function themeConfig($form) {
 	'pjax' => _t('启用PJAX无刷新'),
 	'gotop' => _t('右下返回顶部按钮'),
 	'title' => _t('失去/恢复焦点标题变化'),
+	'night' => _t('显示夜间模式按钮(抽屉顶部)'),
 	'html' => _t('启用HTML压缩 (代码来自<a href="https://www.linpx.com/p/pinghsu-subject-integration-code-compression.html" target="_blank">LiNPX</A>，可能有部分插件不兼容)')
   ),
-  array('copy', 'pjax', 'gotop'), _t('其他设置'));
+  array('copy', 'pjax', 'gotop', 'night'), _t('其他设置'));
   $form->addInput($other->multiMode());
   
   $headimg = new Typecho_Widget_Helper_Form_Element_Text('headimg', NULL, NULL, _t('站点图标'), _t('作者/博主全站头像'));

@@ -39,7 +39,7 @@ function threadedComments($comments, $options) {
 <?php $this->comments()->to($comments); ?>
   <?php if($this->allow('comment')): ?>
   <div id="<?php $this->respondId(); ?>">
-  <div class="mdui-card moe-comments-box moe-card-tr">
+  <div class="mdui-card moe-comments-box moe-card-tr" id="commentsBoxOuO">
   <center><h1><?php echo lang('comment', 'commentTitle'); ?></h1></center>
   <?php if($this->user->hasLogin()): ?>
    <div class="mdui-card-header moe-comments-admin-header">
