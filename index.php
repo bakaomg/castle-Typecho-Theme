@@ -4,10 +4,41 @@
  * 
  * @package Castle
  * @author ohmyga
- * @version 0.2.6
+ * @version 0.3.0
  * @link https://ohmyga.cn/
  */
  if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+  /** 文章置顶 */
+  $sticky = $this->options->sticky; //置顶的文章cid，按照排序输入, 请以半角逗号或空格分隔
+  if($sticky && $this->is('index') || $this->is('front')){
+    $sticky_cids = explode(',', strtr($sticky, ' ', ','));//分割文本 
+    $sticky_html = "<span style=\"color:red;text-shadow:none;\">[置顶] </span>"; //置顶标题的 html
+    $db = Typecho_Db::get();
+    $pageSize = $this->options->pageSize;
+    $select1 = $this->select()->where('type = ?', 'post');
+    $select2 = $this->select()->where('type = ? && status = ? && created < ?', 'post','publish',time());
+    //清空原有文章的列队
+    $this->row = [];
+    $this->stack = [];
+    $this->length = 0;
+    $order = '';
+    foreach($sticky_cids as $i => $cid) {
+        if($i == 0) $select1->where('cid = ?', $cid);
+        else $select1->orWhere('cid = ?', $cid);
+        $order .= " when $cid then $i";
+        $select2->where('table.contents.cid != ?', $cid); //避免重复
+    }
+    if ($order) $select1->order(null,"(case cid$order end)"); //置顶文章的顺序 按 $sticky 中 文章ID顺序
+    if ($this->_currentPage == 1) foreach($db->fetchAll($select1) as $sticky_post){ //首页第一页才显示
+        $sticky_post['sticky'] = $sticky_html;
+        $this->push($sticky_post); //压入列队
+    }
+    $uid = $this->user->uid; //登录时，显示用户各自的私密文章
+    if($uid) $select2->orWhere('authorId = ? && status = ?',$uid,'private');
+    $sticky_posts = $db->fetchAll($select2->order('table.contents.created', Typecho_Db::SORT_DESC)->page($this->_currentPage, $this->parameter->pageSize));
+    foreach($sticky_posts as $sticky_post) $this->push($sticky_post); //压入列队
+    $this->setTotal($this->getTotal()-count($sticky_cids)); //置顶文章不计算在所有文章内
+  }
  if (isset($_GET['_pjax'])) {
   echo '<title>';
   $this->archiveTitle(array('category'=>_t('分类 %s 下的文章'),'search'=>_t('包含关键字 %s 的文章'),'tag'=>_t('标签 %s 下的文章'),'author'=>_t('%s 发布的文章')), '', ' - ');
@@ -23,9 +54,9 @@
 	<?php $PostType = $this->fields->PostType;
     if($PostType == "nopic"){ ?>
 	<div class="mdui-card moe-card moe-card-day moe-card-a moe-card-tr">
-	 <div class="moe-card-day-icon moe-headimg-xz"><i class="mdui-icon material-icons"><?php $Dicon = PSetting('Dicon'); if(!empty($Dicon)) { echo PSetting('Dicon'); }else{ echo 'message'; } ?></i></div>
-	 <h2 class="moe-day-title"><a href="<?php $this->permalink() ?>" title="<?php echo sprintf(lang('index', 'FloatingTitle'), $this->title); ?>"><?php $this->title() ?></a></h2>
-	 <span class="moe-day-d"><?php $this->excerpt(100); ?></span>
+	 <div class="moe-card-day-icon moe-headimg-xz"><i class="mdui-icon material-icons"><?php $Dicon = PSetting($this, 'Dicon'); if(!empty($Dicon)) { echo PSetting($this, 'Dicon'); }else{ echo 'message'; } ?></i></div>
+	 <h2 class="moe-day-title"><a href="<?php $this->permalink() ?>" title="<?php echo sprintf(lang('index', 'FloatingTitle'), $this->title); ?>"><?php $this->sticky(); $this->title() ?></a></h2>
+	 <span class="moe-day-d"><?php if($this->fields->des){ $this->fields->des(); }else{ $this->excerpt(100); } ?></span>
 	 <div class="mdui-divider"></div>
 	 <div class="moe-day-info">
 	  <i class="mdui-icon material-icons moe-author-icon">account_circle</i>
@@ -41,7 +72,7 @@
 	 <div class="moe-day2">
 	  <i class="mdui-icon material-icons">autorenew</i>
 	  <span class="moe-body">
-	   <span class="moe-t"><?php $Dtitle = PSetting('Dtitle'); if(!empty($Dtitle)) { echo PSetting('Dtitle'); }else{ $this->title(); } ?>（<a href="<?php $this->permalink() ?>"><?php echo lang('index', 'LinkDynamic'); ?></a>）</span>
+	   <span class="moe-t"><?php $Dtitle = PSetting($this, 'Dtitle'); if(!empty($Dtitle)) { $this->sticky(); echo PSetting($this, 'Dtitle'); }else{ $this->sticky(); $this->title(); } ?>（<a href="<?php $this->permalink() ?>"><?php echo lang('index', 'LinkDynamic'); ?></a>）</span>
 	   <span class="moe-info"><?php $this->date(lang('index', 'time')); ?> • <?php echo sprintf(lang('index', 'commentDynamic'), $this->commentsNum); ?> • <?php echo sprintf(lang('index', 'viewDynamic'), PostView($this)); ?></span>
 	  </span>
 	 </div>
@@ -57,7 +88,7 @@
 	 }?>" style="background-image: url('<?php echo themeResource('others/img/loading.gif'); ?>');"></main>
 	  <div class="mdui-card-media-covered">
 	   <div class="mdui-card-primary">
-	    <a href="<?php $this->permalink() ?>" class="mdui-card-primary-title moe-card-title moe-text-ellipsis" title="<?php echo sprintf(lang('index', 'FloatingTitle'), $this->title); ?>"><?php $this->title() ?></a>
+	    <a href="<?php $this->permalink() ?>" class="mdui-card-primary-title moe-card-title moe-text-ellipsis" title="<?php echo sprintf(lang('index', 'FloatingTitle'), $this->title); ?>"><?php $this->sticky(); $this->title() ?></a>
 		<div class="mdui-card-primary-subtitle"><?php echo sprintf(lang('index', 'view'), PostView($this)); ?> | <?php echo sprintf(lang('index', 'comment'), $this->commentsNum); ?></div>
        </div>
 	  </div>

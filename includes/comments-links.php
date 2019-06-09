@@ -59,7 +59,7 @@ function threadedComments($comments, $options) {
 	<div class="mdui-textfield-helper"><?php echo lang('comment', 'markdown'); ?></div>
    </div>
    
-   <button mdui-dialog="{target: '#OwO-ck'}" type="button" mdui-tooltip="{content: '<?php echo lang('comment', 'smile'); ?>'}" class="mdui-btn mdui-btn-icon mdui-float-right moe-owo-btn-login"><i class="mdui-icon material-icons">sentiment_very_satisfied</i></button>
+   <button onclick="openSmile()" type="button" mdui-tooltip="{content: '<?php echo lang('comment', 'smile'); ?>'}" class="mdui-btn mdui-btn-icon mdui-float-right moe-owo-btn-login"><i class="mdui-icon material-icons">sentiment_very_satisfied</i></button>
    <?php if ($this->options->comment && in_array('ajax', $this->options->comment)){}else{ ?><div class="moe-comments-btn">
     <?php $comments->cancelReply('<button class="mdui-btn mdui-ripple moe-comments-close-btn mdui-text-color-red" mdui-tooltip="{content: \''.lang('comment', 'cancelReply').'\'}" type="button"><i class="mdui-icon material-icons">close</i></button>'); ?>
     <button class="mdui-btn mdui-color-theme mdui-ripple moe-comments-submit-btn mdui-btn-raised" mdui-tooltip="{content: '<?php echo lang('comment', 'sendComment'); ?>'}" type="submit"><i class="mdui-icon material-icons">send</i></button>
@@ -75,7 +75,7 @@ function threadedComments($comments, $options) {
 	<div class="mdui-textfield-helper"><?php echo lang('comment', 'markdown'); ?></div>
    </div>
    
-   <button mdui-dialog="{target: '#OwO-ck'}" type="button" mdui-tooltip="{content: '<?php echo lang('comment', 'smile'); ?>'}" class="mdui-btn mdui-btn-icon mdui-float-right moe-owo-btn-usr"><i class="mdui-icon material-icons">sentiment_very_satisfied</i></button>
+   <button onclick="openSmile()" type="button" mdui-tooltip="{content: '<?php echo lang('comment', 'smile'); ?>'}" class="mdui-btn mdui-btn-icon mdui-float-right moe-owo-btn-usr"><i class="mdui-icon material-icons">sentiment_very_satisfied</i></button>
    
    <div class="mdui-textfield mdui-textfield-floating-label moe-input-name">
     <i class="mdui-icon"><img class="moe-comment-ajax-headimg moe-headimg-xz" data-original="<?php $this->options->themeUrl('others/img/huaji.png'); ?>" src="<?php echo themeResource('others/img/loading.gif'); ?>"></i>

@@ -1,11 +1,11 @@
 # Castle-Typecho-Theme
 MD风格单栏主题<br>
-Version 0.2.6
+Version 0.3.0
 ## LICENSE
 GPL V3
 ## 链接
 Blog https://ohmyga.cn<br>
-Docs https://castle.ohmyga.cc/ (目前还没写完)
+Docs https://castle.ohmyga.cc/ (快写完了！)
 ## 提示
 (继续偷懒不写README)<br>
 如果觉得本主题还行的话，请给本项目一个Star吧！<br>

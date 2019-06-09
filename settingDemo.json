@@ -1,0 +1,25 @@
+// 高级设置 Demo
+// 复制进设置时记得删除注解以免报错
+{
+ "setting": {
+  "leave": {
+   "title": "悄悄藏好 (/ω＼) ", //页面失去焦点显示的标题
+   "icon": ""  //页面失去焦点显示的图标
+  },
+  "return": {
+   "title": "被找到惹 Σ(っ °Д °;)っ ",  //页面恢复焦点显示的标题
+   "icon": ""  //页面恢复焦点显示的图标
+  },
+  "copyPrompt": {
+   "text": "转载请保留相应版权！", //内容被复制时显示的提示
+   "title": "警告" //内容被复制时提示框标题
+  },
+  "toTopText": "回到顶部~" //回到顶部按钮标题
+ },
+ "resource": {
+  "url": "" //静态资源 只有选择第三方CDN时有效 注意必须为(以直接放在 根目录为例 结尾不需要写/)http(s)://你的域名 ，使资源能访问到的最终URL为(以主题css为例) http(s)://你的域名/others/css/castle.min.css
+ },
+ "randPic": {
+  "url": "" //随机图api 例如https://api.ohmyga.cn/wallpaper/  如果选择附加随机参数最终URL为https://api.ohmyga.cn/wallpaper/?rand=xxx
+ }
+}

@@ -3,7 +3,7 @@
  * ThemeSetting
  * 
  * @author ohmyga
- * @link https://ohmyga.net/
+ * @link https://ohmyga.cn/
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 function themeConfig($form) {
@@ -193,7 +193,9 @@ function themeConfig($form) {
   
   $randimg = new Typecho_Widget_Helper_Form_Element_Select('randimg',array(
     'local' => '本地',
-	'api.ohmyga.cn' => 'api.ohmyga.cn'
+	'api.ohmyga.cn' => 'api.ohmyga.cn',
+	'cdn' => '第三方CDN(附加随机参数)',
+	'cdnno' => '第三方CDN(不附加随机参数)'
   ),
   'api.ohmyga.cn',
   _t('封面图源'),
@@ -255,6 +257,9 @@ function themeConfig($form) {
   ),
   array('copy', 'pjax', 'gotop', 'night'), _t('其他设置'));
   $form->addInput($other->multiMode());
+  
+  $sticky = new Typecho_Widget_Helper_Form_Element_Text('sticky', NULL, NULL, _t('置顶文章'), _t('置顶的文章cid，按照排序输入, 请以半角逗号或空格分隔'));
+  $form->addInput($sticky);
   
   $headimg = new Typecho_Widget_Helper_Form_Element_Text('headimg', NULL, NULL, _t('站点图标'), _t('作者/博主全站头像'));
   $form->addInput($headimg);
@@ -338,6 +343,12 @@ function themeConfig($form) {
    "title": "警告"
   },
   "toTopText": "回到顶部~"
+ },
+ "resource": {
+  "url": ""
+ },
+ "randPic": {
+  "url": ""
  }
 }', _t('高级设置'), _t('主题高级设置，用法参考文档'));
   $form->addInput($advancedSetting);

@@ -1,20 +1,20 @@
 <?php
 /**
  * Functions
- * Version 0.2.6
+ * Version 0.3.0
  * Author ohmyga( https://ohmyga.cn/ )
- * 2019/04/21
+ * 2019/06/01
  **/
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 define("THEME_NAME", "Castle");
-define("CASTLE_VERSION", "0.2.6");
+define("CASTLE_VERSION", "0.3.0");
 
 require_once("libs/setting.php");
+require_once("libs/owo.php");
 
-//鲁迅曾经说过：“看不见报错就是没有错误”。
-//鲁迅本人：“？？？”。
-error_reporting(0);
+//错误是什么？
+//error_reporting(0);
 
 /* 文章or页面类型 */
 function themeFields($layout) {
@@ -50,9 +50,9 @@ function themeFields($layout) {
   $layout->addItem($PageType);
  }
  
- /*$PSetting = new Typecho_Widget_Helper_Form_Element_Textarea('PSetting', NULL, NULL,
+ $PSetting = new Typecho_Widget_Helper_Form_Element_Textarea('PSetting', NULL, NULL,
  '高级设置', '文章/独立页高级设置，如果不懂此有何用请勿填写。');
- $layout->addItem($PSetting);*/
+ $layout->addItem($PSetting);
 }
 
 function themeInit($comment) {
@@ -145,8 +145,8 @@ function themeInit($comment) {
 }
 
 /* 文章阅读次数(含Cookie) */
-function PostView($archive) {
- $cid    = $archive->cid;
+function PostView($moe) {
+ $cid    = $moe->cid;
  $db     = Typecho_Db::get();
  $prefix = $db->getPrefix();
  if (!array_key_exists('views', $db->fetchRow($db->select()->from('table.contents')))) {
@@ -156,7 +156,7 @@ function PostView($archive) {
  }
    
  $row = $db->fetchRow($db->select('views')->from('table.contents')->where('cid = ?', $cid));
- if ($archive->is('single')) {
+ if ($moe->is('single')) {
   $views = Typecho_Cookie::get('extend_contents_views');
   if(empty($views)){
    $views = array();
@@ -174,8 +174,8 @@ function PostView($archive) {
 }
 
 /* 文章or页面高级设置 */
-function PSetting($type) {
- $setting = Typecho_Widget::widget("Widget_Archive")->fields->PSetting;
+function PSetting($moe, $type) {
+ $setting = $moe->fields->PSetting;
  if (json_decode($setting) == null) {
   $output = null;
  } else {
@@ -210,6 +210,10 @@ function randPic() {
   $img = array_rand($openfile);
   preg_match('/\/random\/(.*).jpg/', $openfile[$img], $out);
   $output = Helper::options()->siteUrl.'usr/themes/'.getTheme().'/random/'.$out[1].'.jpg';
+ }elseif ($setting == 'cdn'){
+  $output = adSetting('randPic', 'url').'?rand='.$rand;
+ }elseif ($setting == 'cdnno'){
+  $output = adSetting('randPic', 'url');
  }
  return $output;
 }
@@ -284,6 +288,8 @@ function themeResource($content) {
   $output = Helper::options()->themeUrl.'/'.$content;
  }elseif ($setting == 'jsdelivr') {
   $output = 'https://cdn.jsdelivr.net/gh/ohmyga233/castle-Typecho-Theme@'.themeVer('current').'/'.$content;
+ }elseif ($setting == 'cdn') {
+  $output = adSetting('resource', 'url').'/'.$content;
  }
 
  return $output;
@@ -381,10 +387,10 @@ function tcs() {
   if (!empty($cookie)) {
    if ($cookie == 'off') {
    }else{
-    setcookie('nightSwitch', 'open');
+    setcookie('nightSwitch', 'open', NULL, '/');
    }
   }else{
-   setcookie('nightSwitch', 'open');
+   setcookie('nightSwitch', 'open', NULL, '/');
   }
  }
 }
@@ -646,13 +652,9 @@ class Castle {
   return $mail;
 }
 
- static public function parseAll($content,$parseBoard=false){
-  $new  = self::parseBiaoQing(self::parseFancyBox(self::parseRuby($content)));
-  if($parseBoard){
-   return self::parseBoard($new);
-  }else{
-   return $new;
-  }
+ static public function parseAll($content){
+  $new  = self::parseBiaoQing(self::parseFancyBox(self::parseRuby(self::parseTable($content))));
+  return $new;
  }
 
  static public function parseBiaoQing($content){
@@ -689,6 +691,66 @@ class Castle {
   $rp='<ruby>${1}<rp>(</rp><rt>${2}</rt><rp>)</rp></ruby>';
   $new=preg_replace($reg,$rp,$string);
   return $new;
+ }
+ 
+ static public function parseTable($content){
+  $reg = '/<table>(.*?)<\/table>/s';
+  $rp = '<div class="mdui-table-fluid"><table class="mdui-table mdui-table-hoverable">${1}</table></div>';
+  $new = preg_replace($reg,$rp,$content);
+  return $new;
+ }
+ 
+ public static function exportHead($moe){
+  $author = $moe->author->screenName;
+  if($moe->is("index")) {
+   $description = Helper::options()->description;
+   $type = 'website';
+  }elseif ($moe->is("post") || $moe->is("page")) {
+   if($moe->fields->des && $moe->fields->des!=''){
+    $description = $moe->fields->des;
+   }else{
+    $description = Typecho_Common::subStr(strip_tags($moe->excerpt), 0, 100, "...");
+   }
+   $type='article';
+  }
+  $wzimg = $moe->fields->wzimg;
+  if(!empty($wzimg)){
+   $img = $moe->fields->wzimg;
+  }elseif ($moe->is("index")) {
+   $img = siteHeadimg('ico');
+  }else{
+   $img = randPic();
+  }
+  echo '  <meta name="description" content="'.$description.'" />
+  <meta property="og:title" content="';
+  $moe->archiveTitle(array(
+   'category'  =>  '分类 %s 下的文章',
+   'search'    =>  '包含关键字 %s 的文章',
+   'tag'       =>  '标签 %s 下的文章',
+   'author'    =>  '%s 发布的文章'
+  ), '', ' - ');
+  echo Helper::options()->title();
+  echo '" />
+  <meta name="author" content="'.$author.'" />
+  <meta property="og:site_name" content="'.Helper::options()->title.'" />
+  <meta property="og:type" content="'.$type.'" />
+  <meta property="og:description" content="'.$description.'" />
+  <meta property="og:url" content="'.$moe->permalink.'" />
+  <meta property="og:image" content="'.$img.'" />
+  <meta property="article:published_time" content="'.date('c', $moe->created).'" />
+  <meta property="article:modified_time" content="'.date('c', $moe->modified).'" />
+  <meta name="twitter:title" content="';
+  $moe->archiveTitle(array(
+   'category'  =>  '分类 %s 下的文章',
+   'search'    =>  '包含关键字 %s 的文章',
+   'tag'       =>  '标签 %s 下的文章',
+   'author'    =>  '%s 发布的文章'
+  ), '', ' - ');
+  echo Helper::options()->title();
+  echo "\" />
+  <meta name=\"twitter:description\" content=\"".$description."\" />
+  <meta name=\"twitter:card\" content=\"summary_large_image\" />
+  <meta name=\"twitter:image\" content=\"".$img."\" />\n";
  }
 }
 

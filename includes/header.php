@@ -23,18 +23,19 @@ tcs();
             'author'    =>  _t('%s 发布的文章')
         ), '', ' - '); ?><?php $this->options->title(); ?></title>
   <script src="<?php echo themeResource('others/js/mdui.min.js'); ?>"></script>
-  <script src="<?php echo themeResource('others/js/nprogress.js'); ?>"></script>
+  <script src="<?php echo themeResource('others/js/nprogress.min.js'); ?>"></script>
   <script src="<?php echo themeResource('others/js/jquery3.3.1.min.js'); ?>"></script>
   <?php if ($this->options->other && in_array('pjax', $this->options->other)): ?><script src="<?php echo themeResource('others/js/jquery.pjax.min.js'); ?>"></script><?php endif; ?>
-  <link rel="stylesheet" href="<?php echo themeResource('others/css/iconfont.css'); ?>?v=<?php echo themeVer('current'); ?>" />
+  <link rel="stylesheet" href="<?php echo themeResource('others/css/iconfont.min.css'); ?>" />
   <link rel="stylesheet" href="<?php echo themeResource('others/css/mdui.min.css'); ?>" />
-  <link rel="stylesheet" href="<?php echo themeResource('others/css/nprogress.css'); ?>" />
-  <link rel="stylesheet" href="<?php echo themeResource('others/css/castle.min.css'); ?>?v=<?php echo themeVer('current'); ?>" />
+  <link rel="stylesheet" href="<?php echo themeResource('others/css/nprogress.min.css'); ?>" />
+  <link rel="stylesheet" href="<?php echo themeResource('others/css/castle.min.css'); ?>" />
   <link rel="stylesheet" href="<?php echo themeResource('others/css/fancybox.min.css'); ?>" />
   <link rel="icon" type="image/x-icon" href="<?php echo siteHeadimg('ico'); ?>" id="Icon-title">
   <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+<?php Castle::exportHead($this); ?>
 <?php $this->need('includes/style.php')?>
-  <?php $this->header('generator=&pingback=&xmlrpc=&wlw=&commentReply='); ?>
+  <?php $this->header('generator=&pingback=&xmlrpc=&wlw=&commentReply=&description='); ?>
   <script>var bgmURL = "<?php $this->options->siteUrl(); ?>?action=bangumi&bgmID=:id&auth=:auth";</script>
  </head>
  
