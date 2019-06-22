@@ -284,6 +284,9 @@ function themeConfig($form) {
   array('copy', 'pjax', 'gotop', 'night'), _t('其他设置'));
   $form->addInput($other->multiMode());
   
+  $totc = new Typecho_Widget_Helper_Form_Element_Text('totc', NULL, NULL, _t('Chrome地址栏颜色'), _t('Chrome地址栏颜色代码（十六进制），不填则不显示'));
+  $form->addInput($totc);
+  
   $sticky = new Typecho_Widget_Helper_Form_Element_Text('sticky', NULL, NULL, _t('置顶文章'), _t('置顶的文章cid，按照排序输入, 请以半角逗号或空格分隔'));
   $form->addInput($sticky);
   
