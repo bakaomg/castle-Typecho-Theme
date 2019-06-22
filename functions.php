@@ -1,14 +1,14 @@
 <?php
 /**
  * Functions
- * Version 0.3.1
+ * Version 0.3.2
  * Author ohmyga( https://ohmyga.cn/ )
  * 2019/06/01
  **/
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 define("THEME_NAME", "Castle");
-define("CASTLE_VERSION", "0.3.1");
+define("CASTLE_VERSION", "0.3.2");
 
 require_once("libs/setting.php");
 require_once("libs/owo.php");
