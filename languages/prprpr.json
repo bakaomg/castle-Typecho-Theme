@@ -31,7 +31,8 @@
   "commentAllNumber": "咸鱼总数",
   "home": "首页",
   "pageAllNumber": "页面总数",
-  "postAllNumber": "水文总数"
+  "postAllNumber": "水文总数",
+  "time": "Y 年 n 月"
  },
  "post": {
   "categories": "水文分类",

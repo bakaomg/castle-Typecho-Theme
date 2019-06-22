@@ -18,9 +18,9 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 	 <?php $PostType = $this->fields->PostType;
      if($PostType == "nopic"){ ?>
 	 <div class="mdui-card moe-card moe-card-day moe-card-tr">
-	  <div class="moe-card-day-icon moe-headimg-xz"><i class="mdui-icon material-icons"><?php $Dicon = PSetting('Dicon'); if(!empty($Dicon)) { echo PSetting('Dicon'); }else{ echo 'message'; } ?></i></div>
+	  <div class="moe-card-day-icon moe-headimg-xz"><i class="mdui-icon material-icons"><?php $Dicon = PSetting($this, 'Dicon'); if(!empty($Dicon)) { echo PSetting($this, 'Dicon'); }else{ echo 'message'; } ?></i></div>
 	  <h2 class="moe-day-title"><a href="<?php $this->permalink() ?>" title="<?php echo sprintf(lang('archive', 'FloatingTitle'), $this->title); ?>"><?php $this->title() ?></a></h2>
-	  <span class="moe-day-d"><?php $this->excerpt(100); ?></span>
+	  <span class="moe-day-d"><?php if($this->fields->des){ $this->fields->des(); }else{ $this->excerpt(100); } ?></span>
 	  <div class="mdui-divider"></div>
 	  <div class="moe-day-info">
 	   <i class="mdui-icon material-icons moe-author-icon">account_circle</i>
@@ -36,7 +36,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 	  <div class="moe-day2">
 	   <i class="mdui-icon material-icons">autorenew</i>
 	   <span class="moe-body">
-	    <span class="moe-t"><?php $Dtitle = PSetting('Dtitle'); if(!empty($Dtitle)) { echo PSetting('Dtitle'); }else{ $this->title(); } ?>（<a href="<?php $this->permalink() ?>"><?php echo lang('archive', 'LinkDynamic'); ?></a>）</span>
+	    <span class="moe-t"><?php $Dtitle = PSetting($this, 'Dtitle'); if(!empty($Dtitle)) { echo PSetting($this, 'Dtitle'); }else{ $this->title(); } ?>（<a href="<?php $this->permalink() ?>"><?php echo lang('archive', 'LinkDynamic'); ?></a>）</span>
 	    <span class="moe-info"><?php $this->date(lang('archive', 'time')); ?> • <?php echo sprintf(lang('archive', 'commentDynamic'), $this->commentsNum); ?> • <?php echo sprintf(lang('archive', 'viewDynamic'), PostView($this)); ?></span>
 	   </span>
 	  </div>
@@ -61,7 +61,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 	  <div class="mdui-card-actions">
 	   <div class="moe-post-margin"></div>
 	   <span class="moe-post-text">
-	    <?php $this->excerpt(100); ?>
+	    <?php if($this->fields->des){ $this->fields->des(); }else{ $this->excerpt(100); } ?>
 	   </span>
 	   <div class="moe-post-margin"></div>
 	  </div>

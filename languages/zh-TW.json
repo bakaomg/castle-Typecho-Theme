@@ -31,7 +31,8 @@
   "commentAllNumber": "評論總數",
   "home": "首頁",
   "pageAllNumber": "頁面總數",
-  "postAllNumber": "文章總數"
+  "postAllNumber": "文章總數",
+  "time": "Y 年 n 月"
  },
  "post": {
   "categories": "文章分類",

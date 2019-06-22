@@ -1,20 +1,23 @@
 <?php
 /**
  * Functions
- * Version 0.3.0
+ * Version 0.3.1
  * Author ohmyga( https://ohmyga.cn/ )
  * 2019/06/01
  **/
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 define("THEME_NAME", "Castle");
-define("CASTLE_VERSION", "0.3.0");
+define("CASTLE_VERSION", "0.3.1");
 
 require_once("libs/setting.php");
 require_once("libs/owo.php");
 
 //错误是什么？
 //error_reporting(0);
+
+//设置时区
+date_default_timezone_set("Asia/Shanghai");
 
 /* 文章or页面类型 */
 function themeFields($layout) {
@@ -289,7 +292,32 @@ function themeResource($content) {
  }elseif ($setting == 'jsdelivr') {
   $output = 'https://cdn.jsdelivr.net/gh/ohmyga233/castle-Typecho-Theme@'.themeVer('current').'/'.$content;
  }elseif ($setting == 'cdn') {
-  $output = adSetting('resource', 'url').'/'.$content;
+  $output = adSetting('resource', 'url').$content;
+ }
+
+ return $output;
+}
+
+/* 代码高亮静态文件源（Css */
+function highlightResource() {
+ $setting = Helper::options()->themeResource;
+ $hls = Helper::options()->hls;
+ 
+ if ($setting == 'local') {
+  $hltd = Helper::options()->themeFile(getTheme(), "others/css/highlight/default.min.css");
+  if (file_exists($hltd)) {
+   if ($hls == 'default.min.css') {
+    $output = Helper::options()->themeUrl.'/others/css/highlight/default.min.css';
+   }elseif ($hls == 'jsdelivr') {
+    $output = 'https://cdn.jsdelivr.net/gh/ohmyga233/castle-Typecho-Theme@'.themeVer('current').'/others/css/highlight/default.min.css';
+   }else{
+    $output = Helper::options()->themeUrl.'/others/css/highlight/'.$hls;
+   }
+  }else{
+   $output = 'https://cdn.jsdelivr.net/gh/ohmyga233/castle-Typecho-Theme@'.themeVer('current').'/others/css/highlight/default.min.css';
+  }
+ }elseif ($setting == 'jsdelivr') {
+  $output = 'https://cdn.jsdelivr.net/gh/ohmyga233/castle-Typecho-Theme@'.themeVer('current').'/others/css/highlight/default.min.css';
  }
 
  return $output;
@@ -510,7 +538,7 @@ function DrawerMenu() {
       <i class="mdui-icon material-icons mdui-list-item-icon mdui-collapse-item-arrow">keyboard_arrow_down</i>
      </div>
      <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">';
-	  Typecho_Widget::widget('Widget_Contents_Post_Date', 'type=month&format=F Y')->parse('<a href="{permalink}" class="mdui-list-item mdui-ripple" mdui-drawer-close>{date}</a>');
+	  Typecho_Widget::widget('Widget_Contents_Post_Date', 'type=month&format='.lang('sidebar', 'time').'')->parse('<a href="{permalink}" class="mdui-list-item mdui-ripple" mdui-drawer-close>{date} &nbsp; <span class="moe-cl-a">{count}</span></a>');
 	echo '</ul>
     </li>';
    }elseif ($i['type'] == '2') {
@@ -712,6 +740,9 @@ class Castle {
     $description = Typecho_Common::subStr(strip_tags($moe->excerpt), 0, 100, "...");
    }
    $type='article';
+  }else{
+   $description = Helper::options()->description;
+   $type='archive';
   }
   $wzimg = $moe->fields->wzimg;
   if(!empty($wzimg)){

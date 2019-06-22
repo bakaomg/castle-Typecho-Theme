@@ -36,7 +36,11 @@ class Smile {
  }
 
  public static function getOwO() {
-  $getJson =file_get_contents(Helper::options()->siteUrl.'usr/themes/'.getTheme().'/libs/owo.json');
+  if (get_headers(Helper::options()->siteUrl.'usr/themes/'.getTheme().'/libs/owo.json',1)[0] == 'HTTP/1.1 200 OK') {
+   $getJson =file_get_contents(Helper::options()->siteUrl.'usr/themes/'.getTheme().'/libs/owo.json');
+  }else{
+   $getJson =file_get_contents(Helper::options()->themeFile(getTheme(), "libs/owo.json"));
+  }
   $owoArray = json_decode($getJson, true);
   $owoName = array_keys($owoArray);
   for ($i=0; $i<count($owoName); $i++) {
@@ -86,7 +90,7 @@ class Smile {
  }
  
  public static function randIcon() {
-  $randNum = rand(0,11);
+  $randNum = rand(0,10);
   $iconName = array('tag_faces',
    'face',
    'favorite',
@@ -97,8 +101,7 @@ class Smile {
    'sentiment_very_dissatisfied',
    'sentiment_very_satisfied',
    'sentiment_dissatisfied',
-   'sentiment_neutral',
-   'OωO');
+   'sentiment_neutral');
    $output = $iconName[$randNum];
   return $output;
  }

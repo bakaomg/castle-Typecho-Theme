@@ -31,6 +31,7 @@ tcs();
   <link rel="stylesheet" href="<?php echo themeResource('others/css/nprogress.min.css'); ?>" />
   <link rel="stylesheet" href="<?php echo themeResource('others/css/castle.min.css'); ?>" />
   <link rel="stylesheet" href="<?php echo themeResource('others/css/fancybox.min.css'); ?>" />
+  <link rel="stylesheet" href="<?php echo highlightResource(); ?>">
   <link rel="icon" type="image/x-icon" href="<?php echo siteHeadimg('ico'); ?>" id="Icon-title">
   <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
 <?php Castle::exportHead($this); ?>
@@ -42,7 +43,7 @@ tcs();
  <body class="mdui-theme-primary-<?php echo $ThemeColor; ?> mdui-theme-accent-<?php echo $AccentColor; ?> mdui-appbar-with-toolbar">
  <div class="moe-bg" style="background-color: #EEEEEE;"></div>
  <div class="moe-bg-after"></div>
-  <header class="mdui-appbar mdui-appbar-fixed moe-head">
+  <header class="mdui-appbar mdui-appbar-fixed moe-head<?php if ($this->options->other && in_array('toolbar', $this->options->other)){ echo ' mdui-appbar-scroll-hide'; } ?>">
    <div class="mdui-toolbar">
     <a class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: 'true', overlay: 'true'}"><i class="mdui-icon material-icons">menu</i></a>
     <a href="<?php $this->options->siteUrl(); ?>" class="mdui-typo-title"><?php $this->options->title(); ?></a>

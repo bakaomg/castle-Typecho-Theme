@@ -170,6 +170,20 @@ function themeConfig($form) {
   _t('主题整体颜色'));
   $form->addInput($tcs->multiMode());
   
+  $hltd = Helper::options()->themeFile(getTheme(), "others/css/highlight/default.min.css");
+  if (file_exists($hltd)) {
+   $hlts = array_map('basename', glob(dirname(__FILE__) . '/../others/css/highlight/*.css'));
+   $hlts = array_combine($hlts, $hlts);
+   $texts = '';
+  }else{
+   $hlts = array('jsdelivr' => '默认');
+   $texts = ' - <small style="color: red;">找不到 \'others/css/highlight/default.min.css\' 故将使用 JSdelivr 上的默认样式</small>';
+  }
+  $hls = new Typecho_Widget_Helper_Form_Element_Select('hls', $hlts, 'default.min.css', 
+  _t('代码高亮样式'),
+  _t('代码高亮皮肤样式 (请参考文档)'.$texts));
+  $form->addInput($hls->multiMode());
+  
   $cardt = new Typecho_Widget_Helper_Form_Element_Select('cardt',array(
     '0' => '不透明',
 	'10' => '10%',
@@ -180,6 +194,17 @@ function themeConfig($form) {
   _t('卡片透明度'),
   _t('全部卡片透明度'));
   $form->addInput($cardt->multiMode());
+  
+  $ftt = new Typecho_Widget_Helper_Form_Element_Select('ftt',array(
+    '0' => '不透明',
+	'10' => '10%',
+	'20' => '20%',
+	'30' => '30%',
+  ),
+  '0',
+  _t('底部透明度'),
+  _t('底部的透明度'));
+  $form->addInput($ftt->multiMode());
   
   $themeResource = new Typecho_Widget_Helper_Form_Element_Select('themeResource',array(
     'local' => '本地',
@@ -251,6 +276,7 @@ function themeConfig($form) {
 	'copy' => _t('复制内容提示'),
 	'pjax' => _t('启用PJAX无刷新'),
 	'gotop' => _t('右下返回顶部按钮'),
+	'toolbar' => _t('向下滑动顶栏自动收缩'),
 	'title' => _t('失去/恢复焦点标题变化'),
 	'night' => _t('显示夜间模式按钮(抽屉顶部)'),
 	'html' => _t('启用HTML压缩 (代码来自<a href="https://www.linpx.com/p/pinghsu-subject-integration-code-compression.html" target="_blank">LiNPX</A>，可能有部分插件不兼容)')
