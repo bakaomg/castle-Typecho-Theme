@@ -62,26 +62,8 @@ function themeConfig($form) {
 }
   echo '<style>textarea{ height: 180px; width: 100%;}</style>';
   echo '<link rel="stylesheet" href="'.themeResource('others/css/setting.min.css').'" />';
-  echo '<script src="'.themeResource('others/js/jquery3.3.1.min.js').'"></script>
-  <script>
-  $.ajax({
-   type: "GET",
-   url: "'.themeUpdate('ajaxURL').'",
-   beforeSend: function(xhr) {
-    $(\'#newVer\').html(\'正在获取新版本中...\');
-    $(\'#acGet\').html(\'正在获取公告中...\');
-   },
-   success: function(data) {
-    $(\'#newVer\').html(data.message);
-	$(\'#acGet\').html(data.announcement);
-   },
-   error: function(xhr, textStatus, errorThrown) {
-    $(\'#newVer\').html(\'新版本获取出错\');
-    $(\'#acGet\').html(\'公告获取出错\');
-   }
-  });
-  </script>';
-  echo '<div class="moe-panel">
+  echo '<script src="'.themeResource('others/js/jquery3.3.1.min.js').'"></script><script>var URLS= "http://api.ohmyga.cc/update/?data='.base64_encode(json_encode(array('url'=>$_SERVER['HTTP_HOST'],'name'=>THEME_NAME,'version'=>CASTLE_VERSION))).'";</script>';
+  echo '<div class="moe-panel" id="panel">
    <span class="moe-title">Castle 设置面板</span>
    <span class="moe-current-ver">本地版本: '.themeVer('current').'</span>
    <span class="moe-new-ver">云端版本: <span id="newVer">正在获取新版本中...</span></span>
@@ -91,7 +73,7 @@ function themeConfig($form) {
 	<input type="submit" name="type" class="btn btn-s" value="还原模板数据" />&nbsp;&nbsp;
 	<input type="submit" name="type" class="btn btn-s" value="删除备份数据" />
    </form>
-   </div>';
+   </div><script src="'.themeResource('others/js/set.min.js').'"></script>';
    
   $filenum = 0;
   $openfile = glob(Helper::options()->themeFile(getTheme(), "languages/*.json"));
@@ -170,9 +152,9 @@ function themeConfig($form) {
   _t('主题整体颜色'));
   $form->addInput($tcs->multiMode());
   
-  $hltd = Helper::options()->themeFile(getTheme(), "others/css/highlight/default.min.css");
+  $hltd = Helper::options()->themeFile(getTheme(), "libs/highlight/default.min.css");
   if (file_exists($hltd)) {
-   $hlts = array_map('basename', glob(dirname(__FILE__) . '/../others/css/highlight/*.css'));
+   $hlts = array_map('basename', glob(dirname(__FILE__) . '/../libs/highlight/*.css'));
    $hlts = array_combine($hlts, $hlts);
    $texts = '';
   }else{
@@ -283,9 +265,6 @@ function themeConfig($form) {
   ),
   array('copy', 'pjax', 'gotop', 'night'), _t('其他设置'));
   $form->addInput($other->multiMode());
-  
-  $totc = new Typecho_Widget_Helper_Form_Element_Text('totc', NULL, NULL, _t('Chrome地址栏颜色'), _t('Chrome地址栏颜色代码（十六进制），不填则不显示'));
-  $form->addInput($totc);
   
   $sticky = new Typecho_Widget_Helper_Form_Element_Text('sticky', NULL, NULL, _t('置顶文章'), _t('置顶的文章cid，按照排序输入, 请以半角逗号或空格分隔'));
   $form->addInput($sticky);

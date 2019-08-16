@@ -1,14 +1,14 @@
 <?php
 /**
  * Functions
- * Version 0.3.2
+ * Version 0.3.3
  * Author ohmyga( https://ohmyga.cn/ )
- * 2019/06/01
+ * 2019/08/16
  **/
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 define("THEME_NAME", "Castle");
-define("CASTLE_VERSION", "0.3.2");
+define("CASTLE_VERSION", "0.3.3");
 
 require_once("libs/setting.php");
 require_once("libs/owo.php");
@@ -233,43 +233,10 @@ function getTheme() {
  return $themeName;
 }
 
-/* 主题检查更新链接 */
-function updateURL() {
- if (extension_loaded('openssl')) {
-  $url = 'https://api.ohmyga.cc/';
- }else{
-  $url = 'http://nossl.api.ohmyga.cc/';
- }
- return $url;
-}
-
-/* 主题检查更新&获取公告 */
-function themeUpdate($type) {
- if ($type == 'GetNewVer') {
-  $get_new_ver = file_get_contents(updateURL().'themes/update/?site='.$_SERVER['HTTP_HOST'].'&v='.CASTLE_VERSION.'&n='.THEME_NAME);
-  $array = json_decode($get_new_ver, true);
-  $output = $array['version'];
- }elseif ($type == 'check') {
-  $get_new_ver = file_get_contents(updateURL().'themes/update/?site='.$_SERVER['HTTP_HOST'].'&v='.CASTLE_VERSION.'&n='.THEME_NAME);
-  $array = json_decode($get_new_ver, true);
-  $output = $array['message'];
- }elseif ($type == 'announcement') {
-  $get_new_ver = file_get_contents(updateURL().'themes/update/?site='.$_SERVER['HTTP_HOST'].'&v='.CASTLE_VERSION.'&n='.THEME_NAME);
-  $array = json_decode($get_new_ver, true);
-  $output = $array['announcement'];
- }elseif($type == 'ajaxURL') {
-  $output = updateURL().'themes/update/?site='.$_SERVER['HTTP_HOST'].'&v='.CASTLE_VERSION.'&n='.THEME_NAME;
- }
- 
- return $output;
-}
-
 /* 主题版本 */
 function themeVer($type) {
  if ($type == 'current') {
   $ver = CASTLE_VERSION;
- }elseif ($type == 'new'){
-  $ver =  themeUpdate('GetNewVer');
  }
  return $ver;
 }
@@ -303,21 +270,17 @@ function highlightResource() {
  $setting = Helper::options()->themeResource;
  $hls = Helper::options()->hls;
  
- if ($setting == 'local') {
-  $hltd = Helper::options()->themeFile(getTheme(), "others/css/highlight/default.min.css");
-  if (file_exists($hltd)) {
-   if ($hls == 'default.min.css') {
-    $output = Helper::options()->themeUrl.'/others/css/highlight/default.min.css';
-   }elseif ($hls == 'jsdelivr') {
-    $output = 'https://cdn.jsdelivr.net/gh/ohmyga233/castle-Typecho-Theme@'.themeVer('current').'/others/css/highlight/default.min.css';
-   }else{
-    $output = Helper::options()->themeUrl.'/others/css/highlight/'.$hls;
-   }
+ $hltd = Helper::options()->themeFile(getTheme(), "libs/highlight/default.min.css");
+ if (file_exists($hltd)) {
+  if ($hls == 'default.min.css') {
+   $output = Helper::options()->themeUrl.'/libs/highlight/default.min.css';
+  }elseif ($hls == 'jsdelivr') {
+   $output = 'https://cdn.jsdelivr.net/gh/ohmyga233/castle-Typecho-Theme@'.themeVer('current').'/libs/highlight/default.min.css';
   }else{
-   $output = 'https://cdn.jsdelivr.net/gh/ohmyga233/castle-Typecho-Theme@'.themeVer('current').'/others/css/highlight/default.min.css';
+   $output = Helper::options()->themeUrl.'/others/css/highlight/'.$hls;
   }
- }elseif ($setting == 'jsdelivr') {
-  $output = 'https://cdn.jsdelivr.net/gh/ohmyga233/castle-Typecho-Theme@'.themeVer('current').'/others/css/highlight/default.min.css';
+ }else{
+  $output = 'https://cdn.jsdelivr.net/gh/ohmyga233/castle-Typecho-Theme@'.themeVer('current').'/libs/highlight/default.min.css';
  }
 
  return $output;

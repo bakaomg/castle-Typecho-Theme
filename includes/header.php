@@ -21,8 +21,7 @@ tcs();
             'search'    =>  _t('包含关键字 %s 的文章'),
             'tag'       =>  _t('标签 %s 下的文章'),
             'author'    =>  _t('%s 发布的文章')
-        ), '', ' - '); ?><?php $this->options->title(); ?></title><?php if ($this->options->totc): ?>
-  <meta name="theme-color" content="<?php $this->options->totc(); ?>"><?php endif; ?>
+        ), '', ' - '); ?><?php $this->options->title(); ?></title>
   <script src="<?php echo themeResource('others/js/mdui.min.js'); ?>"></script>
   <script src="<?php echo themeResource('others/js/nprogress.min.js'); ?>"></script>
   <script src="<?php echo themeResource('others/js/jquery3.3.1.min.js'); ?>"></script>
