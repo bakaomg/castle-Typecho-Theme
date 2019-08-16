@@ -12,5 +12,5 @@ MD风格单栏主题
 ## 使用到的开源项目
 详见 [这里](https://castle.ohmyga.cc/#/copy?id=%e4%bd%bf%e7%94%a8%e7%9a%84%e5%bc%80%e6%ba%90%e9%a1%b9%e7%9b%ae)
 ## 链接
-作者博客 https://ohmyga.cn/
+作者博客 https://ohmyga.cn/<br>
 主题文档 https://castle.ohmyga.cc/ (快写完惹)
