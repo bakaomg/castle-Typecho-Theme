@@ -14,7 +14,7 @@ require_once("libs/setting.php");
 require_once("libs/owo.php");
 
 //错误是什么？
-//error_reporting(0);
+error_reporting(0);
 
 //设置时区
 date_default_timezone_set("Asia/Shanghai");
