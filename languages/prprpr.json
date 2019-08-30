@@ -133,6 +133,9 @@
   "clickThis": "点我进行PY~",
   "Slink": "PY申请"
  },
+ "short": {
+  "del": "你知道的太多了"
+ },
  "tags": {
   "tagAllNum": "全部共 %s 个标签o(*￣▽￣*)o",
   "title": "标签云"

@@ -62,7 +62,7 @@ function themeConfig($form) {
 }
   echo '<style>textarea{ height: 180px; width: 100%;}</style>';
   echo '<link rel="stylesheet" href="'.themeResource('others/css/setting.min.css').'" />';
-  echo '<script src="'.themeResource('others/js/jquery3.3.1.min.js').'"></script><script>var URLS= "http://api.ohmyga.cc/update/?data='.base64_encode(json_encode(array('url'=>$_SERVER['HTTP_HOST'],'name'=>THEME_NAME,'version'=>CASTLE_VERSION))).'";</script>';
+  echo '<script src="'.themeResource('others/js/jquery3.3.1.min.js').'"></script><script>var URLS= "https://api.ohmyga.net/updata/?data='.base64_encode(json_encode(array('url'=>$_SERVER['HTTP_HOST'],'name'=>THEME_NAME,'version'=>CASTLE_VERSION))).'";</script>';
   echo '<div class="moe-panel" id="panel">
    <span class="moe-title">Castle 设置面板</span>
    <span class="moe-current-ver">本地版本: '.themeVer('current').'</span>
@@ -73,7 +73,7 @@ function themeConfig($form) {
 	<input type="submit" name="type" class="btn btn-s" value="还原模板数据" />&nbsp;&nbsp;
 	<input type="submit" name="type" class="btn btn-s" value="删除备份数据" />
    </form>
-   </div><script src="'.themeResource('others/js/set.min.js').'"></script>';
+   </div><script src="'.themeResource('others/js/setting.min.js').'"></script>';
    
   $filenum = 0;
   $openfile = glob(Helper::options()->themeFile(getTheme(), "languages/*.json"));

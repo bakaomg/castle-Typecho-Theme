@@ -133,6 +133,9 @@
   "clickThis": "点此申请友链",
   "Slink": "友链申请"
  },
+ "short": {
+  "del": "你知道的太多了"
+ },
  "tags": {
   "tagAllNum": "总共有 %s 个标签",
   "title": "标签云"

@@ -28,7 +28,7 @@ function threadedComments($comments, $options) {
 	 <div class="moe-comments-time"><?php $comments->date(lang('comment', 'time')); ?></div>
 	 <div class="moe-reply"><?php $comments->reply('<button class="mdui-btn">'.lang('comment', 'reply').'</button>'); ?></div>
 	 <div class="moe-comments-textBox">
-	  <?php echo Castle::parseBiaoQing($comments->content); ?>
+	  <?php echo Castle::commentsReply($comments); echo preg_replace('#</?[p][^>]*>#','', Castle::parseAll($comments->content)); ?>
 	 </div>
 	</div>
    </li>

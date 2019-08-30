@@ -1,14 +1,14 @@
 <?php
 /**
  * Functions
- * Version 0.3.3
+ * Version 0.3.5
  * Author ohmyga( https://ohmyga.cn/ )
- * 2019/08/16
+ * 2019/08/30
  **/
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 define("THEME_NAME", "Castle");
-define("CASTLE_VERSION", "0.3.3");
+define("CASTLE_VERSION", "0.3.5");
 
 require_once("libs/setting.php");
 require_once("libs/owo.php");
@@ -67,6 +67,7 @@ function themeInit($comment) {
  Helper::options()->commentsPageSize = 5; //评论每页显示条数
  Helper::options()->commentsPageDisplay = 'first'; //默认显示第一页
  Helper::options()->commentsOrder = 'DESC'; //将较新的评论展示在第一页
+ Helper::options()->commentsMaxNestingLevels = 9999; //最大回复层数
 
  /* AJAX获取评论者Gravatar头像 */
  if(@$_GET["action"] == 'ajax_avatar_get' && 'GET' == $_SERVER['REQUEST_METHOD'] ) {
@@ -644,7 +645,7 @@ class Castle {
 }
 
  static public function parseAll($content){
-  $new  = self::parseBiaoQing(self::parseFancyBox(self::parseRuby(self::parseTable($content))));
+  $new  = self::parseBiaoQing(self::parseFancyBox(self::parseRuby(self::parseDel((self::parseTable($content))))));
   return $new;
  }
 
@@ -683,12 +684,33 @@ class Castle {
   $new=preg_replace($reg,$rp,$string);
   return $new;
  }
+
+ static public function parseDel($string){
+  $reg='/\[del\](.*?)\[\/del\]/s';
+  $rp='<span class="moe-del" title="'.lang('short', 'del').'">${1}</span>';
+  $new=preg_replace($reg,$rp,$string);
+  return $new;
+ }
  
  static public function parseTable($content){
   $reg = '/<table>(.*?)<\/table>/s';
   $rp = '<div class="mdui-table-fluid"><table class="mdui-table mdui-table-hoverable">${1}</table></div>';
   $new = preg_replace($reg,$rp,$content);
   return $new;
+ }
+
+ static public function commentsReply($comment) {
+  $db = Typecho_Db::get();
+  $parentID = $db->fetchRow($db->select('parent')->from('table.comments')->where('coid = ?', $comment->coid));
+  $parentID=$parentID['parent'];
+  if($parentID=='0'){
+   return '';
+  }else {
+   $author=$db->fetchRow($db->select()->from('table.comments')->where('coid = ?', $parentID));
+   if (!array_key_exists('author', $author) || empty($author['author']))
+   $author['author'] = '已删除的评论';
+   return '<span class="moe-comments-reply-name">@'.$author['author'].'</span>';
+  }
  }
  
  public static function exportHead($moe){

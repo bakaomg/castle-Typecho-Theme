@@ -133,6 +133,9 @@
   "clickThis": "點此申請友情鏈接",
   "Slink": "友情鏈接申請"
  },
+ "short": {
+  "del": "隱藏的内容"
+ },
  "tags": {
   "tagAllNum": "總共有 %s 個標簽",
   "title": "全部標簽"
