@@ -14,3 +14,6 @@ MD风格单栏主题
 ## 链接
 作者博客 https://ohmyga.cn/<br>
 主题文档 https://castle.ohmyga.cc/ (快写完惹)
+## 问号
+我寻思这年头小学没毕业的那么多<br>
+已经拉黑的站点: https://www.onlaly.com/ [删除版权]
