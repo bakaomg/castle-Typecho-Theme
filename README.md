@@ -4,7 +4,7 @@ MD风格单栏主题
 1. Star本项目（<br>
 2. 前往 [Releases](https://github.com/ohmyga233/castle-Typecho-Theme/releases) 下载主题<br>
 3. 将主题上传至 `/usr/themes` 目录并解压（记得重命名为 `Castle` 哟~<br>
-4. 前往 Typecho 后台启用主题即可食用ε=ε=ε=(~￣▽￣)~
+4. 前往 Typecho 后台启用主题即可食用ε=ε=ε=(\~￣▽￣)\~
 ## 开源协议
 项目使用 GPL V3 进行许可。
 
