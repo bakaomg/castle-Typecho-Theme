@@ -13,4 +13,5 @@ MD风格单栏主题
 主题文档 https://castle.ohmyga.cc/ (快写完惹)
 
 ## 注意
+**并没有相关的交流群，有问题请直接发 [Issues](https://github.com/ohmyga233/castle-Typecho-Theme/issues)！**
 **仓库已经清空，准备开始重构工作，如需下载使用请到 [Releases](https://github.com/ohmyga233/castle-Typecho-Theme/releases) 下载（**
