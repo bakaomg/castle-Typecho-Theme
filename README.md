@@ -26,13 +26,9 @@ $ git clone https://github.com/ohmyga233/castle-Typecho-Theme
 
 </details>
 
-## 开源协议
-项目使用 GPL V3 进行许可。
-
-## 链接
-作者博客 https://ohmyga.cn/<br>
-主题文档 https://castle.ohmyga.cc/ (快写完惹)
-
-## 注意
+## 使用注意
 **并没有相关的交流群，有问题请直接发 [Issues](https://github.com/ohmyga233/castle-Typecho-Theme/issues)！**<br>
-**仓库已经清空，准备开始重构工作，如需下载使用请到 [Releases](https://github.com/ohmyga233/castle-Typecho-Theme/releases) 下载（**
+**仓库已经清空，重构工作已经完成但还未发布，如需下载使用请到 [Releases](https://github.com/ohmyga233/castle-Typecho-Theme/releases) 下载旧版（**
+
+## 版权信息
+Copyright &copy; 2019-2020 [ohmyga](https://github.com/ohmyga233), under GPL_V3 License
