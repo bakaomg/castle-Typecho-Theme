@@ -31,4 +31,4 @@ $ git clone https://github.com/ohmyga233/castle-Typecho-Theme
 **仓库已经清空，重构工作已经完成但还未发布，如需下载使用请到 [Releases](https://github.com/ohmyga233/castle-Typecho-Theme/releases) 下载旧版（**
 
 ## 版权信息
-Copyright &copy; 2019-2020 [ohmyga](https://github.com/ohmyga233), under GPL-3.0 License
+Copyright &copy; 2018-2020 [ohmyga](https://github.com/ohmyga233), under GPL-3.0 License
