@@ -3,8 +3,12 @@
 </p>
 <hr>
 
+---
+
+> **请下载 [Releases](https://github.com/ohmyga233/castle-Typecho-Theme/releases) 页面的最新发行包，使用时如遇问题请查阅 [文档](https://castle.baka.show/) ，文档中有的问题将一律不给予解答；禁止删除主题版权信息。**
+
 ## 开始使用
-1. Star本项目（<br>
+1. Star本项目（<br>i
 2. 前往 [Releases](https://github.com/ohmyga233/castle-Typecho-Theme/releases) 下载主题<br>
 3. 将主题上传至 `/usr/themes` 目录并解压（记得重命名为 `Castle` 哟~<br>
 4. 前往 Typecho 后台启用主题即可食用ε=ε=ε=(\~￣▽￣)\~
