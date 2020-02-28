@@ -14,7 +14,7 @@
 4. 登录到 Typecho 的后台，在 控制台 -> 外观 启用主题即可食用 ε=ε=ε=(\~￣▽￣)\~
 5. 如有问题请先查阅 [文档](https://castle.baka.show/) ，如文档没有列出再提 [Issues](https://github.com/ohmyga233/castle-Typecho-Theme/issues)
 
-<details><summary>使用开发版</summary>
+<details><summary>使用开发版</summary><br>
 
 直接下载仓库，或者使用 git 命令行进行克隆
 ```git
