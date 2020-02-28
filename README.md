@@ -8,11 +8,11 @@
 <br>**禁止删除主题版权信息。**
 
 ## 开始使用
-1. Star 本项目
-2. 在 [Releases](https://github.com/ohmyga233/castle-Typecho-Theme/releases) 页面下载最新发行包
-3. 将主题上传到 `/usr/themes/` 目录下并解压，如果主题文件夹名为 `castle-Typecho-Theme` 则需改名为 `Castle`
-4. 登录到 Typecho 的后台，在 控制台 -> 外观 启用主题即可食用 ε=ε=ε=(\~￣▽￣)\~
-5. 如有问题请先查阅 [文档](https://castle.baka.show/) ，如文档没有列出再提 [Issues](https://github.com/ohmyga233/castle-Typecho-Theme/issues)
+1. Star 本项目；
+2. 在 [Releases](https://github.com/ohmyga233/castle-Typecho-Theme/releases) 页面下载最新发行包；
+3. 将主题上传到 `/usr/themes/` 目录下并解压，如果主题文件夹名为 `castle-Typecho-Theme` 则需改名为 `Castle`；
+4. 登录到 Typecho 的后台，在 控制台 -> 外观 启用主题即可食用 ε=ε=ε=(\~￣▽￣)\~；
+5. 如有问题请先查阅 [文档](https://castle.baka.show/) ，如文档没有列出再提 [Issues](https://github.com/ohmyga233/castle-Typecho-Theme/issues)。
 
 <details><summary>使用开发版</summary><br>
 
