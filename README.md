@@ -1,5 +1,8 @@
-# Castle
-MD风格单栏主题
+<p align="center">
+  <img src="docs/static/img/banner.png">
+</p>
+<hr>
+
 ## 开始使用
 1. Star本项目（<br>
 2. 前往 [Releases](https://github.com/ohmyga233/castle-Typecho-Theme/releases) 下载主题<br>
