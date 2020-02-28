@@ -8,10 +8,23 @@
 <br>**禁止删除主题版权信息。**
 
 ## 开始使用
-1. Star 本项目<br>
-2. 在 [Releases](https://github.com/ohmyga233/castle-Typecho-Theme/releases) 页面下载最新发行包<br>
-3. 将主题上传到 `/usr/themes/` 目录下并解压，如果主题文件夹名为 `castle-Typecho-Theme` 则需改名为 `Castle`<br>
+1. Star 本项目
+2. 在 [Releases](https://github.com/ohmyga233/castle-Typecho-Theme/releases) 页面下载最新发行包
+3. 将主题上传到 `/usr/themes/` 目录下并解压，如果主题文件夹名为 `castle-Typecho-Theme` 则需改名为 `Castle`
 4. 登录到 Typecho 的后台，在 控制台 -> 外观 启用主题即可食用 ε=ε=ε=(\~￣▽￣)\~
+5. 如有问题请先查阅 [文档](https://castle.baka.show/) ，如文档没有列出再提 [Issues](https://github.com/ohmyga233/castle-Typecho-Theme/issues)
+
+<details><summary>使用开发版</summary>
+
+直接下载仓库，或者使用 git 命令行进行克隆
+```git
+$ git clone https://github.com/ohmyga233/castle-Typecho-Theme
+```
+
+> 开发版为实时打包上传版本，不推荐使用，因为可能会存在一些不稳定因素。<br>
+如果你在使用开发版时出现任何问题请在 [issues](https://github.com/ohmyga233/castle-Typecho-Theme/issues) 提出。
+
+</details>
 
 ## 开源协议
 项目使用 GPL V3 进行许可。
