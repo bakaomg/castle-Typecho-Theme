@@ -148,8 +148,8 @@ function themeConfig($form) {
 
     $Component->panel('侧边抽屉工具栏', NULL,
      $Component->checkbox('sidebarToolsBar', '功能开关', NULL,
-      ['login'       =>  '前台登录(没写完，勾选了也是摆设.jpg)',
-       'settingBtn'  =>  '设置面板',
+      ['login'       =>  '前台登录',
+       'settingBtn'  =>  '设置面板(没写完，勾选了也是摆设.jpg)',
        'darkBtn'     =>  '亮色(白天)/暗色(夜间)切换按钮'
       ],
       ['login', 'settingBtn', 'darkBtn']
