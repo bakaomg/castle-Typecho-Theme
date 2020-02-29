@@ -72,7 +72,57 @@ class Castle_Header {
   '<link rel="stylesheet" href="'.Castle_highLight::getFile().'">'."\n  ".
 
   //主题核心 Css
-  '<link rel="stylesheet" href="'.Castle_Libs::resources('static/css/castle.min.css', true).'">'."\n";
+  '<link rel="stylesheet" href="'.Castle_Libs::resources('static/css/castle.min.css', true).'">'."\n  ";
+  
+  if($header->is("index")) {
+   //如果在首页
+   $type = 'website'; //站点类型
+   $description = Helper::options()->description; //站点简介
+  }elseif ($header->is("post") || $header->is("page")) {
+   //如果在文章/独立页面
+   if($header->fields->excerpt && $header->fields->excerpt != ''){
+    //如果自定义字段不为空
+    $description = $header->fields->excerpt;
+   }else{
+    $description = Typecho_Common::subStr(strip_tags($header->excerpt), 0, 100, "...");
+   }
+   $type='article'; //站点类型
+  }else{
+   //如果无法判断
+   $type='archive';
+   $description = Helper::options()->description;
+  }
+
+  $coverSet = Helper::options()->cover;
+  //封面图片
+  if ($header->is("index")) {
+   $cover = (Helper::options()->siteAvatar) ? Helper::options()->siteAvatar : Castle_Libs::resources('static/img/favicon.png');
+  }else if(!empty($coverSet)) {
+   $cover = $coverSet;
+  }else{
+   $cover = Castle_Libs::randCover(false);
+  }
+  
+  echo '<meta name="description" content="'.$description.'" />'."\n  ".
+       '<meta property="og:title" content="'.self::title($header).'" />'."\n  ".
+       '<meta name="author" content="'.$header->author->screenName.'" />'."\n  ".
+       '<meta property="og:site_name" content="'.Helper::options()->title.'" />'."\n  ".
+       '<meta property="og:type" content="'.$type.'" />'."\n  ".
+       '<meta property="og:description" content="'.$description.'" />'."\n  ".
+       '<meta property="og:url" content="'.$header->permalink.'" />'."\n  ".
+       '<meta property="og:image" content="'.$cover.'" />'."\n  ".
+       '<meta property="article:published_time" content="'.date('c', $header->created).'" />'."\n  ".
+       '<meta property="article:modified_time" content="'.date('c', $header->modified).'" />'."\n  ".
+       '<meta name="twitter:title" content="'.self::title($header).'" />'."\n  ".
+       '<meta name="twitter:description" content="'.$description.'" />'."\n  ".
+       '<meta name="twitter:card" content="summary_large_image" />'."\n  ".
+       '<meta name="twitter:image" content="'.$cover.'" />'."\n  ";
+  $header->header('generator=&pingback=&xmlrpc=&wlw=&commentReply=&description=');
+
+  //判断 APlayer 是否启用
+  if (Castle_Libs::hasPlugin('Meting')) {
+   echo "\n  ".'<link rel="stylesheet" href="'.Castle_Libs::resources('static/css/APlayer.min.css', true).'">'."\n";
+  }
  }
 
  /**
