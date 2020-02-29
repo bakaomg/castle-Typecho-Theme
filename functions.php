@@ -7,7 +7,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 //判断 PHP 版本是否达到要求
 if (substr(PHP_VERSION,0,3) < '7.0') {
- echo 'PHP版本必须 >= 7.0';
+ echo '<h2>PHP版本必须 >= 7.0</h2>';
  die();
 }
 
@@ -104,17 +104,16 @@ function themeFields($layout) {
  //对于魔改的后台模板不保证能正常判断
  preg_match('/write-post.php/', $_SERVER['SCRIPT_NAME'], $post);
 
- //咕咕咕咕咕咕咕咕咕咕咕咕咕咕咕咕咕咕咕咕
- /*if(@$post[0] == 'write-post.php') {
+ if(@$post[0] == 'write-post.php') {
   $PostType = new Typecho_Widget_Helper_Form_Element_Select('PostType',
    array(
 	'post'=>'文章(默认)',
 	'nopic'=>'无图',
-	'dynamic'=>'日常'
+	//'dynamic'=>'日常'
    ),
   'post','文章类型','设置发表的文章的类型(仅对文章有效)。');
   $layout->addItem($PostType);
- }*/
+ }
 
  $advancedSettings = new Typecho_Widget_Helper_Form_Element_Textarea('advancedSettings', NULL, NULL,
  '高级设置', '文章/独立页高级设置，如果不懂此有何用请勿填写。');
