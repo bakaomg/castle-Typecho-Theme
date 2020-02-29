@@ -68,6 +68,9 @@ class Castle_Header {
   //主题配色 Css
   '<link rel="stylesheet" href="'.Castle_Libs::resources('static/css/castle.theme.min.css', true).'">'."\n  ".
 
+  //代码高亮
+  '<link rel="stylesheet" href="'.Castle_highLight::getFile().'">'."\n  ".
+
   //主题核心 Css
   '<link rel="stylesheet" href="'.Castle_Libs::resources('static/css/castle.min.css', true).'">'."\n";
  }

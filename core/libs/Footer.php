@@ -35,6 +35,9 @@ class Castle_Footer {
   //Lazyload
   '<script src="'.Castle_Libs::resources('static/js/lazyload.min.js', true).'"></script>'."\n  ".
 
+  //HighLight
+  '<script src="'.Castle_Libs::resources('static/js/highlight.min.js', true).'"></script>'."\n  ".
+
   //主题核心JS
   '<script src="'.Castle_Libs::resources('static/js/castle.min.js', true).'"></script>'."\n";
  }
