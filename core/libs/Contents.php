@@ -17,6 +17,7 @@ class Castle_Contents {
   if ($widget instanceof Widget_Archive) {
    $text = self::parseOwO($text);
    $text = self::parseBaguetteBox($text, $widget->parameter->__get('type') == 'feed');
+   $text = self::parseTable($text);
    $text = self::parseTitle($text);
    $text = self::parseRuby($text);
   }
@@ -90,6 +91,19 @@ class Castle_Contents {
   $img = '<img class="lazyload" alt="'.$match[2].'" src="" data-src="'.$match[1].'">';
 
   return (self::$photoMode) ? $img : $imgHead.$img.$imgFoot;
+ }
+
+ /**
+  * 表格解析
+  *
+  * @param  string $content  文章内容
+  * @return string $new      解析表格后的内容
+  */
+ static public function parseTable($content){
+  $reg = '/<table>(.*?)<\/table>/s';
+  $rp = '<div class="mdui-table-fluid"><table class="mdui-table mdui-table-hoverable">${1}</table></div>';
+  $new = preg_replace($reg,$rp,$content);
+  return $new;
  }
 
  /**
