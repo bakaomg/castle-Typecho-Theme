@@ -6,7 +6,7 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 //不存在的错误
-//error_reporting(0);
+error_reporting(0);
 
 //设置时区 [上海]
 //如果时间显示有误请注解
