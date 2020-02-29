@@ -5,7 +5,7 @@
  * @package custom
  */
 /**
- * Castle Archives
+ * Castle Links
  * Last Update: 2020/02/26
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
