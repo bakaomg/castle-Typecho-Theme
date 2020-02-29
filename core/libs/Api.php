@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle API Class
- * Last Update: 2020/01/26
+ * Last Update: 2020/02/29
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -31,7 +31,9 @@ class Castle_API {
 
    //Info
    'info' => [
-    'siteName' => Helper::options()->title
+    'siteName' => Helper::options()->title,
+    'author' => Castle_Libs::getAdminScreenName(),
+    'description' => Helper::options()->description
    ],
 
    //Castle Version
