@@ -5,6 +5,12 @@
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
+//判断 PHP 版本是否达到要求
+if (substr(PHP_VERSION,0,3) < '7.0') {
+ echo 'PHP版本必须 >= 7.0';
+ die();
+}
+
 //不存在的错误
 error_reporting(0);
 
