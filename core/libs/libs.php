@@ -69,12 +69,12 @@ class Castle_Libs {
    
    case 'external':
     //自定义第三方 API [无附加随机参数]
-    $output = Helper::options()->randCover_Url;
+    $output = Helper::options()->coverExternal;
     break;
 
    case 'externalRand':
     //自定义第三方 API [附加随机参数]
-    $output = Helper::options()->randCover_Url.'?rand='.mt_rand(0,1000);
+    $output = Helper::options()->coverExternal.'?rand='.mt_rand(0,1000);
     break;
    
    default:
