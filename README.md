@@ -26,9 +26,8 @@ $ git clone https://github.com/ohmyga233/castle-Typecho-Theme
 
 </details>
 
-## 使用注意
-**并没有相关的交流群，有问题请直接发 [Issues](https://github.com/ohmyga233/castle-Typecho-Theme/issues)！**<br>
-**仓库已经清空，重构工作已经完成但还未发布，如需下载使用请到 [Releases](https://github.com/ohmyga233/castle-Typecho-Theme/releases) 下载旧版（**
+## 注意事项
+**并没有相关的交流群，有问题请直接发 [Issues](https://github.com/ohmyga233/castle-Typecho-Theme/issues)！**
 
 ## 版权信息
 Copyright &copy; 2018-2020 [ohmyga](https://github.com/ohmyga233), under GPL-3.0 License
