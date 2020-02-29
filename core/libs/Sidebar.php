@@ -30,6 +30,13 @@ class Castle_Sidebar {
     $sidebarMenu[$menuCount]['link'] = str_replace("{siteIndex}", Castle_Libs::index(), $sidebarMenu[$menuCount]['link']);
    }
 
+   //类型为列表
+   if ($sidebarMenu[$menuCount]['type'] == 'list') {
+    for ($i=0; $i<count($sidebarMenu[$menuCount]['content']); $i++) {
+     $sidebarMenu[$menuCount]['content'][$i]['link'] = str_replace("{siteIndex}", Castle_Libs::index(), $sidebarMenu[$menuCount]['content'][$i]['link']);
+    }
+   }
+
    //类型为归档
    if ($sidebarMenu[$menuCount]['type'] == 'archives') {
    //归档

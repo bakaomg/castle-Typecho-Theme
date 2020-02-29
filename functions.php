@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Functions
- * Last Update: 2020/01/25
+ * Last Update: 2020/02/29
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 

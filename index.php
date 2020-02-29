@@ -6,7 +6,7 @@
  * 
  * @package Castle
  * @author ohmyga
- * @version 0.9.0
+ * @version 0.9.1
  * @link https://ohmyga.cn/
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;

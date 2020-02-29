@@ -119,6 +119,12 @@ function themeConfig($form) {
 
    $Component->panel('404 页面', NULL,
     $Component->input('Cover404', '404 页面卡片封面', '留空显示默认封面。', NULL)
+   ).
+
+   $Component->panel('代码高亮', NULL,
+    $Component->radio("highLight", "代码高亮", '代码高亮',
+     Castle_highLight::getHighLightConfig()[0],'default.min.css').
+     Castle_highLight::getHighLightConfig()[1]
    )
   ).
 
@@ -253,6 +259,9 @@ function themeConfig($form) {
  );
 }
 
+/**
+ * 主题配置备份
+ */
 function themeBackup() {
  $db = Typecho_Db::get();
   $sjdq=$db->fetchRow($db->select()->from ('table.options')->where ('name = ?', 'theme:'.Castle_Libs::getTheme().''));
