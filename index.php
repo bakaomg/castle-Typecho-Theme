@@ -51,6 +51,42 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 ?>
    <main id="moe-post-list">
 <?php while($this->next()): ?>
+    <?php
+    $PostType = $this->fields->PostType;
+    if ($PostType == 'nopic') { ?>
+    <div class="mdui-card mdui-hoverable moe-nopic-card">
+     <div class="moe-left-icon">
+      <i class="mdui-icon material-icons">&#xe0c9;</i>
+     </div>
+     
+     <h2 class="moe-nopic-title">
+      <a href="<?php $this->permalink() ?>"><?php $this->sticky(); $this->title() ?></a>
+     </h2>
+
+     <div class="moe-nopic-excerpt">
+      <?php if (!$this->excerpt && !$this->fields->excerpt) {
+        echo $GLOBALS['CastleLang']['index']['excerptEmpty'];
+       } elseif ($this->fields->excerpt) {
+        echo Castle_Contents::parseOwO($this->fields->excerpt);
+       } else {
+        $this->excerpt(100);
+       } ?>
+     </div>
+
+     <div class="mdui-divider"></div>
+
+     <div class="moe-nopic-info">
+      <i class="mdui-icon material-icons moe-author-icon">account_circle</i>
+	    <span><?php $this->author(); ?></span>
+	    <i class="mdui-icon material-icons moe-time-icon">access_time</i>
+	    <span><?php $this->date($GLOBALS['CastleLang']['index']['time']); ?></span>
+	    <i class="mdui-icon material-icons">forum</i>
+	    <span><?php echo sprintf($GLOBALS['CastleLang']['index']['comment'], $this->commentsNum); ?></span>
+     </div>
+    </div>
+
+    <?php }else{ ?>
+
     <div class="mdui-card mdui-hoverable moe-default-card">
      <div class="mdui-card-media">
       <div class="moe-card-cover-image lazyload" data-src="<?php
@@ -88,10 +124,11 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
       <div class="mdui-card-header-title"><?php $this->author(); ?></div>
       <div class="mdui-card-header-subtitle"><?php $this->date($GLOBALS['CastleLang']['index']['time']); ?></div>
       <div class="mdui-card-menu">
-	   <a href="<?php $this->permalink() ?>" class="mdui-btn mdui-text-color-theme"><?php echo $GLOBALS['CastleLang']['index']['viewLink']; ?></a>
-	  </div>
+	     <a href="<?php $this->permalink() ?>" class="mdui-btn mdui-text-color-theme"><?php echo $GLOBALS['CastleLang']['index']['viewLink']; ?></a>
+	    </div>
      </div>
     </div>
+   <?php } ?>
 <?php endwhile; ?>
 
     
