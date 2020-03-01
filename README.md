@@ -29,7 +29,7 @@ $ git clone https://github.com/ohmyga233/castle-Typecho-Theme
 
 ## 注意事项
 **并没有相关的交流群，有问题请直接发 [Issues](https://github.com/ohmyga233/castle-Typecho-Theme/issues)！**
-<br>文档在写了（0%）.jpg
+<br>文档在写了（0.01%）.jpg
 
 ## 版权信息
 Copyright &copy; 2018-2020 [ohmyga](https://github.com/ohmyga233), under GPL-3.0 License
