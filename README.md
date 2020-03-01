@@ -6,7 +6,7 @@
 
 > **请下载 [Releases](https://github.com/ohmyga233/castle-Typecho-Theme/releases) 页面的最新发行包，使用时如遇问题请查阅 [文档](https://castle.baka.show/) ，文档中有的问题将一律不给予解答。**
 <br>**禁止删除主题版权信息。**
-<br>**PHP 版本必须 >= 7.0 才能正常使用！**
+<br>**PHP 版本必须 >= 7.0 才能正常使用！ **
 
 ## 开始使用
 1. Star 本项目；
