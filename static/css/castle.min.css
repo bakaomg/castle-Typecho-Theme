@@ -788,11 +788,11 @@ body {
   cursor: default;
   border-radius: 50%;
   margin: 0px 25px 10px 0px;
-  border: 1px solid #eaeaea;
+  border: 1px solid #BDBDBD;
 }
 
 #moe-post-list .moe-nopic-card .moe-left-icon i {
-  height: 42px;
+  height: 45px;
   display: flex;
   color: #757575;
   align-items: center;
