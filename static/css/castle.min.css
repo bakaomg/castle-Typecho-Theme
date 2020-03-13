@@ -797,7 +797,7 @@ body {
   color: #757575;
   align-items: center;
   justify-content: center;
-  flex-flow: column nowrap;
+  flex-flow: column nowrap; 
 }
 
 #moe-post-list .moe-nopic-card .moe-nopic-title {
