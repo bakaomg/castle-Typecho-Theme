@@ -1334,23 +1334,6 @@ img:not(.initial) {
   -webkit-transition: all 0.2s;
 }
 
-/* ===== 表情框遮罩层 ===== */
-#moe-owo-overlay {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0;
-  z-index: 6090;
-  position: fixed;
-  transition: all .2s;
-  background-color: rgba(0,0,0,.3);
-}
-
-#moe-owo-overlay.moe-owo-overlay-open {
-  opacity: 1;
-}
-
 /* ===== 已登录者 Header ===== */
 .moe-comment-card .moe-comment-card-content .mdui-card-header {
   margin: 0px -10px 0px -15px;
@@ -1705,6 +1688,23 @@ img:not(.initial) {
 
 #owoBox footer.moe-owo-footer-tab {
   border-top: 1px solid #E0E0E0;
+}
+
+/* ===== 表情框遮罩层 ===== */
+#moe-owo-overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: 6090;
+  position: fixed;
+  transition: all .2s;
+  background-color: rgba(0,0,0,.3);
+}
+
+#moe-owo-overlay.moe-owo-overlay-open {
+  opacity: 1;
 }
 
 /* ===== 全局表情 ===== */
