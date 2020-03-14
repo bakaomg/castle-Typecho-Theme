@@ -193,7 +193,10 @@ class Castle_Libs {
   #custom-field input, #custom-field textarea{ box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;}'.
   
   //编辑器按钮样式修复
-  '.wmd-button-row{ height:unset; }
+  '.wmd-button-row{ height:unset; }'.
+
+  //背景色
+  'body {background: #F6F6F3!important;}
   </style>'.
 
   //MDUI
