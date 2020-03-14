@@ -185,6 +185,10 @@ class Castle_Libs {
   * 编辑界面添加按钮
   */
  public static function addButtons() {
+  $resourcesSetting = (Helper::options()->resources_Type) ? Helper::options()->resources_Type : 'local';
+  $owoCss = ($resourcesSetting == 'jsdelivr') ? 'static/css/owo.min.min.css' : 'static/css/owo.min.css';
+  $owoJS = ($resourcesSetting == 'jsdelivr') ? 'static/js/owo.min.min.js' : 'static/js/owo.min.js';
+
   //自定义字段输入框样式
   echo '<style>
   #custom-field { position: relative; }
@@ -205,8 +209,8 @@ class Castle_Libs {
   
   //表情选择框
   '<script src="'.Castle_Libs::index('/?action=owoConfig', false).'"></script>'.
-  '<link rel="stylesheet" href="'.Castle_Libs::resources('static/css/owo.min.css', true).'" />'.
-  '<script src="'.Castle_Libs::resources('static/js/owo.min.js', true).'"></script>'.
+  '<link rel="stylesheet" href="'.Castle_Libs::resources($owoCss, true).'" />'.
+  '<script src="'.Castle_Libs::resources($owoJS, true).'"></script>'.
   '<script>window.onload = function() { CastleOwO.addOwOBtn(); };</script>';
  }
 

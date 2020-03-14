@@ -11,6 +11,13 @@ class Castle_Footer {
   * 底部输出
   */
  public static function export($footer) {
+  $resourcesSetting = (Helper::options()->resources_Type) ? Helper::options()->resources_Type : 'local';
+  if ($resourcesSetting == 'jsdelivr') {
+   $castleJS = 'static/js/castle.min.min.js';
+  }else{
+   $castleJS = 'static/js/castle.min.js';
+  }
+
   //统计代码
   echo (Helper::options()->statisticsCode) ? '<div class="mdui-hidden">'.Helper::options()->statisticsCode.'</div>'."\n " : NULL;
 
@@ -39,6 +46,6 @@ class Castle_Footer {
   '<script src="'.Castle_Libs::resources('static/js/highlight.min.js', true).'"></script>'."\n  ".
 
   //主题核心JS
-  '<script src="'.Castle_Libs::resources('static/js/castle.min.js', true).'"></script>'."\n";
+  '<script src="'.Castle_Libs::resources($castleJS, true).'"></script>'."\n";
  }
 }

@@ -53,6 +53,17 @@ class Castle_Header {
   * 头部输出
   */
  public static function export($header) {
+  $resourcesSetting = (Helper::options()->resources_Type) ? Helper::options()->resources_Type : 'local';
+  if ($resourcesSetting == 'jsdelivr') {
+   $castleCss = 'static/css/castle.min.min.css';
+   $castleThemeCss = 'static/css/castle.theme.min.min.css';
+   $castleAplayerCss = 'static/css/APlayer.min.min.css';
+  }else{
+   $castleCss = 'static/css/castle.min.css';
+   $castleThemeCss = 'static/css/castle.theme.min.css';
+   $castleAplayerCss = 'static/css/APlayer.min.css';
+  }
+
   //MDUI
   echo '<link rel="stylesheet" href="'.Castle_Libs::resources('static/css/mdui.min.css', true).'">'."\n  ";
 
@@ -66,13 +77,13 @@ class Castle_Header {
   '<link rel="stylesheet" href="'.Castle_Libs::resources('static/css/baguetteBox.min.css', true).'">'."\n  ".
   
   //主题配色 Css
-  '<link rel="stylesheet" href="'.Castle_Libs::resources('static/css/castle.theme.min.css', true).'">'."\n  ".
+  '<link rel="stylesheet" href="'.Castle_Libs::resources($castleThemeCss, true).'">'."\n  ".
 
   //代码高亮
   '<link rel="stylesheet" href="'.Castle_highLight::getFile().'">'."\n  ".
 
   //主题核心 Css
-  '<link rel="stylesheet" href="'.Castle_Libs::resources('static/css/castle.min.css', true).'">'."\n  ";
+  '<link rel="stylesheet" href="'.Castle_Libs::resources($castleCss, true).'">'."\n  ";
   
   if($header->is("index")) {
    //如果在首页
@@ -121,7 +132,7 @@ class Castle_Header {
 
   //判断 APlayer 是否启用
   if (Castle_Libs::hasPlugin('Meting')) {
-   echo "\n  ".'<link rel="stylesheet" href="'.Castle_Libs::resources('static/css/APlayer.min.css', true).'">'."\n";
+   echo "\n  ".'<link rel="stylesheet" href="'.Castle_Libs::resources($castleAplayerCss, true).'">'."\n";
   }
  }
 
