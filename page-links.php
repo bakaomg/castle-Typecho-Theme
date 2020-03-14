@@ -6,7 +6,7 @@
  */
 /**
  * Castle Links
- * Last Update: 2020/02/26
+ * Last Update: 2020/03/14
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 if (@$_SERVER['HTTP_X_PJAX'] == true) {
@@ -16,6 +16,9 @@ if (@$_SERVER['HTTP_X_PJAX'] == true) {
 }else{
  $this->need('core/inc/header.php');
 }
+
+//懒得解决分页问题，直接 9999 （光速逃
+Helper::options()->commentsPageSize = 9999;
 
 $BloggerAvatar = (Helper::options()->siteAvatar) ? Helper::options()->siteAvatar : Castle_Libs::resources('static/img/avatar.jpg');
 ?>

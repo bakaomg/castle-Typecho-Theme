@@ -1878,6 +1878,10 @@ img:not(.initial) {
   transition: all 0.3s;
 }
 
+#links-dialog .moe-comments-list-footer {
+  margin: 20px 0px;
+}
+
 /* ===== 代码高亮 ===== */
 .hljs {
   overflow: auto;
