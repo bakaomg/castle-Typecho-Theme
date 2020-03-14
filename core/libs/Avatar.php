@@ -55,6 +55,9 @@ class Castle_Avatar {
   }elseif ($useCDN == '3') {
    //V2EX
    $avatar = 'https://cdn.v2ex.com/gravatar/'.$email.'?s='.$size;
+  }elseif ($useCDN == '4') {
+   //Loli.net
+   $avatar = 'https://gravatar.loli.net/avatar/'.$email.'?s='.$size;
   }
 
   return $avatar;

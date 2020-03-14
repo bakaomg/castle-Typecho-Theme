@@ -236,7 +236,8 @@ function themeConfig($form) {
       [0 => "Gravatar www",
        1 => 'Gravatar secure',
        2 => 'Gravatar CN',
-       3 => 'V2EX'
+       3 => 'V2EX',
+       4 => 'Loli.net'
       ],
      0)
     )
