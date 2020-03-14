@@ -3,4 +3,43 @@
  * APlayer Dark Style
  * Last Update: 2020/02/29
  */
-.mdui-theme-layout-dark .aplayer{background:#616161!important}.mdui-theme-layout-dark .aplayer svg circle,.mdui-theme-layout-dark .aplayer svg path{fill:#fff!important}.mdui-theme-layout-dark .aplayer,.mdui-theme-layout-dark .aplayer .aplayer-author,.mdui-theme-layout-dark .aplayer .aplayer-list .aplayer-list-author,.mdui-theme-layout-dark .aplayer .aplayer-list .aplayer-list-index,.mdui-theme-layout-dark .aplayer .aplayer-lrc p{color:#fff!important}.mdui-theme-layout-dark .aplayer .aplayer-list ol li:hover,.mdui-theme-layout-dark .aplayer .aplayer-list ol li:hover .aplayer-list-author,.mdui-theme-layout-dark .aplayer .aplayer-list ol li:hover .aplayer-list-index,.mdui-theme-layout-dark .aplayer .aplayer-list-light .aplayer-list-author,.mdui-theme-layout-dark .aplayer .aplayer-list-light .aplayer-list-index,.mdui-theme-layout-dark .aplayer .aplayer-list-light span{color:#000!important}.mdui-theme-layout-dark .aplayer .aplayer-lrc:before{height:0%!important}.mdui-theme-layout-dark .aplayer .aplayer-lrc:after{width:0%!important}.mdui-theme-layout-dark .aplayer .aplayer-icon:hover path{fill:#9e9e9e!important}
+.mdui-theme-layout-dark .aplayer {
+  background: #616161!important;
+}
+
+.mdui-theme-layout-dark .aplayer svg circle, .mdui-theme-layout-dark .aplayer svg path {
+  fill: #fff!important;
+}
+
+.mdui-theme-layout-dark .aplayer,
+.mdui-theme-layout-dark .aplayer .aplayer-author,
+.mdui-theme-layout-dark .aplayer .aplayer-lrc p,
+.mdui-theme-layout-dark .aplayer .aplayer-list .aplayer-list-index,
+.mdui-theme-layout-dark .aplayer .aplayer-list .aplayer-list-author {
+  color: #fff!important;
+}
+
+.mdui-theme-layout-dark .aplayer .aplayer-list-light span,
+.mdui-theme-layout-dark .aplayer .aplayer-list-light .aplayer-list-index,
+.mdui-theme-layout-dark .aplayer .aplayer-list-light .aplayer-list-author,
+.mdui-theme-layout-dark .aplayer .aplayer-list ol li:hover,
+.mdui-theme-layout-dark .aplayer .aplayer-list ol li:hover .aplayer-list-index,
+.mdui-theme-layout-dark .aplayer .aplayer-list ol li:hover .aplayer-list-author {
+  color: #000!important;
+}
+
+.mdui-theme-layout-dark .aplayer .aplayer-list ol li:hover {
+  background-color: rgba(255,255,255,0.65)!important;
+}
+
+.mdui-theme-layout-dark .aplayer .aplayer-lrc:before {
+  height: 0%!important;
+}
+
+.mdui-theme-layout-dark .aplayer .aplayer-lrc:after {
+  width: 0%!important;
+}
+
+.mdui-theme-layout-dark .aplayer .aplayer-icon:hover path {
+  fill: #9E9E9E!important;
+}
