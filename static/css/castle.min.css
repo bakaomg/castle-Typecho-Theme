@@ -268,16 +268,12 @@ body {
   color: rgba(255,255,255,.7);
 }
 
-/* 分割线
+/* 分割线 */
 .mdui-theme-layout-dark .moe-post-card .moe-card-content h1:after,
-.mdui-theme-layout-dark .moe-post-card .moe-card-content h2:after,
-.mdui-theme-layout-dark .moe-post-card .moe-card-content h3:after,
-.mdui-theme-layout-dark .moe-post-card .moe-card-content h4:after,
-.mdui-theme-layout-dark .moe-post-card .moe-card-content h5:after,
-.mdui-theme-layout-dark .moe-post-card .moe-card-content h6:after {
+.mdui-theme-layout-dark .moe-post-card .moe-card-content h2:after {
   border-bottom: 1px solid #E0E0E0;
 }
-*/
+
 
 /* ===== 分割线 =====  */
 @media (max-width: 600px) {
@@ -996,32 +992,31 @@ body {
 
 /* ===== 标题 ===== */
 .moe-post-card .moe-card-content h1:before,
-.moe-post-card .moe-card-content h2:before,
-.moe-post-card .moe-card-content h3:before,
-.moe-post-card .moe-card-content h4:before,
-.moe-post-card .moe-card-content h5:before,
-.moe-post-card .moe-card-content h6:before {
+.moe-post-card .moe-card-content h2:before {
   content: '#';
   font-weight: bold;
-  padding-right: 15px;
+  padding-right: 10px;
   transition: all 0.29s;
 }
 
-/* 分割线
+.moe-post-card .moe-card-content h3,
+.moe-post-card .moe-card-content h4,
+.moe-post-card .moe-card-content h5,
+.moe-post-card .moe-card-content h6 {
+  padding: 0 0 0 7px;
+}
+
+/* 分割线 */
 .moe-post-card .moe-card-content h1:after,
-.moe-post-card .moe-card-content h2:after,
-.moe-post-card .moe-card-content h3:after,
-.moe-post-card .moe-card-content h4:after,
-.moe-post-card .moe-card-content h5:after,
-.moe-post-card .moe-card-content h6:after{
-  content: '';
-  left: -20px;
+.moe-post-card .moe-card-content h2:after {
+  left: 0px;
   bottom: -8px;
+  width: 100%;
+  content: '';
   position: absolute;
-  width: calc(100% + 40px);
   border-bottom: 1px solid #BDBDBD;
 }
-*/
+
 
 .moe-post-card .moe-card-content h1,
 .moe-post-card .moe-card-content h2,
@@ -1033,32 +1028,31 @@ body {
   line-height: 1.35;
   position: relative;
   font-family: inherit;
-  margin: 1.2em 0px 5px 0px;
-  /*margin: 1.2em 0px 0.6em 0px;*/
+  margin: 0.8em 0px 0.6em 0px;
 }
 
 .moe-post-card .moe-card-content h1 {
-  font-size: 2em;
-}
-
-.moe-post-card .moe-card-content h2 {
   font-size: 1.8em;
 }
 
-.moe-post-card .moe-card-content h3 {
+.moe-post-card .moe-card-content h2 {
   font-size: 1.6em;
 }
 
-.moe-post-card .moe-card-content h4 {
+.moe-post-card .moe-card-content h3 {
   font-size: 1.4em;
 }
 
-.moe-post-card .moe-card-content h5 {
+.moe-post-card .moe-card-content h4 {
   font-size: 1.2em;
 }
 
-.moe-post-card .moe-card-content h6 {
+.moe-post-card .moe-card-content h5 {
   font-size: 1.1em;
+}
+
+.moe-post-card .moe-card-content h6 {
+  font-size: 1em;
 }
 
 .moe-post-card .moe-card-content h1 small,
@@ -1172,6 +1166,11 @@ img.loaded {
 
 img:not(.initial) {
   transition: opacity 1s;
+}
+
+/* 表格 */
+.mdui-table-fluid {
+  border-radius: 3px;
 }
 
 /* ========== 文章导航栏 ========== */

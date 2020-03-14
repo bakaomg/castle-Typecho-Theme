@@ -8,9 +8,645 @@
   \_____|  \__,_| |___/  \__| |_|  \___|
  ----------------------------------------
  * Castle's Theme Color Stylesheet
- * Last Update: 2020/02/16 [0.9.1]
+ * Last Update: 2020/02/16 [0.9.0]
  * Author: ohmyga (https://ohmyga.cn)
  * GitHub: https://github.com/ohmyga233/castle-Typecho-Theme/
  * LICENSE: GPL V3 (https://www.gnu.org/licenses/gpl-3.0.html)
  **/
-.moe-card-transparent-10 #moe-post-list .mdui-card,.moe-card-transparent-10 .moe-archive-card,.moe-card-transparent-10 .moe-comment-card:not(.moe-comment-card-opaque),.moe-card-transparent-10 .moe-comments-list-card,.moe-card-transparent-10 .moe-post-card{background-color:rgba(255,255,255,.9)}.mdui-theme-layout-dark .moe-card-transparent-10 #moe-post-list .mdui-card,.mdui-theme-layout-dark .moe-card-transparent-10 .moe-archive-card,.mdui-theme-layout-dark .moe-card-transparent-10 .moe-comment-card:not(.moe-comment-card-opaque),.mdui-theme-layout-dark .moe-card-transparent-10 .moe-comments-list-card,.mdui-theme-layout-dark .moe-card-transparent-10 .moe-post-card{background-color:rgba(66,66,66,.9)}.moe-card-transparent-20 #moe-post-list .mdui-card,.moe-card-transparent-20 .moe-archive-card,.moe-card-transparent-20 .moe-comment-card:not(.moe-comment-card-opaque),.moe-card-transparent-20 .moe-comments-list-card,.moe-card-transparent-20 .moe-post-card{background-color:rgba(255,255,255,.8)}.mdui-theme-layout-dark .moe-card-transparent-20 #moe-post-list .mdui-card,.mdui-theme-layout-dark .moe-card-transparent-20 .moe-archive-card,.mdui-theme-layout-dark .moe-card-transparent-20 .moe-comment-card:not(.moe-comment-card-opaque),.mdui-theme-layout-dark .moe-card-transparent-20 .moe-comments-list-card,.mdui-theme-layout-dark .moe-card-transparent-20 .moe-post-card{background-color:rgba(66,66,66,.8)}.moe-card-transparent-30 #moe-post-list .mdui-card,.moe-card-transparent-30 .moe-archive-card,.moe-card-transparent-30 .moe-comment-card:not(.moe-comment-card-opaque),.moe-card-transparent-30 .moe-comments-list-card,.moe-card-transparent-30 .moe-post-card{background-color:rgba(255,255,255,.7)}.mdui-theme-layout-dark .moe-card-transparent-30 #moe-post-list .mdui-card,.mdui-theme-layout-dark .moe-card-transparent-30 .moe-archive-card,.mdui-theme-layout-dark .moe-card-transparent-30 .moe-comment-card:not(.moe-comment-card-opaque),.mdui-theme-layout-dark .moe-card-transparent-30 .moe-comments-list-card,.mdui-theme-layout-dark .moe-card-transparent-30 .moe-post-card{background-color:rgba(66,66,66,.7)}.mdui-theme-primary-red .moe-post-card .moe-card-content h1:before,.mdui-theme-primary-red .moe-post-card .moe-card-content h2:before,.mdui-theme-primary-red .moe-post-card .moe-card-content h3:before,.mdui-theme-primary-red .moe-post-card .moe-card-content h4:before,.mdui-theme-primary-red .moe-post-card .moe-card-content h5:before,.mdui-theme-primary-red .moe-post-card .moe-card-content h6:before{color:#f44336}.mdui-theme-accent-red #moe-post-list .moe-archive-top-card main i,.mdui-theme-accent-red .moe-post-card .moe-card-content a:not([data-baguettebox]){color:#ff5252}.mdui-theme-accent-red .moe-post-card .moe-card-content a:not([data-baguettebox]):before{background-color:#ff5252}.mdui-theme-accent-red .moe-post-card .moe-card-content .moe-post-card-copy{border-left:4px solid #ff5252}.mdui-theme-primary-pink .moe-post-card .moe-card-content h1:before,.mdui-theme-primary-pink .moe-post-card .moe-card-content h2:before,.mdui-theme-primary-pink .moe-post-card .moe-card-content h3:before,.mdui-theme-primary-pink .moe-post-card .moe-card-content h4:before,.mdui-theme-primary-pink .moe-post-card .moe-card-content h5:before,.mdui-theme-primary-pink .moe-post-card .moe-card-content h6:before{color:#e91e63}.mdui-theme-accent-pink #moe-post-list .moe-archive-top-card main i,.mdui-theme-accent-pink .moe-post-card .moe-card-content a:not([data-baguettebox]){color:#ff4081}.mdui-theme-accent-pink .moe-post-card .moe-card-content a:not([data-baguettebox]):before{background-color:#ff4081}.mdui-theme-accent-pink .moe-post-card .moe-card-content .moe-post-card-copy{border-left:4px solid #ff4081}.mdui-theme-primary-purple .moe-post-card .moe-card-content h1:before,.mdui-theme-primary-purple .moe-post-card .moe-card-content h2:before,.mdui-theme-primary-purple .moe-post-card .moe-card-content h3:before,.mdui-theme-primary-purple .moe-post-card .moe-card-content h4:before,.mdui-theme-primary-purple .moe-post-card .moe-card-content h5:before,.mdui-theme-primary-purple .moe-post-card .moe-card-content h6:before{color:#9c27b0}.mdui-theme-accent-purple #moe-post-list .moe-archive-top-card main i,.mdui-theme-accent-purple .moe-post-card .moe-card-content a:not([data-baguettebox]){color:#e040fb}.mdui-theme-accent-purple .moe-post-card .moe-card-content a:not([data-baguettebox]):before{background-color:#e040fb}.mdui-theme-accent-purple .moe-post-card .moe-card-content .moe-post-card-copy{border-left:4px solid #e040fb}.mdui-theme-primary-deep-purple .moe-post-card .moe-card-content h1:before,.mdui-theme-primary-deep-purple .moe-post-card .moe-card-content h2:before,.mdui-theme-primary-deep-purple .moe-post-card .moe-card-content h3:before,.mdui-theme-primary-deep-purple .moe-post-card .moe-card-content h4:before,.mdui-theme-primary-deep-purple .moe-post-card .moe-card-content h5:before,.mdui-theme-primary-deep-purple .moe-post-card .moe-card-content h6:before{color:#673ab7}.mdui-theme-accent-deep-purple #moe-post-list .moe-archive-top-card main i,.mdui-theme-accent-deep-purple .moe-post-card .moe-card-content a:not([data-baguettebox]){color:#7c4dff}.mdui-theme-accent-deep-purple .moe-post-card .moe-card-content a:not([data-baguettebox]):before{background-color:#7c4dff}.mdui-theme-accent-deep-purple .moe-post-card .moe-card-content .moe-post-card-copy{border-left:4px solid #7c4dff}.mdui-theme-primary-indigo .moe-post-card .moe-card-content h1:before,.mdui-theme-primary-indigo .moe-post-card .moe-card-content h2:before,.mdui-theme-primary-indigo .moe-post-card .moe-card-content h3:before,.mdui-theme-primary-indigo .moe-post-card .moe-card-content h4:before,.mdui-theme-primary-indigo .moe-post-card .moe-card-content h5:before,.mdui-theme-primary-indigo .moe-post-card .moe-card-content h6:before{color:#3f51b5}.mdui-theme-accent-indigo #moe-post-list .moe-archive-top-card main i,.mdui-theme-accent-indigo .moe-post-card .moe-card-content a:not([data-baguettebox]){color:#536dfe}.mdui-theme-accent-indigo .moe-post-card .moe-card-content a:not([data-baguettebox]):before{background-color:#536dfe}.mdui-theme-accent-indigo .moe-post-card .moe-card-content .moe-post-card-copy{border-left:4px solid #536dfe}.mdui-theme-primary-blue .moe-post-card .moe-card-content h1:before,.mdui-theme-primary-blue .moe-post-card .moe-card-content h2:before,.mdui-theme-primary-blue .moe-post-card .moe-card-content h3:before,.mdui-theme-primary-blue .moe-post-card .moe-card-content h4:before,.mdui-theme-primary-blue .moe-post-card .moe-card-content h5:before,.mdui-theme-primary-blue .moe-post-card .moe-card-content h6:before{color:#2196f3}.mdui-theme-accent-blue #moe-post-list .moe-archive-top-card main i,.mdui-theme-accent-blue .moe-post-card .moe-card-content a:not([data-baguettebox]){color:#448aff}.mdui-theme-accent-blue .moe-post-card .moe-card-content a:not([data-baguettebox]):before{background-color:#448aff}.mdui-theme-accent-blue .moe-post-card .moe-card-content .moe-post-card-copy{border-left:4px solid #448aff}.mdui-theme-primary-light-blue .moe-post-card .moe-card-content h1:before,.mdui-theme-primary-light-blue .moe-post-card .moe-card-content h2:before,.mdui-theme-primary-light-blue .moe-post-card .moe-card-content h3:before,.mdui-theme-primary-light-blue .moe-post-card .moe-card-content h4:before,.mdui-theme-primary-light-blue .moe-post-card .moe-card-content h5:before,.mdui-theme-primary-light-blue .moe-post-card .moe-card-content h6:before{color:#03a9f4}.mdui-theme-accent-light-blue #moe-post-list .moe-archive-top-card main i,.mdui-theme-accent-light-blue .moe-post-card .moe-card-content a:not([data-baguettebox]){color:#40c4ff}.mdui-theme-accent-light-blue .moe-post-card .moe-card-content a:not([data-baguettebox]):before{background-color:#40c4ff}.mdui-theme-accent-light-blue .moe-post-card .moe-card-content .moe-post-card-copy{border-left:4px solid #40c4ff}.mdui-theme-primary-cyan .moe-post-card .moe-card-content h1:before,.mdui-theme-primary-cyan .moe-post-card .moe-card-content h2:before,.mdui-theme-primary-cyan .moe-post-card .moe-card-content h3:before,.mdui-theme-primary-cyan .moe-post-card .moe-card-content h4:before,.mdui-theme-primary-cyan .moe-post-card .moe-card-content h5:before,.mdui-theme-primary-cyan .moe-post-card .moe-card-content h6:before{color:#00bcd4}.mdui-theme-accent-cyan #moe-post-list .moe-archive-top-card main i,.mdui-theme-accent-cyan .moe-post-card .moe-card-content a:not([data-baguettebox]){color:#18ffff}.mdui-theme-accent-cyan .moe-post-card .moe-card-content a:not([data-baguettebox]):before{background-color:#18ffff}.mdui-theme-accent-cyan .moe-post-card .moe-card-content .moe-post-card-copy{border-left:4px solid #18ffff}.mdui-theme-primary-teal .moe-post-card .moe-card-content h1:before,.mdui-theme-primary-teal .moe-post-card .moe-card-content h2:before,.mdui-theme-primary-teal .moe-post-card .moe-card-content h3:before,.mdui-theme-primary-teal .moe-post-card .moe-card-content h4:before,.mdui-theme-primary-teal .moe-post-card .moe-card-content h5:before,.mdui-theme-primary-teal .moe-post-card .moe-card-content h6:before{color:#009688}.mdui-theme-accent-teal #moe-post-list .moe-archive-top-card main i,.mdui-theme-accent-teal .moe-post-card .moe-card-content a:not([data-baguettebox]){color:#64ffda}.mdui-theme-accent-teal .moe-post-card .moe-card-content a:not([data-baguettebox]):before{background-color:#64ffda}.mdui-theme-accent-teal .moe-post-card .moe-card-content .moe-post-card-copy{border-left:4px solid #64ffda}.mdui-theme-primary-green .moe-post-card .moe-card-content h1:before,.mdui-theme-primary-green .moe-post-card .moe-card-content h2:before,.mdui-theme-primary-green .moe-post-card .moe-card-content h3:before,.mdui-theme-primary-green .moe-post-card .moe-card-content h4:before,.mdui-theme-primary-green .moe-post-card .moe-card-content h5:before,.mdui-theme-primary-green .moe-post-card .moe-card-content h6:before{color:#4caf50}.mdui-theme-accent-green #moe-post-list .moe-archive-top-card main i,.mdui-theme-accent-green .moe-post-card .moe-card-content a:not([data-baguettebox]){color:#69f0ae}.mdui-theme-accent-green .moe-post-card .moe-card-content a:not([data-baguettebox]):before{background-color:#69f0ae}.mdui-theme-accent-green .moe-post-card .moe-card-content .moe-post-card-copy{border-left:4px solid #69f0ae}.mdui-theme-primary-light-green .moe-post-card .moe-card-content h1:before,.mdui-theme-primary-light-green .moe-post-card .moe-card-content h2:before,.mdui-theme-primary-light-green .moe-post-card .moe-card-content h3:before,.mdui-theme-primary-light-green .moe-post-card .moe-card-content h4:before,.mdui-theme-primary-light-green .moe-post-card .moe-card-content h5:before,.mdui-theme-primary-light-green .moe-post-card .moe-card-content h6:before{color:#8bc34a}.mdui-theme-accent-light-green #moe-post-list .moe-archive-top-card main i,.mdui-theme-accent-light-green .moe-post-card .moe-card-content a:not([data-baguettebox]){color:#b2ff59}.mdui-theme-accent-light-green .moe-post-card .moe-card-content a:not([data-baguettebox]):before{background-color:#b2ff59}.mdui-theme-accent-light-green .moe-post-card .moe-card-content .moe-post-card-copy{border-left:4px solid #b2ff59}.mdui-theme-primary-lime .moe-post-card .moe-card-content h1:before,.mdui-theme-primary-lime .moe-post-card .moe-card-content h2:before,.mdui-theme-primary-lime .moe-post-card .moe-card-content h3:before,.mdui-theme-primary-lime .moe-post-card .moe-card-content h4:before,.mdui-theme-primary-lime .moe-post-card .moe-card-content h5:before,.mdui-theme-primary-lime .moe-post-card .moe-card-content h6:before{color:#cddc39}.mdui-theme-accent-lime #moe-post-list .moe-archive-top-card main i,.mdui-theme-accent-lime .moe-post-card .moe-card-content a:not([data-baguettebox]){color:#eeff41}.mdui-theme-accent-lime .moe-post-card .moe-card-content a:not([data-baguettebox]):before{background-color:#eeff41}.mdui-theme-accent-lime .moe-post-card .moe-card-content .moe-post-card-copy{border-left:4px solid #eeff41}.mdui-theme-primary-yellow .moe-post-card .moe-card-content h1:before,.mdui-theme-primary-yellow .moe-post-card .moe-card-content h2:before,.mdui-theme-primary-yellow .moe-post-card .moe-card-content h3:before,.mdui-theme-primary-yellow .moe-post-card .moe-card-content h4:before,.mdui-theme-primary-yellow .moe-post-card .moe-card-content h5:before,.mdui-theme-primary-yellow .moe-post-card .moe-card-content h6:before{color:#ffeb3b}.mdui-theme-accent-yellow #moe-post-list .moe-archive-top-card main i,.mdui-theme-accent-yellow .moe-post-card .moe-card-content a:not([data-baguettebox]){color:#ff0}.mdui-theme-accent-yellow .moe-post-card .moe-card-content a:not([data-baguettebox]):before{background-color:#ff0}.mdui-theme-accent-yellow .moe-post-card .moe-card-content .moe-post-card-copy{border-left:4px solid #ff0}.mdui-theme-primary-amber .moe-post-card .moe-card-content h1:before,.mdui-theme-primary-amber .moe-post-card .moe-card-content h2:before,.mdui-theme-primary-amber .moe-post-card .moe-card-content h3:before,.mdui-theme-primary-amber .moe-post-card .moe-card-content h4:before,.mdui-theme-primary-amber .moe-post-card .moe-card-content h5:before,.mdui-theme-primary-amber .moe-post-card .moe-card-content h6:before{color:#ffc107}.mdui-theme-accent-amber #moe-post-list .moe-archive-top-card main i,.mdui-theme-accent-amber .moe-post-card .moe-card-content a:not([data-baguettebox]){color:#ffd740}.mdui-theme-accent-amber .moe-post-card .moe-card-content a:not([data-baguettebox]):before{background-color:#ffd740}.mdui-theme-accent-amber .moe-post-card .moe-card-content .moe-post-card-copy{border-left:4px solid #ffd740}.mdui-theme-primary-orange .moe-post-card .moe-card-content h1:before,.mdui-theme-primary-orange .moe-post-card .moe-card-content h2:before,.mdui-theme-primary-orange .moe-post-card .moe-card-content h3:before,.mdui-theme-primary-orange .moe-post-card .moe-card-content h4:before,.mdui-theme-primary-orange .moe-post-card .moe-card-content h5:before,.mdui-theme-primary-orange .moe-post-card .moe-card-content h6:before{color:#ff9800}.mdui-theme-accent-orange #moe-post-list .moe-archive-top-card main i,.mdui-theme-accent-orange .moe-post-card .moe-card-content a:not([data-baguettebox]){color:#ffab40}.mdui-theme-accent-orange .moe-post-card .moe-card-content a:not([data-baguettebox]):before{background-color:#ffab40}.mdui-theme-accent-orange .moe-post-card .moe-card-content .moe-post-card-copy{border-left:4px solid #ffab40}.mdui-theme-primary-deep-orange .moe-post-card .moe-card-content h1:before,.mdui-theme-primary-deep-orange .moe-post-card .moe-card-content h2:before,.mdui-theme-primary-deep-orange .moe-post-card .moe-card-content h3:before,.mdui-theme-primary-deep-orange .moe-post-card .moe-card-content h4:before,.mdui-theme-primary-deep-orange .moe-post-card .moe-card-content h5:before,.mdui-theme-primary-deep-orange .moe-post-card .moe-card-content h6:before{color:#ff5722}.mdui-theme-accent-deep-orange #moe-post-list .moe-archive-top-card main i,.mdui-theme-accent-deep-orange .moe-post-card .moe-card-content a:not([data-baguettebox]){color:#ff6e40}.mdui-theme-accent-deep-orange .moe-post-card .moe-card-content a:not([data-baguettebox]):before{background-color:#ff6e40}.mdui-theme-accent-deep-orange .moe-post-card .moe-card-content .moe-post-card-copy{border-left:4px solid #ff6e40}.mdui-theme-primary-brown .moe-post-card .moe-card-content h1:before,.mdui-theme-primary-brown .moe-post-card .moe-card-content h2:before,.mdui-theme-primary-brown .moe-post-card .moe-card-content h3:before,.mdui-theme-primary-brown .moe-post-card .moe-card-content h4:before,.mdui-theme-primary-brown .moe-post-card .moe-card-content h5:before,.mdui-theme-primary-brown .moe-post-card .moe-card-content h6:before{color:#795548}.mdui-theme-primary-grey .moe-post-card .moe-card-content h1:before,.mdui-theme-primary-grey .moe-post-card .moe-card-content h2:before,.mdui-theme-primary-grey .moe-post-card .moe-card-content h3:before,.mdui-theme-primary-grey .moe-post-card .moe-card-content h4:before,.mdui-theme-primary-grey .moe-post-card .moe-card-content h5:before,.mdui-theme-primary-grey .moe-post-card .moe-card-content h6:before{color:#9e9e9e}.mdui-theme-primary-blue-grey .moe-post-card .moe-card-content h1:before,.mdui-theme-primary-blue-grey .moe-post-card .moe-card-content h2:before,.mdui-theme-primary-blue-grey .moe-post-card .moe-card-content h3:before,.mdui-theme-primary-blue-grey .moe-post-card .moe-card-content h4:before,.mdui-theme-primary-blue-grey .moe-post-card .moe-card-content h5:before,.mdui-theme-primary-blue-grey .moe-post-card .moe-card-content h6:before{color:#607d8b}
+/* ==================== 卡片透明 ==================== */
+/* ========== 透明 10% ========== */
+.moe-card-transparent-10 #moe-post-list .mdui-card,
+.moe-card-transparent-10 .moe-post-card,
+.moe-card-transparent-10 .moe-comment-card:not(.moe-comment-card-opaque),
+.moe-card-transparent-10 .moe-comments-list-card,
+.moe-card-transparent-10 .moe-archive-card {
+  background-color: rgba(255,255,255,0.9);
+}
+
+.mdui-theme-layout-dark .moe-card-transparent-10 #moe-post-list .mdui-card,
+.mdui-theme-layout-dark .moe-card-transparent-10 .moe-post-card,
+.mdui-theme-layout-dark .moe-card-transparent-10 .moe-comment-card:not(.moe-comment-card-opaque),
+.mdui-theme-layout-dark .moe-card-transparent-10 .moe-comments-list-card,
+.mdui-theme-layout-dark .moe-card-transparent-10 .moe-archive-card  {
+  background-color: rgba(66,66,66,0.9);
+}
+
+/* ========== 透明 20% ========== */
+.moe-card-transparent-20 #moe-post-list .mdui-card,
+.moe-card-transparent-20 .moe-post-card,
+.moe-card-transparent-20 .moe-comment-card:not(.moe-comment-card-opaque),
+.moe-card-transparent-20 .moe-comments-list-card,
+.moe-card-transparent-20 .moe-archive-card {
+  background-color: rgba(255,255,255,0.8);
+}
+
+.mdui-theme-layout-dark .moe-card-transparent-20 #moe-post-list .mdui-card,
+.mdui-theme-layout-dark .moe-card-transparent-20 .moe-post-card,
+.mdui-theme-layout-dark .moe-card-transparent-20 .moe-comment-card:not(.moe-comment-card-opaque),
+.mdui-theme-layout-dark .moe-card-transparent-20 .moe-comments-list-card,
+.mdui-theme-layout-dark .moe-card-transparent-20 .moe-archive-card {
+  background-color: rgba(66,66,66,0.8);
+}
+
+/* ========== 透明 30% ========== */
+.moe-card-transparent-30 #moe-post-list .mdui-card,
+.moe-card-transparent-30 .moe-post-card,
+.moe-card-transparent-30 .moe-comment-card:not(.moe-comment-card-opaque),
+.moe-card-transparent-30 .moe-comments-list-card,
+.moe-card-transparent-30 .moe-archive-card {
+  background-color: rgba(255,255,255,0.7);
+}
+
+.mdui-theme-layout-dark .moe-card-transparent-30 #moe-post-list .mdui-card,
+.mdui-theme-layout-dark .moe-card-transparent-30 .moe-post-card,
+.mdui-theme-layout-dark .moe-card-transparent-30 .moe-comment-card:not(.moe-comment-card-opaque),
+.mdui-theme-layout-dark .moe-card-transparent-30 .moe-comments-list-card,
+.mdui-theme-layout-dark .moe-card-transparent-30 .moe-archive-card {
+  background-color: rgba(66,66,66,0.7);
+}
+
+/* ==================== 主题配色 ==================== */
+/* ========== Red ========== */
+/* ===== Theme =====*/
+.mdui-theme-primary-red .moe-post-card .moe-card-content h1:before,
+.mdui-theme-primary-red .moe-post-card .moe-card-content h2:before,
+.mdui-theme-primary-red .moe-post-card .moe-card-content h3:before,
+.mdui-theme-primary-red .moe-post-card .moe-card-content h4:before,
+.mdui-theme-primary-red .moe-post-card .moe-card-content h5:before,
+.mdui-theme-primary-red .moe-post-card .moe-card-content h6:before {
+  color: #F44336;
+}
+
+.mdui-theme-primary-red .moe-post-card .moe-card-content h3,
+.mdui-theme-primary-red .moe-post-card .moe-card-content h4,
+.mdui-theme-primary-red .moe-post-card .moe-card-content h5,
+.mdui-theme-primary-red .moe-post-card .moe-card-content h6 {
+  border-left: 4px solid #F44336;
+}
+
+/* ===== Accent ===== */
+.mdui-theme-accent-red .moe-post-card .moe-card-content a:not([data-baguettebox]),
+.mdui-theme-accent-red #moe-post-list .moe-archive-top-card main i {
+  color: #FF5252;
+}
+
+.mdui-theme-accent-red .moe-post-card .moe-card-content a:not([data-baguettebox]):before {
+  background-color: #FF5252;
+}
+
+.mdui-theme-accent-red .moe-post-card .moe-card-content .moe-post-card-copy {
+  border-left: 4px solid #FF5252;
+}
+/* ========== Red END ========== */
+
+/* ========== Pink ========== */
+/* ===== Theme =====*/
+.mdui-theme-primary-pink .moe-post-card .moe-card-content h1:before,
+.mdui-theme-primary-pink .moe-post-card .moe-card-content h2:before,
+.mdui-theme-primary-pink .moe-post-card .moe-card-content h3:before,
+.mdui-theme-primary-pink .moe-post-card .moe-card-content h4:before,
+.mdui-theme-primary-pink .moe-post-card .moe-card-content h5:before,
+.mdui-theme-primary-pink .moe-post-card .moe-card-content h6:before {
+  color: #E91E63;
+}
+
+.mdui-theme-primary-pink .moe-post-card .moe-card-content h3,
+.mdui-theme-primary-pink .moe-post-card .moe-card-content h4,
+.mdui-theme-primary-pink .moe-post-card .moe-card-content h5,
+.mdui-theme-primary-pink .moe-post-card .moe-card-content h6 {
+  border-left: 4px solid #E91E63;
+}
+
+/* ===== Accent ===== */
+.mdui-theme-accent-pink .moe-post-card .moe-card-content a:not([data-baguettebox]),
+.mdui-theme-accent-pink #moe-post-list .moe-archive-top-card main i {
+  color: #FF4081;
+}
+
+.mdui-theme-accent-pink .moe-post-card .moe-card-content a:not([data-baguettebox]):before {
+  background-color: #FF4081;
+}
+
+.mdui-theme-accent-pink .moe-post-card .moe-card-content .moe-post-card-copy {
+  border-left: 4px solid #FF4081;
+}
+/* ========== Pink END ========== */
+
+/* ========== Purple ========== */
+/* ===== Theme =====*/
+.mdui-theme-primary-purple .moe-post-card .moe-card-content h1:before,
+.mdui-theme-primary-purple .moe-post-card .moe-card-content h2:before,
+.mdui-theme-primary-purple .moe-post-card .moe-card-content h3:before,
+.mdui-theme-primary-purple .moe-post-card .moe-card-content h4:before,
+.mdui-theme-primary-purple .moe-post-card .moe-card-content h5:before,
+.mdui-theme-primary-purple .moe-post-card .moe-card-content h6:before {
+  color: #9C27B0;
+}
+
+.mdui-theme-primary-purple .moe-post-card .moe-card-content h3,
+.mdui-theme-primary-purple .moe-post-card .moe-card-content h4,
+.mdui-theme-primary-purple .moe-post-card .moe-card-content h5,
+.mdui-theme-primary-purple .moe-post-card .moe-card-content h6 {
+  border-left: 4px solid #9C27B0;
+}
+
+/* ===== Accent ===== */
+.mdui-theme-accent-purple .moe-post-card .moe-card-content a:not([data-baguettebox]),
+.mdui-theme-accent-purple #moe-post-list .moe-archive-top-card main i {
+  color: #E040FB;
+}
+
+.mdui-theme-accent-purple .moe-post-card .moe-card-content a:not([data-baguettebox]):before {
+  background-color: #E040FB;
+}
+
+.mdui-theme-accent-purple .moe-post-card .moe-card-content .moe-post-card-copy {
+  border-left: 4px solid #E040FB;
+}
+/* ========== Purple END ========== */
+
+/* ========== Deep Purple ========== */
+/* ===== Theme =====*/
+.mdui-theme-primary-deep-purple .moe-post-card .moe-card-content h1:before,
+.mdui-theme-primary-deep-purple .moe-post-card .moe-card-content h2:before,
+.mdui-theme-primary-deep-purple .moe-post-card .moe-card-content h3:before,
+.mdui-theme-primary-deep-purple .moe-post-card .moe-card-content h4:before,
+.mdui-theme-primary-deep-purple .moe-post-card .moe-card-content h5:before,
+.mdui-theme-primary-deep-purple .moe-post-card .moe-card-content h6:before {
+  color: #673AB7;
+}
+
+.mdui-theme-primary-deep-purple .moe-post-card .moe-card-content h3,
+.mdui-theme-primary-deep-purple .moe-post-card .moe-card-content h4,
+.mdui-theme-primary-deep-purple .moe-post-card .moe-card-content h5,
+.mdui-theme-primary-deep-purple .moe-post-card .moe-card-content h6 {
+  border-left: 4px solid #673AB7;
+}
+
+/* ===== Accent ===== */
+.mdui-theme-accent-deep-purple .moe-post-card .moe-card-content a:not([data-baguettebox]),
+.mdui-theme-accent-deep-purple #moe-post-list .moe-archive-top-card main i {
+  color: #7C4DFF;
+}
+
+.mdui-theme-accent-deep-purple .moe-post-card .moe-card-content a:not([data-baguettebox]):before {
+  background-color: #7C4DFF;
+}
+
+.mdui-theme-accent-deep-purple .moe-post-card .moe-card-content .moe-post-card-copy {
+  border-left: 4px solid #7C4DFF;
+}
+/* ========== Deep Purple END ========== */
+
+/* ========== Indigo ========== */
+/* ===== Theme =====*/
+.mdui-theme-primary-indigo .moe-post-card .moe-card-content h1:before,
+.mdui-theme-primary-indigo .moe-post-card .moe-card-content h2:before,
+.mdui-theme-primary-indigo .moe-post-card .moe-card-content h3:before,
+.mdui-theme-primary-indigo .moe-post-card .moe-card-content h4:before,
+.mdui-theme-primary-indigo .moe-post-card .moe-card-content h5:before,
+.mdui-theme-primary-indigo .moe-post-card .moe-card-content h6:before {
+  color: #3F51B5;
+}
+
+.mdui-theme-primary-indigo .moe-post-card .moe-card-content h3,
+.mdui-theme-primary-indigo .moe-post-card .moe-card-content h4,
+.mdui-theme-primary-indigo .moe-post-card .moe-card-content h5,
+.mdui-theme-primary-indigo .moe-post-card .moe-card-content h6 {
+  border-left: 4px solid #3F51B5;
+}
+
+/* ===== Accent ===== */
+.mdui-theme-accent-indigo .moe-post-card .moe-card-content a:not([data-baguettebox]),
+.mdui-theme-accent-indigo #moe-post-list .moe-archive-top-card main i {
+  color: #536DFE;
+}
+
+.mdui-theme-accent-indigo .moe-post-card .moe-card-content a:not([data-baguettebox]):before {
+  background-color: #536DFE;
+}
+
+.mdui-theme-accent-indigo .moe-post-card .moe-card-content .moe-post-card-copy {
+  border-left: 4px solid #536DFE;
+}
+/* ========== Indigo END ========== */
+
+/* ========== Blue ========== */
+/* ===== Theme =====*/
+.mdui-theme-primary-blue .moe-post-card .moe-card-content h1:before,
+.mdui-theme-primary-blue .moe-post-card .moe-card-content h2:before,
+.mdui-theme-primary-blue .moe-post-card .moe-card-content h3:before,
+.mdui-theme-primary-blue .moe-post-card .moe-card-content h4:before,
+.mdui-theme-primary-blue .moe-post-card .moe-card-content h5:before,
+.mdui-theme-primary-blue .moe-post-card .moe-card-content h6:before {
+  color: #2196F3;
+}
+
+.mdui-theme-primary-blue .moe-post-card .moe-card-content h3,
+.mdui-theme-primary-blue .moe-post-card .moe-card-content h4,
+.mdui-theme-primary-blue .moe-post-card .moe-card-content h5,
+.mdui-theme-primary-blue .moe-post-card .moe-card-content h6 {
+  border-left: 4px solid #2196F3;
+}
+
+/* ===== Accent ===== */
+.mdui-theme-accent-blue .moe-post-card .moe-card-content a:not([data-baguettebox]),
+.mdui-theme-accent-blue #moe-post-list .moe-archive-top-card main i {
+  color: #448AFF;
+}
+
+.mdui-theme-accent-blue .moe-post-card .moe-card-content a:not([data-baguettebox]):before {
+  background-color: #448AFF;
+}
+
+.mdui-theme-accent-blue .moe-post-card .moe-card-content .moe-post-card-copy {
+  border-left: 4px solid #448AFF;
+}
+/* ========== Blue END ========== */
+
+/* ========== Light Blue ========== */
+/* ===== Theme =====*/
+.mdui-theme-primary-light-blue .moe-post-card .moe-card-content h1:before,
+.mdui-theme-primary-light-blue .moe-post-card .moe-card-content h2:before,
+.mdui-theme-primary-light-blue .moe-post-card .moe-card-content h3:before,
+.mdui-theme-primary-light-blue .moe-post-card .moe-card-content h4:before,
+.mdui-theme-primary-light-blue .moe-post-card .moe-card-content h5:before,
+.mdui-theme-primary-light-blue .moe-post-card .moe-card-content h6:before {
+  color: #03A9F4;
+}
+
+.mdui-theme-primary-light-blue .moe-post-card .moe-card-content h3,
+.mdui-theme-primary-light-blue .moe-post-card .moe-card-content h4,
+.mdui-theme-primary-light-blue .moe-post-card .moe-card-content h5,
+.mdui-theme-primary-light-blue .moe-post-card .moe-card-content h6 {
+  border-left: 4px solid #03A9F4;
+}
+
+/* ===== Accent ===== */
+.mdui-theme-accent-light-blue .moe-post-card .moe-card-content a:not([data-baguettebox]),
+.mdui-theme-accent-light-blue #moe-post-list .moe-archive-top-card main i {
+  color: #40C4FF;
+}
+
+.mdui-theme-accent-light-blue .moe-post-card .moe-card-content a:not([data-baguettebox]):before {
+  background-color: #40C4FF;
+}
+
+.mdui-theme-accent-light-blue .moe-post-card .moe-card-content .moe-post-card-copy {
+  border-left: 4px solid #40C4FF;
+}
+/* ========== Light Blue END ========== */
+
+/* ========== Cyan ========== */
+/* ===== Theme =====*/
+.mdui-theme-primary-cyan .moe-post-card .moe-card-content h1:before,
+.mdui-theme-primary-cyan .moe-post-card .moe-card-content h2:before,
+.mdui-theme-primary-cyan .moe-post-card .moe-card-content h3:before,
+.mdui-theme-primary-cyan .moe-post-card .moe-card-content h4:before,
+.mdui-theme-primary-cyan .moe-post-card .moe-card-content h5:before,
+.mdui-theme-primary-cyan .moe-post-card .moe-card-content h6:before {
+  color: #00BCD4;
+}
+
+.mdui-theme-primary-cyan .moe-post-card .moe-card-content h3,
+.mdui-theme-primary-cyan .moe-post-card .moe-card-content h4,
+.mdui-theme-primary-cyan .moe-post-card .moe-card-content h5,
+.mdui-theme-primary-cyan .moe-post-card .moe-card-content h6 {
+  border-left: 4px solid #00BCD4;
+}
+
+/* ===== Accent ===== */
+.mdui-theme-accent-cyan .moe-post-card .moe-card-content a:not([data-baguettebox]),
+.mdui-theme-accent-cyan #moe-post-list .moe-archive-top-card main i {
+  color: #18FFFF;
+}
+
+.mdui-theme-accent-cyan .moe-post-card .moe-card-content a:not([data-baguettebox]):before {
+  background-color: #18FFFF;
+}
+
+.mdui-theme-accent-cyan .moe-post-card .moe-card-content .moe-post-card-copy {
+  border-left: 4px solid #18FFFF;
+}
+/* ========== Cyan END ========== */
+
+/* ========== Teal ========== */
+/* ===== Theme =====*/
+.mdui-theme-primary-teal .moe-post-card .moe-card-content h1:before,
+.mdui-theme-primary-teal .moe-post-card .moe-card-content h2:before,
+.mdui-theme-primary-teal .moe-post-card .moe-card-content h3:before,
+.mdui-theme-primary-teal .moe-post-card .moe-card-content h4:before,
+.mdui-theme-primary-teal .moe-post-card .moe-card-content h5:before,
+.mdui-theme-primary-teal .moe-post-card .moe-card-content h6:before {
+  color: #009688;
+}
+
+.mdui-theme-primary-teal .moe-post-card .moe-card-content h3,
+.mdui-theme-primary-teal .moe-post-card .moe-card-content h4,
+.mdui-theme-primary-teal .moe-post-card .moe-card-content h5,
+.mdui-theme-primary-teal .moe-post-card .moe-card-content h6 {
+  border-left: 4px solid #009688;
+}
+
+/* ===== Accent ===== */
+.mdui-theme-accent-teal .moe-post-card .moe-card-content a:not([data-baguettebox]),
+.mdui-theme-accent-teal #moe-post-list .moe-archive-top-card main i {
+  color: #64FFDA;
+}
+
+.mdui-theme-accent-teal .moe-post-card .moe-card-content a:not([data-baguettebox]):before {
+  background-color: #64FFDA;
+}
+
+.mdui-theme-accent-teal .moe-post-card .moe-card-content .moe-post-card-copy {
+  border-left: 4px solid #64FFDA;
+}
+/* ========== Teal END ========== */
+
+/* ========== Green ========== */
+/* ===== Theme =====*/
+.mdui-theme-primary-green .moe-post-card .moe-card-content h1:before,
+.mdui-theme-primary-green .moe-post-card .moe-card-content h2:before,
+.mdui-theme-primary-green .moe-post-card .moe-card-content h3:before,
+.mdui-theme-primary-green .moe-post-card .moe-card-content h4:before,
+.mdui-theme-primary-green .moe-post-card .moe-card-content h5:before,
+.mdui-theme-primary-green .moe-post-card .moe-card-content h6:before {
+  color: #4CAF50;
+}
+
+.mdui-theme-primary-green .moe-post-card .moe-card-content h3,
+.mdui-theme-primary-green .moe-post-card .moe-card-content h4,
+.mdui-theme-primary-green .moe-post-card .moe-card-content h5,
+.mdui-theme-primary-green .moe-post-card .moe-card-content h6 {
+  border-left: 4px solid #4CAF50;
+}
+
+/* ===== Accent ===== */
+.mdui-theme-accent-green .moe-post-card .moe-card-content a:not([data-baguettebox]),
+.mdui-theme-accent-green #moe-post-list .moe-archive-top-card main i {
+  color: #69F0AE;
+}
+
+.mdui-theme-accent-green .moe-post-card .moe-card-content a:not([data-baguettebox]):before {
+  background-color: #69F0AE;
+}
+
+.mdui-theme-accent-green .moe-post-card .moe-card-content .moe-post-card-copy {
+  border-left: 4px solid #69F0AE;
+}
+/* ========== Green END ========== */
+
+/* ========== Light Green ========== */
+/* ===== Theme =====*/
+.mdui-theme-primary-light-green .moe-post-card .moe-card-content h1:before,
+.mdui-theme-primary-light-green .moe-post-card .moe-card-content h2:before,
+.mdui-theme-primary-light-green .moe-post-card .moe-card-content h3:before,
+.mdui-theme-primary-light-green .moe-post-card .moe-card-content h4:before,
+.mdui-theme-primary-light-green .moe-post-card .moe-card-content h5:before,
+.mdui-theme-primary-light-green .moe-post-card .moe-card-content h6:before {
+  color: #8BC34A;
+}
+
+.mdui-theme-primary-light-green .moe-post-card .moe-card-content h3,
+.mdui-theme-primary-light-green .moe-post-card .moe-card-content h4,
+.mdui-theme-primary-light-green .moe-post-card .moe-card-content h5,
+.mdui-theme-primary-light-green .moe-post-card .moe-card-content h6 {
+  border-left: 4px solid #8BC34A;
+}
+
+/* ===== Accent ===== */
+.mdui-theme-accent-light-green .moe-post-card .moe-card-content a:not([data-baguettebox]),
+.mdui-theme-accent-light-green #moe-post-list .moe-archive-top-card main i {
+  color: #B2FF59;
+}
+
+.mdui-theme-accent-light-green .moe-post-card .moe-card-content a:not([data-baguettebox]):before {
+  background-color: #B2FF59;
+}
+
+.mdui-theme-accent-light-green .moe-post-card .moe-card-content .moe-post-card-copy {
+  border-left: 4px solid #B2FF59;
+}
+/* ========== Light Green END ========== */
+
+/* ========== Lime ========== */
+/* ===== Theme =====*/
+.mdui-theme-primary-lime .moe-post-card .moe-card-content h1:before,
+.mdui-theme-primary-lime .moe-post-card .moe-card-content h2:before,
+.mdui-theme-primary-lime .moe-post-card .moe-card-content h3:before,
+.mdui-theme-primary-lime .moe-post-card .moe-card-content h4:before,
+.mdui-theme-primary-lime .moe-post-card .moe-card-content h5:before,
+.mdui-theme-primary-lime .moe-post-card .moe-card-content h6:before {
+  color: #CDDC39;
+}
+
+.mdui-theme-primary-lime .moe-post-card .moe-card-content h3,
+.mdui-theme-primary-lime .moe-post-card .moe-card-content h4,
+.mdui-theme-primary-lime .moe-post-card .moe-card-content h5,
+.mdui-theme-primary-lime .moe-post-card .moe-card-content h6 {
+  border-left: 4px solid #CDDC39;
+}
+
+/* ===== Accent ===== */
+.mdui-theme-accent-lime .moe-post-card .moe-card-content a:not([data-baguettebox]),
+.mdui-theme-accent-lime #moe-post-list .moe-archive-top-card main i {
+  color: #EEFF41;
+}
+
+.mdui-theme-accent-lime .moe-post-card .moe-card-content a:not([data-baguettebox]):before {
+  background-color: #EEFF41;
+}
+
+.mdui-theme-accent-lime .moe-post-card .moe-card-content .moe-post-card-copy {
+  border-left: 4px solid #EEFF41;
+}
+/* ========== Lime END ========== */
+
+/* ========== Yellow ========== */
+/* ===== Theme =====*/
+.mdui-theme-primary-yellow .moe-post-card .moe-card-content h1:before,
+.mdui-theme-primary-yellow .moe-post-card .moe-card-content h2:before,
+.mdui-theme-primary-yellow .moe-post-card .moe-card-content h3:before,
+.mdui-theme-primary-yellow .moe-post-card .moe-card-content h4:before,
+.mdui-theme-primary-yellow .moe-post-card .moe-card-content h5:before,
+.mdui-theme-primary-yellow .moe-post-card .moe-card-content h6:before {
+  color: #FFEB3B;
+}
+
+.mdui-theme-primary-yellow .moe-post-card .moe-card-content h3,
+.mdui-theme-primary-yellow .moe-post-card .moe-card-content h4,
+.mdui-theme-primary-yellow .moe-post-card .moe-card-content h5,
+.mdui-theme-primary-yellow .moe-post-card .moe-card-content h6 {
+  border-left: 4px solid #FFEB3B;
+}
+
+/* ===== Accent ===== */
+.mdui-theme-accent-yellow .moe-post-card .moe-card-content a:not([data-baguettebox]),
+.mdui-theme-accent-yellow #moe-post-list .moe-archive-top-card main i {
+  color: #FFFF00;
+}
+
+.mdui-theme-accent-yellow .moe-post-card .moe-card-content a:not([data-baguettebox]):before {
+  background-color: #FFFF00;
+}
+
+.mdui-theme-accent-yellow .moe-post-card .moe-card-content .moe-post-card-copy {
+  border-left: 4px solid #FFFF00;
+}
+/* ========== Yellow END ========== */
+
+/* ========== Amber ========== */
+/* ===== Theme =====*/
+.mdui-theme-primary-amber .moe-post-card .moe-card-content h1:before,
+.mdui-theme-primary-amber .moe-post-card .moe-card-content h2:before,
+.mdui-theme-primary-amber .moe-post-card .moe-card-content h3:before,
+.mdui-theme-primary-amber .moe-post-card .moe-card-content h4:before,
+.mdui-theme-primary-amber .moe-post-card .moe-card-content h5:before,
+.mdui-theme-primary-amber .moe-post-card .moe-card-content h6:before {
+  color: #FFC107;
+}
+
+.mdui-theme-primary-amber .moe-post-card .moe-card-content h3,
+.mdui-theme-primary-amber .moe-post-card .moe-card-content h4,
+.mdui-theme-primary-amber .moe-post-card .moe-card-content h5,
+.mdui-theme-primary-amber .moe-post-card .moe-card-content h6 {
+  border-left: 4px solid #FFC107;
+}
+
+/* ===== Accent ===== */
+.mdui-theme-accent-amber .moe-post-card .moe-card-content a:not([data-baguettebox]),
+.mdui-theme-accent-amber #moe-post-list .moe-archive-top-card main i {
+  color: #FFD740;
+}
+
+.mdui-theme-accent-amber .moe-post-card .moe-card-content a:not([data-baguettebox]):before {
+  background-color: #FFD740;
+}
+
+.mdui-theme-accent-amber .moe-post-card .moe-card-content .moe-post-card-copy {
+  border-left: 4px solid #FFD740;
+}
+/* ========== Amber END ========== */
+
+/* ========== Orange ========== */
+/* ===== Theme =====*/
+.mdui-theme-primary-orange .moe-post-card .moe-card-content h1:before,
+.mdui-theme-primary-orange .moe-post-card .moe-card-content h2:before,
+.mdui-theme-primary-orange .moe-post-card .moe-card-content h3:before,
+.mdui-theme-primary-orange .moe-post-card .moe-card-content h4:before,
+.mdui-theme-primary-orange .moe-post-card .moe-card-content h5:before,
+.mdui-theme-primary-orange .moe-post-card .moe-card-content h6:before {
+  color: #FF9800;
+}
+
+.mdui-theme-primary-orange .moe-post-card .moe-card-content h3,
+.mdui-theme-primary-orange .moe-post-card .moe-card-content h4,
+.mdui-theme-primary-orange .moe-post-card .moe-card-content h5,
+.mdui-theme-primary-orange .moe-post-card .moe-card-content h6 {
+  border-left: 4px solid #FF9800;
+}
+
+/* ===== Accent ===== */
+.mdui-theme-accent-orange .moe-post-card .moe-card-content a:not([data-baguettebox]),
+.mdui-theme-accent-orange #moe-post-list .moe-archive-top-card main i {
+  color: #FFAB40;
+}
+
+.mdui-theme-accent-orange .moe-post-card .moe-card-content a:not([data-baguettebox]):before {
+  background-color: #FFAB40;
+}
+
+.mdui-theme-accent-orange .moe-post-card .moe-card-content .moe-post-card-copy {
+  border-left: 4px solid #FFAB40;
+}
+/* ========== Orange END ========== */
+
+/* ========== Deep Orange ========== */
+/* ===== Theme =====*/
+.mdui-theme-primary-deep-orange .moe-post-card .moe-card-content h1:before,
+.mdui-theme-primary-deep-orange .moe-post-card .moe-card-content h2:before,
+.mdui-theme-primary-deep-orange .moe-post-card .moe-card-content h3:before,
+.mdui-theme-primary-deep-orange .moe-post-card .moe-card-content h4:before,
+.mdui-theme-primary-deep-orange .moe-post-card .moe-card-content h5:before,
+.mdui-theme-primary-deep-orange .moe-post-card .moe-card-content h6:before {
+  color: #FF5722;
+}
+
+.mdui-theme-primary-deep-orange .moe-post-card .moe-card-content h3,
+.mdui-theme-primary-deep-orange .moe-post-card .moe-card-content h4,
+.mdui-theme-primary-deep-orange .moe-post-card .moe-card-content h5,
+.mdui-theme-primary-deep-orange .moe-post-card .moe-card-content h6 {
+  border-left: 4px solid #FF5722;
+}
+
+/* ===== Accent ===== */
+.mdui-theme-accent-deep-orange .moe-post-card .moe-card-content a:not([data-baguettebox]),
+.mdui-theme-accent-deep-orange #moe-post-list .moe-archive-top-card main i {
+  color: #FF6E40;
+}
+
+.mdui-theme-accent-deep-orange .moe-post-card .moe-card-content a:not([data-baguettebox]):before {
+  background-color: #FF6E40;
+}
+
+.mdui-theme-accent-deep-orange .moe-post-card .moe-card-content .moe-post-card-copy {
+  border-left: 4px solid #FF6E40;
+}
+/* ========== Deep Orange END ========== */
+
+/* ========== Brown ========== */
+/* ===== Theme =====*/
+.mdui-theme-primary-brown .moe-post-card .moe-card-content h1:before,
+.mdui-theme-primary-brown .moe-post-card .moe-card-content h2:before,
+.mdui-theme-primary-brown .moe-post-card .moe-card-content h3:before,
+.mdui-theme-primary-brown .moe-post-card .moe-card-content h4:before,
+.mdui-theme-primary-brown .moe-post-card .moe-card-content h5:before,
+.mdui-theme-primary-brown .moe-post-card .moe-card-content h6:before {
+  color: #795548;
+}
+
+.mdui-theme-primary-brown .moe-post-card .moe-card-content h3,
+.mdui-theme-primary-brown .moe-post-card .moe-card-content h4,
+.mdui-theme-primary-brown .moe-post-card .moe-card-content h5,
+.mdui-theme-primary-brown .moe-post-card .moe-card-content h6 {
+  border-left: 4px solid #795548;
+}
+/* ========== Brown END ========== */
+
+/* ========== Grey ========== */
+/* ===== Theme =====*/
+.mdui-theme-primary-grey .moe-post-card .moe-card-content h1:before,
+.mdui-theme-primary-grey .moe-post-card .moe-card-content h2:before,
+.mdui-theme-primary-grey .moe-post-card .moe-card-content h3:before,
+.mdui-theme-primary-grey .moe-post-card .moe-card-content h4:before,
+.mdui-theme-primary-grey .moe-post-card .moe-card-content h5:before,
+.mdui-theme-primary-grey .moe-post-card .moe-card-content h6:before {
+  color: #9E9E9E;
+}
+
+.mdui-theme-primary-grey .moe-post-card .moe-card-content h3,
+.mdui-theme-primary-grey .moe-post-card .moe-card-content h4,
+.mdui-theme-primary-grey .moe-post-card .moe-card-content h5,
+.mdui-theme-primary-grey .moe-post-card .moe-card-content h6 {
+  border-left: 4px solid #9E9E9E;
+}
+/* ========== Grey END ========== */
+
+/* ========== Blue Grey ========== */
+/* ===== Theme =====*/
+.mdui-theme-primary-blue-grey .moe-post-card .moe-card-content h1:before,
+.mdui-theme-primary-blue-grey .moe-post-card .moe-card-content h2:before,
+.mdui-theme-primary-blue-grey .moe-post-card .moe-card-content h3:before,
+.mdui-theme-primary-blue-grey .moe-post-card .moe-card-content h4:before,
+.mdui-theme-primary-blue-grey .moe-post-card .moe-card-content h5:before,
+.mdui-theme-primary-blue-grey .moe-post-card .moe-card-content h6:before {
+  color: #607D8B;
+}
+
+.mdui-theme-primary-blue-grey .moe-post-card .moe-card-content h3,
+.mdui-theme-primary-blue-grey .moe-post-card .moe-card-content h4,
+.mdui-theme-primary-blue-grey .moe-post-card .moe-card-content h5,
+.mdui-theme-primary-blue-grey .moe-post-card .moe-card-content h6 {
+  border-left: 4px solid #607D8B;
+}
+/* ========== Blue Grey END ========== */
