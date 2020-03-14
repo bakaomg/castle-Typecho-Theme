@@ -1475,6 +1475,15 @@ img:not(.initial) {
 /* ===== 头像框 ===== */
 .moe-comments-list-box .moe-comments-content-wrap .moe-comments-avatar-box {
   position: relative;
+  transition: all 0.3s;
+}
+
+.moe-comments-list-box .moe-comments-content-wrap:hover .moe-comments-avatar-box {
+  transform: scale(1.12333);
+  -o-transform: scale(1.12333);
+  -ms-transform: scale(1.12333);
+  -moz-transform: scale(1.12333);
+  -webkit-transform: scale(1.12333);
 }
 
 .moe-comments-list-box .moe-comments-content-wrap .moe-comments-avatar-box .moe-comments-avatar {
