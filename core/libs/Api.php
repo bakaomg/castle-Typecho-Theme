@@ -99,7 +99,10 @@ class Castle_API {
     'owoList' => (Castle_OwO::getOwOList()) ? Castle_OwO::getOwOList() : false,
 
     //备案号
-    'miibeian' => (Helper::options()->miibeian) ? Helper::options()->miibeian : false   //备案号
+    'miibeian' => [
+     'number' => (Helper::options()->miibeian) ? Helper::options()->miibeian : false,                                 //备案号
+     'link' => (Helper::options()->miibeianLink) ? Helper::options()->miibeianLink : 'http://www.beian.miit.gov.cn/'  //备案指向链接
+    ]
    ]
   ];
 

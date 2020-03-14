@@ -244,7 +244,8 @@ function themeConfig($form) {
    ).
 
    $Component->panel('页脚设置', NULL,
-    $Component->input('miibeian', '备案号', '如果不填备案号将不会显示在页脚。', NULL)
+    $Component->textarea('miibeianLink', '备案链接', '备案号指向链接，如果不填默认跳转到 http://www.beian.miit.gov.cn/ 。', 'http://www.beian.miit.gov.cn/').
+    $Component->textarea('miibeian', '备案号', '如果不填备案号将不会显示在页脚。', NULL)
    ).
 
    $Component->panel('高级设置', NULL,
