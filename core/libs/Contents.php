@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Content Class
- * Last Update: 2020/02/12
+ * Last Update: 2020/03/14
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 //大部分修改搬自 AlanDecode[https://github.com/AlanDecode] 的主题 VOID
@@ -20,9 +20,19 @@ class Castle_Contents {
    $text = self::parseTable($text);
    $text = self::parseTitle($text);
    $text = self::parseRuby($text);
+   $text = self::shortCode($text);
   }
   
   return $text;
+ }
+
+ /**
+  * 短代码入口
+  */
+ public static function shortCode($content) {
+  $content = self::parseCodeHidden($content);
+
+  return $content;
  }
 
  /**
@@ -84,7 +94,7 @@ class Castle_Contents {
  private static function parseBaguetteBox_Callback($match) {
   // 普通解析
   if(!self::$photoMode) {
-   $imgHead = '<a data-baguettebox="photo" data-caption="'.$match[2].'" href="'.$match[1].'" data-baguettebox="photo" no-go no-pjax>';
+   $imgHead = '<a data-baguettebox="photo" data-caption="'.$match[2].'" href="'.$match[1].'" data-baguettebox="photo" no-go no-pgo no-pjax>';
    $imgFoot = '</a>';
   }
 
@@ -130,9 +140,19 @@ class Castle_Contents {
  public static function parseRuby($string) {
   $reg = '/\{\{(.*?):(.*?)\}\}/s';
   $rp = '<ruby>${1}<rp>(</rp><rt>${2}</rt><rp>)</rp></ruby>';
-  $new = preg_replace($reg,$rp,$string);
+  $new = preg_replace($reg, $rp, $string);
   return $new;
-  }
+ }
+
+ /**
+  * 隐藏文字 [短代码]
+  */
+ public static function parseCodeHidden($content) {
+  $reg = '/\[hidden\](.*?)\[\/hidden\]/s';
+  $rp = '<span class="moe-short-code-hidden">${1}</span>';
+  $new = preg_replace($reg, $rp, $content);
+  return $new;
+ }
 
  /**
   * 文章阅读数

@@ -8,7 +8,7 @@
   \_____|  \__,_| |___/  \__| |_|  \___|
  ----------------------------------------
  * Castle's Stylesheet
- * Last Update: 2020/02/29 [0.9.1]
+ * Last Update: 2020/03/14 [0.9.3]
  * Author: ohmyga (https://ohmyga.cn)
  * GitHub: https://github.com/ohmyga233/castle-Typecho-Theme/
  * LICENSE: GPL V3 (https://www.gnu.org/licenses/gpl-3.0.html)
@@ -281,6 +281,12 @@ body {
  .mdui-theme-layout-dark .moe-comment-card {
   border-bottom: solid 1px rgba(255,255,255,0.3);
  }
+}
+
+/* ===== 短代码 ===== */
+.mdui-theme-layout-dark .moe-short-code-hidden {
+  color: #fff;
+  background-color: #fff;
 }
 
 .mdui-theme-layout-dark .moe-comments-list-card .moe-comments-list-header:after {
@@ -1171,6 +1177,20 @@ img:not(.initial) {
 /* 表格 */
 .mdui-table-fluid {
   border-radius: 3px;
+}
+
+/* ===== 短代码 ===== */
+.moe-short-code-hidden {
+  color: #424242;
+  padding: 3px;
+  cursor: default;
+  border-radius: 3px;
+  transition: all 0.3s;
+  background-color: #424242;
+}
+
+.moe-short-code-hidden:hover {
+  background-color: transparent;
 }
 
 /* ========== 文章导航栏 ========== */
