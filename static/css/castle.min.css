@@ -1182,7 +1182,7 @@ img:not(.initial) {
 /* ===== 短代码 ===== */
 .moe-short-code-hidden {
   color: #424242;
-  padding: 3px;
+  padding: 1px;
   cursor: default;
   border-radius: 3px;
   transition: all 0.3s;

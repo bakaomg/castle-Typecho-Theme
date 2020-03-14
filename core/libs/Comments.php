@@ -137,7 +137,7 @@ class Castle_Comments_Archive extends Widget_Abstract_Comments {
        </div>
 
        <div class="moe-comments-textBox mdui-typo">
-        <?php echo $this->getParent(); echo preg_replace('#</?[p][^>]*>#','', Castle_Contents::parseOwO($this->content)); ?>
+        <?php echo $this->getParent(); echo preg_replace('#</?[p][^>]*>#','', Castle_Contents::parseOwO(Castle_Contents::shortCode($this->content))); ?>
        </div>
       </div>
      </main>
