@@ -194,7 +194,17 @@ class Castle_Libs {
   
   //编辑器按钮样式修复
   '.wmd-button-row{ height:unset; }
-  </style>';
+  </style>'.
+
+  //MDUI
+  '<link rel="stylesheet" href="'.Castle_Libs::resources('static/css/mdui.min.css', true).'">'.
+  '<script src="'.Castle_Libs::resources('static/js/mdui.min.js', true).'"></script>'.
+  
+  //表情选择框
+  '<script src="'.Castle_Libs::index('/?action=owoConfig', false).'"></script>'.
+  '<link rel="stylesheet" href="'.Castle_Libs::resources('static/css/owo.min.css', true).'" />'.
+  '<script src="'.Castle_Libs::resources('static/js/owo.min.js', true).'"></script>'.
+  '<script>window.onload = function() { CastleOwO.addOwOBtn(); };</script>';
  }
 
  /**

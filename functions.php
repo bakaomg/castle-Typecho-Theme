@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Functions
- * Last Update: 2020/02/29
+ * Last Update: 2020/03/14
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -53,6 +53,17 @@ function themeInit($archive) {
  //站点配置文件
  if ($_SERVER['REQUEST_METHOD'] == 'GET' && @$_GET["action"] == 'siteConfig') {
   Castle_API::siteConfig();
+  die();
+ }
+
+ //表情配置文件
+ if ($_SERVER['REQUEST_METHOD'] == 'GET' && @$_GET["action"] == 'owoConfig') {
+  $arr = [
+   'setting' => [
+    'owoList' => (Castle_OwO::getOwOList()) ? Castle_OwO::getOwOList() : false
+   ]
+  ];
+  echo 'var CastleConfig = '.json_encode($arr).';';
   die();
  }
 
