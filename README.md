@@ -32,4 +32,5 @@ $ git clone https://github.com/ohmyga233/castle-Typecho-Theme
 <br>文档在写了（0.01%）.jpg
 
 ## 版权信息
+Screenshot.png: [最近のケモショタまとめログ③ - #P2](https://www.pixiv.net/artworks/66074820?p=2)<br>
 Copyright &copy; 2018-2020 [ohmyga](https://github.com/ohmyga233), under GPL-3.0 License
