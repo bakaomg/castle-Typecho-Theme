@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Comments
- * Last Update: 2020/02/09
+ * Last Update: 2020/03/15
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $showLink = (Helper::options()->commentSwitch && in_array('displayLinkBtn', Helper::options()->commentSwitch)) ? NULL : ' moe-comment-input-url-hidden';
@@ -102,7 +102,11 @@ if(!$this->hidden):
    </div>
 <?php endif; ?>
 
-<?php if (Helper::options()->commentSwitch && in_array('showCommentsList', Helper::options()->commentSwitch) && !$this->allow('comment')) { ?>
+<?php if (!$this->allow('comment')) {
+  if (Helper::options()->commentSwitch && in_array('showCommentsList', Helper::options()->commentSwitch)) { goto commentsList; }
+ } else {
+  commentsList:
+?>
    <div class="mdui-card moe-comments-list-card" id="comments">
     <header class="moe-comments-list-header">
      <div class="moe-comments-list-title"><?php echo $GLOBALS['CastleLang']['comment']['commrntsBox']['title']; ?></div>
