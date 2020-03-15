@@ -8,7 +8,7 @@
   \_____|  \__,_| |___/  \__| |_|  \___|
  ----------------------------------------
  * Castle's Stylesheet
- * Last Update: 2020/03/14 [0.9.3]
+ * Last Update: 2020/03/15 [0.9.3]
  * Author: ohmyga (https://ohmyga.cn)
  * GitHub: https://github.com/ohmyga233/castle-Typecho-Theme/
  * LICENSE: GPL V3 (https://www.gnu.org/licenses/gpl-3.0.html)
@@ -1336,6 +1336,17 @@ img:not(.initial) {
 
 .moe-comment-card .moe-comment-card-footer .moe-comment-card-btns #showLinkInput {
   margin-right: 10px;
+}
+
+/* ===== 评论关闭 ===== */
+.moe-comment-card .moe-comment-card-close {
+  font-size: 18px;
+  padding: 20px 10px;
+}
+
+.moe-comment-card .moe-comment-card-close i {
+  font-size: 28px;
+  vertical-align: middle;
 }
 
 /* ===== 表情按钮 ===== */
