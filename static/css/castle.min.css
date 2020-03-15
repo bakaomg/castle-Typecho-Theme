@@ -1939,6 +1939,11 @@ code {
   -webkit-box-sizing: border-box;
 }
 
+/* ========== 回到顶部按钮 ========== */
+#go-top {
+  z-index: 990;
+}
+
 /* ========== Footer ========== */
 #footer {
   clear: both;
