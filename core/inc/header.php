@@ -15,6 +15,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
    echo ($this->options->siteAvatar) ? $this->options->siteAvatar : Castle_Libs::resources('static/img/favicon.png');
   ?>">
   <?php Castle_Header::export($this) ?>
+  <?php echo ($this->options->addHeader) ? $this->options->addHeader() : NULL; ?>
   <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
  </head>
 

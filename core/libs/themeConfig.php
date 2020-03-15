@@ -249,6 +249,8 @@ function themeConfig($form) {
    ).
 
    $Component->panel('高级设置', NULL,
+    $Component->textarea('addHeader', 'Header', '向 Header 插入 HTML 等。', NULL).
+    $Component->textarea('addFooter', 'Footer', '向 Footer 插入 HTML 等。', NULL).
     $Component->textarea('CastleSettings', '高级设置', '<!-- 主题根目录下有一份 demo 照着改吧。 -->这个暂时无用。', NULL)
    )
 
