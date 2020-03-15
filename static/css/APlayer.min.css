@@ -4,6 +4,10 @@
  * Last Update: 2020/02/29
  */
 
+.aplayer.aplayer-fixed {
+  z-index: 1000;
+}
+
 .mdui-theme-layout-dark .aplayer,
 .mdui-theme-layout-dark .aplayer .aplayer-body {
   background: #616161!important;
