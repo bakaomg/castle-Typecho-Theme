@@ -174,10 +174,11 @@ function themeConfig($form) {
 
    $Component->panel('评论设置', NULL,
     $Component->checkbox('commentSwitch', '评论开关', NULL,
-     ['ajaxSubmit'     =>   'AJAX 提交评论',
-      'displayLinkBtn' =>   '默认显示链接填写框'
+     ['ajaxSubmit'       => 'AJAX 提交评论',
+      'displayLinkBtn'   => '默认显示链接填写框',
+      'showCommentsList' => '当关闭评论时显示评论列表'
      ],
-     ['ajaxSubmit']
+     ['ajaxSubmit', 'showCommentsList']
     ).
 
     $Component->input('commentTips', '评论提示', '显示在评论框的一句话。', '与本文无关评论请发留言板。请不要水评论，谢谢。')

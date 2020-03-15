@@ -16,9 +16,12 @@ $this->widget('Castle_Comments_Archive', $parameter)->to($comments);
 
 //如果有密码且有权查看则显示评论区
 if(!$this->hidden):
+
+ //如果允许评论
+ if($this->allow('comment')):
 ?>
    <div id="<?php $this->respondId(); ?>" class="respondID" data-commentUrl="<?php $this->commentUrl() ?>">
-    <div class="mdui-card moe-comment-card " id="comment-card-box">
+    <div class="mdui-card moe-comment-card" id="comment-card-box">
      <header class="moe-comment-card-header">
       <div class="moe-comment-card-title"><?php echo $GLOBALS['CastleLang']['comment']['respond']['title']; ?></div>
       <?php if(!$this->user->hasLogin()){
@@ -88,7 +91,18 @@ if(!$this->hidden):
 
     </div>
    </div>
+<?php
+ //如果不允许评论
+ else: ?>
+   <div class="mdui-card moe-comment-card" id="comment-card-box">
+    <div class="moe-comment-card-close">
+     <i class="mdui-icon material-icons">&#xe5cd;</i>
+     评论已关闭
+    </div>
+   </div>
+<?php endif; ?>
 
+<?php if (Helper::options()->commentSwitch && in_array('showCommentsList', Helper::options()->commentSwitch) && !$this->allow('comment')) { ?>
    <div class="mdui-card moe-comments-list-card" id="comments">
     <header class="moe-comments-list-header">
      <div class="moe-comments-list-title"><?php echo $GLOBALS['CastleLang']['comment']['commrntsBox']['title']; ?></div>
@@ -109,6 +123,5 @@ if(!$this->hidden):
      <?php $comments->pageNav('<span><<</span>', '<span>>></span>', 1, '...', 'wrapTag=div&wrapClass=moe-comments-page-navigator&prevClass=prev&nextClass=next'); ?>
     </footer>
    </div>
-<?php
-endif;
-?>
+<?php } ?>
+<?php endif; ?>
