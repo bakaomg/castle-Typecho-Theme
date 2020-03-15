@@ -3,8 +3,14 @@
  * APlayer Dark Style
  * Last Update: 2020/02/29
  */
-.mdui-theme-layout-dark .aplayer {
+
+.mdui-theme-layout-dark .aplayer,
+.mdui-theme-layout-dark .aplayer .aplayer-body {
   background: #616161!important;
+}
+
+.mdui-theme-layout-dark .aplayer .aplayer-miniswitcher {
+  background: #757575!important;
 }
 
 .mdui-theme-layout-dark .aplayer svg circle, .mdui-theme-layout-dark .aplayer svg path {
@@ -42,4 +48,11 @@
 
 .mdui-theme-layout-dark .aplayer .aplayer-icon:hover path {
   fill: #9E9E9E!important;
+}
+
+@media(max-width: 450px) {
+ .aplayer.aplayer-fixed .aplayer-body {
+  width: auto!important;
+  max-width: none!important;
+ }
 }
