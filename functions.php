@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Functions
- * Last Update: 2020/03/14
+ * Last Update: 2020/03/15
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -48,7 +48,7 @@ function themeInit($archive) {
  Helper::options()->commentsPageDisplay = 'first'; //默认显示第一页
  Helper::options()->commentsOrder = 'DESC'; //将较新的评论展示在第一页
  Helper::options()->commentsMaxNestingLevels = 999; //最大回复层数
- Helper::options()->commentsHTMLTagAllowed = '<a href=""> <img src=""> <img src="" class=""> <code> <del>'; //评论允许使用的标签
+ Helper::options()->commentsHTMLTagAllowed = '<a href=""> <img src=""> <img src="" class=""> <pre> <code> <code class=""> <del>'; //评论允许使用的标签
 
  //站点配置文件
  if ($_SERVER['REQUEST_METHOD'] == 'GET' && @$_GET["action"] == 'siteConfig') {
