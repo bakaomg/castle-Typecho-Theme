@@ -1,7 +1,7 @@
 @charset "utf-8";
 /**
  * APlayer Dark Style
- * Last Update: 2020/02/29
+ * Last Update: 2020/03/16
  */
 
 .aplayer.aplayer-fixed {
@@ -9,6 +9,7 @@
 }
 
 .mdui-theme-layout-dark .aplayer,
+.mdui-theme-layout-dark .aplayer .aplayer-list,
 .mdui-theme-layout-dark .aplayer .aplayer-body {
   background: #616161!important;
 }
