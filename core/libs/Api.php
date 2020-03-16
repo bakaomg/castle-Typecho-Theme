@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle API Class
- * Last Update: 2020/02/29
+ * Last Update: 2020/03/16
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
