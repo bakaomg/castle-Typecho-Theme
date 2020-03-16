@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Header Class
- * Last Update: 2020/01/26
+ * Last Update: 2020/03/16
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -58,10 +58,12 @@ class Castle_Header {
    $castleCss = 'static/css/castle.min.min.css';
    $castleThemeCss = 'static/css/castle.theme.min.min.css';
    $castleAplayerCss = 'static/css/APlayer.min.min.css';
+   $castlePioCss = 'static/css/pio.min.min.css';
   }else{
    $castleCss = 'static/css/castle.min.css';
    $castleThemeCss = 'static/css/castle.theme.min.css';
    $castleAplayerCss = 'static/css/APlayer.min.css';
+   $castlePioCss = 'static/css/pio.min.css';
   }
 
   //MDUI
@@ -133,6 +135,11 @@ class Castle_Header {
   //判断 APlayer 是否启用
   if (Castle_Libs::hasPlugin('Meting')) {
    echo "\n  ".'<link rel="stylesheet" href="'.Castle_Libs::resources($castleAplayerCss, true).'">'."\n";
+  }
+
+  //判断 Pio 是否启用
+  if (Castle_Libs::hasPlugin('Pio')) {
+   echo "\n  ".'<link rel="stylesheet" href="'.Castle_Libs::resources($castlePioCss, true).'">'."\n";
   }
  }
 
