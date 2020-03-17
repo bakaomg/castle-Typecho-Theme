@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Post
- * Last Update: 2020/02/09
+ * Last Update: 2020/03/17
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 if (@$_SERVER['HTTP_X_PJAX'] == true) {
@@ -13,7 +13,7 @@ if (@$_SERVER['HTTP_X_PJAX'] == true) {
 }
 Typecho_Widget::widget('Widget_Security')->to($security);
 ?>
-   <div class="mdui-card moe-post-card">
+   <div class="mdui-card moe-post-card" data-toc="<?php echo ($this->fields->showToc) ? 'true' : 'false'; ?>">
     <div class="mdui-card-media">
      <div class="moe-card-cover-image lazyload" data-src="<?php
        $cover = $this->fields->cover;

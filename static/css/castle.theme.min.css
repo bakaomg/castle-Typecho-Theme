@@ -27,7 +27,7 @@
 .mdui-theme-layout-dark .moe-card-transparent-10 .moe-post-card,
 .mdui-theme-layout-dark .moe-card-transparent-10 .moe-comment-card:not(.moe-comment-card-opaque),
 .mdui-theme-layout-dark .moe-card-transparent-10 .moe-comments-list-card,
-.mdui-theme-layout-dark .moe-card-transparent-10 .moe-archive-card  {
+.mdui-theme-layout-dark .moe-card-transparent-10 .moe-archive-card {
   background-color: rgba(66,66,66,0.9);
 }
 
@@ -63,6 +63,33 @@
 .mdui-theme-layout-dark .moe-card-transparent-30 .moe-comments-list-card,
 .mdui-theme-layout-dark .moe-card-transparent-30 .moe-archive-card {
   background-color: rgba(66,66,66,0.7);
+}
+
+/* ==================== 目录树配色 ==================== */
+@media (min-width: 1024px) {
+ .moe-toc-transparent-10 {
+  background-color: rgba(255,255,255,0.9)!important;
+ }
+
+ .mdui-theme-layout-dark .moe-toc-transparent-10 {
+  background-color: rgba(66,66,66,0.9)!important;
+ }
+
+ .moe-toc-transparent-20 {
+  background-color: rgba(255,255,255,0.8)!important;
+ }
+
+ .mdui-theme-layout-dark .moe-toc-transparent-20 {
+  background-color: rgba(66,66,66,0.8)!important;
+ }
+
+ .moe-toc-transparent-30 {
+  background-color: rgba(255,255,255,0.7)!important;
+ }
+
+ .mdui-theme-layout-dark .moe-toc-transparent-30 {
+  background-color: rgba(66,66,66,0.7)!important;
+ }
 }
 
 /* ==================== 主题配色 ==================== */

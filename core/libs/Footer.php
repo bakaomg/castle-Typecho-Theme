@@ -51,4 +51,30 @@ class Castle_Footer {
   //主题核心JS
   '<script src="'.Castle_Libs::resources($castleJS, true).'"></script>'."\n";
  }
+
+ /**
+  * 目录树透明度
+  */
+ public static function tocTransparent() {
+  $TocTransparent = Helper::options()->TocTransparent;
+  switch($TocTransparent) {
+   case '0':
+    break;
+
+   case '1':
+    return ' moe-toc-transparent-10';
+    break;
+
+   case '2':
+    return ' moe-toc-transparent-20';
+    break;
+
+   case '3':
+    return ' moe-toc-transparent-30';
+    break;
+
+   default:
+    break;
+  }
+ }
 }

@@ -141,6 +141,20 @@ function themeConfig($form) {
 
   /*  功能设置 */
   $Component->panel('功能设置', NULL, 
+   $Component->panel('目录树', NULL,
+    $Component->radio("TocSwitch", "目录总开关", '目录总开关<br><small>※ 此设置项优先级高于分文章的设置项。</small>',
+     [0   => '关闭目录树',
+      1   => '开启目录树'
+     ],
+    1).
+    
+    $Component->radio("TocPopup", "弹出目录", '弹出目录<br><small>※ 当分辨率 <= 1024px 时不生效。</small>',
+     [0   => '不自动弹出目录树',
+      1   => '页面启用文章目录且有标题时自动弹出目录树'
+     ],
+    1)
+   ).
+
    $Component->panel('语言设置', NULL,
     $Component->radio("Language", NULL, NULL,
      Castle_Lang::getList(),

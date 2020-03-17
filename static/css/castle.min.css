@@ -574,12 +574,13 @@ body {
   top: 0;
   right: 0;
   bottom: 0;
-  width: 240px;
   z-index: 1100;
   position: fixed;
+  width: calc(100% - 56px);
+  max-width: 280px;
   transition: all 0.3s;
   background-color: #fff;
-  transform: translateX(250px);
+  transform: translateX(290px);
 }
 
 #toc-sidebar.toc-sidebar-open {
@@ -691,25 +692,6 @@ body {
 
 #moe-toc-sidebar-overlay.moe-toc-sidebar-overlay-open {
   opacity: 1;
-}
-
-@media(min-width: 1024px) {
- #toc-Btn {
-  bottom: 104px;
- }
-
- .mdui-drawer-body-right #go-top,
- .mdui-drawer-body-right #toc-Btn {
-  right: 264px;
- }
-
- #moe-toc-sidebar-overlay.moe-toc-sidebar-overlay-open {
-  display: none!important;
- }
-
- .mdui-drawer-body-right.mdui-locked {
-  overflow: unset;
- }
 }
 
 /* ========== 登陆框 ========== */
@@ -2155,6 +2137,30 @@ code {
 }
 
 /* ========== 媒体查询 ========== */
+@media(min-width: 1024px) {
+ #toc-sidebar {
+  width: 240px;
+  transform: translateX(250px);
+ }
+ 
+ #toc-Btn {
+  bottom: 104px;
+ }
+
+ .mdui-drawer-body-right #go-top,
+ .mdui-drawer-body-right #toc-Btn {
+  right: 264px;
+ }
+
+ #moe-toc-sidebar-overlay.moe-toc-sidebar-overlay-open {
+  display: none!important;
+ }
+
+ .mdui-drawer-body-right.mdui-locked {
+  overflow: unset;
+ }
+}
+
 @media (max-width: 959px) and (orientation: landscape) {
  #moe-pjax-content {
   padding: 48px 0px 0px 0px;
