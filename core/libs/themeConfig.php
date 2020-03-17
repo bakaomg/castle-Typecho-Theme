@@ -33,9 +33,8 @@ function themeConfig($form) {
        2   => '20%',
        3   => '30%'
       ],
-     0).
+      0).
      '<br><small>※ 为了保证目录树可阅读性，最高只能透明 30% ，如需透明建议只开 10% （当分辨率 <= 1024px 时不生效）。</small>'
-    )
     ).
 
     $Component->panel('主题色', NULL,
