@@ -13,7 +13,7 @@ if (@$_SERVER['HTTP_X_PJAX'] == true) {
 }
 Typecho_Widget::widget('Widget_Security')->to($security);
 ?>
-   <div class="mdui-card moe-post-card" data-toc="<?php echo ($this->fields->showToc) ? 'true' : 'false'; ?>">
+   <div class="mdui-card moe-post-card"<?php if(Helper::options()->TocSwitch == '1') { ?> data-toc="<?php echo ($this->fields->showToc) ? 'true' : 'false'; ?>"<?php } ?>>
     <div class="mdui-card-media">
      <div class="moe-card-cover-image lazyload" data-src="<?php
        $cover = $this->fields->cover;

@@ -43,13 +43,15 @@ class Castle_Footer {
   '<script src="'.Castle_Libs::resources('static/js/lazyload.min.js', true).'"></script>'."\n  ".
 
   //HighLight
-  '<script src="'.Castle_Libs::resources('static/js/highlight.min.js', true).'"></script>'."\n  ".
+  '<script src="'.Castle_Libs::resources('static/js/highlight.min.js', true).'"></script>'."\n  ";
   
-  //Tocbot
-  '<script src="'.Castle_Libs::resources('static/js/tocbot.min.js', true).'"></script>'."\n  ".
+  if (Helper::options()->TocSwitch == '1') {
+   //Tocbot
+   echo '<script src="'.Castle_Libs::resources('static/js/tocbot.min.js', true).'"></script>'."\n  ";
+  }
 
   //主题核心JS
-  '<script src="'.Castle_Libs::resources($castleJS, true).'"></script>'."\n";
+  echo '<script src="'.Castle_Libs::resources($castleJS, true).'"></script>'."\n";
  }
 
  /**

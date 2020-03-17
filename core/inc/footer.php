@@ -7,7 +7,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 ?>
   </div>
 
-  <?php $this->need('core/inc/toc.php'); ?>
+  <?php if (Helper::options()->TocSwitch == '1') { $this->need('core/inc/toc.php'); } ?>
   <?php echo ($this->options->addFooter) ? $this->options->addFooter() : NULL; ?>
   <?php Castle_Footer::export($this) ?>
   <?php $this->footer(); ?>
