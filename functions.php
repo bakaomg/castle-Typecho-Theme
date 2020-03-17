@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Functions
- * Last Update: 2020/03/15
+ * Last Update: 2020/03/17
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -125,6 +125,15 @@ function themeFields($layout) {
   'post','文章类型','设置发表的文章的类型(仅对文章有效)。');
   $layout->addItem($PostType);
  }
+
+ $showToc = new Typecho_Widget_Helper_Form_Element_Select('showToc',
+  ['0' => '不显示目录',
+   '1' => '显示目录'
+  ],
+  '0',
+  '目录树', '是否显示文章/普通页面目录树'
+ );
+ $layout->addItem($showToc);
 
  $advancedSettings = new Typecho_Widget_Helper_Form_Element_Textarea('advancedSettings', NULL, NULL,
  '高级设置', '文章/独立页高级设置，如果不懂此有何用请勿填写。');

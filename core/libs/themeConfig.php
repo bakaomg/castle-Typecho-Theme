@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Theme Config
- * Last Update: 2020/02/14
+ * Last Update: 2020/03/17
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -26,6 +26,18 @@ function themeConfig($form) {
    ).
    
    $Component->panel('主题配色', NULL,
+    $Component->panel('目录树',
+     $Component->radio("TocTransparent", "目录树透明度", '目录树透明度',
+      [0   => '不透明',
+       1   => '10%',
+       2   => '20%',
+       3   => '30%'
+      ],
+     0).
+     '<br><small>※ 为了保证目录树可阅读性，最高只能透明 30% ，如需透明建议只开 10% （当分辨率 <= 1024px 时不生效）。</small>'
+    )
+    ).
+
     $Component->panel('主题色', NULL,
      $Component->radio("themeColor", "主题主色", '主题主色',
       ['red'          => 'Red',
