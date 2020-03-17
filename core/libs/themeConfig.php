@@ -26,7 +26,7 @@ function themeConfig($form) {
    ).
    
    $Component->panel('主题配色', NULL,
-    $Component->panel('目录树',
+    $Component->panel('目录树', NULL,
      $Component->radio("TocTransparent", "目录树透明度", '目录树透明度',
       [0   => '不透明',
        1   => '10%',
