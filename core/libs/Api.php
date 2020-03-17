@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle API Class
- * Last Update: 2020/03/16
+ * Last Update: 2020/03/17
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -67,7 +67,10 @@ class Castle_API {
      'login' => (Helper::options()->sidebarToolsBar && in_array('login', Helper::options()->sidebarToolsBar)) ? true : false,
      'settingBtn' => (Helper::options()->sidebarToolsBar && in_array('settingBtn', Helper::options()->sidebarToolsBar)) ? true : false,
      'darkBtn' => (Helper::options()->sidebarToolsBar && in_array('darkBtn', Helper::options()->sidebarToolsBar)) ? true : false
-    ]
+    ],
+
+    //目录树
+    'toc' => (Helper::options()->TocSwitch == '1') ? true : false
    ],
 
    //设置
@@ -102,6 +105,11 @@ class Castle_API {
     'miibeian' => [
      'number' => (Helper::options()->miibeian) ? Helper::options()->miibeian : false,                                 //备案号
      'link' => (Helper::options()->miibeianLink) ? Helper::options()->miibeianLink : 'http://www.beian.miit.gov.cn/'  //备案指向链接
+    ],
+
+    //目录树
+    'toc' => [
+     'popup' => (Helper::options()->TocPopup == '1') ? true : false  //自动弹出
     ]
    ]
   ];

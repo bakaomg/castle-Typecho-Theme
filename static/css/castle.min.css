@@ -635,6 +635,13 @@ body {
   position: fixed !important;
 }
 
+#toc-sidebar main.moe-toc-main .moe-toc-empty {
+  color: inherit;
+  font-size: 23px;
+  margin-top: 15px;
+  text-align: center;
+}
+
 /* ===== 目录树链接 ===== */
 #toc-sidebar .moe-toc-main a.toc-link {
   height: 100%;
@@ -676,6 +683,7 @@ body {
 /* ===== 打开目录树 改变底部按钮 ===== */
 #toc-Btn {
   bottom: 96px;
+  z-index: 990;
 }
 
 #moe-toc-sidebar-overlay {
@@ -875,7 +883,7 @@ body {
 }
 
 #moe-post-list .mdui-card {
-  width: 800px;
+  width: 900px;
   margin: 18px auto 0px auto;
 }
 
@@ -1025,7 +1033,7 @@ body {
 /* ========== 文章/独立页面 ========== */
 /* 虽然上面写过了 但为了方便区分还是再写一遍 */
 .moe-post-card {
-  width: 800px;
+  width: 900px;
   margin: 38px auto 20px auto;
 }
 
@@ -1403,7 +1411,7 @@ img:not(.initial) {
 
 /* ========== 评论 ========== */
 .moe-comment-card {
-  width: 800px;
+  width: 900px;
   margin: 0px auto 20px auto;
 }
 
@@ -1522,7 +1530,7 @@ img:not(.initial) {
 
 /* ========= 评论区 ==========*/
 .moe-comments-list-card {
-  width: 800px;
+  width: 900px;
   overflow: visible;
   margin: 0px auto 20px auto;
 }
@@ -1743,7 +1751,7 @@ img:not(.initial) {
 }
 
 .moe-404-card {
-  width: 800px;
+  width: 900px;
   margin: auto;
 }
 
@@ -1894,7 +1902,7 @@ img:not(.initial) {
 /* ==================== 独立页面 ==================== */
 /* ========== 归档页面 ========== */
 .moe-archive-card {
-  width: 800px;
+  width: 900px;
   margin: auto;
 }
 
@@ -2028,7 +2036,7 @@ img:not(.initial) {
 
 /* ===== 友链申请框 ===== */
 #links-dialog {
-  width: 800px;
+  width: 900px;
   overflow: auto;
   border-radius: unset;
   height: 100vh!important;
@@ -2137,6 +2145,14 @@ code {
 }
 
 /* ========== 媒体查询 ========== */
+@media(max-width: 1170px) {
+ .mdui-drawer-body-right .moe-post-card,
+ .mdui-drawer-body-right .moe-comment-card,
+ .mdui-drawer-body-right .moe-comments-list-card {
+  width: 96%;
+ }
+}
+
 @media(min-width: 1024px) {
  #toc-sidebar {
   width: 240px;
@@ -2161,6 +2177,20 @@ code {
  }
 }
 
+@media(max-width: 1023px) {
+ #moe-post-list .mdui-card,
+ .moe-post-card,
+ .moe-comment-card,
+ .moe-comments-list-card,
+ .moe-404-card,
+ .moe-archive-card,
+ .mdui-drawer-body-right .moe-post-card,
+ .mdui-drawer-body-right .moe-comment-card,
+ .mdui-drawer-body-right .moe-comments-list-card {
+  width: 800px;
+ }
+}
+
 @media (max-width: 959px) and (orientation: landscape) {
  #moe-pjax-content {
   padding: 48px 0px 0px 0px;
@@ -2179,7 +2209,10 @@ code {
  .moe-comment-card,
  .moe-comments-list-card,
  .moe-404-card,
- .moe-archive-card {
+ .moe-archive-card,
+ .mdui-drawer-body-right .moe-post-card,
+ .mdui-drawer-body-right .moe-comment-card,
+ .mdui-drawer-body-right .moe-comments-list-card {
   width: 96%;
  }
 
@@ -2226,6 +2259,12 @@ code {
 }
 
 @media (max-width: 600px) {
+ .mdui-drawer-body-right .moe-post-card,
+ .mdui-drawer-body-right .moe-comment-card,
+ .mdui-drawer-body-right .moe-comments-list-card {
+  width: 100%;
+ }
+ 
  #moe-pjax-content {
   padding: 56px 0px 0px 0px;
  }
