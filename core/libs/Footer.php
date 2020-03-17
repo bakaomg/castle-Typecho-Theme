@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Footer Class
- * Last Update: 2020/01/26
+ * Last Update: 2020/03/17
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -44,6 +44,9 @@ class Castle_Footer {
 
   //HighLight
   '<script src="'.Castle_Libs::resources('static/js/highlight.min.js', true).'"></script>'."\n  ".
+  
+  //Tocbot
+  '<script src="'.Castle_Libs::resources('static/js/tocbot.min.js', true).'"></script>'."\n  ".
 
   //主题核心JS
   '<script src="'.Castle_Libs::resources($castleJS, true).'"></script>'."\n";

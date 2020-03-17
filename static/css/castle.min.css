@@ -8,7 +8,7 @@
   \_____|  \__,_| |___/  \__| |_|  \___|
  ----------------------------------------
  * Castle's Stylesheet
- * Last Update: 2020/03/15 [0.9.3]
+ * Last Update: 2020/03/17 [0.9.4]
  * Author: ohmyga (https://ohmyga.cn)
  * GitHub: https://github.com/ohmyga233/castle-Typecho-Theme/
  * LICENSE: GPL V3 (https://www.gnu.org/licenses/gpl-3.0.html)
@@ -171,6 +171,20 @@ body {
 .mdui-theme-layout-dark #sidebar .moe-sidebar-TotalCount {
   color: #000;
   background: #fff;
+}
+
+/* ===== Toc Sidebar ===== */
+.mdui-theme-layout-dark #toc-sidebar {
+  background-color: #424242;
+}
+
+.mdui-theme-layout-dark #toc-sidebar .moe-toc-main .toc-link:before {
+  background-color: #616161;
+}
+
+.mdui-theme-layout-dark #toc-sidebar .moe-toc-main .is-active-link:after,
+.mdui-theme-layout-dark #toc-sidebar .moe-toc-main a.toc-link:hover::after {
+  background-color: rgba(255,255,255,0.1);
 }
 
 /* ===== Search ===== */
@@ -553,6 +567,149 @@ body {
 
 #sidebar .moe-sidebar-toolbar .moe-night-btn-rotate360 {
   transform: rotate(360deg);
+}
+
+/* ========== Toc Sidebar ========== */
+#toc-sidebar {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 240px;
+  z-index: 1100;
+  position: fixed;
+  transition: all 0.3s;
+  background-color: #fff;
+  transform: translateX(250px);
+}
+
+#toc-sidebar.toc-sidebar-open {
+  transform: translateX(0);
+}
+
+#toc-sidebar header.moe-toc-header {
+  padding: 20px 15px;
+}
+
+#toc-sidebar .moe-toc-header .moe-toc-header-title {
+  color: inherit;
+  font-size: 23px;
+  text-align: center;
+}
+
+#toc-sidebar main.moe-toc-main {
+  overflow: auto;
+  position: relative;
+  padding-left: 10px;
+  max-height: calc(100vh - 66px);
+  -webkit-overflow-scrolling: touch;
+}
+
+#toc-sidebar main.moe-toc-main .toc-list {
+  margin: 0px;
+  line-height: 2;
+  padding-left: 0px;
+}
+
+#toc-sidebar .moe-toc-main ol,
+#toc-sidebar .moe-toc-main li {
+  list-style: none;
+}
+
+#toc-sidebar main.moe-toc-main .toc-list .toc-list {
+  padding-left: 10px;
+}
+
+#toc-sidebar main.moe-toc-main .is-collapsible {
+	overflow: hidden;
+	max-height: 1000px;
+	transition: all 300ms ease-in-out
+}
+
+#toc-sidebar main.moe-toc-main .is-collapsed {
+	max-height: 0
+}
+
+#toc-sidebar main.moe-toc-main .is-position-fixed {
+	top: 0;
+  position: fixed !important;
+}
+
+/* ===== 目录树链接 ===== */
+#toc-sidebar .moe-toc-main a.toc-link {
+  height: 100%;
+  display: block;
+  font-size: 20px;
+  color: inherit;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-decoration: none;
+}
+
+#toc-sidebar .moe-toc-main .toc-link::before {
+	left: 0;
+  content: '';
+	width: 2px;
+	height: 40px;
+	margin-top: -1px;
+	position: absolute;
+	display: inline-block;
+	background-color: #EEE;
+}
+
+#toc-sidebar .moe-toc-main .is-active-link {
+  font-weight: bolder;
+}
+
+#toc-sidebar .moe-toc-main .is-active-link:after,
+#toc-sidebar .moe-toc-main a.toc-link:hover::after {
+  left: 0;
+  right: 0;
+  content: '';
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  background-color: rgba(0,0,0,0.05);
+}
+
+/* ===== 打开目录树 改变底部按钮 ===== */
+#toc-Btn {
+  bottom: 96px;
+}
+
+#moe-toc-sidebar-overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: 1090;
+  position: fixed;
+  transition: all 0.3s;
+  background-color: rgba(0,0,0,0.55);
+}
+
+#moe-toc-sidebar-overlay.moe-toc-sidebar-overlay-open {
+  opacity: 1;
+}
+
+@media(min-width: 1024px) {
+ #toc-Btn {
+  bottom: 104px;
+ }
+
+ .mdui-drawer-body-right #go-top,
+ .mdui-drawer-body-right #toc-Btn {
+  right: 264px;
+ }
+
+ #moe-toc-sidebar-overlay.moe-toc-sidebar-overlay-open {
+  display: none!important;
+ }
+
+ .mdui-drawer-body-right.mdui-locked {
+  overflow: unset;
+ }
 }
 
 /* ========== 登陆框 ========== */

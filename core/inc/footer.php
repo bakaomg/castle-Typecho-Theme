@@ -1,12 +1,13 @@
 <?php
 /**
  * Castle Footer
- * Last Update: 2020/01/26
+ * Last Update: 2020/03/17
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 ?>
   </div>
 
+  <?php $this->need('core/inc/toc.php'); ?>
   <?php echo ($this->options->addFooter) ? $this->options->addFooter() : NULL; ?>
   <?php Castle_Footer::export($this) ?>
   <?php $this->footer(); ?>
