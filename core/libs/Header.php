@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Header Class
- * Last Update: 2020/03/17
+ * Last Update: 2020/03/18
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -133,12 +133,12 @@ class Castle_Header {
   $header->header('generator=&pingback=&xmlrpc=&wlw=&commentReply=&description=');
 
   //判断 APlayer 是否启用
-  if (Castle_Libs::hasPlugin('Meting')) {
+  if (Castle_Libs::hasPlugin('Meting') || Helper::options()->APlayerStyle == '0') {
    echo "\n  ".'<link rel="stylesheet" href="'.Castle_Libs::resources($castleAplayerCss, true).'">'."\n";
   }
 
   //判断 Pio 是否启用
-  if (Castle_Libs::hasPlugin('Pio')) {
+  if (Castle_Libs::hasPlugin('Pio') || Helper::options()->PioStyle == '0') {
    echo "\n  ".'<link rel="stylesheet" href="'.Castle_Libs::resources($castlePioCss, true).'">'."\n";
   }
  }

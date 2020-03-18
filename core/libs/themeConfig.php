@@ -191,6 +191,7 @@ function themeConfig($form) {
 
    $Component->panel('独立页面', NULL,
     $Component->panel('友链页面', NULL,
+     (new Castle_Plugin_Check())->links().
      $Component->checkbox('pageLinks', NULL, NULL,
       ['rand'  =>  '友链随机排序'],
       ['rand']
@@ -280,6 +281,26 @@ function themeConfig($form) {
     $Component->textarea('addHeader', 'Header', '向 Header 插入 HTML 等。', NULL).
     $Component->textarea('addFooter', 'Footer', '向 Footer 插入 HTML 等。', NULL).
     $Component->textarea('CastleSettings', '高级设置', '<!-- 主题根目录下有一份 demo 照着改吧。 -->这个暂时无用。', NULL)
+   ).
+
+   $Component->panel('第三方插件相关', NULL,
+    $Component->panel('Pio', NULL,
+     (new Castle_Plugin_Check())->pio().
+     $Component->radio("PioStyle", NULL, NULL,
+      [0 => "强制引用暗色样式",
+       1 => '检测插件是否存在并引用暗色设配样式'
+      ],
+     1)
+    ).
+    
+    $Component->panel('APlayer', NULL,
+     (new Castle_Plugin_Check())->APlayer().
+     $Component->radio("APlayerStyle", NULL, NULL,
+      [0 => "强制引用暗色样式",
+       1 => '检测插件是否存在并引用暗色设配样式'
+      ],
+     1)
+    )
    )
 
   ).
