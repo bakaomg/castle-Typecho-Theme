@@ -22,7 +22,8 @@ function themeConfig($form) {
   /* 主题外观 */
   $Component->panel('主题外观', NULL,
    $Component->panel('站点头像', NULL,
-    $Component->input('siteAvatar', '站点头像', '填入头像链接，不填显示默认头像（有效范围：侧栏头像、状态栏图标）。', NULL)
+    $Component->input('siteFavicon', '网站图标', '填入网站图标链接，不填显示默认图标（有效范围：标签页图标）。', NULL).
+    $Component->input('siteAvatar', '站点头像', '填入头像链接，不填显示默认头像（有效范围：侧栏头像）。', NULL)
    ).
    
    $Component->panel('主题配色', NULL,

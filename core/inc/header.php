@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Header
- * Last Update: 2020/01/25
+ * Last Update: 2020/03/18
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 ?>
@@ -12,7 +12,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
   <title><?php Castle_Header::title($this, '', ' - ', true, true); ?></title>
   <?php echo ($this->options->ChromeThemeColor) ? '<meta name="theme-color" content="'.$this->options->ChromeThemeColor.'">'."\n" : NULL; ?>
   <link rel="icon" type="image/x-icon" href="<?php
-   echo ($this->options->siteAvatar) ? $this->options->siteAvatar : Castle_Libs::resources('static/img/favicon.png');
+   echo ($this->options->siteFavicon) ? $this->options->siteFavicon : Castle_Libs::resources('static/img/favicon.png');
   ?>">
   <?php Castle_Header::export($this) ?>
   <?php echo ($this->options->addHeader) ? $this->options->addHeader() : NULL; ?>
@@ -21,7 +21,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
  <body class="mdui-theme-primary-<?php $this->options->themeColor(); ?> mdui-theme-accent-<?php $this->options->themeAccentColor(); ?><?php echo (Helper::options()->themeDarkColor == 'dark') ? ' mdui-theme-layout-dark' : NULL; ?>">
 
-  <header class="mdui-appbar mdui-appbar-fixed" id="header"></header>
+  <header class="mdui-appbar mdui-appbar-fixed mdui-appbar-inset" id="header"></header>
 
 <?php $this->need('/core/inc/sidebar.php'); ?>
 
