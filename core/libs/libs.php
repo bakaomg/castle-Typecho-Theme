@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Libs Class
- * Last Update: 2020/03/14
+ * Last Update: 2020/03/18
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -56,6 +56,10 @@ class Castle_Libs {
     //O's API
     defaultCover:
     $output = 'https://api.ohmyga.cn/wallpaper/?rand='.mt_rand(0,1000);
+    break;
+
+   case 'shota':
+    $output = 'https://api.713.moe/acgpic/?rand='.mt_rand(0,1000);
     break;
 
    case 'local':
