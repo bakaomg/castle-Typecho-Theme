@@ -110,8 +110,8 @@
   "time": "Y年m月d日",
   "menu": {
    "edit": {
-    "edit": "编辑文章",
-    "delete": "删除文章"
+    "edit": "编辑页面",
+    "delete": "删除页面"
    }
   },
   "delete": {

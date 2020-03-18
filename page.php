@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Page
- * Last Update: 2020/03/17
+ * Last Update: 2020/03/18
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 if (@$_SERVER['HTTP_X_PJAX'] == true) {
@@ -47,7 +47,7 @@ Typecho_Widget::widget('Widget_Security')->to($security);
 
               <li class="mdui-menu-item">
                <a data-delUrl="'.$security->getIndex('/action/contents-page-edit?do=delete&cid='.$this->cid).'" class="mdui-ripple mdui-text-color-red-accent" onclick="return CastlePost.delPost(this, \''.$this->title.'\');">
-                <i class="mdui-menu-item-icon mdui-icon material-icons mdui-text-color-red-accent">delete</i>'.$GLOBALS['CastleLang']['page']['menu']['edit']['edit'].'
+                <i class="mdui-menu-item-icon mdui-icon material-icons mdui-text-color-red-accent">delete</i>'.$GLOBALS['CastleLang']['page']['menu']['edit']['delete'].'
                </a>
               </li>
              </ul>';
