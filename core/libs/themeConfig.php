@@ -156,6 +156,13 @@ function themeConfig($form) {
     1)
    ).
 
+   $Component->panel('应用栏', NULL,
+    $Component->checkbox('appbar', '功能开关', NULL,
+     ['scrollHide' => '向下滚动自动隐藏应用栏'],
+     NULL
+    )
+   ).
+
    $Component->panel('语言设置', NULL,
     $Component->radio("Language", NULL, NULL,
      Castle_Lang::getList(),
