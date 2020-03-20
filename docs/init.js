@@ -1,5 +1,5 @@
 var rootUrl = 'https://castle.baka.show/docs',
-    rootDir = '';
+    rootDir = 'docs';
 
 var versions = [
  { title: '0.9.3', path: '/0.9.3/' }
