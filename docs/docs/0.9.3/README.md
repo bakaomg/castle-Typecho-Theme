@@ -1,4 +1,4 @@
-![Banner](/static/img/banner-docs.png)
+![Banner](../../static/img/banner-docs.png)
 
 ------
 
