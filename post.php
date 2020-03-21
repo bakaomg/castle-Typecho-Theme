@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Post
- * Last Update: 2020/03/17
+ * Last Update: 2020/03/21
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 if (@$_SERVER['HTTP_X_PJAX'] == true) {
@@ -72,7 +72,7 @@ Typecho_Widget::widget('Widget_Security')->to($security);
     </div>
    </div>
 <?php $this->need('core/inc/comments.php'); ?>
-<?
+<?php
 //如果有密码且有权限查看则显示导航栏
 if(!$this->hidden) { ?>
    <div class="moe-post-nav">
