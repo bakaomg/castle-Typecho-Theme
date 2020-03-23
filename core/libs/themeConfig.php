@@ -313,8 +313,31 @@ function themeConfig($form) {
   ).
 
   /* 后台设置 */
-  $Component->panel('主题设置界面', NULL,
-   $Component->textarea('themeConfigBG', '后台设置页面背景', '不填将使用默认背景', NULL)
+  $Component->panel('后台/插件设置', NULL,
+   (new Castle_Plugin_Check())->Castle().
+   
+   $Component->panel('登录页面', NULL,
+    $Component->checkbox('PluginLoginSwitch', NULL, NULL,
+     ['style' => '登录页面美化'
+     ],
+     NULL
+    ).
+
+    $Component->input('PluginLoginBG', '登录界面背景', '留空则显示默认图片。（登录页面美化开启时有效）', NULL)
+   ).
+
+   $Component->panel('评论管理', NULL,
+    $Component->checkbox('PluginCommentSwitch', NULL, NULL,
+     ['showIP' => '在评论管理页面显示评论者 IP 归属地'
+     ],
+     ['showIP']
+    )
+   ).
+
+   $Component->panel('主题设置界面', NULL,
+    $Component->textarea('themeConfigBG', '后台设置页面背景', '不填将使用默认背景', NULL)
+   )
+
   )
  );
 }

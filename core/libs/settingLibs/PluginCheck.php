@@ -53,4 +53,19 @@ class Castle_Plugin_Check {
 
   return $str;
  }
+
+ /**
+  * 检查 Castle 配套插件是否存在
+  *
+  * @return string  结果提示框
+  */
+ public function Castle() {
+  if (Castle_Libs::hasPlugin('Castle')) {
+   $str = Castle_Notice::success('检测到您已经安装 Castle 主题配套插件，插件设置请在此设置');
+  }else{
+   $str = Castle_Notice::error('检测到您还未安装 Castle 主题配套插件，请安装后此面板内的设置才有效');
+  }
+
+  return $str;
+ }
 }
