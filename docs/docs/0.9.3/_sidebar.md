@@ -13,6 +13,7 @@
  - [代码高亮](/exterior/highlight)
 
 - **功能设置**
+ - [表情设置](/setting/owo)
  - [文章置顶](/setting/sticky)
  - [语言设置](/setting/language)
  - [侧边抽屉](/setting/sidebar-menu)
