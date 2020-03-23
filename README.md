@@ -28,8 +28,8 @@ $ git clone https://github.com/ohmyga233/castle-Typecho-Theme
 </details>
 
 ## 注意事项
-**并没有相关的交流群，有问题请直接发 [Issues](https://github.com/ohmyga233/castle-Typecho-Theme/issues)！**
-<br>文档在写了（0.01%）.jpg
+**并没有相关的交流群，有问题请直接发 [Issues](https://github.com/ohmyga233/castle-Typecho-Theme/issues)！**<br>
+**文档已经写完 (。・∀・)ノ**
 
 ## 版权信息
 Screenshot.png: [最近のケモショタまとめログ③ - #P2](https://www.pixiv.net/artworks/66074820?p=2)<br>
