@@ -23,7 +23,8 @@ $ git clone https://github.com/ohmyga233/castle-Typecho-Theme
 ```
 
 > 开发版为实时打包上传版本，不推荐使用，因为可能会存在一些不稳定因素。<br>
-如果你在使用开发版时出现任何问题请在 [issues](https://github.com/ohmyga233/castle-Typecho-Theme/issues) 提出。
+如果你在使用开发版时出现任何问题请在 [issues](https://github.com/ohmyga233/castle-Typecho-Theme/issues) 提出。<br>
+**0.9.3 以上版本（包括开发版）已有 [配套插件](https://github.com/ohmyga233/Castle-Plugin/)，部分设置可能得依赖插件**
 
 </details>
 
