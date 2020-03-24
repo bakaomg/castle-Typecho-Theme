@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Header Class
- * Last Update: 2020/03/18
+ * Last Update: 2020/03/24
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -55,11 +55,13 @@ class Castle_Header {
  public static function export($header) {
   $resourcesSetting = (Helper::options()->resources_Type) ? Helper::options()->resources_Type : 'local';
   if ($resourcesSetting == 'jsdelivr') {
+   $castlePlugin = 'static/css/bangumi.min.min.css';
    $castleCss = 'static/css/castle.min.min.css';
    $castleThemeCss = 'static/css/castle.theme.min.min.css';
    $castleAplayerCss = 'static/css/APlayer.min.min.css';
    $castlePioCss = 'static/css/pio.min.min.css';
   }else{
+   $castlePlugin = 'static/css/bangumi.min.css';
    $castleCss = 'static/css/castle.min.css';
    $castleThemeCss = 'static/css/castle.theme.min.css';
    $castleAplayerCss = 'static/css/APlayer.min.css';
@@ -133,13 +135,18 @@ class Castle_Header {
   $header->header('generator=&pingback=&xmlrpc=&wlw=&commentReply=&description=');
 
   //判断 APlayer 是否启用
-  if (Castle_Libs::hasPlugin('Meting') || Helper::options()->APlayerStyle == '0') {
+  if (Castle_Libs::hasPlugin('Meting') || Castle_Libs::hasPlugin('APlayerAtBottom') || Helper::options()->APlayerStyle == '0') {
    echo "\n  ".'<link rel="stylesheet" href="'.Castle_Libs::resources($castleAplayerCss, true).'">'."\n";
   }
 
   //判断 Pio 是否启用
   if (Castle_Libs::hasPlugin('Pio') || Helper::options()->PioStyle == '0') {
    echo "\n  ".'<link rel="stylesheet" href="'.Castle_Libs::resources($castlePioCss, true).'">'."\n";
+  }
+
+  //判断 Castle 配套插件是否启用
+  if (Castle_Libs::hasPlugin('Castle')) {
+   echo "\n  ".'<link rel="stylesheet" href="'.Castle_Libs::resources($castlePlugin, true).'">'."\n";
   }
  }
 

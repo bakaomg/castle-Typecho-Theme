@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Theme Config
- * Last Update: 2020/03/18
+ * Last Update: 2020/03/24
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -332,6 +332,19 @@ function themeConfig($form) {
      ],
      ['showIP']
     )
+   ).
+
+   $Component->panel('追番配置', NULL,
+    $Component->radio("PluginBangumiType", "追番列表拉取源", '追番列表拉取源',
+     [0 => "Bilibili - https://bilibili.com/",
+      1 => 'Bangumi(BGM) - https://bgm.tv/'
+     ],
+    0).
+
+    $Component->input('PluginBangumiUID', '用户 ID', '根据上面选的源填对应的 UID', '0').
+
+    $Component->input('PluginBangumiBiliSESSDATA', 'Bilibili SESSDATA', '选择「Bilibili」时有效，填写说明看文档', NULL)
+
    ).
 
    $Component->panel('主题设置界面', NULL,

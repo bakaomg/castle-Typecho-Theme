@@ -19,7 +19,8 @@ if (@$_SERVER['HTTP_X_PJAX'] == true) {
  $this->need('core/inc/header.php');
 }
 ?>
-   <div class="mdui-card moe-post-card moe-bangumi-card">
+<meta name="referrer" content="never">
+   <div class="mdui-card moe-post-card moe-bangumi-page-card">
     <div class="mdui-card-media">
      <div class="moe-card-cover-image lazyload" data-src="<?php
        $cover = $this->fields->cover;
@@ -39,7 +40,12 @@ if (@$_SERVER['HTTP_X_PJAX'] == true) {
 
     <div class="moe-card-content">
 <?php if (Castle_Libs::hasPlugin('Castle')): ?>
-     <div class="mdui-row" id="bangumi-box"></div>
+     <div class="mdui-row" id="bangumi-box" data-auth="<?php echo (Castle_Libs::hasPlugin('Castle')) ? Castle_Plugin::getAuth() : 'false'; ?>" data-offset="0">
+     </div>
+
+     <div class="moe-bangumi-load-more">
+      <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" disabled>加载更多</button>
+     </div>
 <?php else: ?>
      <div class="bangumi-plugin-disable">
       <span>配套插件未启用！</span>

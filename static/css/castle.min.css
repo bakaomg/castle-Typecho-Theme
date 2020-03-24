@@ -2074,11 +2074,11 @@ img:not(.initial) {
 }
 
 /* ===== 追番页面(未启用配套插件时) ===== */
-.moe-bangumi-card .bangumi-plugin-disable {
+.moe-bangumi-page-card .bangumi-plugin-disable {
   padding: 20px;
 }
 
-.moe-bangumi-card .bangumi-plugin-disable span {
+.moe-bangumi-page-card .bangumi-plugin-disable span {
   color: #FF5252;
   display: block;
   font-size: 23px;

@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Footer Class
- * Last Update: 2020/03/17
+ * Last Update: 2020/03/24
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -33,6 +33,11 @@ class Castle_Footer {
    
    //Nprogress
    echo '<script src="'.Castle_Libs::resources('static/js/nprogress.min.js', true).'"></script>'."\n  ";
+  }
+
+  if (Castle_Libs::hasPlugin('Castle')) {
+   $CastlePluginJS = ($resourcesSetting == 'jsdelivr') ? 'static/js/bangumi.min.min.js' : 'static/js/bangumi.min.js';
+   echo '<script src="'.Castle_Libs::resources($CastlePluginJS, true).'"></script>'."\n  ";
   }
 
   echo
