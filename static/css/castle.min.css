@@ -8,7 +8,7 @@
   \_____|  \__,_| |___/  \__| |_|  \___|
  ----------------------------------------
  * Castle's Stylesheet
- * Last Update: 2020/03/19 [0.9.4]
+ * Last Update: 2020/03/24 [0.9.4]
  * Author: ohmyga (https://ohmyga.cn)
  * GitHub: https://github.com/ohmyga233/castle-Typecho-Theme/
  * LICENSE: GPL V3 (https://www.gnu.org/licenses/gpl-3.0.html)
@@ -2071,6 +2071,19 @@ img:not(.initial) {
 
 #links-dialog .moe-comments-list-footer {
   margin: 20px 0px;
+}
+
+/* ===== 追番页面(未启用配套插件时) ===== */
+.moe-bangumi-card .bangumi-plugin-disable {
+  padding: 20px;
+}
+
+.moe-bangumi-card .bangumi-plugin-disable span {
+  color: #FF5252;
+  display: block;
+  font-size: 23px;
+  font-weight: bolder;
+  text-align: center;
 }
 
 /* ===== 代码高亮 ===== */
