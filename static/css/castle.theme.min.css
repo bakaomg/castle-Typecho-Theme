@@ -8,7 +8,7 @@
   \_____|  \__,_| |___/  \__| |_|  \___|
  ----------------------------------------
  * Castle's Theme Color Stylesheet
- * Last Update: 2020/03/17 [0.9.4]
+ * Last Update: 2020/03/24 [0.9.4]
  * Author: ohmyga (https://ohmyga.cn)
  * GitHub: https://github.com/ohmyga233/castle-Typecho-Theme/
  * LICENSE: GPL V3 (https://www.gnu.org/licenses/gpl-3.0.html)
@@ -207,15 +207,15 @@
 /* ===== Accent ===== */
 .mdui-theme-accent-purple .moe-post-card .moe-card-content a:not([data-baguettebox]),
 .mdui-theme-accent-purple #moe-post-list .moe-archive-top-card main i {
-  color: #E040FB;
+  color: #EA80FC;
 }
 
 .mdui-theme-accent-purple .moe-post-card .moe-card-content a:not([data-baguettebox]):before {
-  background-color: #E040FB;
+  background-color: #EA80FC;
 }
 
 .mdui-theme-accent-purple .moe-post-card .moe-card-content .moe-post-card-copy {
-  border-left: 4px solid #E040FB;
+  border-left: 4px solid #EA80FC;
 }
 /* ========== Purple END ========== */
 
@@ -249,15 +249,15 @@
 /* ===== Accent ===== */
 .mdui-theme-accent-deep-purple .moe-post-card .moe-card-content a:not([data-baguettebox]),
 .mdui-theme-accent-deep-purple #moe-post-list .moe-archive-top-card main i {
-  color: #7C4DFF;
+  color: #B388FF;
 }
 
 .mdui-theme-accent-deep-purple .moe-post-card .moe-card-content a:not([data-baguettebox]):before {
-  background-color: #7C4DFF;
+  background-color: #B388FF;
 }
 
 .mdui-theme-accent-deep-purple .moe-post-card .moe-card-content .moe-post-card-copy {
-  border-left: 4px solid #7C4DFF;
+  border-left: 4px solid #B388FF;
 }
 /* ========== Deep Purple END ========== */
 
@@ -291,15 +291,15 @@
 /* ===== Accent ===== */
 .mdui-theme-accent-indigo .moe-post-card .moe-card-content a:not([data-baguettebox]),
 .mdui-theme-accent-indigo #moe-post-list .moe-archive-top-card main i {
-  color: #536DFE;
+  color: #8C9EFF;
 }
 
 .mdui-theme-accent-indigo .moe-post-card .moe-card-content a:not([data-baguettebox]):before {
-  background-color: #536DFE;
+  background-color: #8C9EFF;
 }
 
 .mdui-theme-accent-indigo .moe-post-card .moe-card-content .moe-post-card-copy {
-  border-left: 4px solid #536DFE;
+  border-left: 4px solid #8C9EFF;
 }
 /* ========== Indigo END ========== */
 
@@ -417,15 +417,15 @@
 /* ===== Accent ===== */
 .mdui-theme-accent-cyan .moe-post-card .moe-card-content a:not([data-baguettebox]),
 .mdui-theme-accent-cyan #moe-post-list .moe-archive-top-card main i {
-  color: #18FFFF;
+  color: #00B8D4;
 }
 
 .mdui-theme-accent-cyan .moe-post-card .moe-card-content a:not([data-baguettebox]):before {
-  background-color: #18FFFF;
+  background-color: #00B8D4;
 }
 
 .mdui-theme-accent-cyan .moe-post-card .moe-card-content .moe-post-card-copy {
-  border-left: 4px solid #18FFFF;
+  border-left: 4px solid #00B8D4;
 }
 /* ========== Cyan END ========== */
 
@@ -459,15 +459,15 @@
 /* ===== Accent ===== */
 .mdui-theme-accent-teal .moe-post-card .moe-card-content a:not([data-baguettebox]),
 .mdui-theme-accent-teal #moe-post-list .moe-archive-top-card main i {
-  color: #64FFDA;
+  color: #00BFA5;
 }
 
 .mdui-theme-accent-teal .moe-post-card .moe-card-content a:not([data-baguettebox]):before {
-  background-color: #64FFDA;
+  background-color: #00BFA5;
 }
 
 .mdui-theme-accent-teal .moe-post-card .moe-card-content .moe-post-card-copy {
-  border-left: 4px solid #64FFDA;
+  border-left: 4px solid #00BFA5;
 }
 /* ========== Teal END ========== */
 
@@ -543,15 +543,15 @@
 /* ===== Accent ===== */
 .mdui-theme-accent-light-green .moe-post-card .moe-card-content a:not([data-baguettebox]),
 .mdui-theme-accent-light-green #moe-post-list .moe-archive-top-card main i {
-  color: #B2FF59;
+  color: #64DD17;
 }
 
 .mdui-theme-accent-light-green .moe-post-card .moe-card-content a:not([data-baguettebox]):before {
-  background-color: #B2FF59;
+  background-color: #64DD17;
 }
 
 .mdui-theme-accent-light-green .moe-post-card .moe-card-content .moe-post-card-copy {
-  border-left: 4px solid #B2FF59;
+  border-left: 4px solid #64DD17;
 }
 /* ========== Light Green END ========== */
 
@@ -585,15 +585,15 @@
 /* ===== Accent ===== */
 .mdui-theme-accent-lime .moe-post-card .moe-card-content a:not([data-baguettebox]),
 .mdui-theme-accent-lime #moe-post-list .moe-archive-top-card main i {
-  color: #EEFF41;
+  color: #AEEA00;
 }
 
 .mdui-theme-accent-lime .moe-post-card .moe-card-content a:not([data-baguettebox]):before {
-  background-color: #EEFF41;
+  background-color: #AEEA00;
 }
 
 .mdui-theme-accent-lime .moe-post-card .moe-card-content .moe-post-card-copy {
-  border-left: 4px solid #EEFF41;
+  border-left: 4px solid #AEEA00;
 }
 /* ========== Lime END ========== */
 
@@ -627,15 +627,15 @@
 /* ===== Accent ===== */
 .mdui-theme-accent-yellow .moe-post-card .moe-card-content a:not([data-baguettebox]),
 .mdui-theme-accent-yellow #moe-post-list .moe-archive-top-card main i {
-  color: #FFFF00;
+  color: #FFD600;
 }
 
 .mdui-theme-accent-yellow .moe-post-card .moe-card-content a:not([data-baguettebox]):before {
-  background-color: #FFFF00;
+  background-color: #FFD600;
 }
 
 .mdui-theme-accent-yellow .moe-post-card .moe-card-content .moe-post-card-copy {
-  border-left: 4px solid #FFFF00;
+  border-left: 4px solid #FFD600;
 }
 /* ========== Yellow END ========== */
 
