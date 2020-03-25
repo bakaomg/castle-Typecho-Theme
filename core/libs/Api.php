@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle API Class
- * Last Update: 2020/03/17
+ * Last Update: 2020/03/25
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -70,7 +70,10 @@ class Castle_API {
     ],
 
     //目录树
-    'toc' => (Helper::options()->TocSwitch == '1') ? true : false
+    'toc' => (Helper::options()->TocSwitch == '1') ? true : false,
+
+    //追番
+    'bangumi' => (Castle_Libs::hasPlugin('Castle')) ? true : false
    ],
 
    //设置
