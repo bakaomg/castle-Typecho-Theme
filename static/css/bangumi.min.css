@@ -8,11 +8,15 @@
   \_____|  \__,_| |___/  \__| |_|  \___|
  ----------------------------------------
  * Castle's Bangumi Stylesheet
- * Last Update: 2020/03/24 [0.9.4]
+ * Last Update: 2020/03/25 [0.9.4]
  * Author: ohmyga (https://ohmyga.cn)
  * GitHub: https://github.com/ohmyga233/castle-Typecho-Theme/
  * LICENSE: GPL V3 (https://www.gnu.org/licenses/gpl-3.0.html)
  **/
+
+.mdui-theme-layout-dark .moe-bangumi-page-card .moe-bangumi-card .moe-bangumi-right header.moe-bangumi-header .moe-bangumi-subtitle {
+  color: rgba(255,255,255,0.65);
+}
 
 .moe-bangumi-page-card .moe-card-content {
   margin-top: 20px;
@@ -66,7 +70,7 @@
 
 .moe-bangumi-page-card .moe-bangumi-card .moe-bangumi-right header.moe-bangumi-header .moe-bangumi-subtitle {
   font-size: 14px;
-  color: rgba(255,255,255,0.65);
+  color: rgba(0,0,0,0.65);
 }
 
 .moe-bangumi-page-card .moe-bangumi-card .moe-bangumi-right main.moe-bangumi-content {
