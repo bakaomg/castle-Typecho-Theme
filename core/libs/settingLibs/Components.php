@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Theme Config Component
- * Last Update: 2020/02/14
+ * Last Update: 2020/03/25
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -36,7 +36,7 @@ class Castle_Component {
   echo '<link href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css" rel="stylesheet">'.
        '<script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>'.
        '<link href="'.Castle_Libs::resources('static/css/castle.setting.min.css', false).'" rel="stylesheet">'.
-       '<script>var CastleConfig = {"bgurl": "'.$themeBG.'", "quq": {"open": "'.Castle_Libs::resources('static/img/webp/na.webp', false).'", "close": "'.Castle_Libs::resources('static/img/webp/setting.webp', false).'"}};</script>'.
+       '<script>var CastleConfig = {"bgurl": "'.$themeBG.'", "quq": {"open": "'.Castle_Libs::resources('static/img/webp/na.png', false).'", "close": "'.Castle_Libs::resources('static/img/webp/setting.png', false).'"}};</script>'.
        '<script src="'.Castle_Libs::resources('static/js/castle.setting.min.js', false).'"></script>';
        
   
