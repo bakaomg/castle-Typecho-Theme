@@ -1163,6 +1163,10 @@ body {
   margin: 3.5em 3em 1em 2em!important;
 }
 
+.moe-post-card .moe-card-content .moe-post-card-copy a {
+  word-break:break-all;
+}
+
 /* ===== 标题 ===== */
 .moe-post-card .moe-card-content h1:before,
 .moe-post-card .moe-card-content h2:before {
