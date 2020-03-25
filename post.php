@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Post
- * Last Update: 2020/03/21
+ * Last Update: 2020/03/25
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 if (@$_SERVER['HTTP_X_PJAX'] == true) {
@@ -51,6 +51,14 @@ Typecho_Widget::widget('Widget_Security')->to($security);
                </a>
               </li>
              </ul>';
+      } ?>
+      <?php if (Helper::options()->deviceQRSwitch && in_array('post', Helper::options()->deviceQRSwitch)) {
+       echo '<button class="mdui-btn mdui-btn-icon" mdui-menu="{target: \'#QRcode\', align: \'right\'}"><i class="mdui-icon material-icons">&#xe1b1;</i></button>';
+       echo '<div class="mdui-menu" id="QRcode">
+        <li class="mdui-menu-item">
+         <img src="'.Castle_Contents::QRcode($this).'">
+        </li>
+       </div>';
       } ?>
      </div>
     </div>

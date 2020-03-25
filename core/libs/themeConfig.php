@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Theme Config
- * Last Update: 2020/03/24
+ * Last Update: 2020/03/25
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -290,6 +290,27 @@ function themeConfig($form) {
     $Component->textarea('CastleSettings', '高级设置', '<!-- 主题根目录下有一份 demo 照着改吧。 -->这个暂时无用。', NULL)
    ).
 
+   $Component->panel('跨设备阅读（文章/页面二维码）', NULL,
+    $Component->checkbox('deviceQRSwitch', NULL, NULL,
+     ['post' =>  '在文章页面显示跨设备阅读',
+      'page' =>  '在独立页面显示跨设备阅读（不包括友链、追番之类的自定义页面）'
+     ],
+     ['post']
+    ).
+
+    $Component->radio("deviceQRAPI", '二维码 API 源', '<hr><span style="display:block;margin: 20px 0px -32px 0px;">二维码 API 源</span>',
+     [0 => "O's API ( api.ohmyga.cn ) - 维护中 无法使用",
+      1 => "犬's API ( api.fczbl.vip )",
+      2 => "Journey.ad ( api.imjad.cn )",
+      3 => "豌豆荚 ( www.wandoujia.com )",
+      4 => "Google Chart ( chart.googleapis.com )",
+      5 => "自定义第三方 QRcode API"
+     ],
+    1).
+
+    $Component->input('deviceQR_DIY_API', '<div style="margin-top: -20px;"></div>第三方 QRcode API', '<span style="display:inline-block;margin-top: 10px;">选择「自定义 API 」时必填，可用变量 <strong>{permalink}</strong></span>', NULL, true)
+   ).
+
    $Component->panel('第三方插件相关', NULL,
     $Component->panel('Pio', NULL,
      (new Castle_Plugin_Check())->pio().
@@ -336,10 +357,11 @@ function themeConfig($form) {
 
    $Component->panel('追番配置', NULL,
     $Component->radio("PluginBangumiType", "追番列表拉取源", '追番列表拉取源',
-     [0 => "Bilibili - https://bilibili.com/",
-      1 => 'Bangumi(BGM) - https://bgm.tv/'
+     ['bilibili' => "Bilibili - https://bilibili.com/",
+      'bgm' => 'Bangumi(BGM) - https://bgm.tv/'
      ],
-    0).
+    'bilibili'
+    ).
 
     $Component->input('PluginBangumiUID', '用户 ID', '根据上面选的源填对应的 UID', '0').
 

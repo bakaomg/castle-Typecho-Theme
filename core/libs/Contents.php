@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Content Class
- * Last Update: 2020/03/14
+ * Last Update: 2020/03/25
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 //大部分修改搬自 AlanDecode[https://github.com/AlanDecode] 的主题 VOID
@@ -117,16 +117,16 @@ class Castle_Contents {
  }
 
  /**
-  * 解析 H2 ~ H6
+  * 解析 H1 ~ H6
   */
  public static function parseTitle($content) {
-  $reg='/\<h([2-6])(.*?)\>(.*?)\<\/h.*?\>/s';
+  $reg='/\<h([1-6])(.*?)\>(.*?)\<\/h.*?\>/s';
   $new = preg_replace_callback($reg, ['Castle_Contents', 'parseTitleCallback'], $content);
   return $new;
  }
 
  /**
-  * 标题解析回调函数（H2~H6）
+  * 标题解析回调函数（H1 ~ H6）
   */
  static private $CurrentTocID = 0;
  public static function parseTitleCallback($matchs) {
@@ -294,5 +294,44 @@ class Castle_Contents {
    $stat[date('Y', $row['created'])][$row['created']] = $arr;
   }
   return $stat;
+ }
+
+ /**
+  * 获取文章二维码
+  */
+ public static function QRcode($widget) {
+  $setting = Helper::options()->deviceQRAPI;
+
+  switch($setting) {
+   case '0':
+    defaultAPI:
+    $link = 'https://api.ohmyga.cn/qrcode?url='.$widget->permalink;
+    break;
+   
+   case '1':
+    $link = 'https://api.fczbl.vip/qr/?m=1&e=H&p=10&url='.$widget->permalink;
+    break;
+   
+   case '2':
+    $link = 'https://api.imjad.cn/qrcode/?size=180&level=H&text='.$widget->permalink;
+    break;
+   
+   case '3':
+    $link = 'https://www.wandoujia.com/api/qr?s=10&c='.$widget->permalink;
+    break;
+   
+   case '4':
+    $link = 'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chld=H|1&chl='.$widget->permalink;
+    break;
+   
+   case '5':
+    $link = str_replace('{permalink}', $widget->permalink, Helper::options()->deviceQR_DIY_API);
+    break;
+
+   default:
+    goto defaultAPI;
+  }
+
+  return $link;
  }
 }
