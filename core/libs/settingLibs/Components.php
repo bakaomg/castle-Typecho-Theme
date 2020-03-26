@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Theme Config Component
- * Last Update: 2020/03/25
+ * Last Update: 2020/03/26
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -36,13 +36,13 @@ class Castle_Component {
   echo '<link href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css" rel="stylesheet">'.
        '<script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>'.
        '<link href="'.Castle_Libs::resources('static/css/castle.setting.min.css', false).'" rel="stylesheet">'.
-       '<script>var CastleConfig = {"bgurl": "'.$themeBG.'", "quq": {"open": "'.Castle_Libs::resources('static/img/webp/na.png', false).'", "close": "'.Castle_Libs::resources('static/img/webp/setting.png', false).'"}};</script>'.
+       '<script>var CastleConfig = {"bgurl": "'.$themeBG.'", "quq": {"open": "'.Castle_Libs::resources('static/img/neko/1.png', false).'", "close": "'.Castle_Libs::resources('static/img/neko/2.png', false).'"}};</script>'.
        '<script src="'.Castle_Libs::resources('static/js/castle.setting.min.js', false).'"></script>';
        
   
   $string = '';
   $string .= '<div class="mdui-card" id="moe-theme-panel">';
-  $string .= '<img src="'.Castle_Libs::resources('static/img/webp/na.webp', false).'" class="moe-quq" onclick="CastleLinkPanel.toggle()"/>';
+  $string .= '<img src="'.Castle_Libs::resources('static/img/neko/1.png', false).'" class="moe-quq" onclick="CastleLinkPanel.toggle()"/>';
 
   //链接面板
   $string .= '<div id="moe-theme-panel-menu" class="moe-menu-open" style="display:block;">
