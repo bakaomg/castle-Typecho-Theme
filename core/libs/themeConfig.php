@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Theme Config
- * Last Update: 2020/03/25
+ * Last Update: 2020/03/26
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -336,6 +336,10 @@ function themeConfig($form) {
   /* 后台设置 */
   $Component->panel('后台/插件设置', NULL,
    (new Castle_Plugin_Check())->Castle().
+
+   $Component->panel('接口保护', NULL,
+    $Component->input('PluginAPIAuth', 'API 接口保护', '加盐保护 API 接口不被滥用，自动生成一般无需设置。', Typecho_Common::randString(32))
+   ).
    
    $Component->panel('登录页面', NULL,
     $Component->checkbox('PluginLoginSwitch', NULL, NULL,
