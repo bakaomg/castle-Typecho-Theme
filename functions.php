@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Functions
- * Last Update: 2020/03/17
+ * Last Update: 2020/03/26
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -32,6 +32,7 @@ $GLOBALS['CastleLang'] = Castle_Lang::getLang();
 Typecho_Plugin::factory('admin/write-post.php')->bottom = array('Castle_Libs', 'addButtons');
 Typecho_Plugin::factory('admin/write-page.php')->bottom = array('Castle_Libs', 'addButtons');
 //内容解析
+Typecho_Plugin::factory('Widget_Abstract_Contents')->markdown = array('Castle_Contents', 'markdown');
 Typecho_Plugin::factory('Widget_Abstract_Contents')->contentEx = array('Castle_Contents', 'contentEx');
 
 /**

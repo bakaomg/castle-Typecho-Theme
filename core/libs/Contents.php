@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Content Class
- * Last Update: 2020/03/25
+ * Last Update: 2020/03/26
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 //大部分修改搬自 AlanDecode[https://github.com/AlanDecode] 的主题 VOID
@@ -15,8 +15,8 @@ class Castle_Contents {
  public static function contentEx($data, $widget, $last) {
   $text = empty($last) ? $data : $last;
   if ($widget instanceof Widget_Archive) {
-   $text = self::parseOwO($text);
    $text = self::parseBaguetteBox($text, $widget->parameter->__get('type') == 'feed');
+   $text = self::parseOwO($text);
    $text = self::parseTable($text);
    $text = self::parseTitle($text);
    $text = self::parseRuby($text);
@@ -152,6 +152,22 @@ class Castle_Contents {
   $rp = '<span class="moe-short-code-hidden">${1}</span>';
   $new = preg_replace($reg, $rp, $content);
   return $new;
+ }
+
+ /**
+  * Markdown
+  */
+ public static function markdown($text) {
+  if (0 == strpos($text, '<!--markdown-->')) {
+   $text = str_replace("```objective-c", "```objectivec", $text);
+   $text = str_replace("```c++", "```cpp", $text);
+   $text = str_replace("```c#", "```csharp", $text);
+   $text = str_replace("```f#", "```fsharp", $text);
+   $text = str_replace("```F#", "```Fsharp", $text);
+   $text = Markdown::convert($text);
+  }
+
+  return $text;
  }
 
  /**
