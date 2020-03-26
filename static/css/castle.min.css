@@ -8,7 +8,7 @@
   \_____|  \__,_| |___/  \__| |_|  \___|
  ----------------------------------------
  * Castle's Stylesheet
- * Last Update: 2020/03/25 [0.9.4]
+ * Last Update: 2020/03/26 [0.9.4]
  * Author: ohmyga (https://ohmyga.cn)
  * GitHub: https://github.com/ohmyga233/castle-Typecho-Theme/
  * LICENSE: GPL V3 (https://www.gnu.org/licenses/gpl-3.0.html)
@@ -1355,7 +1355,7 @@ body {
 }
 
 /* ===== img ===== */
-.moe-post-card .moe-card-content img:not(.moe-owo) {
+.moe-post-card .moe-card-content img.lazyload {
   max-width: 100%;
   margin: 10px auto;
   border-radius: 5px;
