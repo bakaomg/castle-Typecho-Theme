@@ -29,7 +29,7 @@ $ git clone https://github.com/ohmyga233/castle-Typecho-Theme
 </details>
 
 ## 注意事项
-~~并没有相关的交流群~~ **应要求已经重新创建 QQ 群（1033117896），有问题请直接发 [Issues](https://github.com/ohmyga233/castle-Typecho-Theme/issues)！**<br>
+~~并没有相关的交流群~~ **应要求已经重新创建 QQ 群（1033117896），有问题可发 [Issues](https://github.com/ohmyga233/castle-Typecho-Theme/issues) 或 加入 QQ 群反馈。**<br>
 **文档已经写完 (。・∀・)ノ**
 
 ## 版权信息
