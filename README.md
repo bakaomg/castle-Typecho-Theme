@@ -34,6 +34,7 @@ $ git clone https://github.com/ohmyga233/castle-Typecho-Theme
 
 ## 演示站点
 - https://713.moe/<br>
+- https://yellowstone.dns.army:488/<br>
 - https://ohmyga.cn/ - 又要跑路了(穷了)
 
 ## 版权信息
