@@ -303,8 +303,12 @@ function themeConfig($form) {
       1 => "犬's API ( api.fczbl.vip )",
       2 => "Journey.ad ( api.imjad.cn )",
       3 => "豌豆荚 ( www.wandoujia.com )",
-      4 => "Google Chart ( chart.googleapis.com )",
-      5 => "自定义第三方 QRcode API"
+      4 => "Google Chart ( chart.googleapis.com ) - 国内不可用",
+      5 => "搜狐 API（ my.tv.sohu.com ）",
+      6 => "搜狐快站 API（ www.kuaizhan.com ）",
+      7 => "K780 API （ sapi.k780.com ）",
+      8 => "搜藏共享 API（ wenhairu.com ）",
+      9 => "自定义第三方 QRcode API"
      ],
     1).
 

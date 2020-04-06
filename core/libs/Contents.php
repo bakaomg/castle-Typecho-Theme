@@ -341,6 +341,22 @@ class Castle_Contents {
     break;
    
    case '5':
+    $link = 'https://my.tv.sohu.com/user/a/wvideo/getQRCode.do?text='.$widget->permalink;
+    break;
+  
+   case '6':
+    $link = 'https://www.kuaizhan.com/common/encode-png?large=true&data='.$widget->permalink;
+    break;
+   
+   case '7':
+    $link = 'https://sapi.k780.com/?app=qr.get&data='.$widget->permalink;
+    break;
+   
+   case '8':
+    $link = 'https://wenhairu.com/static/api/qr/?size=100&text='.$widget->permalink;
+    break;
+   
+   case '9':
     $link = str_replace('{permalink}', $widget->permalink, Helper::options()->deviceQR_DIY_API);
     break;
 
