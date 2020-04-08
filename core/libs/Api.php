@@ -56,6 +56,9 @@ class Castle_API {
     //暗色
     'dark' => [
      'default' => (Helper::options()->themeDarkColor),  //默认
+     'FTime'   => (Helper::options()->themeFTime) ? true : false,
+     'DarkTimeFrom' => (Helper::options()->DarkTimeFrom),
+     'DarkTimeTo' => (Helper::options()->DarkTimeTo),
      'scheme'  => (Helper::options()->themeScheme && in_array('scheme', Helper::options()->themeScheme)) ? true : false  //监听暗色
     ],
     

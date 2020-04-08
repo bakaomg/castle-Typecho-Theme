@@ -97,8 +97,21 @@ function themeConfig($form) {
       ],
       NULL
      ).
-     '<br/>※ 如果开启跟随系统配色切换，默认色的优先级将会低于跟随，但用户设置优先级永远最高。'
+     //'<br/>※ 如果开启跟随系统配色切换，默认色的优先级将会低于跟随，但用户设置优先级永远最高。'
+     
+     $Component->checkbox('themeFTime', '跟随时间切换默认色', NULL,
+      ['FTime' =>  '跟随时间切换夜间模式'
+      ],
+      NULL
+     ).
+     '※ 优先级:用户设置→跟随时间→跟随系统→设置默认<br/>'.
+     
+   $Component->panel('夜间模式时间段', NULL,
+    $Component->input('DarkTimeFrom', '夜间模式起始时间', '24小时制整点小时数', '22').
+    $Component->input('DarkTimeTo', '夜间模式结束时间', '24小时制整点小时数', '6')
+   )
     ).
+
 
     $Component->panel('卡片透明度', NULL,
      $Component->radio("cardTransparent", "卡片透明度", '卡片透明度',
