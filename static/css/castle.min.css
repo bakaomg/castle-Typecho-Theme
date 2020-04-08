@@ -2297,6 +2297,21 @@ code {
  }
 }
 
+@media (max-width: 970px) {
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+      left: -68px; }
+#footer .moe-footer-box {
+  text-align: center;
+}
+}
+
+/* 手机端自适应 */  
+@media (max-width: 580px) {
+#footer .moe-footer-box {
+  padding: 23px 8px 15px 8px;
+}
+}
+
 @media (max-width: 800px) {
  #links-dialog {
   width: 100%;
@@ -2454,3 +2469,4 @@ html::-webkit-scrollbar-thumb{
 html::-webkit-scrollbar-thumb:hover{
   background-color: #bbb;
 }
+
