@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Theme Config
- * Last Update: 2020/03/26
+ * Last Update: 2020/04/10
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -304,11 +304,9 @@ function themeConfig($form) {
       2 => "Journey.ad ( api.imjad.cn )",
       3 => "豌豆荚 ( www.wandoujia.com )",
       4 => "Google Chart ( chart.googleapis.com ) - 国内不可用",
-      5 => "搜狐 API（ my.tv.sohu.com ）",
-      6 => "搜狐快站 API（ www.kuaizhan.com ）",
-      7 => "K780 API （ sapi.k780.com ）",
-      8 => "搜藏共享 API（ wenhairu.com ）",
-      9 => "自定义第三方 QRcode API"
+      5 => "搜狐 API ( my.tv.sohu.com )",
+      6 => "搜狐快站 API ( www.kuaizhan.com )",
+      7 => "自定义第三方 QRcode API",
      ],
     1).
 

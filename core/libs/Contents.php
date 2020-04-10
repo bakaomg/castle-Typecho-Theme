@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Content Class
- * Last Update: 2020/03/26
+ * Last Update: 2020/04/10
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 //大部分修改搬自 AlanDecode[https://github.com/AlanDecode] 的主题 VOID
@@ -339,24 +339,16 @@ class Castle_Contents {
    case '4':
     $link = 'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chld=H|1&chl='.$widget->permalink;
     break;
-   
+
    case '5':
     $link = 'https://my.tv.sohu.com/user/a/wvideo/getQRCode.do?text='.$widget->permalink;
     break;
-  
+
    case '6':
     $link = 'https://www.kuaizhan.com/common/encode-png?large=true&data='.$widget->permalink;
     break;
    
    case '7':
-    $link = 'https://sapi.k780.com/?app=qr.get&data='.$widget->permalink;
-    break;
-   
-   case '8':
-    $link = 'https://wenhairu.com/static/api/qr/?size=100&text='.$widget->permalink;
-    break;
-   
-   case '9':
     $link = str_replace('{permalink}', $widget->permalink, Helper::options()->deviceQR_DIY_API);
     break;
 
