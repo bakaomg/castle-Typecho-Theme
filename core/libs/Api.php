@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle API Class
- * Last Update: 2020/03/25
+ * Last Update: 2020/04/10
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -55,8 +55,11 @@ class Castle_API {
 
     //暗色
     'dark' => [
-     'default' => (Helper::options()->themeDarkColor),  //默认
-     'scheme'  => (Helper::options()->themeScheme && in_array('scheme', Helper::options()->themeScheme)) ? true : false  //监听暗色
+     'default'      => (Helper::options()->themeDarkColor),  //默认
+     'DarkTimeFrom' => (floor(Helper::options()->DarkTimeFrom) == Helper::options()->DarkTimeFrom && (int)Helper::options()->DarkTimeFrom <= 24 && Helper::options()->DarkTimeFrom != NULL && is_numeric(Helper::options()->DarkTimeFrom)) ? Helper::options()->DarkTimeFrom : '22', //夜间模式起始时间
+     'DarkTimeTo'   => (floor(Helper::options()->DarkTimeTo) == Helper::options()->DarkTimeTo && (int)Helper::options()->DarkTimeTo <= 24 && Helper::options()->DarkTimeTo != NULL && is_numeric(Helper::options()->DarkTimeTo)) ? Helper::options()->DarkTimeTo : '6', //夜间模式结束时间
+     'follow'       => (Helper::options()->themeDefaultColorSwitch && in_array('follow', Helper::options()->themeDefaultColorSwitch)) ? true : false, //跟随时间切换
+     'scheme'       => (Helper::options()->themeDefaultColorSwitch && in_array('scheme', Helper::options()->themeDefaultColorSwitch)) ? true : false  //监听暗色
     ],
     
     //PJAX
