@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle OwO Class
- * Last Update: 2020/02/19
+ * Last Update: 2020/04/11
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -33,7 +33,7 @@ class Castle_OwO {
      'id' => $owoName,
      'name' => $owoJson[$owoName]['title'],
      'type' => $owoJson[$owoName]['type'],
-     'dir' => Helper::options()->themeUrl.'/static/img/owo/'.$owoName.'/',
+     'dir' => Castle_Libs::resources('static/img/owo/'.$owoName.'/'),
      'content' => $owoJson[$owoName]['content']
     ];
    }
