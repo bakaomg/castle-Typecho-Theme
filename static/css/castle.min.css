@@ -1414,6 +1414,11 @@ img:not(.initial) {
   background-color: transparent;
 }
 
+.moe-short-code-text-center {
+  display: block;
+  text-align: center;
+}
+
 /* ========== 文章导航栏 ========== */
 .moe-post-nav {
   color: #fff!important;

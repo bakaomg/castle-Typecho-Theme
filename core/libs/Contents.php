@@ -31,6 +31,7 @@ class Castle_Contents {
   */
  public static function shortCode($content) {
   $content = self::parseCodeHidden($content);
+  $content = self::parseCodeTextCenter($content);
 
   return $content;
  }
@@ -150,6 +151,16 @@ class Castle_Contents {
  public static function parseCodeHidden($content) {
   $reg = '/\[hidden\](.*?)\[\/hidden\]/s';
   $rp = '<span class="moe-short-code-hidden">${1}</span>';
+  $new = preg_replace($reg, $rp, $content);
+  return $new;
+ }
+
+ /**
+  * 文字居中
+  */
+ public static function parseCodeTextCenter($content) {
+  $reg = '/\[center\](.*?)\[\/center\]/s';
+  $rp = '<span class="moe-short-code-text-center">${1}</span>';
   $new = preg_replace($reg, $rp, $content);
   return $new;
  }
