@@ -1,6 +1,6 @@
 ## 使用自带图源
 - 目前自带的随机封面图 API 有 `O's API` 和 `Shota's API`
-- 安利 `Shota's API`，小太的 API 的图属实好康（[疯狂暗示](https://afdian.net/@satosouta)）
+- 安利 `Shota's API`，小太的 API 的图属实好康（[疯狂暗示](https://713.moe/payment/)）
 
 ## 使用本地图源
 - 在 `主题根目录/core/cover/` 文件夹下有个 `README.txt`，里面写了如何使用本地图源
