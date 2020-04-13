@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Content Class
- * Last Update: 2020/04/10
+ * Last Update: 2020/04/13
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 //大部分修改搬自 AlanDecode[https://github.com/AlanDecode] 的主题 VOID
@@ -325,19 +325,19 @@ class Castle_Contents {
     break;
    
    case '1':
-    $link = 'https://api.fczbl.vip/qr/?m=1&e=H&p=10&url='.$widget->permalink;
+    $link = 'https://api.fczbl.vip/qr/?m=1&e=H&p=4.86&url='.$widget->permalink;
     break;
    
    case '2':
-    $link = 'https://api.imjad.cn/qrcode/?size=180&level=H&text='.$widget->permalink;
+    $link = 'https://api.imjad.cn/qrcode/?size=170&level=H&text='.$widget->permalink;
     break;
    
    case '3':
-    $link = 'https://www.wandoujia.com/api/qr?s=10&c='.$widget->permalink;
+    $link = 'https://www.wandoujia.com/api/qr?s=7&c='.$widget->permalink;
     break;
    
    case '4':
-    $link = 'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chld=H|1&chl='.$widget->permalink;
+    $link = 'https://chart.googleapis.com/chart?chs=170x170&cht=qr&chld=H|1&chl='.$widget->permalink;
     break;
 
    case '5':
