@@ -1,17 +1,26 @@
 @charset "utf-8";
 /**
  * APlayer Dark Style
- * Last Update: 2020/03/25
+ * Last Update: 2020/04/13
  */
 
 .aplayer.aplayer-fixed {
   z-index: 1000;
 }
 
+.aplayer.aplayer-fixed .aplayer-list {
+  background: #fff;
+}
+
 .mdui-theme-layout-dark .aplayer,
 .mdui-theme-layout-dark .aplayer .aplayer-list,
 .mdui-theme-layout-dark .aplayer .aplayer-body {
+  border: none!important;
   background: #616161!important;
+}
+
+.mdui-theme-layout-dark .aplayer.aplayer-fixed .aplayer-info {
+  border: none!important;
 }
 
 .mdui-theme-layout-dark .aplayer .aplayer-miniswitcher {
@@ -63,5 +72,11 @@
  .aplayer.aplayer-fixed .aplayer-body {
   width: auto!important;
   max-width: none!important;
+ }
+}
+
+@media(max-width: 970px) {
+ .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -68px;
  }
 }
