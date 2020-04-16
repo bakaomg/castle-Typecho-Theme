@@ -52,4 +52,7 @@
 },{
  "name": "分类总数",
  "type": "TotalCategory"
+},{
+ "name": "总字数",
+ "type": "TotalWords"
 }]

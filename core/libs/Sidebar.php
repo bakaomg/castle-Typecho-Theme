@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Sidebar Class
- * Last Update: 2020/01/26
+ * Last Update: 2020/04/15
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -95,6 +95,11 @@ class Castle_Sidebar {
    //类型为分类总数
    if($sidebarMenu[$menuCount]['type'] == 'TotalCategory') {
     $sidebarMenu[$menuCount]['count'] = $stat->categoriesNum;
+   }
+
+   //类型为字数统计
+   if($sidebarMenu[$menuCount]['type'] == 'TotalWords') {
+    $sidebarMenu[$menuCount]['count'] = WordsCounter_Plugin::allOfCharacters();
    }
   }
 
