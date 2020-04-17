@@ -82,6 +82,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 	    <span><?php $this->date($GLOBALS['CastleLang']['index']['time']); ?></span>
 	    <i class="mdui-icon material-icons">forum</i>
 	    <span><?php echo sprintf($GLOBALS['CastleLang']['index']['comment'], $this->commentsNum); ?></span>
+      <i class="mdui-icon material-icons">border_color</i>
+      <span><?php echo sprintf($GLOBALS['CastleLang']['index']['wordNum'], $this->charactersNum); ?></span>
      </div>
     </div>
 
