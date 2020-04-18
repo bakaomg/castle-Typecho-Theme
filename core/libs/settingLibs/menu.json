@@ -53,6 +53,6 @@
  "name": "分类总数",
  "type": "TotalCategory"
 },{
- "name": "总字数",
+ "name": "字数统计",
  "type": "TotalWords"
 }]
