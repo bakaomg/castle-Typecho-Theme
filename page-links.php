@@ -67,12 +67,12 @@ $BloggerAvatar = (Helper::options()->siteAvatar) ? Helper::options()->siteAvatar
        preg_match_all('/data\-bgUrl="(.*?)"/i', $Links[$i], $bgUrl);
        
        if (!empty($bgUrl[1][0])) {
-        $link_output = preg_replace('/data\-src="(.*?)"/i', 'data-src="'.$bgUrl[1][0].'"', $Links[$i]);
+        $Links[$i] = preg_replace('/data\-src="(.*?)"/i', 'data-src="'.$bgUrl[1][0].'"', $Links[$i]);
        }
 
-       $link_output = preg_replace('/data\-bgUrl="(.*?)"/i', '', (isset($link_output)) ? $link_output : $Links[$i]);
+       $Links[$i] = preg_replace('/data\-bgUrl="(.*?)"/i', '', $Links[$i]);
 
-       echo $link_output;
+       echo $Links[$i];
       }
      }else{
       echo '<div class="mdui-col">
