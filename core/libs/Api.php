@@ -50,7 +50,7 @@ class Castle_API {
     'comment' => [
      'link' => (Helper::options()->commentsRequireURL) ? true : false,    //评论者是否需要填写链接
      'email' => (Helper::options()->commentsRequireMail) ? true : false,  //评论者是否需要填写邮箱
-     'ajax' => true                                                     //是否开启评论 AJAX 提交
+     'ajax' => true                                                       //是否开启评论 AJAX 提交
     ],
 
     //暗色
@@ -75,7 +75,10 @@ class Castle_API {
     'toc' => (Helper::options()->TocSwitch == '1') ? true : false,
 
     //追番
-    'bangumi' => (Castle_Libs::hasPlugin('Castle')) ? true : false
+    'bangumi' => (Castle_Libs::hasPlugin('Castle')) ? true : false,
+
+    //全站公告
+    'FSA' => (Helper::options()->FSAswitch && in_array('switch', Helper::options()->FSAswitch)) ? true : false
    ],
 
    //设置
@@ -115,6 +118,18 @@ class Castle_API {
     //目录树
     'toc' => [
      'popup' => (Helper::options()->TocPopup == '1') ? true : false  //自动弹出
+    ],
+
+    //全站公告
+    'FSA' => [
+     'content'      => (Helper::options()->FSAcontent) ? Helper::options()->FSAcontent : false,
+     'background'   => (Helper::options()->FSAbgColor) ? Helper::options()->FSAbgColor : '#424242',
+     'textColor'    => (Helper::options()->FSAtextColor) ? Helper::options()->FSAtextColor : '#ffffff',
+     'timeout'      => (Helper::options()->FSAtime && is_numeric(Helper::options()->FSAtime)) ? Helper::options()->FSAtime : 0,
+     'position'     => (Helper::options()->FSAposition) ? Helper::options()->FSAposition : 'top',
+     'buttonColor'  => (Helper::options()->FSAbtnColor) ? Helper::options()->FSAbtnColor : '#FF4081',
+     'buttonText'   => (Helper::options()->FSAbtnText) ? Helper::options()->FSAbtnText : 'OK',
+     'buttonSwitch' => (Helper::options()->FSAswitch && in_array('button', Helper::options()->FSAswitch)) ? true : false
     ]
    ]
   ];

@@ -176,6 +176,31 @@ function themeConfig($form) {
     )
    ).
 
+   $Component->panel('全站公告', NULL,
+    $Component->checkbox('FSAswitch', '公告设置', '公告设置',
+     ['switch'   =>  '全站公告总开关',
+      'button'   =>  '显示关闭公告按钮'
+     ],
+     NULL
+    ).'<hr>'.
+
+    $Component->radio("FSAposition", '显示位置', '<span style="display:block;margin: 20px 0px -32px 0px;">公告显示的位置</span>',
+     ['top'          =>  '上方',
+      'bottom'       =>  '下方',
+      'left-top'     =>  '左上方',
+      'left-bottom'  =>  '左下方',
+      'right-top'    =>  '右上方',
+      'right-bottom' =>  '右下方'
+     ], 'top'
+    ).'<hr>'.
+
+    $Component->textarea('FSAcontent', '公告内容', '全站公告的内容', NULL).
+    $Component->input('FSAtime', '公告显示时间', '公告显示的时间，单位 [ms] ，如为 0 则不自动关闭', 0).
+    $Component->input('FSAbgColor', '公告框背景色', '填入十六进制的颜色或 RGB/RGBA 颜色值', '#424242').
+    $Component->input('FSAbtnColor', '公告框按钮字体颜色', '填入十六进制的颜色或 RGB/RGBA 颜色值，请根据背景色而决定', '#FF4081').
+    $Component->input('FSAbtnText', '公告框按钮内容', '公告框关闭按钮的内容，不填默认为 "OK"', 'OK')
+   ).
+
    $Component->panel('字数统计', NULL,
     $Component->radio("WordsCounterOpts", "全站字数", '全站字数计算方式',
       [0 => '仅计算公开状态的文章字数',
