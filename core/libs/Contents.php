@@ -20,20 +20,10 @@ class Castle_Contents {
    $text = self::parseTable($text);
    $text = self::parseTitle($text);
    $text = self::parseRuby($text);
-   $text = self::shortCode($text);
+   $text = Castle_ShortCode::parseAll($text, $widget->parameter->__get('type') == 'feed');
   }
   
   return $text;
- }
-
- /**
-  * 短代码入口
-  */
- public static function shortCode($content) {
-  $content = self::parseCodeHidden($content);
-  $content = self::parseCodeTextCenter($content);
-
-  return $content;
  }
 
  /**
@@ -142,26 +132,6 @@ class Castle_Contents {
   $reg = '/\{\{(.*?):(.*?)\}\}/s';
   $rp = '<ruby>${1}<rp>(</rp><rt>${2}</rt><rp>)</rp></ruby>';
   $new = preg_replace($reg, $rp, $string);
-  return $new;
- }
-
- /**
-  * 隐藏文字 [短代码]
-  */
- public static function parseCodeHidden($content) {
-  $reg = '/\[hidden\](.*?)\[\/hidden\]/s';
-  $rp = '<span class="moe-short-code-hidden">${1}</span>';
-  $new = preg_replace($reg, $rp, $content);
-  return $new;
- }
-
- /**
-  * 文字居中
-  */
- public static function parseCodeTextCenter($content) {
-  $reg = '/\[center\](.*?)\[\/center\]/s';
-  $rp = '<span class="moe-short-code-text-center">${1}</span>';
-  $new = preg_replace($reg, $rp, $content);
   return $new;
  }
 
