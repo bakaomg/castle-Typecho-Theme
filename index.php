@@ -82,6 +82,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 	    <span><?php $this->date($GLOBALS['CastleLang']['index']['time']); ?></span>
 	    <i class="mdui-icon material-icons">forum</i>
 	    <span><?php echo sprintf($GLOBALS['CastleLang']['index']['comment'], $this->commentsNum); ?></span>
+      <i class="mdui-icon material-icons">border_color</i>
+      <span><?php echo sprintf($GLOBALS['CastleLang']['index']['wordNum'], $this->charactersNum); ?></span>
      </div>
     </div>
 
@@ -100,7 +102,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
       <div class="mdui-card-media-covered">
        <div class="mdui-card-primary">
         <a href="<?php $this->permalink() ?>" class="mdui-card-primary-title mdui-text-truncate"><?php $this->sticky(); $this->title() ?></a>
-        <div class="mdui-card-primary-subtitle"><?php echo sprintf($GLOBALS['CastleLang']['index']['view'], Castle_Contents::PostView($this)); ?> | <?php echo sprintf($GLOBALS['CastleLang']['index']['comment'], $this->commentsNum); ?></div>
+        <div class="mdui-card-primary-subtitle"><?php echo sprintf($GLOBALS['CastleLang']['index']['view'], Castle_Contents::PostView($this)); ?> | <?php echo sprintf($GLOBALS['CastleLang']['index']['comment'], $this->commentsNum); ?> | <?php echo sprintf($GLOBALS['CastleLang']['index']['wordNum'], $this->charactersNum); ?></div>
        </div>
       </div>
      </div>

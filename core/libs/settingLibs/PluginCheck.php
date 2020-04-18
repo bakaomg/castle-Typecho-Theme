@@ -68,4 +68,15 @@ class Castle_Plugin_Check {
 
   return $str;
  }
+
+ //检查文字统计是否存在
+ public function WordCounter() {
+    if (Castle_Libs::hasPlugin('WordsCounter')) {
+        $str = Castle_Notice::success('检测到您已经安装 WordsCounter 插件，可以使用文章字数统计功能')
+    }else{
+        $str = Castle_Notice::error('检测到您还未安装 WordsCounter 插件，字数统计无法使用，侧边栏可能显示错误！')
+    }
+    return $str;
+ }
+
 }
