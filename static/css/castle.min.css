@@ -8,7 +8,7 @@
   \_____|  \__,_| |___/  \__| |_|  \___|
  ----------------------------------------
  * Castle's Stylesheet
- * Last Update: 2020/04/13 [0.9.4]
+ * Last Update: 2020/04/18 [0.9.4]
  * Author: ohmyga (https://ohmyga.cn)
  * GitHub: https://github.com/ohmyga233/castle-Typecho-Theme/
  * LICENSE: GPL V3 (https://www.gnu.org/licenses/gpl-3.0.html)
@@ -2102,6 +2102,9 @@ img:not(.initial) {
   display: block;
   font-size: 23px;
   margin-bottom: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .moe-links-box .moe-links-card .moe-links-description {
