@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Post
- * Last Update: 2020/04/15
+ * Last Update: 2020/04/18
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 if (@$_SERVER['HTTP_X_PJAX'] == true) {
@@ -26,7 +26,7 @@ Typecho_Widget::widget('Widget_Security')->to($security);
      <div class="mdui-card-media-covered">
       <div class="mdui-card-primary">
        <div class="mdui-card-primary-title mdui-text-truncate"><?php $this->title() ?></div>
-       <div class="mdui-card-primary-subtitle"><?php echo sprintf($GLOBALS['CastleLang']['post']['view'], Castle_Contents::PostView($this)); ?> | <?php echo sprintf($GLOBALS['CastleLang']['post']['comment'], $this->commentsNum); ?> | <?php echo sprintf($GLOBALS['CastleLang']['post']['wordNum'], $this->charactersNum); ?></div>
+       <div class="mdui-card-primary-subtitle"><?php echo sprintf($GLOBALS['CastleLang']['post']['view'], Castle_Contents::PostView($this)); ?> | <?php echo sprintf($GLOBALS['CastleLang']['post']['comment'], $this->commentsNum); ?><?php if (Helper::options()->WordsCounterSwitch && in_array('post', Helper::options()->WordsCounterSwitch)) { ?> | <?php echo sprintf($GLOBALS['CastleLang']['post']['wordNum'], Castle_WordCounter::charactersNum($this)); } ?></div>
       </div>
      </div>
     </div>

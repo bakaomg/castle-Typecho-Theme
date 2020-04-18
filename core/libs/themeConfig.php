@@ -175,6 +175,22 @@ function themeConfig($form) {
      Helper::options()->themeFile(Castle_Libs::getTheme(), "core/lang/zh-CN.json")
     )
    ).
+
+   $Component->panel('字数统计', NULL,
+    $Component->radio("WordsCounterOpts", "全站字数", '全站字数计算方式',
+      [0 => '仅计算公开状态的文章字数',
+       1 => '计算包括非公开文章的字数'
+      ],
+     0).
+
+     $Component->checkbox('WordsCounterSwitch', '字数统计显示', '字数统计显示',
+     ['post'   =>  '在文章页显示此文章的字数',
+      'page'   =>  '在独立页显示此页面的字数（不包括特殊页面）',
+      'index'  =>  '在首页显示每篇文章的字数（与文章页内显示互不影响）'
+     ],
+     ['post']
+    )
+   ).
    
    $Component->panel('功能开关', NULL,
     $Component->checkbox('switch', '功能开关', NULL,

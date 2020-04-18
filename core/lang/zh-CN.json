@@ -60,13 +60,15 @@
   "comment": "评论 %s",
   "view": "浏览 %s",
   "time": "Y年m月d日",
-  "excerptEmpty": "「正文内容为空」"
+  "excerptEmpty": "「正文内容为空」",
+  "wordNum": "字数 %s"
  },
 
  "post": {
   "view": "浏览 %s",
   "comment": "评论 %s",
   "time": "Y年m月d日",
+  "wordNum": "字数 %s",
   "menu": {
    "edit": {
     "edit": "编辑文章",
@@ -108,6 +110,7 @@
   "view": "浏览 %s",
   "comment": "评论 %s",
   "time": "Y年m月d日",
+  "wordNum": "字数 %s",
   "menu": {
    "edit": {
     "edit": "编辑页面",
