@@ -6,7 +6,7 @@
  */
 /**
  * Castle Links
- * Last Update: 2020/03/14
+ * Last Update: 2020/04/18
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 if (@$_SERVER['HTTP_X_PJAX'] == true) {
@@ -49,7 +49,7 @@ $BloggerAvatar = (Helper::options()->siteAvatar) ? Helper::options()->siteAvatar
        <a class="moe-links-href" href="{url}" title="{title}" target="_blank">
         <div class="mdui-card moe-links-card mdui-hoverable">
          <div class="mdui-card-media">
-          <main class="lazyload" data-src="{image}" style="background-image: url(\'\');"></main>
+          <main class="lazyload" data-src="{image}" data-bgUrl="{user}" style="background-image: url(\'\');"></main>
          </div>
          <div class="mdui-card-actions mdui-text-center">
           <img src="{image}" data-original="{image}" class="moe-links-avatar"/><br>
@@ -63,7 +63,17 @@ $BloggerAvatar = (Helper::options()->siteAvatar) ? Helper::options()->siteAvatar
       if (Helper::options()->pageLinks && in_array('rand', Helper::options()->pageLinks)) {
        shuffle($Links);
       }
-      for ($i=0;$i<count($Links);$i++) { echo $Links[$i]; }
+      for ($i=0;$i<count($Links);$i++) { 
+       preg_match_all('/data\-bgUrl="(.*?)"/i', $Links[$i], $bgUrl);
+       
+       if (!empty($bgUrl[1][0])) {
+        $link_output = preg_replace('/data\-src="(.*?)"/i', 'data-src="'.$bgUrl[1][0].'"', $Links[$i]);
+       }
+
+       $link_output = preg_replace('/data\-bgUrl="(.*?)"/i', '', (isset($link_output)) ? $link_output : $Links[$i]);
+
+       echo $link_output;
+      }
      }else{
       echo '<div class="mdui-col">
       <a class="moe-links-href" no-go>
