@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle API Class
- * Last Update: 2020/04/10
+ * Last Update: 2020/04/18
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -68,7 +68,6 @@ class Castle_API {
     //侧边抽屉底部工具栏
     'sidebarToolsBar' => [
      'login' => (Helper::options()->sidebarToolsBar && in_array('login', Helper::options()->sidebarToolsBar)) ? true : false,
-     'settingBtn' => (Helper::options()->sidebarToolsBar && in_array('settingBtn', Helper::options()->sidebarToolsBar)) ? true : false,
      'darkBtn' => (Helper::options()->sidebarToolsBar && in_array('darkBtn', Helper::options()->sidebarToolsBar)) ? true : false
     ],
 
