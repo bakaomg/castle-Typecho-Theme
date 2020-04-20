@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Theme Config
- * Last Update: 2020/04/18
+ * Last Update: 2020/04/20
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -196,6 +196,7 @@ function themeConfig($form) {
 
     $Component->textarea('FSAcontent', '公告内容', '全站公告的内容', NULL).
     $Component->input('FSAtime', '公告显示时间', '公告显示的时间，单位 [ms] ，如为 0 则不自动关闭', 0).
+    $Component->input('FSAtextColor', '公告内容字体颜色', '填入十六进制的颜色或 RGB/RGBA 颜色值，请根据背景色而决定', '#fff').
     $Component->input('FSAbgColor', '公告框背景色', '填入十六进制的颜色或 RGB/RGBA 颜色值', '#424242').
     $Component->input('FSAbtnColor', '公告框按钮字体颜色', '填入十六进制的颜色或 RGB/RGBA 颜色值，请根据背景色而决定', '#FF4081').
     $Component->input('FSAbtnText', '公告框按钮内容', '公告框关闭按钮的内容，不填默认为 "OK"', 'OK')
