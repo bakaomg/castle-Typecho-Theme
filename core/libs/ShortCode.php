@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Short Code Class
- * Last Update: 2020/04/18
+ * Last Update: 2020/04/20
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -35,7 +35,7 @@ class Castle_ShortCode {
  public static function parseHidden($content, $isFeed) {
   $reg = self::get_shortcode_regex(['hidden']);
   $rp = ($isFeed === true) ? '<del>${5}</del>' :'<span class="moe-short-code-hidden">${5}</span>';
-  $new = preg_replace("/$reg/s", $rp, htmlspecialchars_decode($content));
+  $new = preg_replace("/$reg/s", $rp, $content);
   return $new;
  }
 
@@ -50,7 +50,7 @@ class Castle_ShortCode {
  public static function parseTextCenter($content, $isFeed) {
   $reg = self::get_shortcode_regex(['center']);
   $rp = ($isFeed === true) ? '<center>>${1}</center>' :'<span class="moe-short-code-text-center">${1}</span>';
-  $new = preg_replace("/$reg/s", $rp, htmlspecialchars_decode($content));
+  $new = preg_replace("/$reg/s", $rp, $content);
   return $new;
  }
 
@@ -78,8 +78,7 @@ class Castle_ShortCode {
   */
  private static function parsePanelCallback($matches) {
   static $data = [];
-  $data = self::shortcode_parse_atts(htmlspecialchars_decode($matches[3]));
-  $matches[5] = htmlspecialchars_decode($matches[5]);
+  $data = self::shortcode_parse_atts($matches[3]);
 
   if (self::$isFeed === true && !empty($matches)) {
    return '<strong>这是一个折叠面板，请在浏览器中查看</strong>';
