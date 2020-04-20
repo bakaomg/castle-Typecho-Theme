@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Comments Libs
- * Last Update: 2020/02/12
+ * Last Update: 2020/04/20
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 //基本照搬 Typecho 的评论组件
@@ -137,7 +137,7 @@ class Castle_Comments_Archive extends Widget_Abstract_Comments {
        </div>
 
        <div class="moe-comments-textBox mdui-typo">
-        <?php echo $this->getParent(); echo preg_replace('#</?[p][^>]*>#','', Castle_Contents::parseOwO(Castle_Contents::shortCode($this->content))); ?>
+        <?php echo $this->getParent(); echo preg_replace('#</?[p][^>]*>#','', Castle_Contents::parseOwO(Castle_ShortCode::parseAll($this->content))); ?>
        </div>
       </div>
      </main>
