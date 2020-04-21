@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Comments
- * Last Update: 2020/03/15
+ * Last Update: 2020/04/21
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $showLink = (Helper::options()->commentSwitch && in_array('displayLinkBtn', Helper::options()->commentSwitch)) ? NULL : ' moe-comment-input-url-hidden';
@@ -127,5 +127,6 @@ if(!$this->hidden):
      <?php $comments->pageNav('<span><<</span>', '<span>>></span>', 1, '...', 'wrapTag=div&wrapClass=moe-comments-page-navigator&prevClass=prev&nextClass=next'); ?>
     </footer>
    </div>
+<?php if ($this->options->commentsAntiSpam) { Castle_Comments_Archive::AntiSpam($this); } ?>
 <?php } ?>
 <?php endif; ?>

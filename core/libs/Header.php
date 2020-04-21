@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Header Class
- * Last Update: 2020/03/24
+ * Last Update: 2020/04/21
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -132,7 +132,7 @@ class Castle_Header {
        '<meta name="twitter:description" content="'.$description.'" />'."\n  ".
        '<meta name="twitter:card" content="summary_large_image" />'."\n  ".
        '<meta name="twitter:image" content="'.$cover.'" />'."\n  ";
-  $header->header('generator=&pingback=&xmlrpc=&wlw=&commentReply=&description=');
+  $header->header('generator=&pingback=&xmlrpc=&wlw=&commentReply=&description=&antiSpam=');
 
   //判断 APlayer 是否启用
   if (Castle_Libs::hasPlugin('Meting') || Castle_Libs::hasPlugin('APlayerAtBottom') || Helper::options()->APlayerStyle == '0') {

@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Functions
- * Last Update: 2020/03/26
+ * Last Update: 2020/04/21
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -41,7 +41,10 @@ Typecho_Plugin::factory('Widget_Abstract_Contents')->contentEx = array('Castle_C
  * @param $archive  Widget_Archive
  */
 function themeInit($archive) {
- Helper::options()->commentsAntiSpam = false; //关闭评论反垃圾(否则与PJAX冲突)
+ //已经兼容反垃圾
+ //Helper::options()->commentsAntiSpam = false; //关闭评论反垃圾(否则与PJAX冲突)
+
+
  Helper::options()->commentsMarkdown = true; //启用评论可使用MarkDown语法
  Helper::options()->commentsCheckReferer = false; //关闭检查评论来源URL与文章链接是否一致判断(否则会无法评论)
  Helper::options()->commentsPageBreak = true; //是否开启评论分页
