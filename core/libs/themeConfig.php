@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Theme Config
- * Last Update: 2020/04/20
+ * Last Update: 2020/04/24
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -296,7 +296,7 @@ function themeConfig($form) {
    $Component->panel('封面图源', NULL,
     $Component->select('coverType', '封面图源', NULL,
      ['oapi'         =>  'O\'s API(api.ohmyga.cn)',
-      'shota'        =>  'Shota\'s API(api.713.moe)',
+      'shota'        =>  'Shota\'s API(api.9jojo.cn)',
       'local'        =>  '本地图源',
       'external'     =>  '第三方 API',
       'externalRand' =>  '第三方 API（附加随机参数）'
