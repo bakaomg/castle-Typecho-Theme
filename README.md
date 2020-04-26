@@ -24,9 +24,11 @@ $ git clone https://github.com/ohmyga233/castle-Typecho-Theme
 
 > 开发版为实时打包上传版本，不推荐使用，因为可能会存在一些不稳定因素。<br>
 如果你在使用开发版时出现任何问题请在 [issues](https://github.com/ohmyga233/castle-Typecho-Theme/issues) 提出。<br>
-**`0.9.3` 以上版本（包括开发版但不包括 `0.9.3` ）已有 [配套插件](https://github.com/ohmyga233/Castle-Plugin/)，部分设置可能得依赖插件**
 
 </details>
+
+## 配套插件
+**`0.9.3` 以上版本（包括开发版但不包括 `0.9.3` ）已有 [配套插件](https://github.com/ohmyga233/Castle-Plugin/)，部分设置可能得依赖插件**
 
 ## 注意事项
 ~~并没有相关的交流群~~ **应要求已经重新创建 QQ 群（1033117896），有问题可发 [Issues](https://github.com/ohmyga233/castle-Typecho-Theme/issues) 或 加入 QQ 群反馈。**<br>
@@ -36,6 +38,10 @@ $ git clone https://github.com/ohmyga233/castle-Typecho-Theme
 - https://713.moe/<br>
 - https://blog.ystone.top:488/<br>
 - https://ohmyga.cn/ - 又要跑路了(穷了)
+
+## 其他
+爱发电：https://afdian.net/@ohmyga<br>
+题外话：就目前而言主题已经没什么想加的功能了，接下来也只会修修锅，等正式发布 `1.0.0` 时更新频率将会变缓，或者不再更新。
 
 ## 版权信息
 Screenshot.png: [最近のケモショタまとめログ③ - #P2](https://www.pixiv.net/artworks/66074820?p=2)<br>
