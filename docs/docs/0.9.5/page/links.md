@@ -4,7 +4,7 @@
 ![创建页面](../../../static/img/page/1.png)
 
 - 选择自定义模板 `友链页` （移动端看不清图片的话，长按图片在新窗口打开即可。<br>
-![](../../../static/img/page/links2.png)
+![](../../../static/img/page/links2.png) 
 
 - 最后保存即可。
 
