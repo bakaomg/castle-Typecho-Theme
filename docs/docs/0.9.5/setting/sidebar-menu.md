@@ -13,7 +13,7 @@
 ------
 
 ## 普通按钮
-![按钮](../../static/img/setting/button.png)
+![按钮](../../../static/img/setting/button.png)
 - `"name"` 按钮名称
 - `"type"` 类型 `button` 为普通按钮
 - `"link"` 按钮链接（如果链接为站外链接且不设置禁止新标签页打开将会自动添加 target="blank" 属性
@@ -37,7 +37,7 @@
 ------
 
 ## 归档按钮
-![归档](../../static/img/setting/archives.png)
+![归档](../../../static/img/setting/archives.png)
 - `"name"` 列表名称
 - `"type"` 类型 `archives` 为归档列表
 - `"icon"` 列表图标（请前往 [MDUI Docs](https://www.mdui.org/docs/material_icon) 获取图标名）
@@ -61,7 +61,7 @@
 ------
 
 ## 分类按钮
-![分类](../../static/img/setting/category.png)
+![分类](../../../static/img/setting/category.png)
 - `"name"` 列表名称
 - `"type"` 类型 `category` 为分类列表
 - `"icon"` 列表图标（请前往 [MDUI Docs](https://www.mdui.org/docs/material_icon) 获取图标名）
@@ -84,7 +84,7 @@
 ------
 
 ## 页面按钮
-![页面](../../static/img/setting/pages.png)
+![页面](../../../static/img/setting/pages.png)
 - `"name"` 列表名称
 - `"type"` 类型 `pages` 为页面列表
 - `"icon"` 列表图标（请前往 [MDUI Docs](https://www.mdui.org/docs/material_icon) 获取图标名）
@@ -103,7 +103,7 @@
 ------
 
 ## 列表按钮
-![列表](../../static/img/setting/list.png)
+![列表](../../../static/img/setting/list.png)
 - `"name"` 显示名称
 - `"type"` 类型 `list` 为列表
 - `"icon"` 父列表图标（请前往 [MDUI Docs](https://www.mdui.org/docs/material_icon) 获取图标名）
@@ -136,7 +136,7 @@
 ------
 
 ## 分割线
-![数据统计](../../static/img/setting/divider.png)
+![数据统计](../../../static/img/setting/divider.png)
 - `"type"` 类型 `divider` 为分割线
 
 ```json
@@ -148,7 +148,7 @@
 ------
 
 ## Rss 订阅按钮
-![数据统计](../../static/img/setting/rss.png)
+![数据统计](../../../static/img/setting/rss.png)
 - `"name"` 显示名称
 - `"type"` 类型 `RssLink` 为 RSS 订阅按钮
 - `"icon"` 按钮图标（请前往 [MDUI Docs](https://www.mdui.org/docs/material_icon) 获取图标名）
@@ -171,7 +171,7 @@
 ------
 
 ## 数据统计
-![数据统计](../../static/img/setting/total.png)
+![数据统计](../../../static/img/setting/total.png)
 - `"name"` 显示名称
 - `"type"` 数据统计类型，见示例
 

@@ -1,10 +1,10 @@
 ## 页面设置
 
 - 首先新建一个独立页面<br>
-![创建页面](../../static/img/page/1.png)
+![创建页面](../../../static/img/page/1.png)
 
 - 选择自定义模板 `追番页` （移动端看不清图片的话，长按图片在新窗口打开即可。<br>
-![](../../static/img/page/bgm2.png)
+![](../../../static/img/page/bgm2.png)
 
 - 最后保存即可。
 
