@@ -61,14 +61,14 @@
   "view": "Views: %s",
   "time": "Y-m-d",
   "excerptEmpty": "There is nothing.",
-  "wordNum": "Word Count: %s"
+  "wordNum": "Words: %s"
  },
 
  "post": {
   "view": "Views %s",
   "comment": "Comments %s",
   "time": "Y-m-d",
-  "wordNum": "Word Count: %s",
+  "wordNum": "Words: %s",
   "menu": {
    "edit": {
     "edit": "Edit article",
@@ -110,7 +110,7 @@
   "view": "Views %s",
   "comment": "Comments %s",
   "time": "Y-m-d",
-  "wordNum": "Word Count: %s",
+  "wordNum": "Words: %s",
   "menu": {
    "edit": {
     "edit": "Edit the page",

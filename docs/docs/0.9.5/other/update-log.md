@@ -20,6 +20,7 @@
 - 修复：独立页面的一处文字错误
 - 修复：友链 Dialog 暗色下的问题
 - 修复：自带表情包无法使用 `CDN` 的问题
+- 修复：移动端页脚的排版（By @CberYellowstone ）
 - 修复：APlayer 吸底模式在暗色下歌词阴影太大的问题
 - 修复：`AplayerAtBottom` 亮色下吸底模式的播放透明问题
 - 修复：`post` 页面语法问题导致 PHP 报错 (由 @CberYellowstone  发现)
