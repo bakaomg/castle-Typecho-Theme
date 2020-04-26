@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle API Class
- * Last Update: 2020/04/18
+ * Last Update: 2020/04/26
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -159,7 +159,8 @@ class Castle_API {
     'delete' => $GLOBALS['CastleLang']['page']['delete']
    ],
    'comment' => $GLOBALS['CastleLang']['api']['comment'],
-   'pjax' => $GLOBALS['CastleLang']['pjax']
+   'pjax' => $GLOBALS['CastleLang']['pjax'],
+   'toc' => $GLOBALS['CastleLang']['toc']
   ];
 
   $output .= "\n".'var CastleLang ='.json_encode($lang);

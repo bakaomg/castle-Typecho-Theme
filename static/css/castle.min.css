@@ -8,7 +8,7 @@
   \_____|  \__,_| |___/  \__| |_|  \___|
  ----------------------------------------
  * Castle's Stylesheet
- * Last Update: 2020/04/18 [0.9.4]
+ * Last Update: 2020/04/26 [0.9.4]
  * Author: ohmyga (https://ohmyga.cn)
  * GitHub: https://github.com/ohmyga233/castle-Typecho-Theme/
  * LICENSE: GPL V3 (https://www.gnu.org/licenses/gpl-3.0.html)
@@ -466,7 +466,7 @@ body {
   text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
 }
 
-.moe-appbar .moe-device-btn-hidden {
+#header .moe-device-btn-hidden {
   transform: scale(0);
 }
 
