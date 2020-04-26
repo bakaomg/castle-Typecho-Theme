@@ -56,7 +56,10 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     if ($PostType == 'nopic') { ?>
     <div class="mdui-card mdui-hoverable moe-nopic-card">
      <div class="moe-left-icon">
-      <i class="mdui-icon material-icons">&#xe0c9;</i>
+      <i class="mdui-icon material-icons"><?php
+       $postSeting = Castle_Contents::getSetting($this, 'indexIcon');
+       echo (!empty($postSeting)) ? $postSeting : '&#xe0c9;';
+      ?></i>
      </div>
      
      <h2 class="moe-nopic-title">
