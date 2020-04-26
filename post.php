@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Post
- * Last Update: 2020/04/18
+ * Last Update: 2020/04/26
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 if (@$_SERVER['HTTP_X_PJAX'] == true) {
@@ -13,7 +13,11 @@ if (@$_SERVER['HTTP_X_PJAX'] == true) {
 }
 Typecho_Widget::widget('Widget_Security')->to($security);
 ?>
-   <div class="mdui-card moe-post-card"<?php if(Helper::options()->TocSwitch == '1') { ?> data-toc="<?php echo ($this->fields->showToc) ? 'true' : 'false'; ?>"<?php } ?>>
+   <div class="mdui-card moe-post-card"<?php if(Helper::options()->TocSwitch == '1') { ?> data-toc="<?php echo ($this->fields->showToc) ? 'true' : 'false'; ?>"<?php
+    $postSeting = Castle_Contents::getSetting($this, 'tocPopup');
+    $postSeting = (isset($postSeting)) ? $postSeting : [];
+    echo ($postSeting === false || $postSeting == 'false') ? ' data-popup="false"' : '';
+   } ?>>
     <div class="mdui-card-media">
      <div class="moe-card-cover-image lazyload" data-src="<?php
        $cover = $this->fields->cover;

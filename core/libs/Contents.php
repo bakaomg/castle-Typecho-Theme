@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Content Class
- * Last Update: 2020/04/13
+ * Last Update: 2020/04/26
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 //大部分修改搬自 AlanDecode[https://github.com/AlanDecode] 的主题 VOID
@@ -338,5 +338,20 @@ class Castle_Contents {
   }
 
   return $link;
+ }
+
+ /**
+  * 获取文章/独立页面高级设置
+  *
+  * @access public
+  */
+ public static function getSetting($widget, $key) {
+  $key = strtolower($key);
+  
+  $setting = strtolower($widget->fields->advancedSettings);
+  $setting = json_decode($setting, true);
+  if (!is_array($setting)) { return false; }
+
+  return (isset($setting[$key])) ? $setting[$key] : false;
  }
 }
