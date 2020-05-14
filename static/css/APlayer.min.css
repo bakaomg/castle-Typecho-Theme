@@ -1,7 +1,7 @@
 @charset "utf-8";
 /**
  * APlayer Dark Style
- * Last Update: 2020/04/13
+ * Last Update: 2020/05/14
  */
 
 .aplayer.aplayer-fixed {
@@ -75,7 +75,7 @@
  }
 }
 
-@media(max-width: 970px) {
+@media(max-width: 1075px) {
  .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
   left: -68px;
  }
