@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Theme Config
- * Last Update: 2020/04/24
+ * Last Update: 2020/05/14
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -422,12 +422,28 @@ function themeConfig($form) {
 
    ).
 
+   $Component->panel('缓存设置', NULL,
+    $Component->checkbox('PluginCache', NULL, NULL,
+     ['siteConfig' => '缓存外观设置（加快访问速度）'
+     ],
+     ['siteConfig']
+    ).
+
+    '注意：此功能需配套插件支持且得确保 <code>插件目录/Castle/cache/</code> 文件夹有足够的读写权限。'
+   ).
+
    $Component->panel('主题设置界面', NULL,
     $Component->textarea('themeConfigBG', '后台设置页面背景', '不填将使用默认背景', NULL)
    )
 
   )
  );
+
+ //想不到更好的办法了
+ //只能在访问外观设置时顺带更新缓存
+ if (Castle_Libs::hasPlugin('Castle') && Helper::options()->PluginCache && in_array('siteConfig', Helper::options()->PluginCache)) {
+  Castle_API::siteConfigUpdate();
+ }
 }
 
 /**

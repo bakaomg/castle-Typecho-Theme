@@ -1,16 +1,16 @@
 <?php
 /**
  * Castle API Class
- * Last Update: 2020/04/26
+ * Last Update: 2020/05/14
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 class Castle_API {
-
  /**
-  * 站点配置整合输出
+  * 登录状态
+  * 
   */
- public static function siteConfig() {
+ public static function loginStatus() {
   Typecho_Widget::widget('Widget_User')->to($user);
   if ($user->hasLogin()) {
    $hasLogin = true;
@@ -19,7 +19,21 @@ class Castle_API {
   }
 
   $arr = [
-   
+   'is' => $hasLogin
+  ];
+
+  $output = 'var CLStatus = '.json_encode($arr);
+
+  //设置Header
+  header('Content-type: text/javascript');
+  echo $output;
+ }
+
+ /**
+  * 站点配置整合输出
+  */
+ public static function siteConfig($return = false) {
+  $arr = [
    //Url
    'url' => [
     'site' => Helper::options()->siteUrl,             //站点链接
@@ -38,11 +52,6 @@ class Castle_API {
 
    //Castle Version
    'CastleVersion' => CASTLE_VERSION,
-
-   //判断
-   'is' => [
-    'login' => $hasLogin
-   ],
    
    //功能开关
    'switch' => [
@@ -165,8 +174,18 @@ class Castle_API {
 
   $output .= "\n".'var CastleLang ='.json_encode($lang);
 
-  //设置Header
-  header('Content-type: text/javascript');
-  echo $output;
+ 
+  
+  if ($return === false || $return == NULL) {
+   //设置Header
+   header('Content-type: text/javascript');
+   echo $output;
+  }else{
+   return $output;
+  }
+ }
+
+ public static function siteConfigUpdate() {
+  Castle_Plugin::siteConfig(self::siteConfig(true), true);
  }
 }

@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Footer Class
- * Last Update: 2020/03/24
+ * Last Update: 2020/05/14
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -21,11 +21,18 @@ class Castle_Footer {
   //统计代码
   echo (Helper::options()->statisticsCode) ? '<div class="mdui-hidden">'.Helper::options()->statisticsCode.'</div>'."\n " : NULL;
 
+  //登录状态
+  echo '<script src="'.Castle_Libs::index('/?action=loginStatus', false).'"></script>'."\n  ";
+
   //siteConfig
-  echo '<script src="'.Castle_Libs::index('/?action=siteConfig', false).'"></script>'."\n  ".
+  if (Castle_Libs::hasPlugin('Castle') && Helper::options()->PluginCache && in_array('siteConfig', Helper::options()->PluginCache)) {
+   echo '<script src="'.Castle_Plugin::siteConfig(Castle_API::siteConfig(true)).'"></script>'."\n  ";
+  }else{
+   echo '<script src="'.Castle_Libs::index('/?action=siteConfig', false).'"></script>'."\n  ";
+  }
 
   //MDUI
-  '<script src="'.Castle_Libs::resources('static/js/mdui.min.js', true).'"></script>'."\n  ";
+  echo '<script src="'.Castle_Libs::resources('static/js/mdui.min.js', true).'"></script>'."\n  ";
 
   if (Helper::options()->PJAX && in_array('PJAX_Switch', Helper::options()->PJAX)) {
    //PJAX

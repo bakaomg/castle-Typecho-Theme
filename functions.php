@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Functions
- * Last Update: 2020/04/26
+ * Last Update: 2020/05/14
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -60,6 +60,12 @@ function themeInit($archive) {
   die();
  }
 
+ //登录状态
+ if ($_SERVER['REQUEST_METHOD'] == 'GET' && @$_GET["action"] == 'loginStatus') {
+  Castle_API::loginStatus();
+  die();
+ }
+
  //表情配置文件
  if ($_SERVER['REQUEST_METHOD'] == 'GET' && @$_GET["action"] == 'owoConfig') {
   $arr = [
@@ -72,7 +78,6 @@ function themeInit($archive) {
  }
 
  //登陆
-
  if ($_SERVER['REQUEST_METHOD'] == 'POST' && @$_GET["action"] == 'login' && @$_GET['_'] != NULL && Helper::options()->sidebarToolsBar && in_array('login', Helper::options()->sidebarToolsBar)) {
   header('Content-type: application/json');
   echo json_encode((new TypechoLogin())->Login());
