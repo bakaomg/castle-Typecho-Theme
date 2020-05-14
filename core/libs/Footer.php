@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Footer Class
- * Last Update: 2020/05/14
+ * Last Update: 2020/05/15
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -26,7 +26,7 @@ class Castle_Footer {
 
   //siteConfig
   if (Castle_Libs::hasPlugin('Castle') && Helper::options()->PluginCache && in_array('siteConfig', Helper::options()->PluginCache)) {
-   echo '<script src="'.Castle_Plugin::siteConfig(Castle_API::siteConfig(true)).'"></script>'."\n  ";
+   echo '<script src="'.Castle_Plugin::siteConfig(Castle_API::siteConfig(true)).'?hash='.Castle_Plugin::getSiteConfigMd5().'"></script>'."\n  ";
   }else{
    echo '<script src="'.Castle_Libs::index('/?action=siteConfig', false).'"></script>'."\n  ";
   }
