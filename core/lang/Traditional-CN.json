@@ -1,0 +1,219 @@
+{
+"name": "繁體中文",
+"raw_name": "Traditional-CN",
+"404": {
+"home": "首頁",
+"title": "404 Not Found.",
+"try": "或許你可以試著搜索一下？",
+"search": "輸入你想搜索的內容吧！"
+},
+"search": {
+"input": "輸入你想搜索的內容並回車",
+"empty": "請輸入你要搜索的內容然後再回車"
+},
+"sidebar": {
+"home": "首頁",
+"toolbar": {
+"setting": "設置",
+"login": "登錄",
+"logout": "退出登錄",
+"light": "亮色（白天）",
+"dark": "暗色（夜間）"
+},
+"login": {
+"logout": {
+"title": "退出登錄",
+"content": {
+"logout": "已成功退出登錄"
+}
+},
+"login": {
+"title": "登錄",
+"user": "用戶名",
+"password": "密碼",
+"remember": "下次自動登錄",
+"submit": "登錄",
+"wrongUser": "用戶名不能為空",
+"wrongPass": "密碼不能為空",
+"success": "登錄成功",
+"logined": "已經登陸，請勿重複登陸！"
+}
+},
+"setting": {
+"title": "設置面板",
+"content": "這功能並沒有寫好"
+},
+"dark": {
+"dark": "已啟用亮色主題（白天模式）",
+"dark_enabled": "已經是暗色咯~",
+"light": "已啟用暗色主題（夜間模式）",
+"light_enabled": "已經是亮色咯~"
+}
+},
+"index": {
+"FloatTitle": "點擊標題繼續閱讀《%s》",
+"viewLink": "繼續閱讀",
+"comment": "評論 %s",
+"view": "瀏覽 %s",
+"time": "Y年m月d日",
+"excerptEmpty": "「正文內容為空」",
+"wordNum": "字數 %s"
+},
+"post": {
+"view": "瀏覽 %s",
+"comment": "評論 %s",
+"time": "Y年m月d日",
+"wordNum": "字數 %s",
+"menu": {
+"edit": {
+"edit": "編輯文章",
+"delete": "刪除文章"
+}
+},
+"delete": {
+"tips": {
+"title": "提示",
+"content": "你確定要刪除文章「%s」？ ",
+"cancel": "取消",
+"confirm": "確定"
+},
+"warning": {
+"title": "警告",
+"content": {
+"small": "你真的非常確定要刪除文章「%s」？ ",
+"big": "此操作將無法撤銷！"
+},
+"cancel": "取消",
+"confirm": "我非常確定"
+}
+},
+"copy": "本文作者：{author}<br>本文鏈接：{link}<br>最後修改時間：{time}<br>本站未註明轉載的文章均為原創，並採用{protocol}授權協議，轉載請註明來源，謝謝！",
+"nav": {
+"next": "下一篇",
+"prev": "上一篇",
+"empty": "沒有了"
+},
+"hidden": {
+"input": "請輸入密碼訪問",
+"empty": "密碼不能為空",
+"success": "密碼正確，重載頁面中...",
+"error": "驗證失敗！<br>原因："
+}
+},
+"page": {
+"view": "瀏覽 %s",
+"comment": "評論 %s",
+"time": "Y年m月d日",
+"wordNum": "字數 %s",
+"menu": {
+"edit": {
+"edit": "編輯頁面",
+"delete": "刪除頁面"
+}
+},
+"delete": {
+"tips": {
+"title": "提示",
+"content": "你確定要刪除頁面「%s」？ ",
+"cancel": "取消",
+"confirm": "確定"
+},
+"warning": {
+"title": "警告",
+"content": {
+"small": "你真的非常確定要刪除頁面「%s」？ ",
+"big": "此操作將無法撤銷！"
+},
+"cancel": "取消",
+"confirm": "我非常確定"
+}
+},
+"copy": "本文作者：{author}<br>本文鏈接：{link}<br>最後修改時間：{time}<br>本站未註明轉載的文章均為原創，並採用{protocol}授權協議，轉載請註明來源，謝謝！"
+},
+"comment": {
+"respond": {
+"title": "評論",
+"login": {
+"tips": "現在以登錄者的身份評論",
+"logout": "退出登錄"
+},
+"smile": "表情",
+"user": "暱稱",
+"email": {
+"input": "郵箱",
+"require": "必填，將保密",
+"optional": "選填"
+},
+"url": {
+"input": "鏈接",
+"require": "必填",
+"optional": "選填"
+},
+"message": {
+"input": "留下你成為大佬的想法吧",
+"helper": "支持 Markdown 語法"
+},
+"buttons": {
+"link": "顯示/隱藏鏈接輸入框",
+"cancelReply": "取消回复",
+"reply": "發送評論"
+}
+},
+"commrntsBox": {
+"title": "評論列表",
+"reply": "回复",
+"blogger": "博主",
+"time": "Y-m-d H:i",
+"status": {
+"login": "此條評論正等待審核!",
+"logout": "您的評論正等待審核!"
+},
+"pending": "待審核的評論",
+"delete": "已刪除的評論",
+"counts": {
+"no": "暫無評論",
+"have": "已有 <span>%s</span> 條評論"
+}
+}
+},
+"page-archives": {
+"tags": {
+"title": "文章標籤",
+"count": "共 %s 個標籤",
+"empty": "並沒有任何標籤 ヽ(*。>Д<)o゜",
+"have": "有 %s 篇文章在這個標籤下"
+},
+"archives": {
+"title": "文章歸檔",
+"count": "%s 篇"
+}
+},
+"api": {
+"login": {
+"wrong": "用戶名或密碼無效",
+"noLogin": "當前並沒有登錄",
+"user": "請輸入用戶名",
+"passwd": "請輸入密碼",
+"success": "登錄成功"
+},
+"comment": {
+"MsgEmpty": "請填寫評論內容",
+"AuthorEmpty": "請填寫你的暱稱",
+"EmailEmpty": "請填寫你的郵箱",
+"UrlEmpty": "請填寫你的網站鏈接",
+"refresh": "評論提交失敗，請刷新頁面",
+"pending": "評論成功，正在等待審核！",
+"success": "評論成功！",
+"have": "已有 %s 條評論"
+}
+},
+"tips": {
+"tips": "提示",
+"unknown": "發生未知錯誤",
+"error": "發生錯誤"
+},
+"pjax": {
+"error": "請求失敗，請檢查網絡是否正常"
+},
+"toc": "目錄"
+}
