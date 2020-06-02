@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Content Class
- * Last Update: 2020/04/26
+ * Last Update: 2020/06/02
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 //大部分修改搬自 AlanDecode[https://github.com/AlanDecode] 的主题 VOID
@@ -89,9 +89,7 @@ class Castle_Contents {
    $imgFoot = '</a>';
   }
 
-  $img = '<img class="lazyload" alt="'.$match[2].'" src="" data-src="'.$match[1].'">';
-
-  return (self::$photoMode) ? $img : $imgHead.$img.$imgFoot;
+  return (self::$photoMode) ? '<img alt="'.$match[2].'" src="'.$match[1].'"/>' : $imgHead.'<img class="lazyload" alt="'.$match[2].'" src="" data-src="'.$match[1].'"/>'.$imgFoot;
  }
 
  /**
