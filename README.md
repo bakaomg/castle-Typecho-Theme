@@ -41,6 +41,7 @@ $ git clone https://github.com/ohmyga233/castle-Typecho-Theme
 
 ## 其他
 爱发电：https://afdian.net/@ohmyga<br>
+赞助列表：hhttps://blog.ohmyga.cn/donate-list.html<br>
 题外话：就目前而言主题已经没什么想加的功能了，接下来也只会修修锅，等正式发布 `1.0.0` 时更新频率将会变缓，或者不再更新。
 
 ## 版权信息
