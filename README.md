@@ -13,7 +13,7 @@
 没错，此次迁移就是为了再次重构而做准备（~~高考完一定来，绝对不咕咕咕！~~
 
 ## README
-其他信息详见：(这里 这里 这里！)[https://github.com/bakaomg/castle-Typecho-Theme/blob/0.9.x/README.md]
+其他信息详见：[这里 这里 这里！](https://github.com/bakaomg/castle-Typecho-Theme/blob/0.9.x/README.md)
 
 ## 其他
 爱发电：https://afdian.net/@ohmyga<br>
