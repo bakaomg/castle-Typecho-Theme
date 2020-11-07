@@ -4,7 +4,7 @@
 
 ---
 
-> **请下载 [Releases](https://github.com/ohmyga233/castle-Typecho-Theme/releases) 页面的最新发行包，使用时如遇问题请查阅 [文档](https://castle.baka.show/) ，文档中有的问题将一律不给予解答。**
+> **请下载 [Releases](https://github.com/bakaomg/castle-Typecho-Theme/releases) 页面的最新发行包，使用时如遇问题请查阅 [文档](https://castle.baka.show/) ，文档中有的问题将一律不给予解答。**
 <br>**禁止删除主题版权信息。**
 <br>**PHP 版本必须 >= 7.0 才能正常使用！**
 
@@ -13,7 +13,8 @@
 没错，此次迁移就是为了再次重构而做准备（~~高考完一定来，绝对不咕咕咕！~~
 
 ## README
-其他信息详见：[这里 这里 这里！](https://github.com/bakaomg/castle-Typecho-Theme/blob/0.9.x/README.md)
+其他信息详见：[这里 这里 这里！](https://github.com/bakaomg/castle-Typecho-Theme/blob/0.9.x/README.md)<br>
+下载 0.9.x 请到：[！这里！](https://github.com/bakaomg/castle-Typecho-Theme/releases)进行下载（别再问我怎么下了，谢谢！）
 
 ## 其他
 爱发电：https://afdian.net/@ohmyga<br>
