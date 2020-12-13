@@ -4,6 +4,9 @@
 
 ---
 
+## 前排提醒
+**主题附带的插件目前存在无法获取 BiliBili 追番信息的问题，解决方案请参考[这里](https://github.com/bakaomg/castle-Typecho-Theme/issues/18#issuecomment-743772640)**
+
 > **请下载 [Releases](https://github.com/bakaomg/castle-Typecho-Theme/releases) 页面的最新发行包，使用时如遇问题请查阅 [文档](https://castle.baka.show/) ，文档中有的问题将一律不给予解答。**
 <br>**禁止删除主题版权信息。**
 <br>**PHP 版本必须 >= 7.0 才能正常使用！**
@@ -15,9 +18,6 @@
 ## README
 其他信息详见：[这里 这里 这里！](https://github.com/bakaomg/castle-Typecho-Theme/blob/0.9.x/README.md)<br>
 下载 0.9.x 请到：[！这里！](https://github.com/bakaomg/castle-Typecho-Theme/releases)进行下载（别再问我怎么下了，谢谢！）
-
-## 前排提醒
-**主题附带的插件目前存在无法获取 BiliBili 追番信息的问题，解决方案请参考[这里](https://github.com/bakaomg/castle-Typecho-Theme/issues/18#issuecomment-743772640)**
 
 ## 其他
 爱发电：https://afdian.net/@ohmyga<br>
