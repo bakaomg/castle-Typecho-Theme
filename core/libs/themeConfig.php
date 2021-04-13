@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Theme Config
- * Last Update: 2020/05/14
+ * Last Update: 2021/04/13
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -495,10 +495,15 @@ function themeConfig($form)
                                                             1 => 'Gravatar secure',
                                                             2 => 'Gravatar CN',
                                                             3 => 'V2EX',
-                                                            4 => 'Loli.net'
+                                                            4 => 'Loli.net',
+                                                            5 => '自定义 Gravatar 源'
                                                       ],
-                                                      0
-                                                )
+                                                      4
+                                                ).
+
+                                                $Component->input('gravatarExternal', '自定义 Gravatar 源', '<small style="margin-top: 10px;display: block;margin-bottom: -20px;">当 Gravatar 源为自定义时此设置项生效<br />
+                                                可用变量：<code>{mail}</code> 为邮箱，<code>{size}</code> 为头像大小。<br>
+                                                例如：<code>https://www.gravatar.com/avatar/{mail}?s={size}</code></small>', NULL, true)
                                           )
                               ) .
 
