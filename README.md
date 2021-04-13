@@ -19,7 +19,7 @@
 
 直接下载仓库，或者使用 git 命令行进行克隆
 ```git
-$ git clone https://github.com/ohmyga233/castle-Typecho-Theme
+$ git clone https://github.com/bakaomg/castle-Typecho-Theme
 ```
 
 > 开发版为实时打包上传版本，不推荐使用，因为可能会存在一些不稳定因素。<br>
