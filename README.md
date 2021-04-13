@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/static/img/banner.png">
+  <img src="https://castle.baka.show/static/img/banner.png">
 </p>
 
 ---
@@ -35,9 +35,8 @@ $ git clone https://github.com/ohmyga233/castle-Typecho-Theme
 **文档已经写完 (。・∀・)ノ**
 
 ## 演示站点
-- https://713.moe/<br>
-- https://blog.ystone.top:488/<br>
-- https://ohmyga.cn/ - 又要跑路了(穷了)
+- https://blog.713.moe/<br>
+- https://blog.ystone.top:488/
 
 ## 其他
 爱发电：https://afdian.net/@ohmyga<br>
