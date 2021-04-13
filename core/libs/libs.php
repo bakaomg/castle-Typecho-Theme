@@ -155,7 +155,7 @@ class Castle_Libs
    */
   public static function isDev()
   {
-    return (CASTLE_ENV == 'dev') ? true : false;
+    return (CASTLE_ENV == 'dev' || CASTLE_ENV == 'development' ) ? true : false;
   }
 
   /**
