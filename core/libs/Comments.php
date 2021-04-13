@@ -112,7 +112,7 @@ class Castle_Comments_Archive extends Widget_Abstract_Comments {
   //评论结构
 ?>
 
-    <div id="<?php $this->theId(); ?>" class="moe-comments-box<?php echo $commentClass; ?>">
+    <div id="<?php $this->theId(); ?>" class="moe-comments-box moe-post-card<?php echo $commentClass; ?>">
      <main class="moe-comments-content-wrap">
       <div class="moe-comments-avatar-box">
        <img class="moe-comments-avatar" src="<?php echo Castle_Avatar::getCommentAvatar($this->mail, 100); ?>" /><?php echo $commentOwner; ?>
@@ -136,7 +136,7 @@ class Castle_Comments_Archive extends Widget_Abstract_Comments {
         <?php $this->reply('<button class="mdui-btn mdui-text-color-theme">'.$GLOBALS['CastleLang']['comment']['commrntsBox']['reply'].'</button>'); ?>
        </div>
 
-       <div class="moe-comments-textBox mdui-typo">
+       <div class="moe-comments-textBox moe-card-content">
         <?php echo $this->getParent(); echo preg_replace('#</?[p][^>]*>#','', Castle_Contents::parseOwO(Castle_ShortCode::parseAll($this->content))); ?>
        </div>
       </div>

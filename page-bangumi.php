@@ -19,7 +19,6 @@ if (@$_SERVER['HTTP_X_PJAX'] == true) {
  $this->need('core/inc/header.php');
 }
 ?>
-<meta name="referrer" content="same-origin">
    <div class="mdui-card moe-post-card moe-bangumi-page-card"<?php if(Helper::options()->TocSwitch == '1') { ?> data-toc="<?php echo ($this->fields->showToc) ? 'true' : 'false'; ?>"<?php } ?>>
     <div class="mdui-card-media">
      <div class="moe-card-cover-image lazyload" data-src="<?php
