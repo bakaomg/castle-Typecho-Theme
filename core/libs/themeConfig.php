@@ -536,24 +536,7 @@ function themeConfig($form)
                                           ['post']
                                     ) .
 
-                                          $Component->radio(
-                                                "deviceQRAPI",
-                                                '二维码 API 源',
-                                                '<hr><span style="display:block;margin: 20px 0px -32px 0px;">二维码 API 源</span>',
-                                                [
-                                                      0 => "O's API ( api.ohmyga.cn ) - 维护中 无法使用",
-                                                      1 => "犬's API ( api.fczbl.vip )",
-                                                      2 => "Journey.ad ( api.imjad.cn )",
-                                                      3 => "豌豆荚 ( www.wandoujia.com )",
-                                                      4 => "Google Chart ( chart.googleapis.com ) - 国内不可用",
-                                                      5 => "搜狐 API ( my.tv.sohu.com )",
-                                                      6 => "搜狐快站 API ( www.kuaizhan.com )",
-                                                      7 => "自定义第三方 QRcode API",
-                                                ],
-                                                1
-                                          ) .
-
-                                          $Component->input('deviceQR_DIY_API', '<div style="margin-top: -20px;"></div>第三方 QRcode API', '<span style="display:inline-block;margin-top: 10px;">选择「自定义 API 」时必填，可用变量 <strong>{permalink}</strong></span>', NULL, true)
+                                    '<hr><small>注：二维码不再依赖外部生成，转而使用 QRcode.js 生成</small>'
                               ) .
 
                               $Component->panel(

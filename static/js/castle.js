@@ -7,7 +7,7 @@
   \_____|  \__,_| |___/  \__| |_|  \___|
  ----------------------------------------
  * Castle's JavaScript
- * Last Update: 2021/04/12 [0.9.6]
+ * Last Update: 2021/04/13 [0.9.6]
  * Author: ohmyga (https://ohmyga.cn)
  * GitHub: https://github.com/bakaomg/castle-Typecho-Theme/
  * LICENSE: GPL V3 (https://www.gnu.org/licenses/gpl-3.0.html)
@@ -1003,16 +1003,28 @@ var CastlePost = {
 
   //文章二维码
   deviceQR: function () {
+    if (!$$('.moe-post-card #QRcode li img')[0] && $$('.moe-post-card #QRcode li')[0]) {
+      var qrcode = new QRCode($$('.moe-post-card #QRcode li')[0], {
+        text: window.location.href,
+        width: 165,
+        height: 165,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+      });
+    };
     if (!$$('.moe-post-card #QRcode')[0]) { $$('#toolbar-device-btn').addClass('moe-device-btn-hidden'); return false; };
     if (!$$('#header .mdui-toolbar #decice-toolbar-list')[0]) {
       $$('#header .mdui-toolbar').append('<div class="mdui-menu" id="decice-toolbar-list">\
-    <li class="mdui-menu-item">\
-     <img src="">\
-    </li>\
-   </div>');
+       <li class="mdui-menu-item">\
+        <img src="" />\
+       </li>\
+      </div>');
     };
 
-    $$('#decice-toolbar-list li img').attr('src', $$('.moe-post-card #QRcode li img').attr('src'));
+    setTimeout(function () {
+      $$('#decice-toolbar-list li img').attr('src', $$('.moe-post-card #QRcode li img').attr('src'));
+    }, 10);
   }
 };
 

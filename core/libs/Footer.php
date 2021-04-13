@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Footer Class
- * Last Update: 2021/04/12
+ * Last Update: 2021/04/13
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -56,7 +56,9 @@ class Castle_Footer
         '<script src="' . Castle_Libs::resources('static/js/lazyload.min.js', true) . '"></script>' . "\n  " .
 
         //HighLight
-        '<script src="' . Castle_Libs::resources('static/js/highlight.min.js', true) . '"></script>' . "\n  ";
+        '<script src="' . Castle_Libs::resources('static/js/highlight.min.js', true) . '"></script>' . "\n  " .
+        
+        '<script src="' . Castle_Libs::resources('static/js/qrcode.min.js', true) . '"></script>' . "\n  ";
 
     if (Helper::options()->TocSwitch == '1') {
       //Tocbot
