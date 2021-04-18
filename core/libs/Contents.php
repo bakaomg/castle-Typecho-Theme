@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Content Class
- * Last Update: 2021/04/13
+ * Last Update: 2021/04/18
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 //大部分修改搬自 AlanDecode[https://github.com/AlanDecode] 的主题 VOID
@@ -161,6 +161,18 @@ class Castle_Contents
       }
 
       return $text;
+   }
+
+   /**
+    * Code
+    */
+   public static function code($text)
+   {
+      $reg = '/<code class="lang-(.*)">([\\s\\S]*?)<\/code>/i';
+      $rp = '<pre><code class="lang-${1}">${2}</code></pre>';
+      $new = preg_replace($reg, $rp, $text);
+
+      return $new;
    }
 
    /**

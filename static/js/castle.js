@@ -7,7 +7,7 @@
   \_____|  \__,_| |___/  \__| |_|  \___|
  ----------------------------------------
  * Castle's JavaScript
- * Last Update: 2021/04/13 [0.9.6]
+ * Last Update: 2021/04/18 [0.9.6.1]
  * Author: ohmyga (https://ohmyga.cn)
  * GitHub: https://github.com/bakaomg/castle-Typecho-Theme/
  * LICENSE: GPL V3 (https://www.gnu.org/licenses/gpl-3.0.html)
@@ -978,14 +978,6 @@ var CastlePost = {
 
   //代码高亮
   highLight: function () {
-    // 为评论区的代码高亮补全样式
-    $$('code[class^="lang"]:not(pre code)').each(function (key, item) {
-      let child = item;
-      let parent = document.createElement("pre");
-      child.parentNode.replaceChild(parent, child);
-      parent.appendChild(child);
-    });
-
     $$("pre code").each(function (key, item) {
       if (item.classList.contains("hljs") === false) {
         $$(this).html("<ol><li>" + $$(this).html().replace(/\n/g, "\n</li><li>") + "\n</li></ol>");
@@ -1450,7 +1442,7 @@ var CastleComments = {
     if (next[0] == null) {
       return node;
     }
-    if (next.hasClass("moe-comments-list-box") == false) {
+    if (next.hasClass("moe-comments-list-box") === false) {
       return node;
     }
     nextNodeList = next.children(".moe-comments-box");
