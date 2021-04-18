@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Theme Config
- * Last Update: 2021/04/13
+ * Last Update: 2021/04/18
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -510,7 +510,7 @@ function themeConfig($form)
                               $Component->panel(
                                     '页脚设置',
                                     NULL,
-                                    $Component->textarea('miibeianLink', '备案链接', '备案号指向链接，如果不填默认跳转到 http://www.beian.miit.gov.cn/ 。', 'http://www.beian.miit.gov.cn/') .
+                                    $Component->textarea('miibeianLink', '备案链接', '备案号指向链接，如果不填默认跳转到 https://beian.miit.gov.cn/ 。', 'https://beian.miit.gov.cn/') .
                                           $Component->textarea('miibeian', '备案号', '如果不填备案号将不会显示在页脚。', NULL)
                               ) .
 
