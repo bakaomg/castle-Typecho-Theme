@@ -8,7 +8,7 @@
 <br>**PHP 版本必须 >= 7.0 才能正常使用！**
 
 ## 前排提醒
-~~**主题附带的插件目前存在无法获取 BiliBili 追番信息的问题，解决方案请参考[这里](https://github.com/bakaomg/castle-Typecho-Theme/issues/18#issuecomment-743772640)**~~
+~~**主题附带的插件目前存在无法获取 BiliBili 追番信息的问题，解决方案请参考[这里](https://github.com/bakaomg/castle-Typecho-Theme/issues/18#issuecomment-743772640)**~~<br />
 在 0.9.6+ 已解决此问题。
 
 ## 0.9.x 及以下的版本已经迁移到 `0.9.x` 分支
