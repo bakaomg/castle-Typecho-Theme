@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Page
- * Last Update: 2021/04/13
+ * Last Update: 2021/04/18
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 if (@$_SERVER['HTTP_X_PJAX'] == true) {
@@ -42,7 +42,7 @@ Typecho_Widget::widget('Widget_Security')->to($security);
       <div class="mdui-card-header-subtitle"><?php $this->date($GLOBALS['CastleLang']['page']['time']); ?></div>
       <div class="mdui-card-menu">
          <?php if ($this->user->hasLogin()) {
-            echo '<button class="mdui-btn mdui-btn-icon" mdui-menu="{target: \'#postEditMenu\', align: \'right\', position: \'top\'}"><i class="mdui-icon material-icons">edit</i></button>';
+            echo '<button class="mdui-btn mdui-btn-icon" mdui-menu="{target: \'#postEditMenu\', align: \'right\'}"><i class="mdui-icon material-icons">edit</i></button>';
             echo '<ul class="mdui-menu" id="postEditMenu">
               <li class="mdui-menu-item">
                <a href="' . $this->options->adminUrl . 'write-page.php?cid=' . $this->cid . '" class="mdui-ripple" target="_blank">
