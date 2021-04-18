@@ -8,9 +8,9 @@
   \_____|  \__,_| |___/  \__| |_|  \___|
  ----------------------------------------
  * Castle's Stylesheet
- * Last Update: 2020/05/14 [0.9.5.1]
+ * Last Update: 2021/04/18 [0.9.6.1]
  * Author: ohmyga (https://ohmyga.cn)
- * GitHub: https://github.com/ohmyga233/castle-Typecho-Theme/
+ * GitHub: https://github.com/bakaomg/castle-Typecho-Theme/
  * LICENSE: GPL V3 (https://www.gnu.org/licenses/gpl-3.0.html)
  **/
 
@@ -547,17 +547,25 @@ body {
 }
 
 #header #decice-toolbar-list {
-  width: 170px;
-  height: 170px;
+  width: 180px;
+  height: 180px;
   padding: unset;
   overflow: unset;
   overflow-y: unset;
   border-radius: 3px;
+  user-select: none;
+}
+
+#header #decice-toolbar-list,
+#header #decice-toolbar-list li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #header #decice-toolbar-list img {
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
   border-radius: 3px;
 }
 
@@ -1223,16 +1231,20 @@ body {
 
 /* ===== 文章二维码弹出框 ===== */
 .moe-post-card .mdui-card-menu #QRcode {
-  width: 170px;
-  height: 170px;
+  width: 180px;
+  height: 180px;
   padding: unset;
   overflow-y: unset;
   border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
 }
 
 .moe-post-card .mdui-card-menu #QRcode img {
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
   border-radius: 3px;
 }
 
@@ -1860,10 +1872,11 @@ img:not(.initial) {
 .moe-comments-box.moe-post-card {
   width: unset !important;
   margin: 0 !important;
+  background-color: inherit!important
 }
 
 .moe-comments-box.moe-post-card .moe-comments-textBox.moe-card-content {
-  padding: 0!important;
+  padding: 0 !important;
 }
 
 /* ===== 头像框 ===== */
