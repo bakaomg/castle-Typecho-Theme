@@ -575,7 +575,8 @@ var CastleNight = {
 
   toggle: function () {
     var status = $$('body').hasClass('mdui-theme-layout-dark');
-    if (status) { this.close(true); } else { this.open(true); }
+    if (status) { this.close(true); } else { this.open(true); };
+    setTimeout(function () { CastlePost.deviceQR(true); }, 400);
   },
 
   open: function (toggle) {
@@ -994,16 +995,24 @@ var CastlePost = {
   },
 
   //文章二维码
-  deviceQR: function () {
-    if (!$$('.moe-post-card #QRcode li img')[0] && $$('.moe-post-card #QRcode li')[0]) {
+  deviceQR: function (reCreate) {
+    function createQR() {
       var qrcode = new QRCode($$('.moe-post-card #QRcode li')[0], {
         text: window.location.href,
         width: 165,
         height: 165,
-        colorDark: "#000000",
-        colorLight: "#ffffff",
+        colorDark: $$('body').hasClass('mdui-theme-layout-dark') ? "#e0e0e0" : "#000000",
+        colorLight: $$('body').hasClass('mdui-theme-layout-dark') ? "rgba(0,0,0,0)" : "#ffffff",
         correctLevel: QRCode.CorrectLevel.H
       });
+      return qrcode;
+    };
+    if (reCreate === true) {
+      $$('.moe-post-card #QRcode li')[0].innerHTML = "";
+      createQR();
+    };
+    if (!$$('.moe-post-card #QRcode li img')[0] && $$('.moe-post-card #QRcode li')[0]) {
+      createQR();
     };
     if (!$$('.moe-post-card #QRcode')[0]) { $$('#toolbar-device-btn').addClass('moe-device-btn-hidden'); return false; };
     if (!$$('#header .mdui-toolbar #decice-toolbar-list')[0]) {
@@ -1882,30 +1891,11 @@ var CastleTop = {
   },
 
   //平滑回到顶部
-  gotoTop: function (speed, rtime) {
-    rtime = rtime || 10;
-    speed = speed || 0.08;
-    var x2 = 0, y2 = 0, x3 = 0, y3 = 0;
-    var y1 = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset || 0;
-    var x1 = document.documentElement.scrollLeft || document.body.scrollLeft || window.pageXOffset || 0;
-    var x3 = window.scrollX || 0;
-    var y3 = window.scrollY || 0;
-
-    // 滚动条到页面顶部的水平距离
-    var x = Math.max(x1, Math.max(x2, x3));
-
-    // 滚动条到页面顶部的垂直距离
-    var y = Math.max(y1, Math.max(y2, y3));
-
-    // 滚动距离 = 目前距离 / 速度, 因为距离原来越小, 速度是大于 1 的数, 所以滚动距离会越来越小
-    var speeding = 1 + speed;
-    window.scrollTo(Math.floor(x / speeding), Math.floor(y / speeding));
-
-    // 如果距离不为零, 继续调用函数
-    if (x > 0 || y > 0) {
-      var run = "CastleTop.gotoTop(" + speed + ", " + rtime + ")";
-      window.setTimeout(run, rtime);
-    }
+  gotoTop: function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });  
   },
 
   //平滑滚动
@@ -2022,7 +2012,7 @@ if (CastleConfig.switch.pjax) {
   document.addEventListener('pjax:complete', function () {
     NProgress.done();
     //CastleTop.gotoTop(0, 0);
-    CastlePost.barTitle('remove');
+    if (!$$('.moe-post-card')[0] || $$('#links-dialog')[0]) { CastlePost.barTitle('remove'); }
     PjaxConfig.after();
   });
 

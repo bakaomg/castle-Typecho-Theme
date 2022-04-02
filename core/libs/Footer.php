@@ -57,6 +57,9 @@ class Castle_Footer
 
         //HighLight
         '<script src="' . Castle_Libs::resources('static/js/highlight.min.js', true) . '"></script>' . "\n  " .
+
+        //smoothscroll
+        '<script src="' . Castle_Libs::resources('static/js/smoothscroll.min.js', true) . '"></script>' . "\n  " .
         
         '<script src="' . Castle_Libs::resources('static/js/qrcode.min.js', true) . '"></script>' . "\n  ";
 
