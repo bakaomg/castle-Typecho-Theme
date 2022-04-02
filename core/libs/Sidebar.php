@@ -42,33 +42,33 @@ class Castle_Sidebar {
    //归档
    $sidebarMenu[$menuCount]['setting']['date'] = ($sidebarMenu[$menuCount]['setting']['date']) ? $sidebarMenu[$menuCount]['setting']['date'] : 'Y 年 m 月';
    Typecho_Widget::widget('Widget_Contents_Post_Date', 'type=month&format='.$sidebarMenu[$menuCount]['setting']['date'])->to($archives);
-    for($i=0; $i<count($archives->stack); $i++) {
-     $sidebarMenu[$menuCount]['archives'][$i] = [
-      'date'  => ($archives->stack)[$i]['date'],
-      'count' => ($archives->stack)[$i]['count'],
-      'link' => ($archives->stack)[$i]['permalink'],
-     ];
+    while($archives->next()) {
+        $sidebarMenu[$menuCount]['archives'][] = [
+            'date'  => $archives->date,
+            'count' => $archives->count,
+            'link' => $archives->permalink
+        ];
     }
    }
 
    //类型为分类
    if ($sidebarMenu[$menuCount]['type'] == 'category') {
-    for($i=0; $i<count($category->stack); $i++) {
-     $sidebarMenu[$menuCount]['category'][$i] = [
-      'name' => ($category->stack)[$i]['name'],
-      'count' => ($category->stack)[$i]['count'],
-      'link' => ($category->stack)[$i]['permalink']
-     ];
+    while($category->next()) {
+        $sidebarMenu[$menuCount]['category'][] = [
+            'name' => $category->name,
+            'count' => $category->count,
+            'link' => $category->permalink
+        ];
     }
    }
 
    //类型为页面
    if ($sidebarMenu[$menuCount]['type'] == 'pages') {
-    for($i=0; $i<count($pages->stack); $i++) {
-     $sidebarMenu[$menuCount]['pages'][$i] = [
-      'name' => ($pages->stack)[$i]['title'],
-      'link' => ($pages->stack)[$i]['permalink']
-     ];
+    while($pages->next()) {
+        $sidebarMenu[$menuCount]['pages'][] = [
+            'name' => $pages->title,
+            'link' => $pages->permalink
+        ];
     }
    }
 

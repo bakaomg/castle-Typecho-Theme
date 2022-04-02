@@ -176,7 +176,7 @@ class Castle_Component
                $options[$id] = _t($value);
           }
           $string .= "</ul>";
-          $$name = new Typecho_Widget_Helper_Form_Element_Radio($name, $options, $default, _t($display), _t($description));
+          $$name = new Typecho_Widget_Helper_Form_Element_Radio($name, $options, $default, _t(($display == NULL) ? "" : $display), _t(($description == NULL) ? "" : $description));
           $this->form->addInput($$name);
           return $string;
      }
@@ -195,7 +195,7 @@ class Castle_Component
                $string .= '<li><label class="mdui-checkbox"><input type="checkbox" name="' . $name . '[]" value="' . $option . '" ' . $checked . '/><i class="mdui-checkbox-icon"></i>' . $value . '</label></li>';
           }
           $string .= "</ul>";
-          $$name = new Typecho_Widget_Helper_Form_Element_Checkbox($name, $options, $default, _t($display), _t($description));
+          $$name = new Typecho_Widget_Helper_Form_Element_Checkbox($name, $options, $default, _t(($display == NULL) ? "" : $display), _t(($description == NULL) ? "" : $description));
           $this->form->addInput($$name->multiMode());
           return $string;
      }
@@ -211,7 +211,7 @@ class Castle_Component
           $description = ($description) ? '<div class="mdui-textfield-helper">' . $description . '</div>' : NULL;
           $floatingLabel = ($userOption == "") ? " mdui-textfield-floating-label" : NULL;
           $string .= '<div class="mdui-textfield"><label class="mdui-textfield-label">' . $display . '</label><textarea class="mdui-textfield-input" type="text" name="' . $name . '"' . $rows . '/>' . htmlspecialchars($userOption) . '</textarea>' . $description . '</div>';
-          $$name = new Typecho_Widget_Helper_Form_Element_Textarea($name, null, _t($default), _t($display), _t($description));
+          $$name = new Typecho_Widget_Helper_Form_Element_Textarea($name, null, _t(($default == NULL) ? "" : $default), _t(($display == NULL) ? "" : $display), _t(($description == NULL) ? "" : $description));
           $this->form->addInput($$name);
           return $string;
      }
@@ -234,7 +234,7 @@ class Castle_Component
                $string .= '<option value="' . $id . '"' . $check . '>' . $value . '</option>';
           }
           $string .= "</select>";
-          $$name = new Typecho_Widget_Helper_Form_Element_Select($name, $options, $default, _t($display), _t($description));
+          $$name = new Typecho_Widget_Helper_Form_Element_Select($name, $options, $default, _t(($display == NULL) ? "" : $display), _t(($description == NULL) ? "" : $description));
           $this->form->addInput($$name);
           return $string;
      }
