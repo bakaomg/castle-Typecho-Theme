@@ -1076,7 +1076,6 @@ body {
 #moe-post-list .moe-default-card .mdui-card-media .moe-card-cover-image {
   height: 300px;
   overflow: hidden;
-  transition: all 0.3s;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -1872,7 +1871,7 @@ img:not(.initial) {
 .moe-comments-box.moe-post-card {
   width: unset !important;
   margin: 0 !important;
-  background-color: inherit!important
+  background-color: inherit !important;
 }
 
 .moe-comments-box.moe-post-card .moe-comments-textBox.moe-card-content {
@@ -2426,6 +2425,16 @@ code {
 
 #footer .moe-footer-bottom .moe-footer-icp {
   float: right;
+}
+
+/* ========== 图片懒加载 ========== */
+.castle-lazyload {
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.castle-lazyload.display {
+  opacity: 1!important;
 }
 
 /* ========== 媒体查询 ========== */

@@ -858,9 +858,18 @@ var CastlePost = {
 
   //图片懒加载
   Lazyload: function () {
-    var lazyload = new LazyLoad({
-      threshold: 0,
-      elements_selector: '.lazyload'
+    $$(".lazyload").each(function (index, item) {
+      item.classList.add("castle-lazyload");
+      if (item.dataset.src) {
+        const image = new Image();
+        image.src = item.dataset.src;
+        image.onload = function() {
+          if (item.tagName.toLowerCase() == "div") {
+            item.style.backgroundImage = "url('" + item.dataset.src + "')";
+            setTimeout(function () { item.classList.add("display"); }, 600);
+          }
+        }
+      }
     });
   },
 
@@ -1357,9 +1366,9 @@ var CastleOwO = {
       myField.selectionStart = cursorPos,
       myField.selectionEnd = cursorPos
     ) : (
-        myField.value += tag,
-        myField.focus()
-      );
+      myField.value += tag,
+      myField.focus()
+    );
   }
 };
 
@@ -1895,7 +1904,7 @@ var CastleTop = {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
-    });  
+    });
   },
 
   //平滑滚动
