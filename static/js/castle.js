@@ -1026,6 +1026,7 @@ var CastlePost = {
 
   //文章二维码
   deviceQR: function (reCreate) {
+    if (!$$('.moe-post-card #QRcode')[0]) { $$('#toolbar-device-btn').addClass('moe-device-btn-hidden'); return false; };
     function createQR(element) {
       var qrcode = new QRCode(element, {
         text: window.location.href + "?lastScroll=" + CastleLibs.getNowScrollTop(),
@@ -1041,7 +1042,6 @@ var CastlePost = {
       $$('.moe-post-card #QRcode li')[0].innerHTML = "";
       createQR($$('.moe-post-card #QRcode li')[0]);
     };
-    if (!$$('.moe-post-card #QRcode')[0]) { $$('#toolbar-device-btn').addClass('moe-device-btn-hidden'); return false; };
     if (!$$('#header .mdui-toolbar #decice-toolbar-list')[0]) {
       $$('#header .mdui-toolbar').append('<div class="mdui-menu" id="decice-toolbar-list">\
        <li class="mdui-menu-item">\
