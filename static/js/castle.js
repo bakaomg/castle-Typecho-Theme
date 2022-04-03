@@ -900,7 +900,7 @@ var CastlePost = {
   //修改密码框样式
   modifyPasswordStyle: function () {
     if (!$$('form.protected')[0]) { return false; }
-    $$('form.protected').attr('onKeyDown', 'if(event.keyCode == 13){return false;}');
+    $$('form.protected').attr('onKeyDown', 'if(event.keyCode == 13){CastlePost.submitPassword();return false;}');
     $$('form.protected')[0].innerHTML = '<div class="mdui-textfield mdui-textfield-floating-label">\
    <label class="mdui-textfield-label">'+ CastleLang.post.hidden.input + '</label>\
    <input class="mdui-textfield-input" name="protectPassword" id="protectPassword" type="password"/>\
