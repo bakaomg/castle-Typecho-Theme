@@ -923,13 +923,20 @@ var CastlePost = {
       return false;
     }
 
-    $$.ajax({
-      method: 'POST',
-      data: $$('form.protected').serialize(),
-      url: $$('form.protected').attr('action'),
-      success: function (data) {
-        var Obj = $$(document.createElement('body')).append(data);
-        if ($$(Obj)[0].querySelector('.container') == null) {
+    function parseError(data) {
+      var Obj = $$(document.createElement('body')).append(data);
+        if (/Typecho\\Widget\\Exception/i.test(data)) {
+          if (/Typecho\\Widget\\Exception:(.*)in/i.exec(data).length > 0) {
+            const errroMsg = /Typecho\\Widget\\Exception:(.*)in/i.exec(data)[1].trim();
+            mdui.snackbar({
+              message: errroMsg,
+              position: 'right-bottom',
+              onOpen: function () {
+                document.querySelector('.mdui-snackbar').classList.add('mdui-color-red-400');
+              }
+            });
+          }
+        } else if ($$(Obj)[0].querySelector('.container') == null) {
           mdui.snackbar({
             message: CastleLang.post.hidden.success,
             position: 'right-bottom',
@@ -951,7 +958,18 @@ var CastlePost = {
               document.querySelector('.mdui-snackbar').classList.add('mdui-color-red-400');
             }
           });
-        }
+        };
+    };
+
+    $$.ajax({
+      method: 'POST',
+      data: $$('form.protected').serialize(),
+      url: $$('form.protected').attr('action'),
+      success: function (data) {
+        parseError(data);
+      },
+      error: function (xhr, status, error) {
+        parseError(xhr.responseText);
       }
     });
   },

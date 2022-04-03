@@ -52,9 +52,6 @@ class Castle_Footer
       //baguetteBox
       '<script src="' . Castle_Libs::resources('static/js/baguetteBox.min.js', true) . '"></script>' . "\n  " .
 
-        //Lazyload
-        '<script src="' . Castle_Libs::resources('static/js/lazyload.min.js', true) . '"></script>' . "\n  " .
-
         //HighLight
         '<script src="' . Castle_Libs::resources('static/js/highlight.min.js', true) . '"></script>' . "\n  " .
 
