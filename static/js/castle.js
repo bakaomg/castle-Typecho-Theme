@@ -871,6 +871,11 @@ var CastlePost = {
             item.style.backgroundImage = "url('" + item.dataset.src + "')";
             setTimeout(function () { item.classList.add("display"); }, 600);
           }
+
+          if (item.tagName.toLowerCase() == "img") {
+            item.src = item.dataset.src;
+            item.style.opacity = 1;
+          }
         }
       }
     });
@@ -1028,8 +1033,9 @@ var CastlePost = {
   deviceQR: function (reCreate) {
     if (!$$('.moe-post-card #QRcode')[0]) { $$('#toolbar-device-btn').addClass('moe-device-btn-hidden'); return false; };
     function createQR(element) {
+      const url = (CastleConfig.switch.QRcodeSyncScroll) ? "?lastScroll=" + CastleLibs.getNowScrollTop() : "";
       var qrcode = new QRCode(element, {
-        text: window.location.href + "?lastScroll=" + CastleLibs.getNowScrollTop(),
+        text: window.location.href + url,
         width: 165,
         height: 165,
         colorDark: $$('body').hasClass('mdui-theme-layout-dark') ? "#e0e0e0" : "#000000",
@@ -2046,7 +2052,7 @@ needReload = function () {
   if (CastleConfig.switch.bangumi) {
     bangumiLoad()
   };
-  setTimeout(function () { CastleLibs.goScrollTop(); }, 100);
+  if (CastleConfig.switch.QRcodeSyncScroll) { setTimeout(function () { CastleLibs.goScrollTop(); }, 100); }
 };
 needReload();
 
@@ -2056,13 +2062,13 @@ needReload();
 document.addEventListener('scroll', function () {
   CastlePost.toolbar();
   CastleTop.gotoTopBtn();
-  CastlePost.autoReCreateQRcode();
+  if (CastleConfig.switch.QRcodeSyncScroll) { CastlePost.autoReCreateQRcode(); }
   if (!$$('.moe-post-card #QRcode')[0]) { $$('#toolbar-device-btn').addClass('moe-device-btn-hidden'); };
 });
 
 window.addEventListener('resize', function () {
   CastlePost.toolbar();
-  CastlePost.autoReCreateQRcode();
+  if (CastleConfig.switch.QRcodeSyncScroll) { CastlePost.autoReCreateQRcode(); }
   if (!$$('.moe-post-card #QRcode')[0]) { $$('#toolbar-device-btn').addClass('moe-device-btn-hidden'); };
 });
 
@@ -2070,7 +2076,7 @@ window.addEventListener('resize', function () {
  * 页面资源加载完成
  */
 window.addEventListener('load', function () {
-  setTimeout(function () { CastleLibs.goScrollTop(); }, 100);
+  if (CastleConfig.switch.QRcodeSyncScroll) { setTimeout(function () { CastleLibs.goScrollTop(); }, 100); }
 });
 
 /**

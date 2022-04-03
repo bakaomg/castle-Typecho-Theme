@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Castle Header Class
  * Last Update: 2022/04/04
@@ -85,20 +86,22 @@ class Castle_Header
           }
 
           echo
-               //baguetteBox
-               '<link rel="stylesheet" href="' . Castle_Libs::resources('static/css/baguetteBox.min.css', true) . '">' . "\n  " .
+          //baguetteBox
+          '<link rel="stylesheet" href="' . Castle_Libs::resources('static/css/baguetteBox.min.css', true) . '">' . "\n  " .
 
-                    //主题配色 Css
-                    '<link rel="stylesheet" href="' . Castle_Libs::resources($castleThemeCss, true) . '">' . "\n  " .
+               //主题配色 Css
+               '<link rel="stylesheet" href="' . Castle_Libs::resources($castleThemeCss, true) . '">' . "\n  " .
 
-                    //主题核心 Css
-                    '<link rel="stylesheet" href="' . Castle_Libs::resources($castleCss, true) . '">' . "\n  " .
+               //主题核心 Css
+               '<link rel="stylesheet" href="' . Castle_Libs::resources($castleCss, true) . '">' . "\n  " .
 
-                    // New UI Css
-                    '<link rel="stylesheet" href="' . Castle_Libs::resources($castleNewUICss, true) . '">' . "\n  " .
+               //代码高亮
+               '<link rel="stylesheet" href="' . Castle_highLight::getFile() . '">' . "\n  ";
 
-                    //代码高亮
-                    '<link rel="stylesheet" href="' . Castle_highLight::getFile() . '">' . "\n  ";
+          if (Helper::options()->TestSwitch && in_array('newui', Helper::options()->TestSwitch)) {
+               // New UI Css
+               echo '<link rel="stylesheet" href="' . Castle_Libs::resources($castleNewUICss, true) . '">' . "\n  ";
+          }
 
           if ($header->is("index")) {
                //如果在首页

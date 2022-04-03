@@ -32,6 +32,7 @@ function themeConfig($form)
                         '这可能是一些在 0.9.x 版本中不会继续更新的测试特性，或许这些特性是未来 1.0+ 版本的抢先体验 (￣﹃￣)',
                         [
                               'newui'              =>  '启用经过调整的新版本 UI',
+                              'newuiUPRadius'      =>  '启用新 UI 更大的圆角模式 (必须启用新 UI 此项才有效)',
                               'QRCodeSyncScroll'   =>  '文章/独立页面跨设备二维码同步阅读进度'
                         ],
                         NULL

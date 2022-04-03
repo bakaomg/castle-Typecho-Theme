@@ -94,7 +94,10 @@ class Castle_API
                 'FSA' => (Helper::options()->FSAswitch && in_array('switch', Helper::options()->FSAswitch)) ? true : false,
 
                 // 实时搜索
-                'search'  => (Helper::options()->PluginSearch && in_array('switch', Helper::options()->PluginSearch)) ? true : false
+                'search'  => (Helper::options()->PluginSearch && in_array('switch', Helper::options()->PluginSearch)) ? true : false,
+
+                // 跨设备阅读同步进度
+                'QRcodeSyncScroll' => (Helper::options()->TestSwitch && in_array('QRCodeSyncScroll', Helper::options()->TestSwitch)) ? true : false
             ],
 
             //设置

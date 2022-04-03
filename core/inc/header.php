@@ -4,6 +4,7 @@
  * Last Update: 2020/03/18
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+$newuiClass = (Helper::options()->TestSwitch && in_array('newui', Helper::options()->TestSwitch) && Helper::options()->TestSwitch && in_array('newuiUPRadius', Helper::options()->TestSwitch)) ? " newui-up-radius" : "";
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,7 +20,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
   <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
  </head>
 
- <body class="mdui-theme-primary-<?php $this->options->themeColor(); ?> mdui-theme-accent-<?php $this->options->themeAccentColor(); ?><?php echo (Helper::options()->themeDarkColor == 'dark') ? ' mdui-theme-layout-dark' : NULL; ?>">
+ <body class="mdui-theme-primary-<?php $this->options->themeColor(); ?> mdui-theme-accent-<?php $this->options->themeAccentColor(); ?><?php echo (Helper::options()->themeDarkColor == 'dark') ? ' mdui-theme-layout-dark' : NULL; ?><?php echo $newuiClass; ?>">
 
   <header class="mdui-appbar mdui-appbar-fixed mdui-appbar-inset<?php echo ($this->options->appbar && in_array('scrollHide', $this->options->appbar)) ? ' mdui-appbar-scroll-hide' : NULL; ?>" id="header"></header>
 

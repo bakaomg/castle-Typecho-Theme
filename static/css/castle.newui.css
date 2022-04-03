@@ -20,19 +20,84 @@
 .mdui-card.moe-post-card,
 .mdui-card.moe-comment-card,
 .mdui-card.moe-comments-list-card,
-.mdui-card.moe-archive-top-card {
-  border-radius: 8px;
+.mdui-card.moe-archive-top-card,
+.mdui-menu.mdui-menu-open,
+.mdui-snackbar.mdui-snackbar-right-bottom,
+#owoBox,
+.hljs,
+img.lazyload,
+.aplayer,
+.mdui-table-fluid,
+.mdui-table-fluid .mdui-table,
+.mdui-card.moe-search-result,
+#search-dialog .moe-search-content.moe-search-content-focus form #searchInput,
+.mdui-card.moe-bangumi-card,
+.mdui-card.moe-links-card,
+.mdui-card.moe-404-card,
+.mdui-dialog.mdui-dialog-alert,
+.mdui-dialog.moe-login,
+.mdui-card.moe-archive-card {
+  border-radius: 8px !important;
 }
 
-.up-radius .mdui-card.moe-post-card {
-  border-radius: 12px;
+.moe-post-card .moe-card-content .moe-post-card-copy {
+  border-radius: 1px 8px 8px 1px !important;
+}
+
+.mdui-btn:not(.mdui-btn-icon) {
+  border-radius: 6px;
+}
+
+.newui-up-radius #moe-post-list .mdui-card.moe-default-card,
+.newui-up-radius #moe-post-list .mdui-card.moe-nopic-card,
+.newui-up-radius .mdui-card.moe-post-card,
+.newui-up-radius .mdui-card.moe-comment-card,
+.newui-up-radius .mdui-card.moe-comments-list-card,
+.newui-up-radius .mdui-card.moe-archive-top-card,
+.newui-up-radius .mdui-menu.mdui-menu-open,
+.newui-up-radius .mdui-snackbar.mdui-snackbar-right-bottom,
+.newui-up-radius #owoBox,
+.newui-up-radius .hljs,
+.newui-up-radius img.lazyload,
+.newui-up-radius .aplayer,
+.newui-up-radius .mdui-table-fluid,
+.newui-up-radius .mdui-table-fluid .mdui-table,
+.newui-up-radius .mdui-card.moe-search-result,
+.newui-up-radius
+  #search-dialog
+  .moe-search-content.moe-search-content-focus
+  form
+  #searchInput,
+.newui-up-radius .mdui-card.moe-bangumi-card,
+.newui-up-radius .mdui-card.moe-links-card,
+.newui-up-radius .mdui-card.moe-404-card,
+.newui-up-radius .mdui-dialog.mdui-dialog-alert,
+.newui-up-radius .mdui-dialog.moe-login,
+.newui-up-radius .mdui-card.moe-archive-card {
+  border-radius: 12px !important;
+}
+
+.newui-up-radius .moe-post-card .moe-card-content .moe-post-card-copy {
+  border-radius: 1px 12px 12px 1px !important;
 }
 
 @media (max-width: 600px) {
   .mdui-card.moe-post-card,
   .mdui-card.moe-comment-card,
-  .mdui-card.moe-comments-list-card {
-    border-radius: 0px;
+  .mdui-card.moe-comments-list-card,
+  .newui-up-radius .mdui-card.moe-post-card,
+  .newui-up-radius .mdui-card.moe-comment-card,
+  .newui-up-radius .mdui-card.moe-comments-list-card,
+  .mdui-snackbar.mdui-snackbar-right-bottom,
+  .newui-up-radius .mdui-snackbar.mdui-snackbar-right-bottom {
+    border-radius: 0px !important;
+  }
+}
+
+@media (max-width: 530px) {
+  .mdui-dialog.moe-login,
+  .newui-up-radius .mdui-dialog.moe-login {
+    border-radius: 0px !important;
   }
 }
 
