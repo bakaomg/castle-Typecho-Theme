@@ -25,7 +25,10 @@ var CastleData = {
   },
   "compositionFlag": true,
   "searchLock": false,
+  "lastScrollStopUnix": 0,
 };
+
+CastleData.lastScrollStopUnix = Math.round(CastleData.date.getTime() / 1000);
 
 /**
  * 组件生成
@@ -1023,9 +1026,9 @@ var CastlePost = {
 
   //文章二维码
   deviceQR: function (reCreate) {
-    function createQR() {
-      var qrcode = new QRCode($$('.moe-post-card #QRcode li')[0], {
-        text: window.location.href,
+    function createQR(element) {
+      var qrcode = new QRCode(element, {
+        text: window.location.href + "?lastScroll=" + CastleLibs.getNowScrollTop(),
         width: 165,
         height: 165,
         colorDark: $$('body').hasClass('mdui-theme-layout-dark') ? "#e0e0e0" : "#000000",
@@ -1036,10 +1039,7 @@ var CastlePost = {
     };
     if (reCreate === true) {
       $$('.moe-post-card #QRcode li')[0].innerHTML = "";
-      createQR();
-    };
-    if (!$$('.moe-post-card #QRcode li img')[0] && $$('.moe-post-card #QRcode li')[0]) {
-      createQR();
+      createQR($$('.moe-post-card #QRcode li')[0]);
     };
     if (!$$('.moe-post-card #QRcode')[0]) { $$('#toolbar-device-btn').addClass('moe-device-btn-hidden'); return false; };
     if (!$$('#header .mdui-toolbar #decice-toolbar-list')[0]) {
@@ -1049,10 +1049,27 @@ var CastlePost = {
        </li>\
       </div>');
     };
+    if (!$$('.moe-post-card #QRcode li img')[0] && $$('.moe-post-card #QRcode li')[0]) {
+      createQR($$('.moe-post-card #QRcode li')[0]);
+    };
 
     setTimeout(function () {
-      $$('#decice-toolbar-list li img').attr('src', $$('.moe-post-card #QRcode li img').attr('src'));
-    }, 10);
+      if ($$('.moe-post-card #QRcode li img').css("display") != "none") {
+        $$('#decice-toolbar-list li img').attr('src', $$('.moe-post-card #QRcode li img').attr('src'));
+      } else {
+        $$('#decice-toolbar-list li')[0].innerHTML = "";
+        createQR($$('#decice-toolbar-list li')[0]);
+      }
+    }, 1000);
+  },
+
+  // 刷新二维码
+  autoReCreateQRcode() {
+    const nowUnix = Math.round((new Date()).getTime() / 1000);
+    if ((nowUnix - CastleData.lastScrollStopUnix) > 1) {
+      CastlePost.deviceQR(true);
+      CastleData.lastScrollStopUnix = nowUnix;
+    }
   }
 };
 
@@ -1826,6 +1843,34 @@ var CastleLibs = {
     }
   },
 
+  // 获取 Query 参数
+  getQueryString: function (name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var reg_rewrite = new RegExp("(^|/)" + name + "/([^/]*)(/|$)", "i");
+    var hash = window.location.hash;
+    if (/#(.*)\?(.*)/.test(hash)) {
+      var hashNew = /#(.*)\?(.*)/.exec(hash);
+      if (hashNew != null) {
+        hash = hashNew[2].match(reg)
+      } else {
+        hash = null;
+      }
+    } else {
+      hash = null;
+    }
+    var result = window.location.hash.substring(1).match(reg);
+    var query = window.location.pathname.substring(1).match(reg_rewrite);
+    if (result != null) {
+      return decodeURIComponent(result[2]);
+    } else if (query != null) {
+      return decodeURIComponent(query[2]);
+    } else if (hash != null) {
+      return decodeURIComponent(hash[2]);
+    } else {
+      return null;
+    }
+  },
+
   //非站内链接添加 target=_blank 属性
   linkTarget: function () {
     $$('a:not([no-go]):not([target="_self"]):not(.toc-link)').each(function () {
@@ -1858,15 +1903,7 @@ var CastleLibs = {
   //滚动条定位到上次浏览的位置
   scrollPos: function () {
     window.onbeforeunload = function () {
-      var scrollPos;
-      if (typeof window.pageYOffset != 'undefined') {
-        scrollPos = window.pageYOffset;
-      } else if (typeof document.compatMode != 'undefined' &&
-        document.compatMode != 'BackCompat') {
-        scrollPos = document.documentElement.scrollTop;
-      } else if (typeof document.body != 'undefined') {
-        scrollPos = document.body.scrollTop;
-      }
+      const scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
       document.cookie = "scrollTop=" + scrollPos; //存储滚动条位置到cookies中
     };
 
@@ -1891,6 +1928,24 @@ var CastleLibs = {
   rmToolTip: function () {
     var tooltips = $$('.mdui-tooltip');
     tooltips.remove();
+  },
+
+  // 获取页面目前位置
+  getNowScrollTop: function () {
+    return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+  },
+
+  // 解析并跳转到指定位置
+  goScrollTop: function() {
+    const width = $$("body").width();
+    const lastScroll = CastleLibs.getQueryString("lastScroll");
+    if (lastScroll != null) {
+      const realScroll = width <= 600 ? lastScroll - 140 : width <= 800 ? lastScroll - 40 : lastScroll;
+      window.scrollTo({
+        top: realScroll,
+        behavior: "smooth",
+      });
+    }
   }
 };
 
@@ -1991,22 +2046,32 @@ needReload = function () {
   if (CastleConfig.switch.bangumi) {
     bangumiLoad()
   };
+  setTimeout(function () { CastleLibs.goScrollTop(); }, 100);
 };
 needReload();
 
 /**
  * 窗口滚动变化
  */
-document.onscroll = function () {
+document.addEventListener('scroll', function () {
   CastlePost.toolbar();
   CastleTop.gotoTopBtn();
+  CastlePost.autoReCreateQRcode();
   if (!$$('.moe-post-card #QRcode')[0]) { $$('#toolbar-device-btn').addClass('moe-device-btn-hidden'); };
-};
+});
 
-window.onresize = function () {
+window.addEventListener('resize', function () {
   CastlePost.toolbar();
+  CastlePost.autoReCreateQRcode();
   if (!$$('.moe-post-card #QRcode')[0]) { $$('#toolbar-device-btn').addClass('moe-device-btn-hidden'); };
-};
+});
+
+/**
+ * 页面资源加载完成
+ */
+window.addEventListener('load', function () {
+  setTimeout(function () { CastleLibs.goScrollTop(); }, 100);
+});
 
 /**
  * PJAX
