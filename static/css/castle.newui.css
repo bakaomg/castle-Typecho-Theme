@@ -1,0 +1,59 @@
+@charset "utf-8";
+/**
+   _____                 _     _        
+  / ____|               | |   | |       
+ | |        __ _   ___  | |_  | |   ___ 
+ | |       / _` | / __| | __| | |  / _ \
+ | |____  | (_| | \__ \ | |_  | | |  __/
+  \_____|  \__,_| |___/  \__| |_|  \___|
+ ----------------------------------------
+ * Castle's NewUI Stylesheet
+ * Last Update: 2022/04/04 [0.9.6.1]
+ * Author: ohmyga (https://ohmyga.cn)
+ * GitHub: https://github.com/bakaomg/castle-Typecho-Theme/
+ * LICENSE: GPL V3 (https://www.gnu.org/licenses/gpl-3.0.html)
+ **/
+
+/* ========== 圆角 ========== */
+#moe-post-list .mdui-card.moe-default-card,
+#moe-post-list .mdui-card.moe-nopic-card,
+.mdui-card.moe-post-card,
+.mdui-card.moe-comment-card,
+.mdui-card.moe-comments-list-card,
+.mdui-card.moe-archive-top-card {
+  border-radius: 8px;
+}
+
+.up-radius .mdui-card.moe-post-card {
+  border-radius: 12px;
+}
+
+@media (max-width: 600px) {
+  .mdui-card.moe-post-card,
+  .mdui-card.moe-comment-card,
+  .mdui-card.moe-comments-list-card {
+    border-radius: 0px;
+  }
+}
+
+/* ========== 右下角按钮 ========== */
+@media (max-width: 600px) {
+  #btn-group .mdui-fab {
+    width: 36px !important;
+    min-width: 36px !important;
+    height: 36px !important;
+    font-size: 20px !important;
+  }
+
+  #btn-group .mdui-fab .mdui-icon {
+    font-size: 20px !important;
+    width: 20px !important;
+    margin-top: 8px !important;
+    margin-left: 8px !important;
+    line-height: 20px !important;
+  }
+
+  #toc-Btn {
+    bottom: 65px !important;
+  }
+}

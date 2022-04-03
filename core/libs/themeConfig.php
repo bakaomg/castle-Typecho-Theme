@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Theme Config
- * Last Update: 2021/04/18
+ * Last Update: 2022/04/04
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -20,6 +20,22 @@ function themeConfig($form)
                   NULL,
                   NULL,
                   $Component->input('StickyArticle', '置顶文章', '置顶的文章cid，按照排序输入, 请以半角逗号或空格分隔。')
+            ) .
+
+            /* 测试功能 */
+            $Component->card(
+                  NULL,
+                  NULL,
+                  $Component->checkbox(
+                        'TestSwitch',
+                        '测试特性',
+                        '这可能是一些在 0.9.x 版本中不会继续更新的测试特性，或许这些特性是未来 1.0+ 版本的抢先体验 (￣﹃￣)',
+                        [
+                              'newui'              =>  '启用经过调整的新版本 UI',
+                              'QRCodeSyncScroll'   =>  '文章/独立页面跨设备二维码同步阅读进度'
+                        ],
+                        NULL
+                  ) . '<hr>' . '<small>这可能是一些在 0.9.x 版本中不会继续更新维护的测试特性，也可能是未来 1.0+ 版本的抢先体验特性 (￣﹃￣)</small>'
             ) .
 
                   /* 主题外观 */

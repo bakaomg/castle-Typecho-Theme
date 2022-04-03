@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Header Class
- * Last Update: 2021/04/13
+ * Last Update: 2022/04/04
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -63,12 +63,14 @@ class Castle_Header
           if (Castle_Libs::isDev() === true) {
                $castlePlugin = 'static/css/bangumi.css';
                $castleCss = 'static/css/castle.css';
+               $castleNewUICss = 'static/css/castle.newui.css';
                $castleThemeCss = 'static/css/castle.theme.css';
                $castleAplayerCss = 'static/css/APlayer.css';
                $castlePioCss = 'static/css/pio.css';
           } else {
                $castlePlugin = 'static/css/bangumi.min.css';
                $castleCss = 'static/css/castle.min.css';
+               $castleNewUICss = 'static/css/castle.newui.min.css';
                $castleThemeCss = 'static/css/castle.theme.min.css';
                $castleAplayerCss = 'static/css/APlayer.min.css';
                $castlePioCss = 'static/css/pio.min.css';
@@ -91,6 +93,9 @@ class Castle_Header
 
                     //主题核心 Css
                     '<link rel="stylesheet" href="' . Castle_Libs::resources($castleCss, true) . '">' . "\n  " .
+
+                    // New UI Css
+                    '<link rel="stylesheet" href="' . Castle_Libs::resources($castleNewUICss, true) . '">' . "\n  " .
 
                     //代码高亮
                     '<link rel="stylesheet" href="' . Castle_highLight::getFile() . '">' . "\n  ";

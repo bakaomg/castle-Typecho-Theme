@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Archive
- * Last Update: 2020/04/26
+ * Last Update: 2022/04/04
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 if (@$_SERVER['HTTP_X_PJAX'] == true) {
@@ -17,10 +17,10 @@ if (@$_SERVER['HTTP_X_PJAX'] == true) {
     <div class="mdui-card moe-archive-top-card">
      <main><?php
 	 $this->archiveTitle(array(
-      'category'  =>  _t('分类 <i>%s</i> 下的文章'),
-      'search'    =>  _t('包含关键字 <i>%s</i> 的文章'),
-      'tag'       =>  _t('标签 <i>%s</i> 下的文章'),
-      'author'    =>  _t('<i>%s</i> 发布的文章')), '', '');
+      'category'  =>  _t('分类<i>%s</i>下的文章'),
+      'search'    =>  _t('包含关键字<i>%s</i>的文章'),
+      'tag'       =>  _t('标签<i>%s</i>下的文章'),
+      'author'    =>  _t('<i>%s</i>发布的文章')), '', '');
 	 ?></main>
     </div>
 

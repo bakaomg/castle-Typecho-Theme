@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Theme Config Component
- * Last Update: 2021/04/18
+ * Last Update: 2022/04/04
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -37,7 +37,7 @@ class Castle_Component
      public function themePanel()
      {
           $hasMin = (Castle_Libs::isDev() === true) ? "" : ".min";
-          $themeBG = (Helper::options()->themeConfigBG) ? Helper::options()->themeConfigBG : Castle_Libs::resources('static/img/bg/setting.png', false);
+          $themeBG = (Helper::options()->themeConfigBG) ? Helper::options()->themeConfigBG : Castle_Libs::resources('static/img/bg/setting.jpg', false);
           echo '<link href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css" rel="stylesheet">' .
                '<script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>' .
                '<link href="' . Castle_Libs::resources('static/css/castle.setting' . $hasMin . '.css', false) . '" rel="stylesheet">' .
@@ -69,8 +69,7 @@ class Castle_Component
    <button class="mdui-btn mdui-btn-dense mdui-btn-raised mdui-color-teal" type="button" onclick="CastlePanel.open();">打开全部面板</button>
    <button class="mdui-btn mdui-btn-dense mdui-btn-raised mdui-color-red" type="button" onclick="CastlePanel.close();">关闭全部面板</button>
    <button class="mdui-btn mdui-btn-dense mdui-btn-raised" type="button" onclick="CastlePanel.updateLog();">查看更新日志</button>
-   <br/><br/>
-   <form class="protected" action="?CastleBackup" method="post" style="display: block!important">
+   <form class="protected" action="?CastleBackup" method="post" style="display: block!important; margin-top: 12px">
     <input class="mdui-btn mdui-btn-dense mdui-btn-raised mdui-color-teal" type="submit" name="type" value="备份模板数据" />
     <input class="mdui-btn mdui-btn-dense mdui-btn-raised mdui-color-blue-600" type="submit" name="type" value="还原模板数据" />
     <input class="mdui-btn mdui-btn-dense mdui-btn-raised mdui-color-red" type="submit" name="type" value="删除备份数据" />
