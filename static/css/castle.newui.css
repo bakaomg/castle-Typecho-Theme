@@ -36,7 +36,13 @@ img.lazyload,
 .mdui-card.moe-404-card,
 .mdui-dialog.mdui-dialog-alert,
 .mdui-dialog.moe-login,
-.mdui-card.moe-archive-card {
+.mdui-card.moe-archive-card,
+#owoBox main.moe-owo-main a.moe-owo-smallPicture-btn,
+#owoBox main.moe-owo-main a.moe-owo-emoji-btn,
+#owoBox main.moe-owo-main a.moe-owo-smallPicture-btn,
+#owoBox main.moe-owo-main a.moe-owo-text-btn,
+#owoBox main.moe-owo-main a.moe-owo-picture-btn,
+#owoBox main.moe-owo-main a.moe-owo-picture-btn img {
   border-radius: 8px !important;
 }
 
@@ -73,7 +79,13 @@ img.lazyload,
 .newui-up-radius .mdui-card.moe-404-card,
 .newui-up-radius .mdui-dialog.mdui-dialog-alert,
 .newui-up-radius .mdui-dialog.moe-login,
-.newui-up-radius .mdui-card.moe-archive-card {
+.newui-up-radius .mdui-card.moe-archive-card,
+.newui-up-radius #owoBox main.moe-owo-main a.moe-owo-smallPicture-btn,
+.newui-up-radius #owoBox main.moe-owo-main a.moe-owo-emoji-btn,
+.newui-up-radius #owoBox main.moe-owo-main a.moe-owo-smallPicture-btn,
+.newui-up-radius #owoBox main.moe-owo-main a.moe-owo-text-btn,
+.newui-up-radius #owoBox main.moe-owo-main a.moe-owo-picture-btn,
+.newui-up-radius #owoBox main.moe-owo-main a.moe-owo-picture-btn img {
   border-radius: 12px !important;
 }
 
