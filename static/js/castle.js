@@ -1882,7 +1882,7 @@ var CastleLibs = {
     $$('a:not([no-go]):not([target="_self"]):not(.toc-link)').each(function () {
       var href = $$(this).attr('href');
       var check = new RegExp("^" + document.location.protocol + "//" + window.location.host);
-      if (!check.test(href)) {
+      if (!check.test(href) && (href != null && href != "")) {
         $$(this).attr('target', '_blank');
       }
     });
