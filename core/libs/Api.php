@@ -136,7 +136,8 @@ class Castle_API
 
                 //目录树
                 'toc' => [
-                    'popup' => (Helper::options()->TocPopup == '1') ? true : false  //自动弹出
+                    'popup' => (Helper::options()->TocPopup == '1') ? true : false,  //自动弹出
+                    'color' => (Helper::options()->TocBtnColor != "") ? Helper::options()->TocBtnColor : null // 按钮颜色
                 ],
 
                 //全站公告

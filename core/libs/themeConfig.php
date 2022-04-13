@@ -22,22 +22,22 @@ function themeConfig($form)
                   $Component->input('StickyArticle', '置顶文章', '置顶的文章cid，按照排序输入, 请以半角逗号或空格分隔。')
             ) .
 
-            /* 测试功能 */
-            $Component->card(
-                  NULL,
-                  NULL,
-                  $Component->checkbox(
-                        'TestSwitch',
-                        '测试特性',
-                        '这可能是一些在 0.9.x 版本中不会继续更新的测试特性，或许这些特性是未来 1.0+ 版本的抢先体验 (￣﹃￣)',
-                        [
-                              'newui'              =>  '启用经过调整的新版本 UI',
-                              'newuiUPRadius'      =>  '启用新 UI 更大的圆角模式 (必须启用新 UI 此项才有效)',
-                              'QRCodeSyncScroll'   =>  '文章/独立页面跨设备二维码同步阅读进度'
-                        ],
-                        NULL
-                  ) . '<hr>' . '<small>这可能是一些在 0.9.x 版本中不会继续更新维护的测试特性，也可能是未来 1.0+ 版本的抢先体验特性 (￣﹃￣)</small>'
-            ) .
+                  /* 测试功能 */
+                  $Component->card(
+                        NULL,
+                        NULL,
+                        $Component->checkbox(
+                              'TestSwitch',
+                              '测试特性',
+                              '这可能是一些在 0.9.x 版本中不会继续更新的测试特性，或许这些特性是未来 1.0+ 版本的抢先体验 (￣﹃￣)',
+                              [
+                                    'newui'              =>  '启用经过调整的新版本 UI',
+                                    'newuiUPRadius'      =>  '启用新 UI 更大的圆角模式 (必须启用新 UI 此项才有效)',
+                                    'QRCodeSyncScroll'   =>  '文章/独立页面跨设备二维码同步阅读进度'
+                              ],
+                              NULL
+                        ) . '<hr>' . '<small>这可能是一些在 0.9.x 版本中不会继续更新维护的测试特性，也可能是未来 1.0+ 版本的抢先体验特性 (￣﹃￣)</small>'
+                  ) .
 
                   /* 主题外观 */
                   $Component->panel(
@@ -255,7 +255,9 @@ function themeConfig($form)
                                                 1   => '页面启用文章目录且有标题时自动弹出目录树'
                                           ],
                                           1
-                                    )
+                                    ) .
+                                    $Component->input('TocBtnColor', '目录树按钮的颜色', '', "") .
+                                    "<small>可输入十六进制颜色值 (如#424242) 或 RGB(A) 颜色值 (如rgb(0,0,0)/rgba(0,0,0,1)) 留空显示跟随主题色。</small>"
                         ) .
 
                               $Component->panel(
@@ -516,9 +518,9 @@ function themeConfig($form)
                                                             5 => '自定义 Gravatar 源'
                                                       ],
                                                       4
-                                                ).
+                                                ) .
 
-                                                $Component->input('gravatarExternal', '自定义 Gravatar 源', '<small style="margin-top: 10px;display: block;margin-bottom: -20px;">当 Gravatar 源为自定义时此设置项生效<br />
+                                                      $Component->input('gravatarExternal', '自定义 Gravatar 源', '<small style="margin-top: 10px;display: block;margin-bottom: -20px;">当 Gravatar 源为自定义时此设置项生效<br />
                                                 可用变量：<code>{mail}</code> 为邮箱，<code>{size}</code> 为头像大小。<br>
                                                 例如：<code>https://www.gravatar.com/avatar/{mail}?s={size}</code></small>', NULL, true)
                                           )
@@ -553,7 +555,7 @@ function themeConfig($form)
                                           ['post']
                                     ) .
 
-                                    '<hr><small>注：二维码不再依赖外部生成，转而使用 QRcode.js 生成</small>'
+                                          '<hr><small>注：二维码不再依赖外部生成，转而使用 QRcode.js 生成</small>'
                               ) .
 
                               $Component->panel(

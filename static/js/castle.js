@@ -204,7 +204,12 @@ var CastleCreate = {
   tocBtn: function () {
     var tocBtn = document.createElement("div");
     tocBtn.setAttribute("id", "toc-Btn");
-    tocBtn.setAttribute("class", "mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme mdui-fab-hide");
+    tocBtn.setAttribute("class", "mdui-fab mdui-fab-fixed mdui-ripple mdui-fab-hide");
+    if (CastleConfig.setting.toc.color) {
+      tocBtn.style.backgroundColor = CastleConfig.setting.toc.color;
+    } else {
+      tocBtn.classList.add("mdui-color-theme");
+    };
     tocBtn.innerHTML = '<i class="mdui-icon material-icons">&#xe866;</i>';
     tocBtn.onclick = function () { CastlePostToc.toggle(); };
     $$('#btn-group').append(tocBtn);
