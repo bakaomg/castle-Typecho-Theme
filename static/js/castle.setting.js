@@ -7,7 +7,7 @@
   \_____|  \__,_| |___/  \__| |_|  \___|
  ----------------------------------------
  * Castle's Theme Setting JavaScript
- * Last Update: 2021/04/12 [0.9.6]
+ * Last Update: 2022/04/22 [0.9.7]
  * Author: ohmyga (https://ohmyga.cn)
  * GitHub: https://github.com/bakaomg/castle-Typecho-Theme/
  * LICENSE: GPL V3 (https://www.gnu.org/licenses/gpl-3.0.html)
@@ -15,7 +15,9 @@
 /* 偷偷用 MDUI 的 JQ 库应该没人看吧（小声 */
 var $$ = mdui.JQ;
 
-var CastleSettingData = {};
+var CastleSettingData = {
+   cache: window.sessionStorage
+};
 
 $$("body").prepend('<div id="moe-bg" style="background-image: url(\'' + CastleConfig.bgurl + '\')">');
 
@@ -111,24 +113,41 @@ var CastlePanel = {
 var CastleUpdate = {
    AJAXGet: function () {
       if (!$$('#update-msg')[0]) { return false; }
+      var update = CastleSettingData.cache.getItem("CastleUpdate");
 
-      $$.ajax({
-         method: 'POST',
-         url: 'https://api.baka.show/themeUpdate/',
-         data: 'data=' + $$('#update-data').data('up'),
-         success: function (data) {
-            var data = JSON.parse(data);
-            if (data.status == 'ok') {
-               $$('#update-msg').html(data.message);
-               if (data.announcement.has) {
-                  $$('#update-msg')[0].innerHTML += '<br/>' + data.announcement.message;
-               }
+      if (!!update) {
+         CastleUpdate.setMsg(JSON.parse(update));
+      } else {
+         $$.ajax({
+            method: 'POST',
+            url: 'https://api.baka.show/v2/theme/check-update',
+            dataType: "json",
+            data: {
+               use: "typecho",
+               theme: "castle",
+               current_version: $$('#update-data').data('currentVer'),
+               user_token: $$('#update-data').data('up')
+            },
+            success: function (data) {
+               CastleUpdate.setMsg(data);
+               CastleSettingData.cache.setItem("CastleUpdate", JSON.stringify(data));
+            },
+            error: function (xhr, status, error) {
+               $$('#update-msg').html('<span class="mdui-text-color-red-accent">API 发生错误 [HTTP' + xhr.status + ']，无法获取更新信息。</span>');
             }
-         },
-         error: function (xhr, status, error) {
-            $$('#update-msg').html('<span class="mdui-text-color-red-accent">API 发生错误 [HTTP' + xhr.status + ']，无法获取更新信息。</span>');
+         });
+      }
+   },
+
+   setMsg: function (data) {
+      if (data.status === true) {
+         $$('#update-msg').html(`<span style="color:${data.data.version.message.color};">${data.data.version.message.text}</span>`);
+         if (data.data.announcement.has) {
+            $$('#update-msg')[0].innerHTML += '<br/>' + data.data.announcement.text;
          }
-      });
+      } else {
+         $$('#update-msg').html(`<span class="mdui-text-color-red-accent">${data.message}</span>`);
+      }
    },
 
    log: function () {
@@ -139,29 +158,32 @@ var CastleUpdate = {
          }
       };
 
-      if (CastleSettingData.changelog != undefined) {
-         if ($$(".update-log-dialog .mdui-dialog-content")[0] == undefined) {
+      var update_logs = CastleSettingData.cache.getItem("CastleUpdateLogs");
+
+      if (CastleSettingData.changelog != undefined || update_logs != null) {
+         if ($$(".update-log-dialog .mdui-dialog-content")[0] == undefined || ($$(".update-log-dialog .mdui-dialog-content")[0] != undefined && $$(".update-log-dialog .mdui-dialog-content")[0].innerText == '获取中...')) {
             $$(".update-log-dialog .mdui-dialog-content")[0].innerHTML = "";
-            $$(".update-log-dialog .mdui-dialog-content")[0].innerHTML = CastlePanel.updateLogPanel(CastleSettingData.changelog);
+            $$(".update-log-dialog .mdui-dialog-content")[0].innerHTML = CastlePanel.updateLogPanel(CastleSettingData.changelog != undefined ? CastleSettingData.changelog : JSON.parse(update_logs));
             mdui.mutation();
          }
          goToLog();
-         return false;
-      }
-      $$.ajax({
-         method: 'GET',
-         url: 'https://api.baka.show/themeUpdate/?action=log',
-         success: function (data) {
-            var data = JSON.parse(data);
-            if (data.status == 'ok') {
-               CastleSettingData.changelog = data.data;
-               $$(".update-log-dialog .mdui-dialog-content")[0].innerHTML = "";
-               $$(".update-log-dialog .mdui-dialog-content")[0].innerHTML = CastlePanel.updateLogPanel(CastleSettingData.changelog);
-               mdui.mutation();
-               goToLog();
+      } else {
+         $$.ajax({
+            method: 'GET',
+            url: 'https://api.baka.show/v2/theme/update-logs?use=typecho&theme=castle',
+            success: function (data) {
+               var data = JSON.parse(data);
+               if (data.status === true) {
+                  CastleSettingData.changelog = data.data;
+                  CastleSettingData.cache.setItem("CastleUpdateLogs", JSON.stringify(data.data))
+                  $$(".update-log-dialog .mdui-dialog-content")[0].innerHTML = "";
+                  $$(".update-log-dialog .mdui-dialog-content")[0].innerHTML = CastlePanel.updateLogPanel(CastleSettingData.changelog);
+                  mdui.mutation();
+                  goToLog();
+               }
             }
-         }
-      });
+         });
+      }
    }
 };
 

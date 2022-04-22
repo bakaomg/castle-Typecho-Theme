@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Theme Config Component
- * Last Update: 2022/04/04
+ * Last Update: 2022/04/22
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -62,7 +62,7 @@ class Castle_Component
    <div class="mdui-typo-title">主题设置</div>
    <br/>
    <div id="update-msg"><span class="mdui-text-color-pink-accent">正在检查是否有新版本...</span></div>
-   <div id="update-data" data-up="' . base64_encode('theme=' . Castle_Libs::getTheme() . '&version=' . CASTLE_VERSION . '&token=' . $this->token) . '"></div>
+   <div id="update-data" data-currentVer="' . CASTLE_VERSION . '" data-up="' . base64_encode('theme=' . Castle_Libs::getTheme() . '&version=' . CASTLE_VERSION . '&token=' . $this->token) . '"></div>
    <script>CastleUpdate.AJAXGet();</script>
    相关链接：<a href="https://ohmyga.cn/" target="_blank">O\'s Blog</a> | <a href="https://castle.baka.show/docs/' . substr(CASTLE_VERSION, 0, 5) . '/#/" target="_blank">主题文档</a> | <a href="https://github.com/ohmyga233/castle-Typecho-Theme" target="_blank">GitHub 发布页</a>
    <br/><br/>

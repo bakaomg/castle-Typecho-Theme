@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Libs Class
- * Last Update: 2021/04/12
+ * Last Update: 2022/04/22
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -66,7 +66,7 @@ class Castle_Libs
         break;
 
       case 'shota':
-        $output = 'https://api.9jojo.cn/acgpic/?rand=' . mt_rand(0, 1000);
+        $output = 'https://api.baka.fun/acgpic/?rand=' . mt_rand(0, 1000);
         break;
 
       case 'local':
