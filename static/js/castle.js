@@ -7,7 +7,7 @@
   \_____|  \__,_| |___/  \__| |_|  \___|
  ----------------------------------------
  * Castle's JavaScript
- * Last Update: 2022/04/04 [0.9.7]
+ * Last Update: 2022/04/22 [0.9.7]
  * Author: ohmyga (https://ohmyga.cn)
  * GitHub: https://github.com/bakaomg/castle-Typecho-Theme/
  * LICENSE: GPL V3 (https://www.gnu.org/licenses/gpl-3.0.html)
