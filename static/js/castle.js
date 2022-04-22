@@ -914,9 +914,11 @@ var CastlePost = {
   modifyPasswordStyle: function () {
     if (!$$('form.protected')[0]) { return false; }
     $$('form.protected').attr('onKeyDown', 'if(event.keyCode == 13){CastlePost.submitPassword();return false;}');
+    var cid = $$('form.protected input[name=protectCID]')[0] != undefined ? $$('form.protected input[name=protectCID]').attr("value") : "0";
     $$('form.protected')[0].innerHTML = '<div class="mdui-textfield mdui-textfield-floating-label">\
    <label class="mdui-textfield-label">'+ CastleLang.post.hidden.input + '</label>\
    <input class="mdui-textfield-input" name="protectPassword" id="protectPassword" type="password"/>\
+   <input type="hidden" name="protectCID" value="' + cid + '">\
   </div>\
   <button class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple mdui-btn-raised" type="button" onclick="CastlePost.submitPassword()"><i class="mdui-icon material-icons">&#xe876;</i></button>';
   },
