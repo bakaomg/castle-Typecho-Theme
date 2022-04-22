@@ -269,4 +269,14 @@ class Castle_Libs
 
     return ($name === NULL) ? $themeOptions : (isset($themeOptions[$name]) ? $themeOptions[$name] : NULL);
   }
+
+  /**
+   * 获取 Cookie
+   * 
+   * @param string $key
+   * @return string|null
+   */
+  public static function getCookie($key, $default = NULL) {
+    return !empty($_COOKIE[$key]) ? $_COOKIE[$key] : $default;
+  }
 }

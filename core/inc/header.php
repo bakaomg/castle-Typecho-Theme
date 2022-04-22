@@ -1,10 +1,11 @@
 <?php
 /**
  * Castle Header
- * Last Update: 2020/03/18
+ * Last Update: 2022/04/22
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $newuiClass = (Helper::options()->TestSwitch && in_array('newui', Helper::options()->TestSwitch) && Helper::options()->TestSwitch && in_array('newuiUPRadius', Helper::options()->TestSwitch)) ? " newui-up-radius" : "";
+$isDark = (!empty(Castle_Libs::getCookie("nightSwitch")) && Castle_Libs::getCookie("nightSwitch") == "true") ? true : false;
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,7 +21,7 @@ $newuiClass = (Helper::options()->TestSwitch && in_array('newui', Helper::option
   <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
  </head>
 
- <body class="mdui-theme-primary-<?php $this->options->themeColor(); ?> mdui-theme-accent-<?php $this->options->themeAccentColor(); ?><?php echo (Helper::options()->themeDarkColor == 'dark') ? ' mdui-theme-layout-dark' : NULL; ?><?php echo $newuiClass; ?>">
+ <body class="mdui-theme-primary-<?php $this->options->themeColor(); ?> mdui-theme-accent-<?php $this->options->themeAccentColor(); ?><?php echo (Helper::options()->themeDarkColor == 'dark' || $isDark === true) ? ' mdui-theme-layout-dark' : NULL; ?><?php echo $newuiClass; ?>">
 
   <header class="mdui-appbar mdui-appbar-fixed mdui-appbar-inset<?php echo ($this->options->appbar && in_array('scrollHide', $this->options->appbar)) ? ' mdui-appbar-scroll-hide' : NULL; ?>" id="header"></header>
 
