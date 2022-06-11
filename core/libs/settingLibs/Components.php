@@ -1,7 +1,7 @@
 <?php
 /**
  * Castle Theme Config Component
- * Last Update: 2022/04/22
+ * Last Update: 2022/06/11
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
@@ -63,7 +63,7 @@ class Castle_Component
    <div id="update-msg"><span class="mdui-text-color-pink-accent">正在检查是否有新版本...</span></div>
    <div id="update-data" data-currentVer="' . CASTLE_VERSION . '" data-up="' . base64_encode('theme=' . Castle_Libs::getTheme() . '&version=' . CASTLE_VERSION . '&token=' . $this->token) . '"></div>
    <script>CastleUpdate.AJAXGet();</script>
-   相关链接：<a href="https://ohmyga.cn/" target="_blank">O\'s Blog</a> | <a href="https://castle.baka.show/docs/' . substr(CASTLE_VERSION, 0, 5) . '/#/" target="_blank">主题文档</a> | <a href="https://github.com/ohmyga233/castle-Typecho-Theme" target="_blank">GitHub 发布页</a>
+   相关链接：<a href="https://ohmyga.cn/" target="_blank">O\'s Blog</a> | <a href="https://castle.baka.show/docs/' . substr(CASTLE_VERSION, 0, 5) . '/#/" target="_blank">主题文档</a> | <a href="https://github.com/bakaomg/castle-Typecho-Theme" target="_blank">GitHub 发布页</a>
    <br/><br/>
    <button class="mdui-btn mdui-btn-dense mdui-btn-raised mdui-color-teal" type="button" onclick="CastlePanel.open();">打开全部面板</button>
    <button class="mdui-btn mdui-btn-dense mdui-btn-raised mdui-color-red" type="button" onclick="CastlePanel.close();">关闭全部面板</button>
