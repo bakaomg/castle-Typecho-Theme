@@ -12,6 +12,7 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /** 文章置顶 */
 $sticky = $this->options->StickyArticle; //置顶的文章cid，按照排序输入, 请以半角逗号或空格分隔
+$sticky = !empty($sticky) ? $sticky : ""; // 奇怪的错误增加了
 if ($sticky && $this->is('index') || $this->is('front')) {
   $sticky_cids = explode(',', strtr($sticky, ' ', ',')); //分割文本 
   $sticky_html = "<span style=\"color:red;text-shadow:none;\">[置顶] </span>"; //置顶标题的 html
