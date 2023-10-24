@@ -43,6 +43,8 @@ $ git clone https://github.com/bakaomg/castle-Typecho-Theme
 赞助列表：https://blog.ohmyga.cn/donate-list.html<br>
 注：**此分支为旧版本主题，之后只会修复 BUG 不会继续更新新内容。（兼容 Typecho 1.2.0 (往前兼容)）**
 
+[MDUI](https://www.mdui.org) 已经出 V2 了 (MD3)，在考虑是否更新主题或者新开个主题 (￣﹃￣)
+
 ## 版权信息
 ~~Screenshot.png: [最近のケモショタまとめログ③ - #P2](https://www.pixiv.net/artworks/66074820?p=2)~~<br>
 Copyright &copy; 2018-2022 [ohmyga](https://github.com/bakaomg), under GPL-3.0 License
